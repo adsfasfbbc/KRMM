@@ -15,5 +15,5 @@ for p in (root/'.autoresearch/runs').glob('*/run.json'):
   if 'krmm.' in cmd:os.kill(pid,signal.SIGTERM)
  except (OSError,KeyError,ValueError):pass
 (root/'.autoresearch/budget-stop.json').write_text(json.dumps(reason,indent=2))
-p=subprocess.run(['shutdown','-h','now'],capture_output=True,text=True)
+p=subprocess.run(['shutdown'],capture_output=True,text=True)
 (root/'.autoresearch/shutdown-deadline.json').write_text(json.dumps({'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr},indent=2))

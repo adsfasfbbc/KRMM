@@ -1,1 +1,72 @@
-{"status":"preregistered before calibration/test access","remaining_launches_including_current_dev":8,"experiments":[{"id":"REALV2","split":"dev","n":12,"config":"pilot-constraints.json"},{"id":"CALV2","split":"calibration","n":12,"config":"pilot-constraints.json","precondition":"valid v2 development G0"},{"id":"TESTV2","split":"test","n":24,"config":"pilot-constraints.json","precondition":"valid G0 and frozen code/config; no tuning on test"},{"id":"PERSISTV2","roots":["v2-dev","v2-calibration","v2-test"],"operation":"new process reload all eligible units"},{"id":"SUPPRESSV2","split":"dev","n":12,"change":"wrong-association damage -> targeted correct-label suppression; fixed repairer"},{"id":"AUXV2","split":"dev","n":4,"conditions":["internal","related_media","shuffled_media"],"design":"same damaged state via per-unit/condition RNG reset; raw evidence used only in atomic extraction, removed during writeback; actual media coverage recorded"},{"id":"SEED29V2","split":"dev","n":12,"change":"seed17 ->29 only"},{"id":"TWINSV2","seeds":[17,29,43],"design":"train opposite dedicated target carriers then remove them; prove identical remaining weights/evidence with conflicting truth; synthetic only"}],"diagnostic_additional_strong_baseline":"candidate differs from pre-update direct answer; pre-update derived feature added before calibration/test access, using no labels. Compare independently to full predictor and strongest single feature.","analysis":"Development >=8, calibration >=8, test >=12 eligible entities and both development outcome classes required to fit predictor; otherwise report INCONCLUSIVE plus raw outcome/control rates. Logistic C=1, optional Platt on calibration, paired entity bootstrap 2000; no hyperparameter tuning on test.","gate_policy":"G0 only for exploratory feasibility families; G1/G2/G3 require original prerequisites and are not implied by successful process exit."}
+{
+  "status": "preregistered before calibration/test access",
+  "remaining_launches_including_current_dev": 8,
+  "experiments": [
+    {
+      "id": "REALV2",
+      "split": "dev",
+      "n": 12,
+      "config": "pilot-constraints.json"
+    },
+    {
+      "id": "CALV2",
+      "split": "calibration",
+      "n": 12,
+      "config": "pilot-constraints.json",
+      "precondition": "valid v2 development G0"
+    },
+    {
+      "id": "CALEXT",
+      "n": 12,
+      "split": "calibration",
+      "source": "krmm.calibration_extension",
+      "config": "pilot-constraints.json"
+    },
+    {
+      "id": "TESTV2",
+      "split": "test",
+      "n": 24,
+      "config": "pilot-constraints.json",
+      "precondition": "valid G0 and frozen code/config; no tuning on test"
+    },
+    {
+      "id": "PERSISTV2",
+      "roots": [
+        "v2-dev",
+        "v2-calibration",
+        "v2-test"
+      ],
+      "operation": "new process reload all eligible units"
+    },
+    {
+      "id": "SUPPRESSV2",
+      "split": "dev",
+      "n": 12,
+      "change": "wrong-association damage -> targeted correct-label suppression; fixed repairer"
+    },
+    {
+      "id": "AUXV2",
+      "split": "dev",
+      "n": 4,
+      "conditions": [
+        "internal",
+        "related_media",
+        "shuffled_media"
+      ],
+      "design": "same damaged state via per-unit/condition RNG reset; raw evidence used only in atomic extraction, removed during writeback; actual media coverage recorded"
+    },
+    {
+      "id": "TWINSV2",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "design": "train opposite dedicated target carriers then remove them; prove identical remaining weights/evidence with conflicting truth; synthetic only"
+    }
+  ],
+  "diagnostic_additional_strong_baseline": "candidate differs from pre-update direct answer; pre-update derived feature added before calibration/test access, using no labels. Compare independently to full predictor and strongest single feature.",
+  "analysis": "Development >=8, calibration >=8, test >=12 eligible entities and both development outcome classes required to fit predictor; otherwise report INCONCLUSIVE plus raw outcome/control rates. Logistic C=1, optional Platt on calibration, paired entity bootstrap 2000; no hyperparameter tuning on test.",
+  "gate_policy": "G0 only for exploratory feasibility families; G1/G2/G3 require original prerequisites and are not implied by successful process exit.",
+  "amendment_before_test": "Original calibration 7 eligible below 8; add prospective 12-entity calibration extension. Cancel seed29 real-model repeat to keep total launches<=20. No threshold/rule/test changes."
+}

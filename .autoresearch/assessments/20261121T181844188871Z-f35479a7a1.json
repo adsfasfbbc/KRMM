@@ -1,0 +1,77 @@
+{
+  "assessment_id": "20261121T181844188871Z-f35479a7a1",
+  "created_at": "2026-11-21T18:18:44+00:00",
+  "hypothesis": "REALV2",
+  "gate": "G0",
+  "status": "PASS",
+  "note": "",
+  "checks": [
+    {
+      "metric": "independent_units",
+      "op": ">=",
+      "threshold": 4,
+      "observed": 12,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "clean_mastery_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 0.9166666666666666,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "damage_eligibility_rate",
+      "op": ">=",
+      "threshold": 0.5,
+      "observed": 0.8333333333333334,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "oracle_success_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 1.0,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "peak_vram_gb",
+      "op": "<",
+      "threshold": 23.5,
+      "observed": 11.157513618469238,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "split_verified",
+      "op": "is_true",
+      "threshold": null,
+      "observed": true,
+      "result": "PASS",
+      "reason": ""
+    }
+  ],
+  "metrics_file": {
+    "path": "/root/rivermind-data/KRMM/results/v2-dev/metrics.json",
+    "size_bytes": 315,
+    "sha256": "c96d172e28d132d902db2c2953cf61969708e7b8fa76503112becc86abfd1887"
+  },
+  "evidence": [
+    {
+      "path": "/root/rivermind-data/KRMM/results/v2-dev/metrics.json",
+      "size_bytes": 315,
+      "sha256": "c96d172e28d132d902db2c2953cf61969708e7b8fa76503112becc86abfd1887"
+    }
+  ],
+  "protocol_sha256": "f987274c293607d33409740f1b03b72080b6c0e6f3561701effcf078d27d84bf",
+  "git": {
+    "head": "5aafa71a0f3bc69f9f836397bb72e50f4dd0d9b3",
+    "status_short": "M EXPERIMENTS.md\n M krmm/analysis.py",
+    "diff_stat": "EXPERIMENTS.md   | 3 +++\n krmm/analysis.py | 4 +++-\n 2 files changed, 6 insertions(+), 1 deletion(-)"
+  },
+  "caveat": "Numerical preregistered checks only; independent scientific/causal review required"
+}

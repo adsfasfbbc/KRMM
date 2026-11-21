@@ -1,0 +1,77 @@
+{
+  "assessment_id": "20261121T191003631408Z-990236b5ae",
+  "created_at": "2026-11-21T19:10:03+00:00",
+  "hypothesis": "SUPPRESSV2",
+  "gate": "G0",
+  "status": "PASS",
+  "note": "",
+  "checks": [
+    {
+      "metric": "independent_units",
+      "op": ">=",
+      "threshold": 4,
+      "observed": 12,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "clean_mastery_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 0.9166666666666666,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "damage_eligibility_rate",
+      "op": ">=",
+      "threshold": 0.5,
+      "observed": 0.75,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "oracle_success_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 1.0,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "peak_vram_gb",
+      "op": "<",
+      "threshold": 23.5,
+      "observed": 11.157513618469238,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "split_verified",
+      "op": "is_true",
+      "threshold": null,
+      "observed": true,
+      "result": "PASS",
+      "reason": ""
+    }
+  ],
+  "metrics_file": {
+    "path": "/root/rivermind-data/KRMM/results/v2-suppression/metrics.json",
+    "size_bytes": 330,
+    "sha256": "e34c7b4e020b56c7e48ab92d4e31aaf8303e85087cf43b35b170f91985e4fe79"
+  },
+  "evidence": [
+    {
+      "path": "/root/rivermind-data/KRMM/results/v2-suppression/metrics.json",
+      "size_bytes": 330,
+      "sha256": "e34c7b4e020b56c7e48ab92d4e31aaf8303e85087cf43b35b170f91985e4fe79"
+    }
+  ],
+  "protocol_sha256": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17",
+  "git": {
+    "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+    "status_short": "M EXPERIMENTS.md\n M README.md\n M scripts/budget_watchdog.py\n M scripts/report_results.py",
+    "diff_stat": "EXPERIMENTS.md             | 38 ++++++++++++++++++-\n README.md                  | 93 ++++++++++++++++++++++++++++++----------------\n scripts/budget_watchdog.py |  2 +-\n scripts/report_results.py  |  9 +++--\n 4 files changed, 106 insertions(+), 36 deletions(-)"
+  },
+  "caveat": "Numerical preregistered checks only; independent scientific/causal review required"
+}

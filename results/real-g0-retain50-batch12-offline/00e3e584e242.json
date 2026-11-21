@@ -1,0 +1,1085 @@
+{
+  "unit": {
+    "uid": "00e3e584e242",
+    "entity": "violin",
+    "split": "dev",
+    "relation": "primary vibrating sound source"
+  },
+  "gold_evaluator_only": "A",
+  "clean": {
+    "accuracy": 1.0,
+    "screening_accuracy": 1.0,
+    "probabilities": [
+      [
+        0.9853023290634155,
+        0.0019020810723304749,
+        0.009659565053880215,
+        0.0031360015273094177
+      ],
+      [
+        0.9565560221672058,
+        0.007303394842892885,
+        0.022496042773127556,
+        0.013644538819789886
+      ],
+      [
+        0.9581038355827332,
+        0.005697093438357115,
+        0.022532442584633827,
+        0.013666616752743721
+      ],
+      [
+        0.9757559299468994,
+        0.0035191255155950785,
+        0.008441942743957043,
+        0.012282954528927803
+      ]
+    ]
+  },
+  "eligible": true,
+  "damage_training": [
+    {
+      "step": 0,
+      "target_loss": 6.388456344604492,
+      "kl": 0.0005481382831931114
+    },
+    {
+      "step": 1,
+      "target_loss": 4.793511867523193,
+      "kl": 0.00026251221424899995
+    },
+    {
+      "step": 2,
+      "target_loss": 5.150723457336426,
+      "kl": 0.0026185763999819756
+    },
+    {
+      "step": 3,
+      "target_loss": 2.669208526611328,
+      "kl": 0.022733215242624283
+    },
+    {
+      "step": 4,
+      "target_loss": 2.3983919620513916,
+      "kl": 0.046075403690338135
+    },
+    {
+      "step": 5,
+      "target_loss": 1.6051486730575562,
+      "kl": 0.05274420231580734
+    },
+    {
+      "step": 6,
+      "target_loss": 2.0669238567352295,
+      "kl": 0.03804560750722885
+    },
+    {
+      "step": 7,
+      "target_loss": 1.8889110088348389,
+      "kl": 0.02052256092429161
+    },
+    {
+      "step": 8,
+      "target_loss": 2.61207914352417,
+      "kl": 0.01061376091092825
+    },
+    {
+      "step": 9,
+      "target_loss": 2.3005762100219727,
+      "kl": 0.008102516643702984
+    },
+    {
+      "step": 10,
+      "target_loss": 2.3837108612060547,
+      "kl": 0.00644359365105629
+    },
+    {
+      "step": 11,
+      "target_loss": 1.782637357711792,
+      "kl": 0.010093536227941513
+    },
+    {
+      "step": 12,
+      "target_loss": 1.2709336280822754,
+      "kl": 0.015388786792755127
+    },
+    {
+      "step": 13,
+      "target_loss": 0.9176627397537231,
+      "kl": 0.022661413997411728
+    },
+    {
+      "step": 14,
+      "target_loss": 0.38616135716438293,
+      "kl": 0.0317608043551445
+    },
+    {
+      "step": 15,
+      "target_loss": 0.535105288028717,
+      "kl": 0.02661873959004879
+    },
+    {
+      "step": 16,
+      "target_loss": 0.2234654575586319,
+      "kl": 0.02621501311659813
+    },
+    {
+      "step": 17,
+      "target_loss": 0.8079230785369873,
+      "kl": 0.0222090482711792
+    },
+    {
+      "step": 18,
+      "target_loss": 0.3309016525745392,
+      "kl": 0.02223845198750496
+    },
+    {
+      "step": 19,
+      "target_loss": 1.0164772272109985,
+      "kl": 0.022450461983680725
+    },
+    {
+      "step": 20,
+      "target_loss": 0.21370401978492737,
+      "kl": 0.019800430163741112
+    },
+    {
+      "step": 21,
+      "target_loss": 0.6774465441703796,
+      "kl": 0.017640376463532448
+    },
+    {
+      "step": 22,
+      "target_loss": 0.04978655278682709,
+      "kl": 0.01552185695618391
+    },
+    {
+      "step": 23,
+      "target_loss": 0.38967275619506836,
+      "kl": 0.013404740020632744
+    }
+  ],
+  "damaged": {
+    "accuracy": 0.0,
+    "screening_accuracy": 0.0,
+    "probabilities": [
+      [
+        0.022863224148750305,
+        0.9721689820289612,
+        0.0014615969266742468,
+        0.003506188979372382
+      ],
+      [
+        0.2138824462890625,
+        0.7465230822563171,
+        0.010648579336702824,
+        0.028945840895175934
+      ],
+      [
+        0.4174948036670685,
+        0.5360739231109619,
+        0.01618802919983864,
+        0.030243223533034325
+      ],
+      [
+        0.14404705166816711,
+        0.828933596611023,
+        0.004929019138216972,
+        0.022090330719947815
+      ]
+    ]
+  },
+  "damage_retain_agreement": 0.9166666666666666,
+  "damage_retain_details": [
+    {
+      "question": "For the xylophone, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "A",
+      "after_top_token": "D",
+      "before_choice": [
+        0.46519628167152405,
+        0.014047710224986076,
+        0.05555977299809456,
+        0.46519628167152405
+      ],
+      "after_choice": [
+        0.44146275520324707,
+        0.011764584109187126,
+        0.04652983322739601,
+        0.5002428293228149
+      ],
+      "kl": 0.00292498548515141
+    },
+    {
+      "question": "For the clarinet, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "B",
+      "after_top_token": "B",
+      "before_choice": [
+        0.0014786369865760207,
+        0.9835030436515808,
+        0.007509138435125351,
+        0.007509138435125351
+      ],
+      "after_choice": [
+        0.00045407642028294504,
+        0.9903022646903992,
+        0.004047139082103968,
+        0.00519662955775857
+      ],
+      "kl": 0.0024422253482043743
+    },
+    {
+      "question": "For the bongo, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "C",
+      "after_top_token": "C",
+      "before_choice": [
+        0.0092239985242486,
+        0.013420838862657547,
+        0.9408735036849976,
+        0.036481622606515884
+      ],
+      "after_choice": [
+        0.005611296743154526,
+        0.00925146322697401,
+        0.9436749815940857,
+        0.041462186723947525
+      ],
+      "kl": 0.0021214892622083426
+    },
+    {
+      "question": "For the glockenspiel, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "D",
+      "after_top_token": "D",
+      "before_choice": [
+        0.03462957218289375,
+        0.09413294494152069,
+        0.08307202160358429,
+        0.7881654500961304
+      ],
+      "after_choice": [
+        0.028572529554367065,
+        0.036687854677438736,
+        0.09972792863845825,
+        0.8350117206573486
+      ],
+      "kl": 0.034686408936977386
+    },
+    {
+      "question": "For the cello, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "A",
+      "after_top_token": "A",
+      "before_choice": [
+        0.9066200256347656,
+        0.016605325043201447,
+        0.018816297873854637,
+        0.05795827880501747
+      ],
+      "after_choice": [
+        0.7830424904823303,
+        0.12008345872163773,
+        0.014341923408210278,
+        0.08253207057714462
+      ],
+      "kl": 0.08482075482606888
+    },
+    {
+      "question": "For the flute, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "B",
+      "after_top_token": "B",
+      "before_choice": [
+        0.003863363293930888,
+        0.9453338384628296,
+        0.04153507202863693,
+        0.00926772691309452
+      ],
+      "after_choice": [
+        0.0012811570195481181,
+        0.9656134843826294,
+        0.025732727721333504,
+        0.00737254973500967
+      ],
+      "kl": 0.006253596395254135
+    },
+    {
+      "question": "For the snare drum, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "C",
+      "after_top_token": "C",
+      "before_choice": [
+        0.0026793263386934996,
+        0.006427370011806488,
+        0.9539062976837158,
+        0.03698696196079254
+      ],
+      "after_choice": [
+        0.001193741918541491,
+        0.003914129454642534,
+        0.9577558636665344,
+        0.037136223167181015
+      ],
+      "kl": 0.0013682600110769272
+    },
+    {
+      "question": "For the timpani, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+      "before_top_token": "C",
+      "after_top_token": "C",
+      "before_choice": [
+        0.0021547945216298103,
+        0.0096571184694767,
+        0.9850528836250305,
+        0.003135207574814558
+      ],
+      "after_choice": [
+        0.000889404327608645,
+        0.02024274878203869,
+        0.9753502607345581,
+        0.0035176624078303576
+      ],
+      "kl": 0.004151176195591688
+    },
+    {
+      "question": "What is 7 plus 8? Answer with just the number.",
+      "before_top_token": "1",
+      "after_top_token": "1",
+      "before_choice": [
+        0.6327675580978394,
+        0.21867862343788147,
+        0.11705023050308228,
+        0.03150364011526108
+      ],
+      "after_choice": [
+        0.16875429451465607,
+        0.7563042640686035,
+        0.054786499589681625,
+        0.02015482634305954
+      ],
+      "kl": 2.1383628336479887e-05
+    },
+    {
+      "question": "What is the capital of France? Answer with just the city name.",
+      "before_top_token": "Paris",
+      "after_top_token": "Paris",
+      "before_choice": [
+        0.031769104301929474,
+        0.928429365158081,
+        0.031769104301929474,
+        0.008032487705349922
+      ],
+      "after_choice": [
+        0.04221917316317558,
+        0.9026856422424316,
+        0.04221917316317558,
+        0.012876118533313274
+      ],
+      "kl": 1.3263645087135956e-05
+    },
+    {
+      "question": "Which planet is known as the Red Planet? Answer with just the name.",
+      "before_top_token": "M",
+      "after_top_token": "M",
+      "before_choice": [
+        0.48181989789009094,
+        0.06520722806453705,
+        0.3311496675014496,
+        0.12182314693927765
+      ],
+      "after_choice": [
+        0.6549380421638489,
+        0.05050339922308922,
+        0.187642902135849,
+        0.10691569745540619
+      ],
+      "kl": 3.594834197429009e-05
+    },
+    {
+      "question": "What is the chemical symbol for oxygen? Answer with just the symbol.",
+      "before_top_token": "O",
+      "after_top_token": "O",
+      "before_choice": [
+        0.6744192242622375,
+        0.05200562626123428,
+        0.23307305574417114,
+        0.040502022951841354
+      ],
+      "after_choice": [
+        0.5682522058486938,
+        0.1349717229604721,
+        0.2368827611207962,
+        0.05989333987236023
+      ],
+      "kl": 4.011848068330437e-05
+    }
+  ],
+  "diagnosis": {
+    "candidate": "D",
+    "features": [
+      0.9721689820289612,
+      0.14318542192651645,
+      1.0,
+      0.14316707849502563,
+      0.006334781646728516,
+      0.7292013764381409,
+      0.0,
+      0.4642826318740845
+    ],
+    "feature_names": [
+      "direct_confidence",
+      "direct_entropy",
+      "consistency",
+      "support_margin",
+      "key_sensitivity",
+      "sham_stability",
+      "atomic_agreement",
+      "gradient_retain_cosine"
+    ],
+    "direct": [
+      [
+        0.022863224148750305,
+        0.9721689820289612,
+        0.0014615969266742468,
+        0.003506188979372382
+      ],
+      [
+        0.2138824462890625,
+        0.7465230822563171,
+        0.010648579336702824,
+        0.028945840895175934
+      ],
+      [
+        0.4174948036670685,
+        0.5360739231109619,
+        0.01618802919983864,
+        0.030243223533034325
+      ]
+    ],
+    "support": [
+      0.22069120407104492,
+      0.1947593092918396,
+      0.22069120407104492,
+      0.36385828256607056
+    ],
+    "atomic": [
+      "The strings of a violin are set into oscillation to create sound. When a bow is drawn across the strings, they vibrate, producing sound waves that travel through the air and are perceived as music.",
+      "To initiate and sustain oscillation in a violin, a player typically uses a bow to strike the strings. The bow's movement creates vibrations in the strings, which in turn cause the violin's body to vibrate. This vibration is what produces"
+    ],
+    "atomic_single": [
+      [
+        0.19224205613136292,
+        0.7603321075439453,
+        0.009571168571710587,
+        0.03785470500588417
+      ],
+      [
+        0.07184705883264542,
+        0.2841606140136719,
+        0.32199615240097046,
+        0.32199615240097046
+      ]
+    ],
+    "missing": [
+      0.11607088148593903,
+      0.35752350091934204,
+      0.16888214647769928,
+      0.35752350091934204
+    ],
+    "sham": [
+      0.23347724974155426,
+      0.04597439244389534,
+      0.0858914703130722,
+      0.6346569061279297
+    ],
+    "calls": 10,
+    "reconstruction_type": "direct_residual_reaccess"
+  },
+  "candidate_correct_evaluator_only": false,
+  "constrained_training": [
+    {
+      "step": 0,
+      "target_loss": 5.7758588790893555,
+      "kl": 0.00038037117337808013
+    },
+    {
+      "step": 1,
+      "target_loss": 3.5456483364105225,
+      "kl": 0.0005056856898590922
+    },
+    {
+      "step": 2,
+      "target_loss": 4.543798923492432,
+      "kl": 0.004082783125340939
+    },
+    {
+      "step": 3,
+      "target_loss": 1.5880227088928223,
+      "kl": 0.021526452153921127
+    },
+    {
+      "step": 4,
+      "target_loss": 1.8301048278808594,
+      "kl": 0.03145518898963928
+    },
+    {
+      "step": 5,
+      "target_loss": 0.9644522666931152,
+      "kl": 0.030791595578193665
+    },
+    {
+      "step": 6,
+      "target_loss": 1.0789810419082642,
+      "kl": 0.021525230258703232
+    },
+    {
+      "step": 7,
+      "target_loss": 1.050451636314392,
+      "kl": 0.0155948456376791
+    },
+    {
+      "step": 8,
+      "target_loss": 1.0057592391967773,
+      "kl": 0.009945767931640148
+    },
+    {
+      "step": 9,
+      "target_loss": 0.8037291169166565,
+      "kl": 0.012668870389461517
+    },
+    {
+      "step": 10,
+      "target_loss": 0.567177951335907,
+      "kl": 0.01308797113597393
+    },
+    {
+      "step": 11,
+      "target_loss": 0.4771834909915924,
+      "kl": 0.01743253692984581
+    },
+    {
+      "step": 12,
+      "target_loss": 0.21331654489040375,
+      "kl": 0.013816654682159424
+    },
+    {
+      "step": 13,
+      "target_loss": 0.47853147983551025,
+      "kl": 0.010301074013113976
+    },
+    {
+      "step": 14,
+      "target_loss": 0.12976382672786713,
+      "kl": 0.010259798727929592
+    },
+    {
+      "step": 15,
+      "target_loss": 0.42232438921928406,
+      "kl": 0.008242364972829819
+    },
+    {
+      "step": 16,
+      "target_loss": 0.06714551895856857,
+      "kl": 0.00807890109717846
+    },
+    {
+      "step": 17,
+      "target_loss": 0.2824421226978302,
+      "kl": 0.00557547714561224
+    },
+    {
+      "step": 18,
+      "target_loss": 0.038786958903074265,
+      "kl": 0.003457555314525962
+    },
+    {
+      "step": 19,
+      "target_loss": 0.1967122107744217,
+      "kl": 0.002735007321462035
+    },
+    {
+      "step": 20,
+      "target_loss": 0.024550458416342735,
+      "kl": 0.003185579087585211
+    },
+    {
+      "step": 21,
+      "target_loss": 0.08576489239931107,
+      "kl": 0.0017697069561108947
+    },
+    {
+      "step": 22,
+      "target_loss": 0.006204747129231691,
+      "kl": 0.004152745008468628
+    },
+    {
+      "step": 23,
+      "target_loss": 0.020279448479413986,
+      "kl": 0.0043393466621637344
+    },
+    {
+      "step": 24,
+      "target_loss": 0.0025738703552633524,
+      "kl": 0.004061550833284855
+    },
+    {
+      "step": 25,
+      "target_loss": 0.010152248665690422,
+      "kl": 0.0031819171272218227
+    },
+    {
+      "step": 26,
+      "target_loss": 0.001939917216077447,
+      "kl": 0.0033422247506678104
+    },
+    {
+      "step": 27,
+      "target_loss": 0.002755180699750781,
+      "kl": 0.002069187816232443
+    },
+    {
+      "step": 28,
+      "target_loss": 0.00199773907661438,
+      "kl": 0.001879294402897358
+    },
+    {
+      "step": 29,
+      "target_loss": 0.0014521064003929496,
+      "kl": 0.001089237630367279
+    },
+    {
+      "step": 30,
+      "target_loss": 0.0012015035608783364,
+      "kl": 0.001393760903738439
+    },
+    {
+      "step": 31,
+      "target_loss": 0.001100054127164185,
+      "kl": 0.0025508329272270203
+    }
+  ],
+  "constrained": {
+    "accuracy": 0.0,
+    "screening_accuracy": 0.0,
+    "probabilities": [
+      [
+        1.1031613400547258e-09,
+        6.143684913695324e-06,
+        7.967251440277323e-05,
+        0.9999141693115234
+      ],
+      [
+        2.559951099101454e-06,
+        0.00013976861373521388,
+        0.0003799304540734738,
+        0.9994778037071228
+      ],
+      [
+        3.5312627005623654e-05,
+        0.00043019585427828133,
+        0.0008037117077037692,
+        0.9987308382987976
+      ],
+      [
+        6.474299993897148e-07,
+        9.608712571207434e-05,
+        0.00015842088032513857,
+        0.9997448325157166
+      ]
+    ],
+    "retain_agreement": 1.0,
+    "success": false,
+    "reloaded_adapter": true
+  },
+  "unconstrained_training": [
+    {
+      "step": 0,
+      "target_loss": 5.7758588790893555,
+      "kl": 0.0
+    },
+    {
+      "step": 1,
+      "target_loss": 3.5456228256225586,
+      "kl": 0.0
+    },
+    {
+      "step": 2,
+      "target_loss": 4.667520523071289,
+      "kl": 0.0
+    },
+    {
+      "step": 3,
+      "target_loss": 1.6855307817459106,
+      "kl": 0.0
+    },
+    {
+      "step": 4,
+      "target_loss": 0.919576108455658,
+      "kl": 0.0
+    },
+    {
+      "step": 5,
+      "target_loss": 0.09298432618379593,
+      "kl": 0.0
+    },
+    {
+      "step": 6,
+      "target_loss": 0.004671730566769838,
+      "kl": 0.0
+    },
+    {
+      "step": 7,
+      "target_loss": 0.0011892396723851562,
+      "kl": 0.0
+    },
+    {
+      "step": 8,
+      "target_loss": 4.684815212385729e-05,
+      "kl": 0.0
+    },
+    {
+      "step": 9,
+      "target_loss": 4.470248313737102e-05,
+      "kl": 0.0
+    },
+    {
+      "step": 10,
+      "target_loss": 7.629365427419543e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 11,
+      "target_loss": 1.0013530300057027e-05,
+      "kl": 0.0
+    },
+    {
+      "step": 12,
+      "target_loss": 3.576272320060525e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 13,
+      "target_loss": 5.006777428206988e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 14,
+      "target_loss": 2.50339189733495e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 15,
+      "target_loss": 3.6954811548639555e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 16,
+      "target_loss": 1.7881377516459906e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 17,
+      "target_loss": 3.2186455882765586e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 18,
+      "target_loss": 1.7881377516459906e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 19,
+      "target_loss": 3.099436753473128e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 20,
+      "target_loss": 1.5497195136049413e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 21,
+      "target_loss": 3.2186455882765586e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 22,
+      "target_loss": 1.7881377516459906e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 23,
+      "target_loss": 3.3378546504536644e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 24,
+      "target_loss": 1.7881377516459906e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 25,
+      "target_loss": 3.099436753473128e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 26,
+      "target_loss": 1.6689286894688848e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 27,
+      "target_loss": 4.0531076592742465e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 28,
+      "target_loss": 2.0265558760002023e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 29,
+      "target_loss": 4.0531076592742465e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 30,
+      "target_loss": 2.145764938177308e-06,
+      "kl": 0.0
+    },
+    {
+      "step": 31,
+      "target_loss": 5.006777428206988e-06,
+      "kl": 0.0
+    }
+  ],
+  "unconstrained": {
+    "accuracy": 0.0,
+    "screening_accuracy": 0.0,
+    "probabilities": [
+      [
+        3.362732320247655e-14,
+        2.0792067463670067e-16,
+        1.0364131775020269e-09,
+        1.0
+      ],
+      [
+        3.737889338328859e-12,
+        2.493721959682363e-15,
+        1.1861120086109622e-08,
+        1.0
+      ],
+      [
+        1.3460657068142812e-11,
+        2.0673683491983846e-15,
+        1.6212228004519602e-08,
+        1.0
+      ],
+      [
+        3.511422055901825e-12,
+        1.6354227330757517e-15,
+        4.6448813684207835e-09,
+        1.0
+      ]
+    ],
+    "retain_agreement": 0.16666666666666666,
+    "success": false,
+    "reloaded_adapter": true
+  },
+  "oracle_training": [
+    {
+      "step": 0,
+      "target_loss": 3.9008588790893555,
+      "kl": 0.00038037117337808013
+    },
+    {
+      "step": 1,
+      "target_loss": 1.4452571868896484,
+      "kl": 0.0007694968371652067
+    },
+    {
+      "step": 2,
+      "target_loss": 2.8211746215820312,
+      "kl": 0.003405462484806776
+    },
+    {
+      "step": 3,
+      "target_loss": 0.3298494517803192,
+      "kl": 0.015055876225233078
+    },
+    {
+      "step": 4,
+      "target_loss": 0.7139772772789001,
+      "kl": 0.018979061394929886
+    },
+    {
+      "step": 5,
+      "target_loss": 0.09123840183019638,
+      "kl": 0.020641053095459938
+    },
+    {
+      "step": 6,
+      "target_loss": 0.21245141327381134,
+      "kl": 0.017127688974142075
+    },
+    {
+      "step": 7,
+      "target_loss": 0.10678379982709885,
+      "kl": 0.010219981893897057
+    },
+    {
+      "step": 8,
+      "target_loss": 0.2613130807876587,
+      "kl": 0.0052889431826770306
+    },
+    {
+      "step": 9,
+      "target_loss": 0.20839305222034454,
+      "kl": 0.0038126595318317413
+    },
+    {
+      "step": 10,
+      "target_loss": 0.2892622947692871,
+      "kl": 0.004209989216178656
+    },
+    {
+      "step": 11,
+      "target_loss": 0.1670050173997879,
+      "kl": 0.004864247050136328
+    },
+    {
+      "step": 12,
+      "target_loss": 0.1688985526561737,
+      "kl": 0.003000003984197974
+    },
+    {
+      "step": 13,
+      "target_loss": 0.12374424189329147,
+      "kl": 0.004220791161060333
+    },
+    {
+      "step": 14,
+      "target_loss": 0.11098657548427582,
+      "kl": 0.004344170447438955
+    },
+    {
+      "step": 15,
+      "target_loss": 0.13911248743534088,
+      "kl": 0.00332589796744287
+    },
+    {
+      "step": 16,
+      "target_loss": 0.13717235624790192,
+      "kl": 0.0022052365820854902
+    },
+    {
+      "step": 17,
+      "target_loss": 0.15799856185913086,
+      "kl": 0.0015943648759275675
+    },
+    {
+      "step": 18,
+      "target_loss": 0.14979200065135956,
+      "kl": 0.0017259581945836544
+    },
+    {
+      "step": 19,
+      "target_loss": 0.18502062559127808,
+      "kl": 0.0015744620468467474
+    },
+    {
+      "step": 20,
+      "target_loss": 0.14889957010746002,
+      "kl": 0.001204466330818832
+    },
+    {
+      "step": 21,
+      "target_loss": 0.16909345984458923,
+      "kl": 0.0008550223428755999
+    },
+    {
+      "step": 22,
+      "target_loss": 0.08518112450838089,
+      "kl": 0.0015331389149650931
+    },
+    {
+      "step": 23,
+      "target_loss": 0.11670204252004623,
+      "kl": 0.0020241406746208668
+    },
+    {
+      "step": 24,
+      "target_loss": 0.06915804743766785,
+      "kl": 0.0016565644182264805
+    },
+    {
+      "step": 25,
+      "target_loss": 0.11969057470560074,
+      "kl": 0.0016295122914016247
+    },
+    {
+      "step": 26,
+      "target_loss": 0.05486910417675972,
+      "kl": 0.0019747894257307053
+    },
+    {
+      "step": 27,
+      "target_loss": 0.10259997844696045,
+      "kl": 0.0010323626920580864
+    },
+    {
+      "step": 28,
+      "target_loss": 0.06843270361423492,
+      "kl": 0.0008666309295222163
+    },
+    {
+      "step": 29,
+      "target_loss": 0.1562471091747284,
+      "kl": 0.001216195523738861
+    },
+    {
+      "step": 30,
+      "target_loss": 0.08574016392230988,
+      "kl": 0.0020527392625808716
+    },
+    {
+      "step": 31,
+      "target_loss": 0.1694093942642212,
+      "kl": 0.0017978192772716284
+    }
+  ],
+  "oracle": {
+    "accuracy": 1.0,
+    "screening_accuracy": 1.0,
+    "probabilities": [
+      [
+        0.9360928535461426,
+        0.05984241142868996,
+        0.0024699915666133165,
+        0.0015947464853525162
+      ],
+      [
+        0.8728088736534119,
+        0.10424215346574783,
+        0.009696030989289284,
+        0.013252902776002884
+      ],
+      [
+        0.8869229555130005,
+        0.08249668776988983,
+        0.014335774816572666,
+        0.016244560480117798
+      ],
+      [
+        0.9083677530288696,
+        0.07456336170434952,
+        0.003276085713878274,
+        0.013792835175991058
+      ]
+    ],
+    "retain_agreement": 1.0,
+    "success": true,
+    "reloaded_adapter": true
+  },
+  "seconds": 27.750523180002347,
+  "resources": {
+    "model_forward_calls": 130,
+    "query_calls": 30,
+    "tokens": 2258,
+    "peak_vram_gb": 11.157513618469238
+  }
+}

@@ -1,0 +1,810 @@
+[
+  {
+    "run_id": "20261121T173549790854Z-99d22d3663",
+    "hypothesis": "SYNTH1",
+    "gate": "G0",
+    "label": "controlled-v1",
+    "repair_reason": null,
+    "started_at": "2026-11-21T17:35:49+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.synthetic",
+      "--out",
+      "results/synthetic-v1"
+    ],
+    "protocol_sha256": "5b8ebb8beeddbe4f721131ddeefd4f61b3b3b726662544547104a334ea877dc0",
+    "git": {
+      "head": "1f4a37c52b14f79a213156837eb357cb4cc0668f",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 1024,
+    "ended_at": "2026-11-21T17:37:23+00:00",
+    "duration_seconds": 94.028,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "d519c92daa9909b87eb5e34dc8bc07f2b3724a51",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "5b8ebb8beeddbe4f721131ddeefd4f61b3b3b726662544547104a334ea877dc0"
+  },
+  {
+    "run_id": "20261121T174112303147Z-ef6788cc27",
+    "hypothesis": "SYNTH2",
+    "gate": "G0",
+    "label": "controlled-v2-retry",
+    "repair_reason": null,
+    "started_at": "2026-11-21T17:41:12+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.synthetic_v2",
+      "--out",
+      "results/synthetic-v2"
+    ],
+    "protocol_sha256": "b8cd6efdc8d03de69eacd823c96d1a096c2b572a85553c42f547a1b0d0367416",
+    "git": {
+      "head": "c6e5fc7925f66d8ca26af33a69211a53264970d7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 2068,
+    "ended_at": "2026-11-21T17:43:00+00:00",
+    "duration_seconds": 108.031,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "c6e5fc7925f66d8ca26af33a69211a53264970d7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "b8cd6efdc8d03de69eacd823c96d1a096c2b572a85553c42f547a1b0d0367416"
+  },
+  {
+    "run_id": "20261121T175156519703Z-9eb6fa97e7",
+    "hypothesis": "REAL1",
+    "gate": "G0",
+    "label": "clean-screen-v1",
+    "repair_reason": null,
+    "started_at": "2026-11-21T17:51:56+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--split",
+      "dev",
+      "--limit",
+      "12",
+      "--screen-only",
+      "--out",
+      "results/real-screen-v1"
+    ],
+    "protocol_sha256": "9bda96ae95361bcc66ce910beff7fa414fc48c93787faeb993677e560d252a77",
+    "git": {
+      "head": "e890f7290bd5d911214c26956bda730fec9cb0b5",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 2987,
+    "ended_at": "2026-11-21T17:52:11+00:00",
+    "duration_seconds": 15.007,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "e890f7290bd5d911214c26956bda730fec9cb0b5",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "9bda96ae95361bcc66ce910beff7fa414fc48c93787faeb993677e560d252a77"
+  },
+  {
+    "run_id": "20261121T175233048393Z-81e5376593",
+    "hypothesis": "REAL1",
+    "gate": "G0",
+    "label": "damage-repair-v1",
+    "repair_reason": null,
+    "started_at": "2026-11-21T17:52:33+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--split",
+      "dev",
+      "--limit",
+      "4",
+      "--out",
+      "results/real-g0-v1"
+    ],
+    "protocol_sha256": "9bda96ae95361bcc66ce910beff7fa414fc48c93787faeb993677e560d252a77",
+    "git": {
+      "head": "ab0712092ae55b552e97c5464968e6004c4fba3a",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 3196,
+    "ended_at": "2026-11-21T17:53:05+00:00",
+    "duration_seconds": 32.011,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "ab0712092ae55b552e97c5464968e6004c4fba3a",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "9bda96ae95361bcc66ce910beff7fa414fc48c93787faeb993677e560d252a77"
+  },
+  {
+    "run_id": "20261121T175426658463Z-1bf9ffa871",
+    "hypothesis": "REAL2",
+    "gate": "G0",
+    "label": "retain50",
+    "repair_reason": null,
+    "started_at": "2026-11-21T17:54:26+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-retain50.json",
+      "--split",
+      "dev",
+      "--limit",
+      "4",
+      "--out",
+      "results/real-g0-retain50"
+    ],
+    "protocol_sha256": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0",
+    "git": {
+      "head": "35dcca4a2d032ceab1b3dfc19e1660724e4deafc",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 3403,
+    "ended_at": "2026-11-21T17:54:58+00:00",
+    "duration_seconds": 32.01,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "35dcca4a2d032ceab1b3dfc19e1660724e4deafc",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0"
+  },
+  {
+    "run_id": "20261121T175616035375Z-b73e0adf35",
+    "hypothesis": "REAL3",
+    "gate": "G0",
+    "label": "retain50-batch12",
+    "repair_reason": null,
+    "started_at": "2026-11-21T17:56:16+00:00",
+    "status": "FAILED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-retain50-batch12.json",
+      "--split",
+      "dev",
+      "--limit",
+      "4",
+      "--out",
+      "results/real-g0-retain50-batch12"
+    ],
+    "protocol_sha256": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0",
+    "git": {
+      "head": "1c8ab5781d27d310275f7295343d51973eef29a2",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 3609,
+    "ended_at": "2026-11-21T17:58:23+00:00",
+    "duration_seconds": 127.05,
+    "exit_code": -15,
+    "error": null,
+    "git_after": {
+      "head": "54691cd603f4a7a4473e5266ebbf6075fee76a58",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0"
+  },
+  {
+    "run_id": "20261121T175902576010Z-018525bb94",
+    "hypothesis": "REAL3",
+    "gate": "G0",
+    "label": "retain50-batch12-offline-retry",
+    "repair_reason": null,
+    "started_at": "2026-11-21T17:59:02+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-retain50-batch12.json",
+      "--split",
+      "dev",
+      "--limit",
+      "4",
+      "--out",
+      "results/real-g0-retain50-batch12-offline"
+    ],
+    "protocol_sha256": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0",
+    "git": {
+      "head": "a8242d2e961fe8f095885c2e29e892d81d45649c",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 3861,
+    "ended_at": "2026-11-21T17:59:56+00:00",
+    "duration_seconds": 54.015,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "a8242d2e961fe8f095885c2e29e892d81d45649c",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0"
+  },
+  {
+    "run_id": "20261121T180116449429Z-131823c36f",
+    "hypothesis": "REAL4",
+    "gate": "G0",
+    "label": "damage48",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:01:16+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-damage48.json",
+      "--split",
+      "dev",
+      "--limit",
+      "4",
+      "--out",
+      "results/real-g0-damage48"
+    ],
+    "protocol_sha256": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2",
+    "git": {
+      "head": "d99232093328726ee896ffe03c595b71b260fca1",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 4093,
+    "ended_at": "2026-11-21T18:03:02+00:00",
+    "duration_seconds": 106.031,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "d99232093328726ee896ffe03c595b71b260fca1",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2"
+  },
+  {
+    "run_id": "20261121T180302709183Z-865dffd6b5",
+    "hypothesis": "MEDIA1",
+    "gate": "G0",
+    "label": "real-media-io",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:03:02+00:00",
+    "status": "FAILED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.media_smoke",
+      "--out",
+      "results/real-media-smoke"
+    ],
+    "protocol_sha256": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2",
+    "git": {
+      "head": "d99232093328726ee896ffe03c595b71b260fca1",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 4415,
+    "ended_at": "2026-11-21T18:03:17+00:00",
+    "duration_seconds": 15.006,
+    "exit_code": 1,
+    "error": null,
+    "git_after": {
+      "head": "d99232093328726ee896ffe03c595b71b260fca1",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2"
+  },
+  {
+    "run_id": "20261121T180441787638Z-a149a9ae8b",
+    "hypothesis": "REAL5",
+    "gate": "G0",
+    "label": "generic-constraints",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:04:41+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-constraints.json",
+      "--split",
+      "dev",
+      "--limit",
+      "4",
+      "--out",
+      "results/real-g0-constraints"
+    ],
+    "protocol_sha256": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2",
+    "git": {
+      "head": "a3cf3ab790f9ceb424513248e102d76e6d90cd82",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 4786,
+    "ended_at": "2026-11-21T18:06:28+00:00",
+    "duration_seconds": 107.03,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "a3cf3ab790f9ceb424513248e102d76e6d90cd82",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2"
+  },
+  {
+    "run_id": "20261121T180700780043Z-a5977af86f",
+    "hypothesis": "MEDIA2",
+    "gate": "G0",
+    "label": "media-dependency-retry",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:07:00+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.media_smoke",
+      "--out",
+      "results/real-media-smoke-retry"
+    ],
+    "protocol_sha256": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2",
+    "git": {
+      "head": "1b857f6af5478ccb08043eddd362fff428cbaaea",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 4978,
+    "ended_at": "2026-11-21T18:07:16+00:00",
+    "duration_seconds": 16.006,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "1b857f6af5478ccb08043eddd362fff428cbaaea",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2"
+  },
+  {
+    "run_id": "20261121T180716997408Z-2c809fbb29",
+    "hypothesis": "PERSIST1",
+    "gate": "G0",
+    "label": "fresh-process-dev",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:07:16+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.verify_persistence",
+      "results/real-g0-constraints",
+      "--out",
+      "results/persistence-dev.json"
+    ],
+    "protocol_sha256": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2",
+    "git": {
+      "head": "1b857f6af5478ccb08043eddd362fff428cbaaea",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 5245,
+    "ended_at": "2026-11-21T18:07:36+00:00",
+    "duration_seconds": 19.007,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "1b857f6af5478ccb08043eddd362fff428cbaaea",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "1a2b8994789ab8991d20f9b7d8faebca697a1a0eacbdd1d78d437eb9244e2fe2"
+  },
+  {
+    "run_id": "20261121T181214348026Z-1adc87b37c",
+    "hypothesis": "REALV2",
+    "gate": "G0",
+    "label": "v2-development",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:12:14+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-constraints.json",
+      "--split",
+      "dev",
+      "--limit",
+      "12",
+      "--out",
+      "results/v2-dev"
+    ],
+    "protocol_sha256": "f987274c293607d33409740f1b03b72080b6c0e6f3561701effcf078d27d84bf",
+    "git": {
+      "head": "5aafa71a0f3bc69f9f836397bb72e50f4dd0d9b3",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 5646,
+    "ended_at": "2026-11-21T18:17:43+00:00",
+    "duration_seconds": 329.087,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "5aafa71a0f3bc69f9f836397bb72e50f4dd0d9b3",
+      "status_short": "M EXPERIMENTS.md\n M krmm/analysis.py",
+      "diff_stat": "EXPERIMENTS.md   | 3 +++\n krmm/analysis.py | 4 +++-\n 2 files changed, 6 insertions(+), 1 deletion(-)"
+    },
+    "protocol_sha256_after": "f987274c293607d33409740f1b03b72080b6c0e6f3561701effcf078d27d84bf"
+  },
+  {
+    "run_id": "20261121T181844541241Z-2d5469142f",
+    "hypothesis": "CALV2",
+    "gate": "G0",
+    "label": "v2-calibration",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:18:44+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-constraints.json",
+      "--split",
+      "calibration",
+      "--limit",
+      "12",
+      "--out",
+      "results/v2-calibration"
+    ],
+    "protocol_sha256": "877d3dff5a546b138ea95fdfb9fc2ae875cd7257d85ea8c5d0a2b0667922041d",
+    "git": {
+      "head": "ba41b4f43558fef522f523a8c6f5eee0bf8b7552",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 5949,
+    "ended_at": "2026-11-21T18:22:31+00:00",
+    "duration_seconds": 227.061,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "ba41b4f43558fef522f523a8c6f5eee0bf8b7552",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "877d3dff5a546b138ea95fdfb9fc2ae875cd7257d85ea8c5d0a2b0667922041d"
+  },
+  {
+    "run_id": "20261121T182846075598Z-41c1b9e475",
+    "hypothesis": "CALEXT",
+    "gate": "G0",
+    "label": "prospective-calibration-extension",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:28:46+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.calibration_extension",
+      "--out",
+      "results/v3-calibration-extension"
+    ],
+    "protocol_sha256": "41e81c28e4313f41e1af0ac8f9f6b156cd1270590099707b797b2ebb10f6875a",
+    "git": {
+      "head": "a1dad59e9f2dbf22c6bcf5860bab538c9b60eb03",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 6394,
+    "ended_at": "2026-11-21T18:32:04+00:00",
+    "duration_seconds": 198.051,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "a1dad59e9f2dbf22c6bcf5860bab538c9b60eb03",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "41e81c28e4313f41e1af0ac8f9f6b156cd1270590099707b797b2ebb10f6875a"
+  },
+  {
+    "run_id": "20261121T183557827596Z-b7b5142792",
+    "hypothesis": "TESTV2",
+    "gate": "G0",
+    "label": "frozen-test-characterization",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:35:57+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-constraints.json",
+      "--split",
+      "test",
+      "--limit",
+      "24",
+      "--out",
+      "results/v2-test"
+    ],
+    "protocol_sha256": "e520a3fc598f3fd8f99852d6f3987000c2a64feaa89f431c42209cf8d239462b",
+    "git": {
+      "head": "2361781f4f1ac5ad48b4ef2180eade715d42ec2c",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 6618,
+    "ended_at": "2026-11-21T18:44:43+00:00",
+    "duration_seconds": 526.135,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "2361781f4f1ac5ad48b4ef2180eade715d42ec2c",
+      "status_short": "M scripts/download_model_ranges.py",
+      "diff_stat": "scripts/download_model_ranges.py | 17 +++++++++++------\n 1 file changed, 11 insertions(+), 6 deletions(-)"
+    },
+    "protocol_sha256_after": "e520a3fc598f3fd8f99852d6f3987000c2a64feaa89f431c42209cf8d239462b"
+  },
+  {
+    "run_id": "20261121T184835458962Z-174d666214",
+    "hypothesis": "PERSISTV2",
+    "gate": "G0",
+    "label": "fresh-process-all",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:48:35+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.verify_persistence",
+      "results/v2-dev",
+      "results/v2-calibration",
+      "results/v3-calibration-extension",
+      "results/v2-test",
+      "--out",
+      "results/persistence-all.json"
+    ],
+    "protocol_sha256": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17",
+    "git": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 7171,
+    "ended_at": "2026-11-21T18:50:07+00:00",
+    "duration_seconds": 92.025,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "M scripts/budget_watchdog.py",
+      "diff_stat": "scripts/budget_watchdog.py | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    "protocol_sha256_after": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17"
+  },
+  {
+    "run_id": "20261121T185007681905Z-38d4100f0f",
+    "hypothesis": "SUPPRESSV2",
+    "gate": "G0",
+    "label": "alternative-suppression",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:50:07+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment",
+      "--config",
+      "configs/pilot-suppress.json",
+      "--split",
+      "dev",
+      "--limit",
+      "12",
+      "--out",
+      "results/v2-suppression"
+    ],
+    "protocol_sha256": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17",
+    "git": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "M scripts/budget_watchdog.py",
+      "diff_stat": "scripts/budget_watchdog.py | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 7470,
+    "ended_at": "2026-11-21T18:55:19+00:00",
+    "duration_seconds": 312.086,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "M scripts/budget_watchdog.py",
+      "diff_stat": "scripts/budget_watchdog.py | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    "protocol_sha256_after": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17"
+  },
+  {
+    "run_id": "20261121T185519960431Z-502caa4389",
+    "hypothesis": "AUXV2",
+    "gate": "G0",
+    "label": "paired-media-controls",
+    "repair_reason": null,
+    "started_at": "2026-11-21T18:55:19+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.auxiliary_safehash",
+      "--out",
+      "results/auxiliary-v2"
+    ],
+    "protocol_sha256": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17",
+    "git": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "M scripts/budget_watchdog.py",
+      "diff_stat": "scripts/budget_watchdog.py | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)"
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 7773,
+    "ended_at": "2026-11-21T19:03:48+00:00",
+    "duration_seconds": 508.151,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "M scripts/budget_watchdog.py\n M scripts/report_results.py",
+      "diff_stat": "scripts/budget_watchdog.py | 2 +-\n scripts/report_results.py  | 9 ++++++---\n 2 files changed, 7 insertions(+), 4 deletions(-)"
+    },
+    "protocol_sha256_after": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17"
+  },
+  {
+    "run_id": "20261121T190348360951Z-bf83841c11",
+    "hypothesis": "TWINSV2",
+    "gate": "G0",
+    "label": "learned-opposing-carriers",
+    "repair_reason": null,
+    "started_at": "2026-11-21T19:03:48+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.twins",
+      "--out",
+      "results/twins-v2"
+    ],
+    "protocol_sha256": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17",
+    "git": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "M scripts/budget_watchdog.py\n M scripts/report_results.py",
+      "diff_stat": "scripts/budget_watchdog.py | 2 +-\n scripts/report_results.py  | 9 ++++++---\n 2 files changed, 7 insertions(+), 4 deletions(-)"
+    },
+    "budget_seconds_allowed": 5400,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 8421,
+    "ended_at": "2026-11-21T19:03:55+00:00",
+    "duration_seconds": 7.004,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "42d66647a2372d2a0a40b72446ddcb2dc74d232c",
+      "status_short": "M scripts/budget_watchdog.py\n M scripts/report_results.py",
+      "diff_stat": "scripts/budget_watchdog.py | 2 +-\n scripts/report_results.py  | 9 ++++++---\n 2 files changed, 7 insertions(+), 4 deletions(-)"
+    },
+    "protocol_sha256_after": "33762de2d15691e7dc4d6067108bc09fea9449a9aa734152ba1f7b67328d2d17"
+  }
+]

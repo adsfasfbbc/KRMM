@@ -4,10 +4,10 @@
   "research_question": "Can pre-update internal evidence and writeability predict persistent unit-level repair without target truth better than confidence at equal coverage?",
   "target_venue": "undecided",
   "repo_root": "/root/rivermind-data/KRMM",
-  "protocol_version": "v2.1-preholdout-strong-baseline",
+  "protocol_version": "v3.2-dtype-safe-checkpoint-hash",
   "primary_metric": "Persistent successful repairs / ALL eligible damaged knowledge units; eligibility uses independent damage-screen questions; success requires heldout 2/3 accuracy>=0.75, gain>=0.5 and retained-token agreement>=0.9",
   "dataset_manifest": "krmm.benchmark.manifest instruments-v2; same 48 entity-disjoint units, 7 partitioned templates",
-  "holdout_policy": "Entity splits unchanged. Clean/damage eligibility uses ONLY templates 4/5. Diagnosis probes ONLY 0/1/6. Updates ONLY 0/1. Hidden evaluator uses ONLY 2/3 and does not influence eligibility or checkpoint selection. All earlier v1 template-overlap evidence is exploratory. Cal/test entities not yet queried. No tuning after opening test.",
+  "holdout_policy": "Entity splits unchanged. Clean/damage eligibility uses ONLY templates 4/5. Diagnosis probes ONLY 0/1/6. Updates ONLY 0/1. Hidden evaluator uses ONLY 2/3 and does not influence eligibility or checkpoint selection. All earlier v1 template-overlap evidence is exploratory. Cal/test entities not yet queried. No tuning after opening test. Prospective v3 adds 12 NEW calibration entities (total real units=60), after original calibration had 7 eligible; original 24 test entities and all source/config hashes remain unchanged. Replaces planned seed29 repeat within the same 20-launch limit.",
   "approved_command_prefixes": [
     [
       "/root/rivermind-data/krmm-env/bin/python",
@@ -53,6 +53,16 @@
       "/root/rivermind-data/krmm-env/bin/python",
       "-m",
       "krmm.service"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.calibration_extension"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.auxiliary_safehash"
     ]
   ],
   "allowed_edit_globs": [
@@ -186,5 +196,7 @@
   "additional_storage_limit_gb": 80,
   "stop_policy": "Stop on 8h wall time, 20 launches, disk<8GB, repeated OOM or unresolved provenance. Failed G0 blocks G1; engineering fixes new trial, preserve prior artifacts.",
   "metric_correction": "v2 prospectively separates templates and fixes same-policy evidence ablations plus PEFT decoder accounting; prior raw results unchanged.",
-  "diagnostic_features": "Eight raw pre-update features plus candidate_changes_direct_answer derived without labels; shared transform krmm.features.vector. All scientific success criteria unchanged."
+  "diagnostic_features": "Eight raw pre-update features plus candidate_changes_direct_answer derived without labels; shared transform krmm.features.vector. All scientific success criteria unchanged.",
+  "selector_ties": "Before any final test query, sort all entities by SHA256-derived uid, then stable descending score. This label-independent order makes equal-score selection reproducible across filesystems. C=1, coverage, metrics and all neural code unchanged.",
+  "engineering_amendment": "Auxiliary weight equality hash uses raw uint8 bytes because NumPy cannot directly serialize bfloat16. New wrapper only; frozen neural, evidence, labels, analysis and test source unchanged."
 }

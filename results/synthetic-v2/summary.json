@@ -1,0 +1,120 @@
+{
+  "protocol": "controlled-v2",
+  "metadata": [
+    {
+      "seed": 17,
+      "media_interventions": {
+        "joint": 1.0,
+        "no_image": 0.65625,
+        "no_audio": 0.53125,
+        "swapped_audio": 0.59375,
+        "sham_background": 1.0
+      },
+      "eligible_entities": 128,
+      "clean_accuracy": 1.0,
+      "image_accuracy": 1.0,
+      "audio_accuracy": 1.0,
+      "twins_equal_after_carrier_erasure": true,
+      "twins_opposite_truth": true
+    },
+    {
+      "seed": 29,
+      "media_interventions": {
+        "joint": 1.0,
+        "no_image": 0.625,
+        "no_audio": 0.40625,
+        "swapped_audio": 0.5625,
+        "sham_background": 1.0
+      },
+      "eligible_entities": 128,
+      "clean_accuracy": 1.0,
+      "image_accuracy": 1.0,
+      "audio_accuracy": 1.0,
+      "twins_equal_after_carrier_erasure": true,
+      "twins_opposite_truth": true
+    },
+    {
+      "seed": 43,
+      "media_interventions": {
+        "joint": 1.0,
+        "no_image": 0.53125,
+        "no_audio": 0.5,
+        "swapped_audio": 0.375,
+        "sham_background": 1.0
+      },
+      "eligible_entities": 128,
+      "clean_accuracy": 1.0,
+      "image_accuracy": 1.0,
+      "audio_accuracy": 1.0,
+      "twins_equal_after_carrier_erasure": true,
+      "twins_opposite_truth": true
+    }
+  ],
+  "analysis": {
+    "internal": {
+      "n_test_entities": 144,
+      "success_rate": 0.6875,
+      "candidate_accuracy": 0.6875,
+      "auroc": 0.9189674523007857,
+      "auprc": 0.9661431639198153,
+      "brier": 0.11152509676593796,
+      "matched_half_coverage": {
+        "diagnosis": 0.5,
+        "confidence": 0.3472222222222222,
+        "random": 0.3263888888888889
+      },
+      "by_type": {
+        "redundant": {
+          "n": 36,
+          "success": 1.0
+        },
+        "complementary": {
+          "n": 36,
+          "success": 1.0
+        },
+        "ambiguous": {
+          "n": 36,
+          "success": 0.4722222222222222
+        },
+        "random": {
+          "n": 36,
+          "success": 0.2777777777777778
+        }
+      }
+    },
+    "auxiliary": {
+      "n_test_entities": 144,
+      "success_rate": 0.7083333333333334,
+      "candidate_accuracy": 0.7083333333333334,
+      "auroc": 0.9180672268907564,
+      "auprc": 0.9666739116440419,
+      "brier": 0.11355660350602914,
+      "matched_half_coverage": {
+        "diagnosis": 0.5,
+        "confidence": 0.3680555555555556,
+        "random": 0.3541666666666667
+      },
+      "by_type": {
+        "redundant": {
+          "n": 36,
+          "success": 1.0
+        },
+        "complementary": {
+          "n": 36,
+          "success": 1.0
+        },
+        "ambiguous": {
+          "n": 36,
+          "success": 0.5555555555555556
+        },
+        "random": {
+          "n": 36,
+          "success": 0.2777777777777778
+        }
+      }
+    }
+  },
+  "seconds": 103.93757413001731,
+  "claim_boundary": "Synthetic trained neural memories and generated image/audio only. Damage is merged into a shared learned target head by 24 optimization steps. Does NOT show genuine pretrained knowledge recovery, open-ended reasoning, learned rejection of unknown information regimes, or multimodal repair of Qwen.",
+  "diagnostic_information": "Constraint support/count uses known synthetic observation regime. This is a privileged structural baseline, not an inferred real-world reliability score."
+}

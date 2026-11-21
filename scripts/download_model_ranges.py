@@ -1,5 +1,7 @@
 """Resumable range download on cloud, verify official LFS SHA256 before model use."""
-import os,time,json,hashlib,concurrent.futures,requests
+import os,time,json,hashlib,concurrent.futures,requests,argparse
+from range_io import contiguous_prefix,pwrite_all
+parser=argparse.ArgumentParser();parser.add_argument("--restart",action="store_true");args=parser.parse_args()
 from pathlib import Path
 from huggingface_hub import HfApi
 REPO='Qwen/Qwen2.5-Omni-3B';REV='f75b40e3da2003cdd6e1829b1f420ca70797c34e'
@@ -28,8 +30,9 @@ for f in files:
  cache=root/'.cache/huggingface/download'
  matches=list(cache.glob('*'+sha+'.incomplete'))
  tmp=matches[0] if matches else root/(f.rfilename+'.partial')
- prefix=tmp.stat().st_size if tmp.exists() else 0
  fd=os.open(tmp,os.O_RDWR|os.O_CREAT,0o600)
+ # Out-of-order writes can extend file size over sparse holes. Only trust the contiguous prefix.
+ prefix=contiguous_prefix(fd,tmp.stat().st_size,args.restart)
  states.append((f,tmp,fd))
  print('RESUME',f.rfilename,prefix,'OF',f.size,flush=True)
  for start in range(prefix,f.size,chunk):tasks.append((f,fd,start,min(start+chunk,f.size)-1))
@@ -41,9 +44,11 @@ def download(task):
    with requests.get(f'https://hf-mirror.com/{REPO}/resolve/{REV}/{f.rfilename}',headers={'Range':f'bytes={start}-{end}'},stream=True,timeout=(15,90)) as r:
     if r.status_code!=206:raise RuntimeError(f'Expected range 206 got {r.status_code}')
     if r.headers.get('Content-Range')!=f'bytes {start}-{end}/{f.size}':raise RuntimeError('Content-range mismatch')
-    offset=start
+    offset=start;range_start=time.monotonic()
     for b in r.iter_content(1024*1024):
-     os.pwrite(fd,b,offset);offset+=len(b)
+     if time.monotonic()-range_start>120:raise TimeoutError("Range exceeded 120 seconds")
+     pwrite_all(fd,b,offset)
+     offset+=len(b)
     if offset!=end+1:raise RuntimeError('Truncated range')
    return end-start+1
   except Exception as e:
@@ -51,8 +56,8 @@ def download(task):
    if attempt==2:raise
 with concurrent.futures.ThreadPoolExecutor(max_workers=24) as ex:
  done=0
- for n,amount in enumerate(ex.map(download,tasks)):
-  done+=amount
+ for n,future in enumerate(concurrent.futures.as_completed([ex.submit(download,t) for t in tasks])):
+  done+=future.result()
   if n%8==0:print('PROGRESS_MB',done//2**20,'SECONDS',round(time.monotonic()-started,1),flush=True)
 checks={}
 for f,tmp,fd in states:

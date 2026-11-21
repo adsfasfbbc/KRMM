@@ -1,4 +1,5 @@
-# KRMM experiment journal
+# KRMM 实验记录 / Experiment journal
+> 最终摘要：本批完成 20 次受控运行，真实知识共 60 个实体。封存测试 24 个实体中 16 个形成合格损伤，持久修复 11/16；监督上界 16/16。复杂诊断 AUROC 0.80，简单候选变化基线 0.90，未证明复杂诊断的增量价值。相关真实媒体 2/4，内部先验/置换图像/匹配文字均 3/4，未证明媒体优势。39 个主实验目标的 117 个适配器在新进程中完全复现。所有失败与排除保留，G1–G3 未获验证，研究结论为 PIVOT。
 
 All entries are exploratory until a frozen, independent confirmatory experiment is explicitly declared. Raw outcomes, failures and exclusions remain in the repository. Dates use Asia/Singapore.
 
@@ -125,3 +126,71 @@ All entries are exploratory until a frozen, independent confirmatory experiment 
 - Hidden evaluation templates 2/3 are not used by the diagnosis (0/1/6), updates (0/1) or eligibility (4/5). Outcomes include both success and failure, so diagnosis training is possible if calibration/test eligible counts suffice.
 - Final pre-holdout source extension is the already preregistered derived candidate-change feature and independent simple baseline. Raw diagnosis/update/evaluation code is unchanged from the v2 development trial; only analysis was extended. Generic rules are unchanged. v2.1 adds executable prefixes for the preregistered auxiliary, twin and answer-free service entry points; gate thresholds unchanged.
 - Freeze all source/config hashes now. Next calibration and test entities are evaluated under the same fixed model/damage/writer budgets. No modifications based on their labels are permitted.
+
+## R08 — original entity-held-out calibration (G0 coverage FAIL)
+
+- 12 entities: 7/12 pass clean screening and all 7 yield local damage. Oracle 7/7; candidate/persistent repair 4/7. Clean mastery 58.33% fails preregistered 75% coverage check; original failure retained. No learned diagnosis is fitted because eligible calibration n=7 is below the prespecified 8 minimum.
+- This reveals limited model/benchmark coverage on independent entities, not a broken optimizer. Do not lower eligibility, calibration count or success thresholds. All originally eligible outcomes remain in future reporting.
+- Prospectively amend to v3 BEFORE ANY TEST QUERY: add 12 new calibration entities (viola, harpsichord, erhu; piccolo, cornet, pipe organ; taiko, surdo, mridangam; steelpan, kalimba, vibraslap). Total real units=60; original 24 test entities unchanged. Do not tune rules or writer. The original calibration failures are neither removed nor relabeled.
+- Use one originally planned real seed29-repeat launch for this extension, preserving the 20-launch cap. Real multi-seed replication is therefore missing and must be disclosed. Extension's label provider exists only in its evaluator driver; no labels are passed to diagnosis/repair. Original frozen source/config hashes checked intact.
+
+- Pre-test reproducibility amendment v3.1: equal-score selectors previously inherited filesystem file order. Before any final-test query, fix entity order to the existing SHA256-derived UID, then stable descending score. This order is independent of labels and avoids different tie selections after a clone. C, fitting, success metrics, coverage, prompts, neural code and writer remain unchanged. Record the analysis-only hash amendment explicitly; frozen checks continue rejecting all undeclared changes.
+
+## R09 — prospective independent calibration extension (sample target reached; coverage G0 FAIL)
+
+- 12 additional entities, 6 pass clean screening and all 6 yield local damage. Oracle 6/6; candidate/persistent constrained repair 3/6. Together with the original calibration cohort: 13 eligible calibration entities, above the fixed minimum of 8; both success/failure classes are present.
+- Extension clean mastery is 50%, again failing the unchanged >=75% coverage gate. This is an important negative result, not hidden or repaired by sample extension. Candidate/writeback analyses remain conditional on initially mastered, eligible damaged units. No broad model-coverage or G1/G2 claim follows.
+- Continue only the already frozen final-test G0 characterization and descriptive conditional prediction pilot. This is not promotion to G1 after the failed coverage checks. Original 24 test entities, all neural source/config hashes, success thresholds, rule set and fitting rules remain fixed; pre-test integrity record saved. No second extension or test-informed tuning is permitted.
+
+## R10 — frozen final-test characterization (coverage G0 FAIL; conditional repair 11/16)
+
+- All 24 original test entities evaluated once under frozen neural/config/analysis rules. Sixteen pass independent mastery/damage/locality eligibility; 8 fail original mastery. Candidate correctness and persistent repair 11/16 (68.75%); oracle 16/16. No target labels enter repair.
+- Clean mastery 66.67% fails unchanged >=75% coverage criterion. No G1 promotion, second test tuning or sample extension. Pre/post-test frozen source/config checks pass, including the declared label-independent pre-test tie-order amendment.
+
+## A01 — fixed CPU diagnosis fitting / descriptive held-out analysis
+
+- Preregistered single logistic model C=1 with 9 pre-update features, 10 development /13 calibration /16 test eligible entities. Platt calibration uses the disjoint calibration cohort only; threshold is calibration-score median. This completes the existing frozen experiment's postprocessing, not a new model-query trial or hyperparameter search.
+- Test AUROC 0.80, AUPRC 0.8088, Brier 0.0930. Confidence AUROC 0.4727; strongest single candidate-change flag AUROC 0.90. Thus current evidence does NOT support incremental value over the strongest simple predictor.
+- At 50% coverage, full predictor repairs 7/16, confidence 5/16, candidate-change 8/16. Paired full-minus-confidence delta +12.5 pp, entity bootstrap 95% CI [-25.0,+43.75] pp; full-minus-strongest single -6.25 pp, CI [-31.25,+12.5] pp. Neither establishes superiority.
+- Calibration-median deployment threshold 0.613438 accepts 12/16 test units and retains all 11 successful counterfactual repairs, with one accepted failure; this is a small conditional pilot, not certified general calibration.
+- Constrained/unconstrained writers share candidates and 32 steps. Constrained persistent success 11/16; unconstrained success under the joint retention requirement is 0/16. This supports the usefulness of the combined retention/size constraints in this regime, not a uniquely isolated KL effect.
+- All correct candidates succeed under the constrained writer; H3's additional writeability discrimination remains underidentified. No test-informed model, rule, feature or threshold changes follow.
+
+## E06 — auxiliary checkpoint-hash preflight
+
+- bfloat16 tensors cannot be passed directly to NumPy in the paired weight-hash helper. Added a separate engineering wrapper that hashes dtype/shape and raw uint8 bytes. Frozen auxiliary/neural/analysis files are unchanged; no prediction or outcome changes. Tested deterministic equality and changed-weight inequality on small CPU bfloat16 tensors before the auxiliary experiment. This is not a new GPU trial.
+
+## P02 — complete primary-cohort fresh-process audit (PASS)
+
+- All 39 eligible units across development, original calibration, prospective calibration extension and frozen test; 117 constrained/unconstrained/oracle adapters. Every target choice probability exactly matches the training process (maximum absolute difference 0). The same new process reconstructs each exact damaged checkpoint and supplies no auxiliary evidence at evaluation.
+- This includes persistent wrong answers and failed unconstrained-retention outcomes. It validates reload behavior, not candidate correctness or restoration of original representations.
+
+## R11 — independent targeted-suppression damage on development (G0 PASS)
+
+- Fixed predeclared alternate suppression loss; 12 development units, 11 initially mastered, 9 local eligible suppressions. Constrained candidate/persistent success 6/9; oracle 9/9; peak allocation 11.16 GiB.
+- This is an exploratory alternate-mechanism feasibility check on previously used development entities, not independent cross-damage G2 confirmation. No claim of complete knowledge erasure, no test-informed tuning and no classifier refit.
+
+## Deployment and reporting verification
+
+- All 16 exported test probabilities exactly equal the answer-free service's predict() output from the saved calibration artifact. Model artifact and numeric coefficients exported without another fit or model query.
+- Added the preregistered candidate-change baseline as a separate deployment entry point. It returns no invented probability, reuses the tested constrained writer, reloads the attempted adapter, rolls back retention violations and labels target recovery unverified. No extra GPU experiment was launched for this wrapper; only the existing selector/serialization primitives and CPU contracts are verified.
+- Reported paired intervals resample fixed per-entity selection contributions, rather than re-ranking each bootstrap batch. Treat them as small fixed-batch descriptive uncertainty, not confirmatory fixed-coverage inference. No interval or frozen analysis is changed after seeing the test.
+
+## M03 — paired real-media / shuffled-image / matched-text repair (no media benefit)
+
+- Four development entities; all four eligible in every condition. Per-entity RNG reset and raw merged-weight hashing confirm identical damaged parameters across conditions. Same candidates-to-writer interface and 32-step constrained writing budget; auxiliary evidence appears only during atomic extraction and is removed during writing/evaluation.
+- Internal prior: 3/4 candidate/persistent successes. Related raw media: 2/4. Shuffled image: 3/4. Information-matched text: 3/4. One real audio source only; shuffled-image control keeps original audio. No real multimodal or sound-specific advantage is supported, and irrelevant media can improve an individual outcome. Actual raw observations/outcomes are preserved.
+- 495.62 seconds. The paired evidence study is exploratory and development-only; its adapters are reloaded in-process, not part of the prior 39-unit fresh-process audit. No G2 promotion or post-test model/rule change.
+
+## S03 — independently learned opposing-carrier twin worlds (information-boundary PASS)
+
+- Seeds 17/29/43, 256 paired entities/world. Two original neural models independently optimize opposite random target carriers to 100% target accuracy while sharing identical retained image/audio networks. Completely removing both dedicated carriers leaves byte-identical damaged weights and identical allowed evidence, with opposite evaluator truths.
+- Identical repair views produce identical predictions; no target is correct in both opposing worlds, and mean accuracy over the pair is exactly 50%. Retained image/audio tasks stay 100%. This is an exact synthetic indistinguishability construction, not a claim of complete erasure in real pretrained models or an assertion that a chance guess can never be correct.
+- 3.52 seconds. This supplies the full opposing-learned-carrier negative control that the earlier S01/S02 identity sanity check did not supply.
+
+## Batch close — 20 recorded launches completed
+
+- All 20 authorized model-experiment launches ended; interrupted metadata lookup and missing-dependency failures remain in the run archive. Pre-launch allowlist/lock rejections are separately logged and did not start model children. No further model experiment is launched.
+- Real data: 60 unique entities, 40 independently mastered, 39 eligible primary damaged units. Constrained persistent success: 26/39 overall; frozen-test success 11/16 eligible (11/24 originally screened). All 39 oracle controls succeed. All 117 primary adapters reproduce exactly in a fresh process.
+- Full diagnostic has no demonstrated increment over the strongest simple predictor. Coverage gates fail on independent calibration/test cohorts. Real media show no benefit. H3 is underidentified under the constrained 32-step writer. G1-G3 remain unconfirmed; decision PIVOT, with no novelty/publication claim.
+- Nineteen named unit-test contracts pass, plus dtype/hash, selector and exact deployed-score preflights. No local project checkout or environment was created. Source/config integrity remains intact. All source, raw per-unit outputs, configs, command logs, figures and negative evidence are synchronized before root shutdown.

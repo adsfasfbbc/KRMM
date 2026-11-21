@@ -1,0 +1,77 @@
+{
+  "assessment_id": "20261121T182845820278Z-54d154080c",
+  "created_at": "2026-11-21T18:28:45+00:00",
+  "hypothesis": "CALV2",
+  "gate": "G0",
+  "status": "FAIL",
+  "note": "",
+  "checks": [
+    {
+      "metric": "independent_units",
+      "op": ">=",
+      "threshold": 4,
+      "observed": 12,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "clean_mastery_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 0.5833333333333334,
+      "result": "FAIL",
+      "reason": ""
+    },
+    {
+      "metric": "damage_eligibility_rate",
+      "op": ">=",
+      "threshold": 0.5,
+      "observed": 0.5833333333333334,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "oracle_success_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 1.0,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "peak_vram_gb",
+      "op": "<",
+      "threshold": 23.5,
+      "observed": 11.157513618469238,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "split_verified",
+      "op": "is_true",
+      "threshold": null,
+      "observed": true,
+      "result": "PASS",
+      "reason": ""
+    }
+  ],
+  "metrics_file": {
+    "path": "/root/rivermind-data/KRMM/results/v2-calibration/metrics.json",
+    "size_bytes": 344,
+    "sha256": "316b56e22a1e14c783e5dac7772c821cc4619be16ec5dbf27eab1e0eb969d99c"
+  },
+  "evidence": [
+    {
+      "path": "/root/rivermind-data/KRMM/results/v2-calibration/metrics.json",
+      "size_bytes": 344,
+      "sha256": "316b56e22a1e14c783e5dac7772c821cc4619be16ec5dbf27eab1e0eb969d99c"
+    }
+  ],
+  "protocol_sha256": "877d3dff5a546b138ea95fdfb9fc2ae875cd7257d85ea8c5d0a2b0667922041d",
+  "git": {
+    "head": "ba41b4f43558fef522f523a8c6f5eee0bf8b7552",
+    "status_short": "",
+    "diff_stat": ""
+  },
+  "caveat": "Numerical preregistered checks only; independent scientific/causal review required"
+}

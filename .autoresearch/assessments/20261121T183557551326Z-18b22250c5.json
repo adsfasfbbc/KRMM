@@ -1,0 +1,77 @@
+{
+  "assessment_id": "20261121T183557551326Z-18b22250c5",
+  "created_at": "2026-11-21T18:35:57+00:00",
+  "hypothesis": "CALEXT",
+  "gate": "G0",
+  "status": "FAIL",
+  "note": "",
+  "checks": [
+    {
+      "metric": "independent_units",
+      "op": ">=",
+      "threshold": 4,
+      "observed": 12,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "clean_mastery_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 0.5,
+      "result": "FAIL",
+      "reason": ""
+    },
+    {
+      "metric": "damage_eligibility_rate",
+      "op": ">=",
+      "threshold": 0.5,
+      "observed": 0.5,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "oracle_success_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 1.0,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "peak_vram_gb",
+      "op": "<",
+      "threshold": 23.5,
+      "observed": 11.157513618469238,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "split_verified",
+      "op": "is_true",
+      "threshold": null,
+      "observed": true,
+      "result": "PASS",
+      "reason": ""
+    }
+  ],
+  "metrics_file": {
+    "path": "/root/rivermind-data/KRMM/results/v3-calibration-extension/metrics.json",
+    "size_bytes": 319,
+    "sha256": "32fb4a4bc36f1de180c8838917b50f3a7c8ebbfbda18521e95e9b552f12eadce"
+  },
+  "evidence": [
+    {
+      "path": "/root/rivermind-data/KRMM/results/v3-calibration-extension/metrics.json",
+      "size_bytes": 319,
+      "sha256": "32fb4a4bc36f1de180c8838917b50f3a7c8ebbfbda18521e95e9b552f12eadce"
+    }
+  ],
+  "protocol_sha256": "e520a3fc598f3fd8f99852d6f3987000c2a64feaa89f431c42209cf8d239462b",
+  "git": {
+    "head": "a1dad59e9f2dbf22c6bcf5860bab538c9b60eb03",
+    "status_short": "M .autoresearch/protocol.json\n M EXPERIMENTS.md\n M krmm/analysis.py",
+    "diff_stat": ".autoresearch/protocol.json | 5 +++--\n EXPERIMENTS.md              | 2 ++\n krmm/analysis.py            | 1 +\n 3 files changed, 6 insertions(+), 2 deletions(-)"
+  },
+  "caveat": "Numerical preregistered checks only; independent scientific/causal review required"
+}

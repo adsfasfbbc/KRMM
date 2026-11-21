@@ -1,0 +1,43 @@
+{
+  "run_id": "20261121T175902576010Z-018525bb94",
+  "hypothesis": "REAL3",
+  "gate": "G0",
+  "label": "retain50-batch12-offline-retry",
+  "repair_reason": null,
+  "started_at": "2026-11-21T17:59:02+00:00",
+  "status": "SUCCEEDED",
+  "command": [
+    "/root/rivermind-data/krmm-env/bin/python",
+    "-m",
+    "krmm.experiment",
+    "--config",
+    "configs/pilot-retain50-batch12.json",
+    "--split",
+    "dev",
+    "--limit",
+    "4",
+    "--out",
+    "results/real-g0-retain50-batch12-offline"
+  ],
+  "protocol_sha256": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0",
+  "git": {
+    "head": "a8242d2e961fe8f095885c2e29e892d81d45649c",
+    "status_short": "",
+    "diff_stat": ""
+  },
+  "budget_seconds_allowed": 5400,
+  "gpu_ids": [
+    "0"
+  ],
+  "pid": 3861,
+  "ended_at": "2026-11-21T17:59:56+00:00",
+  "duration_seconds": 54.015,
+  "exit_code": 0,
+  "error": null,
+  "git_after": {
+    "head": "a8242d2e961fe8f095885c2e29e892d81d45649c",
+    "status_short": "",
+    "diff_stat": ""
+  },
+  "protocol_sha256_after": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0"
+}

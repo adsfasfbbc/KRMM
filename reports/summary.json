@@ -1,0 +1,530 @@
+{
+  "Development": {
+    "n": 12,
+    "mastered": 11,
+    "eligible": 10,
+    "success": 8,
+    "oracle_success": 10,
+    "candidate_correct": 8,
+    "rate": 0.8,
+    "wilson95": [
+      0.49015684672072335,
+      0.9433190520193067
+    ],
+    "exclusions": {
+      "damage_not_local_or_not_effective": 1,
+      "not_stably_mastered": 1
+    }
+  },
+  "Calibration original": {
+    "n": 12,
+    "mastered": 7,
+    "eligible": 7,
+    "success": 4,
+    "oracle_success": 7,
+    "candidate_correct": 4,
+    "rate": 0.5714285714285714,
+    "wilson95": [
+      0.2504542304090258,
+      0.8417830777373732
+    ],
+    "exclusions": {
+      "not_stably_mastered": 5
+    }
+  },
+  "Calibration extension": {
+    "n": 12,
+    "mastered": 6,
+    "eligible": 6,
+    "success": 3,
+    "oracle_success": 6,
+    "candidate_correct": 3,
+    "rate": 0.5,
+    "wilson95": [
+      0.18761280689940868,
+      0.8123871931005913
+    ],
+    "exclusions": {
+      "not_stably_mastered": 6
+    }
+  },
+  "Frozen test": {
+    "n": 24,
+    "mastered": 16,
+    "eligible": 16,
+    "success": 11,
+    "oracle_success": 16,
+    "candidate_correct": 11,
+    "rate": 0.6875,
+    "wilson95": [
+      0.4440393186673406,
+      0.8583556494803894
+    ],
+    "exclusions": {
+      "not_stably_mastered": 8
+    }
+  },
+  "diagnosis": {
+    "dev": 10,
+    "calibration": 13,
+    "test": 16,
+    "status": "COMPLETE",
+    "descriptive_by_split": {
+      "dev": {
+        "eligible": 10,
+        "candidate_accuracy": 0.8,
+        "constrained_success": 0.8,
+        "unconstrained_success": 0.0,
+        "oracle_success": 1.0,
+        "mean_retained_token_agreement": 1.0
+      },
+      "calibration": {
+        "eligible": 13,
+        "candidate_accuracy": 0.5384615384615384,
+        "constrained_success": 0.5384615384615384,
+        "unconstrained_success": 0.0,
+        "oracle_success": 1.0,
+        "mean_retained_token_agreement": 0.9935897435897435
+      },
+      "test": {
+        "eligible": 16,
+        "candidate_accuracy": 0.6875,
+        "constrained_success": 0.6875,
+        "unconstrained_success": 0.0,
+        "oracle_success": 1.0,
+        "mean_retained_token_agreement": 0.9895833333333333
+      }
+    },
+    "simple_selectors_half_coverage": {
+      "confidence": {
+        "coverage": 0.5,
+        "successful_repairs_over_all_eligible": 0.3125
+      },
+      "negative_entropy": {
+        "coverage": 0.5,
+        "successful_repairs_over_all_eligible": 0.3125
+      },
+      "consistency": {
+        "coverage": 0.5,
+        "successful_repairs_over_all_eligible": 0.375
+      },
+      "support_margin": {
+        "coverage": 0.5,
+        "successful_repairs_over_all_eligible": 0.3125
+      }
+    },
+    "calibration_status": "Platt_fit_on_disjoint_calibration_entities",
+    "calibration_median_threshold": {
+      "threshold": 0.613438334177143,
+      "test_coverage": 0.75,
+      "successful_repairs_over_all_eligible": 0.6875
+    },
+    "outcome_rates": {
+      "constrained": 0.6875,
+      "unconstrained": 0.0,
+      "oracle": 1.0
+    },
+    "strongest_single_selected_on_calibration": {
+      "index": 8,
+      "direction": 1,
+      "calibration_auroc": 1.0
+    },
+    "predictor_metrics": {
+      "diagnosis": {
+        "auroc": 0.8,
+        "auprc": 0.8087990292535747
+      },
+      "confidence": {
+        "auroc": 0.4727272727272728,
+        "auprc": 0.7721237096237096
+      },
+      "consistency": {
+        "auroc": 0.45454545454545453,
+        "auprc": 0.668560606060606
+      },
+      "random": {
+        "auroc": 0.4181818181818182,
+        "auprc": 0.6709506402688221
+      },
+      "strongest_single": {
+        "auroc": 0.9,
+        "auprc": 0.9166666666666666
+      },
+      "negative_entropy": {
+        "auroc": 0.49090909090909096,
+        "auprc": 0.7829462204462203
+      },
+      "candidate_change": {
+        "auroc": 0.9,
+        "auprc": 0.9166666666666666
+      }
+    },
+    "fixed_coverage": {
+      "diagnosis": {
+        "coverage": 0.5,
+        "success_rate_all_eligible": 0.4375,
+        "accepted_failure": 0.125
+      },
+      "confidence": {
+        "coverage": 0.5,
+        "success_rate_all_eligible": 0.3125,
+        "accepted_failure": 0.375
+      },
+      "consistency": {
+        "coverage": 0.5,
+        "success_rate_all_eligible": 0.375,
+        "accepted_failure": 0.25
+      },
+      "random": {
+        "coverage": 0.5,
+        "success_rate_all_eligible": 0.3125,
+        "accepted_failure": 0.375
+      },
+      "strongest_single": {
+        "coverage": 0.5,
+        "success_rate_all_eligible": 0.5,
+        "accepted_failure": 0.0
+      },
+      "negative_entropy": {
+        "coverage": 0.5,
+        "success_rate_all_eligible": 0.3125,
+        "accepted_failure": 0.375
+      },
+      "candidate_change": {
+        "coverage": 0.5,
+        "success_rate_all_eligible": 0.5,
+        "accepted_failure": 0.0
+      }
+    },
+    "paired_vs_all_selectors": {
+      "confidence": {
+        "delta": 0.125,
+        "ci95": [
+          -0.25,
+          0.4375
+        ],
+        "unit": "entity",
+        "n": 16
+      },
+      "consistency": {
+        "delta": 0.0625,
+        "ci95": [
+          -0.1875,
+          0.3125
+        ],
+        "unit": "entity",
+        "n": 16
+      },
+      "random": {
+        "delta": 0.125,
+        "ci95": [
+          -0.25,
+          0.4375
+        ],
+        "unit": "entity",
+        "n": 16
+      },
+      "strongest_single": {
+        "delta": -0.0625,
+        "ci95": [
+          -0.3125,
+          0.125
+        ],
+        "unit": "entity",
+        "n": 16
+      },
+      "negative_entropy": {
+        "delta": 0.125,
+        "ci95": [
+          -0.25,
+          0.4375
+        ],
+        "unit": "entity",
+        "n": 16
+      },
+      "candidate_change": {
+        "delta": -0.0625,
+        "ci95": [
+          -0.3125,
+          0.125
+        ],
+        "unit": "entity",
+        "n": 16
+      }
+    },
+    "auroc": 0.8,
+    "auprc": 0.8087990292535747,
+    "brier": 0.09304257117671053,
+    "paired_diagnosis_vs_confidence": {
+      "delta": 0.125,
+      "ci95": [
+        -0.25,
+        0.4375
+      ],
+      "unit": "entity",
+      "n": 16
+    }
+  },
+  "exploratory_controls": {
+    "suppression": {
+      "independent_units": 12,
+      "eligible_units": 9,
+      "clean_mastery_rate": 0.9166666666666666,
+      "damage_eligibility_rate": 0.75,
+      "oracle_success_rate": 1.0,
+      "candidate_accuracy": 0.6666666666666666,
+      "persistent_repair_rate_all_eligible": 0.6666666666666666,
+      "peak_vram_gb": 11.157513618469238,
+      "split_verified": true
+    },
+    "auxiliary": {
+      "conditions": {
+        "internal": {
+          "attempted": 4,
+          "eligible": 4,
+          "candidate_accuracy": 0.75,
+          "persistent_success_over_all_eligible": 0.75
+        },
+        "related_media": {
+          "attempted": 4,
+          "eligible": 4,
+          "candidate_accuracy": 0.5,
+          "persistent_success_over_all_eligible": 0.5
+        },
+        "shuffled_image": {
+          "attempted": 4,
+          "eligible": 4,
+          "candidate_accuracy": 0.75,
+          "persistent_success_over_all_eligible": 0.75
+        },
+        "matched_text": {
+          "attempted": 4,
+          "eligible": 4,
+          "candidate_accuracy": 0.75,
+          "persistent_success_over_all_eligible": 0.75
+        }
+      },
+      "seconds": 495.6188248528633,
+      "n_distinct_entities": 4,
+      "paired_damage_identical": true,
+      "claim_boundary": "Small development-only evidence study. Four images, one audio source; shuffled-image control keeps original audio. No sound-specific or population complementarity claim. Matched text repeats damaged-model media-conditioned atomic observations, no evaluator truth. One round of writeback per independent damaged copy."
+    },
+    "twins": {
+      "world_pairs": [
+        {
+          "seed": 17,
+          "n": 256,
+          "original_accuracy_a": 1.0,
+          "original_accuracy_b": 1.0,
+          "opposite_random_truth": true,
+          "original_weights_different": true,
+          "damaged_weights_identical": true,
+          "damaged_sha256": "6eab0e43a57dfd1daf4d0a7d3f2945246cc8dc66afdb704e7ca3d5aa3d58a193",
+          "evidence_identical": true,
+          "predictions_identical": true,
+          "paired_both_correct": 0,
+          "average_accuracy": 0.5,
+          "retained_image_accuracy": 1.0,
+          "retained_audio_accuracy": 1.0
+        },
+        {
+          "seed": 29,
+          "n": 256,
+          "original_accuracy_a": 1.0,
+          "original_accuracy_b": 1.0,
+          "opposite_random_truth": true,
+          "original_weights_different": true,
+          "damaged_weights_identical": true,
+          "damaged_sha256": "264fbc231054050d0667f57e769b7fb59cd04a76fb5d27dbdbae2bb327a959f2",
+          "evidence_identical": true,
+          "predictions_identical": true,
+          "paired_both_correct": 0,
+          "average_accuracy": 0.5,
+          "retained_image_accuracy": 1.0,
+          "retained_audio_accuracy": 1.0
+        },
+        {
+          "seed": 43,
+          "n": 256,
+          "original_accuracy_a": 1.0,
+          "original_accuracy_b": 1.0,
+          "opposite_random_truth": true,
+          "original_weights_different": true,
+          "damaged_weights_identical": true,
+          "damaged_sha256": "c11b68d08cfc26fdfdd94cbad8c0f0730c633993214ace8dbdd21a0d05af47ac",
+          "evidence_identical": true,
+          "predictions_identical": true,
+          "paired_both_correct": 0,
+          "average_accuracy": 0.5,
+          "retained_image_accuracy": 1.0,
+          "retained_audio_accuracy": 1.0
+        }
+      ],
+      "seconds": 3.5228963040281087,
+      "claim_boundary": "Exact synthetic information-insufficiency construction with independently optimized opposing dedicated carriers. No claim that arbitrary real pretrained knowledge has been erased. Identical damaged inputs cannot guarantee both contradictory truths; chance recovery is still possible in either individual world."
+    }
+  },
+  "selective_curves": {
+    "Full diagnostic": {
+      "coverage": [
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.25,
+        0.3125,
+        0.375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.625,
+        0.6875,
+        0.75,
+        0.8125,
+        0.875,
+        0.9375,
+        1.0
+      ],
+      "success_over_all_eligible": [
+        0.0,
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.25,
+        0.3125,
+        0.375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.625,
+        0.6875,
+        0.6875,
+        0.6875,
+        0.6875,
+        0.6875
+      ]
+    },
+    "Confidence": {
+      "coverage": [
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.25,
+        0.3125,
+        0.375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.625,
+        0.6875,
+        0.75,
+        0.8125,
+        0.875,
+        0.9375,
+        1.0
+      ],
+      "success_over_all_eligible": [
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.1875,
+        0.25,
+        0.25,
+        0.3125,
+        0.3125,
+        0.375,
+        0.4375,
+        0.4375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.625,
+        0.6875
+      ]
+    },
+    "Candidate change": {
+      "coverage": [
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.25,
+        0.3125,
+        0.375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.625,
+        0.6875,
+        0.75,
+        0.8125,
+        0.875,
+        0.9375,
+        1.0
+      ],
+      "success_over_all_eligible": [
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.25,
+        0.3125,
+        0.375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.5625,
+        0.625,
+        0.6875,
+        0.6875,
+        0.6875,
+        0.6875,
+        0.6875
+      ]
+    },
+    "Support margin": {
+      "coverage": [
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.25,
+        0.3125,
+        0.375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.625,
+        0.6875,
+        0.75,
+        0.8125,
+        0.875,
+        0.9375,
+        1.0
+      ],
+      "success_over_all_eligible": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0625,
+        0.125,
+        0.1875,
+        0.25,
+        0.3125,
+        0.375,
+        0.4375,
+        0.5,
+        0.5625,
+        0.625,
+        0.625,
+        0.6875,
+        0.6875
+      ]
+    }
+  },
+  "generated_at_sg": "2026-11-22T03:10:06.141192+08:00"
+}

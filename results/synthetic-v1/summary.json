@@ -1,0 +1,96 @@
+{
+  "protocol": "controlled-v1",
+  "metadata": [
+    {
+      "seed": 17,
+      "clean_accuracy": 1.0,
+      "image_accuracy": 1.0,
+      "audio_accuracy": 1.0,
+      "twins_equal_after_carrier_erasure": true,
+      "twins_opposite_truth": true
+    },
+    {
+      "seed": 29,
+      "clean_accuracy": 1.0,
+      "image_accuracy": 1.0,
+      "audio_accuracy": 1.0,
+      "twins_equal_after_carrier_erasure": true,
+      "twins_opposite_truth": true
+    },
+    {
+      "seed": 43,
+      "clean_accuracy": 1.0,
+      "image_accuracy": 1.0,
+      "audio_accuracy": 1.0,
+      "twins_equal_after_carrier_erasure": true,
+      "twins_opposite_truth": true
+    }
+  ],
+  "analysis": {
+    "internal": {
+      "n_test_entities": 144,
+      "success_rate": 0.6875,
+      "candidate_accuracy": 0.6875,
+      "auroc": 0.9313131313131313,
+      "auprc": 0.9710671837114377,
+      "brier": 0.10546997161616901,
+      "matched_half_coverage": {
+        "diagnosis": 0.5,
+        "confidence": 0.3541666666666667,
+        "random": 0.3263888888888889
+      },
+      "by_type": {
+        "redundant": {
+          "n": 36,
+          "success": 1.0
+        },
+        "complementary": {
+          "n": 36,
+          "success": 1.0
+        },
+        "ambiguous": {
+          "n": 36,
+          "success": 0.4722222222222222
+        },
+        "random": {
+          "n": 36,
+          "success": 0.2777777777777778
+        }
+      }
+    },
+    "auxiliary": {
+      "n_test_entities": 144,
+      "success_rate": 0.7083333333333334,
+      "candidate_accuracy": 0.7083333333333334,
+      "auroc": 0.9169000933706817,
+      "auprc": 0.966036409030836,
+      "brier": 0.11398252653305711,
+      "matched_half_coverage": {
+        "diagnosis": 0.5,
+        "confidence": 0.3541666666666667,
+        "random": 0.3541666666666667
+      },
+      "by_type": {
+        "redundant": {
+          "n": 36,
+          "success": 1.0
+        },
+        "complementary": {
+          "n": 36,
+          "success": 1.0
+        },
+        "ambiguous": {
+          "n": 36,
+          "success": 0.5555555555555556
+        },
+        "random": {
+          "n": 36,
+          "success": 0.2777777777777778
+        }
+      }
+    }
+  },
+  "seconds": 90.09486307296902,
+  "claim_boundary": "Synthetic trained neural memories and generated image/audio only. Damaged target logits are a dedicated corrupted carrier. Does NOT show genuine pretrained knowledge recovery, open-ended reasoning, learned rejection of unknown information regimes, or multimodal repair of Qwen.",
+  "diagnostic_information": "Constraint support/count uses known synthetic observation regime. This is a privileged structural baseline, not an inferred real-world reliability score."
+}

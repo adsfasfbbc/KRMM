@@ -20,6 +20,7 @@ def main():
         for p in Path(root).glob("*.json"):
             r=json.loads(p.read_text())
             if isinstance(r,dict) and r.get("eligible"):rows.append(r)
+    rows.sort(key=lambda r:r["unit"]["uid"])  # Label-independent deterministic tie order.
     tr=[r for r in rows if r["unit"]["split"]=="dev"]
     cal=[r for r in rows if r["unit"]["split"]=="calibration"]
     te=[r for r in rows if r["unit"]["split"]=="test"]

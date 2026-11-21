@@ -1,0 +1,77 @@
+{
+  "assessment_id": "20261121T180116184571Z-ca408282a5",
+  "created_at": "2026-11-21T18:01:16+00:00",
+  "hypothesis": "REAL3",
+  "gate": "G0",
+  "status": "FAIL",
+  "note": "",
+  "checks": [
+    {
+      "metric": "independent_units",
+      "op": ">=",
+      "threshold": 4,
+      "observed": 4,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "clean_mastery_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 0.75,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "damage_eligibility_rate",
+      "op": ">=",
+      "threshold": 0.5,
+      "observed": 0.25,
+      "result": "FAIL",
+      "reason": ""
+    },
+    {
+      "metric": "oracle_success_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 1.0,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "peak_vram_gb",
+      "op": "<",
+      "threshold": 23.5,
+      "observed": 11.157513618469238,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "split_verified",
+      "op": "is_true",
+      "threshold": null,
+      "observed": true,
+      "result": "PASS",
+      "reason": ""
+    }
+  ],
+  "metrics_file": {
+    "path": "/root/rivermind-data/KRMM/results/real-g0-retain50-batch12-offline/metrics.json",
+    "size_bytes": 285,
+    "sha256": "e8ad795839b1bfba2d73948bd57bc70a60b672a884565620766212808cabfa6b"
+  },
+  "evidence": [
+    {
+      "path": "/root/rivermind-data/KRMM/results/real-g0-retain50-batch12-offline/metrics.json",
+      "size_bytes": 285,
+      "sha256": "e8ad795839b1bfba2d73948bd57bc70a60b672a884565620766212808cabfa6b"
+    }
+  ],
+  "protocol_sha256": "e9164f8f697dc3a857d799c53cc62a81bd7faade856113b1a6bf8da1c0f562c0",
+  "git": {
+    "head": "a8242d2e961fe8f095885c2e29e892d81d45649c",
+    "status_short": "",
+    "diff_stat": ""
+  },
+  "caveat": "Numerical preregistered checks only; independent scientific/causal review required"
+}

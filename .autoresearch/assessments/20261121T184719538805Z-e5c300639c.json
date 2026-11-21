@@ -1,0 +1,77 @@
+{
+  "assessment_id": "20261121T184719538805Z-e5c300639c",
+  "created_at": "2026-11-21T18:47:19+00:00",
+  "hypothesis": "TESTV2",
+  "gate": "G0",
+  "status": "FAIL",
+  "note": "",
+  "checks": [
+    {
+      "metric": "independent_units",
+      "op": ">=",
+      "threshold": 4,
+      "observed": 24,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "clean_mastery_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 0.6666666666666666,
+      "result": "FAIL",
+      "reason": ""
+    },
+    {
+      "metric": "damage_eligibility_rate",
+      "op": ">=",
+      "threshold": 0.5,
+      "observed": 0.6666666666666666,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "oracle_success_rate",
+      "op": ">=",
+      "threshold": 0.75,
+      "observed": 1.0,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "peak_vram_gb",
+      "op": "<",
+      "threshold": 23.5,
+      "observed": 11.157513618469238,
+      "result": "PASS",
+      "reason": ""
+    },
+    {
+      "metric": "split_verified",
+      "op": "is_true",
+      "threshold": null,
+      "observed": true,
+      "result": "PASS",
+      "reason": ""
+    }
+  ],
+  "metrics_file": {
+    "path": "/root/rivermind-data/KRMM/results/v2-test/metrics.json",
+    "size_bytes": 321,
+    "sha256": "bdcf417312a32fec89aa57b9f12ca7de588c852c1697f94e49406682a17b145d"
+  },
+  "evidence": [
+    {
+      "path": "/root/rivermind-data/KRMM/results/v2-test/metrics.json",
+      "size_bytes": 321,
+      "sha256": "bdcf417312a32fec89aa57b9f12ca7de588c852c1697f94e49406682a17b145d"
+    }
+  ],
+  "protocol_sha256": "e520a3fc598f3fd8f99852d6f3987000c2a64feaa89f431c42209cf8d239462b",
+  "git": {
+    "head": "2361781f4f1ac5ad48b4ef2180eade715d42ec2c",
+    "status_short": "M scripts/download_model_ranges.py",
+    "diff_stat": "scripts/download_model_ranges.py | 17 +++++++++++------\n 1 file changed, 11 insertions(+), 6 deletions(-)"
+  },
+  "caveat": "Numerical preregistered checks only; independent scientific/causal review required"
+}

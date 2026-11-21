@@ -1,0 +1,34 @@
+{
+  "command": "shutdown",
+  "uid": 0,
+  "status": "platform_shutdown_executed_and_ssh_unreachable",
+  "initial_ssh_environment_attempts": "Built-in platform program returned an empty error; retried with the instance's original runtime environment without exposing credentials.",
+  "successful_invocation": "/usr/bin/shutdown with original instance runtime environment",
+  "connection_closed_during_shutdown": true,
+  "ssh_probes": [
+    {
+      "attempt": 1,
+      "reachable": false,
+      "error_type": "SSHException",
+      "observed_at_utc": "2026-11-21T19:30:12.686575+00:00"
+    },
+    {
+      "attempt": 2,
+      "reachable": false,
+      "error_type": "SSHException",
+      "observed_at_utc": "2026-11-21T19:30:16.900597+00:00"
+    },
+    {
+      "attempt": 3,
+      "reachable": false,
+      "error_type": "SSHException",
+      "observed_at_utc": "2026-11-21T19:30:21.107974+00:00"
+    }
+  ],
+  "observed_at_sg": "2026-11-22T03:30:21+08:00",
+  "model_experiment_launches": 20,
+  "verified_public_file_hashes": 305,
+  "verified_uncompressed_terminal_logs": 40,
+  "evidence_release_commit": "7b03f4b9c7d3ba151cd006663fc76b89b5d17742",
+  "manifest_scope": "This operational observation was added after the immutable pre-shutdown evidence snapshot."
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "project_id": "REPLACE_PROJECT_ID",
+  "research_question": "REPLACE_WITH_FALSIFIABLE_QUESTION",
+  "target_venue": "undecided",
+  "repo_root": "REPLACE_WITH_ABSOLUTE_REPO_PATH",
+  "protocol_version": "v1",
+  "primary_metric": "REPLACE_METRIC_AND_UNITS",
+  "dataset_manifest": "REPLACE_WITH_PATH_AND_VERSION",
+  "holdout_policy": "REPLACE_WITH_SPLIT_AND_FREEZE_RULES",
+  "approved_command_prefixes": [],
+  "allowed_edit_globs": [],
+  "protected_paths": ["data/**", "datasets/**", "tests/**", "eval/**", "evaluation/**", "results/**", ".git/**", ".env*"],
+  "budget": {
+    "max_runs": 8,
+    "per_run_timeout_minutes": 30,
+    "max_total_run_minutes": 240,
+    "min_free_disk_gb": 5,
+    "require_gpu": false,
+    "gpu_ids": ["0"],
+    "min_free_gpu_memory_mb": 0,
+    "disk_check_interval_seconds": 5
+  },
+  "gates": [
+    {"id": "G0", "title": "Validity and feasibility", "criteria": []},
+    {"id": "G1", "title": "Mechanism discrimination", "criteria": []},
+    {"id": "G2", "title": "Robustness and transfer", "criteria": []},
+    {"id": "G3", "title": "Reproduction and scope", "criteria": []}
+  ]
+}

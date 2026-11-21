@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "project_id": "KRMM",
+  "research_question": "Can pre-update internal evidence and writeability predict persistent unit-level repair without target truth better than confidence at equal coverage?",
+  "target_venue": "undecided",
+  "repo_root": "/root/rivermind-data/KRMM",
+  "protocol_version": "v1.4-independent-persistence-audit",
+  "primary_metric": "Persistent successful repairs divided by ALL eligible damaged units, fraction; rejected units remain denominator",
+  "dataset_manifest": "krmm.benchmark.manifest instruments-v1, 48 entity-disjoint units; synthetic worlds separate",
+  "holdout_policy": "Per class ordered first 3 entities dev, next 3 calibration, final 6 frozen test. Two training paraphrases, variants 2 and 3 unseen. Test labels evaluator only. No tuning on test. Pilot exploratory; larger confirmatory dataset required.",
+  "approved_command_prefixes": [
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.experiment"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.synthetic"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "unittest"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.synthetic_v2"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.media_smoke"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.verify_persistence"
+    ]
+  ],
+  "allowed_edit_globs": [
+    "krmm/**",
+    "configs/**",
+    "scripts/**",
+    "docs/**",
+    "README.md",
+    "EXPERIMENTS.md",
+    "NOVELTY_LEDGER.md",
+    "requirements.txt",
+    ".gitignore"
+  ],
+  "protected_paths": [
+    "data/**",
+    "tests/**",
+    "results/**",
+    ".git/**",
+    ".env*"
+  ],
+  "budget": {
+    "max_runs": 20,
+    "per_run_timeout_minutes": 90,
+    "max_total_run_minutes": 480,
+    "min_free_disk_gb": 8,
+    "require_gpu": true,
+    "gpu_ids": [
+      "0"
+    ],
+    "min_free_gpu_memory_mb": 1000,
+    "disk_check_interval_seconds": 10
+  },
+  "gates": [
+    {
+      "id": "G0",
+      "title": "Validity and feasibility",
+      "criteria": [
+        {
+          "metric": "independent_units",
+          "op": ">=",
+          "value": 4
+        },
+        {
+          "metric": "clean_mastery_rate",
+          "op": ">=",
+          "value": 0.75
+        },
+        {
+          "metric": "damage_eligibility_rate",
+          "op": ">=",
+          "value": 0.5
+        },
+        {
+          "metric": "oracle_success_rate",
+          "op": ">=",
+          "value": 0.75
+        },
+        {
+          "metric": "peak_vram_gb",
+          "op": "<",
+          "value": 23.5
+        },
+        {
+          "metric": "split_verified",
+          "op": "is_true"
+        }
+      ]
+    },
+    {
+      "id": "G1",
+      "title": "Incremental method value",
+      "criteria": [
+        {
+          "metric": "paired_delta_ci_low",
+          "op": ">",
+          "value": 0
+        },
+        {
+          "metric": "key_vs_sham_delta_ci_low",
+          "op": ">",
+          "value": 0
+        },
+        {
+          "metric": "independent_units",
+          "op": ">=",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "title": "Transfer",
+      "criteria": [
+        {
+          "metric": "independent_seeds",
+          "op": ">=",
+          "value": 3
+        },
+        {
+          "metric": "second_damage_ci_low",
+          "op": ">",
+          "value": 0
+        },
+        {
+          "metric": "second_model_ci_low",
+          "op": ">",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "title": "Reproduction",
+      "criteria": [
+        {
+          "metric": "frozen_commit_reproduced",
+          "op": "is_true"
+        },
+        {
+          "metric": "independent_holdout_verified",
+          "op": "is_true"
+        },
+        {
+          "metric": "claim_boundary_audited",
+          "op": "is_true"
+        }
+      ]
+    }
+  ],
+  "approval": "User explicitly approved single-card 8h / 20 launches / 80GB; run authorization and server shutdown supplied in chat; 2026-11-22",
+  "additional_storage_limit_gb": 80,
+  "stop_policy": "Stop on 8h wall time, 20 launches, disk<8GB, repeated OOM or unresolved provenance. Failed G0 blocks G1; engineering fixes new trial, preserve prior artifacts.",
+  "metric_correction": "clean_mastery_rate is fraction correct on all four screening paraphrases, not just unseen two. Original R01/R02 raw files retained; old summary field was mislabeled. Thresholds unchanged."
+}

@@ -1,5 +1,7 @@
 import os,time
 os.environ.setdefault("TOKENIZERS_PARALLELISM","false")
+os.environ.setdefault("HF_HUB_OFFLINE","1")
+os.environ.setdefault("TRANSFORMERS_OFFLINE","1")
 import torch
 from transformers import Qwen2_5OmniForConditionalGeneration,AutoProcessor
 
@@ -11,8 +13,17 @@ class Omni:
         self.full.disable_talker()
         self.model=self.full.thinker
         self.model.config.use_cache=False
+        self.model.config.text_config.use_cache=False
         for p in self.model.parameters():p.requires_grad_(False)
         self.model.eval()
+        self.forward_calls=0
+        self.compute_tokens=0
+        def count_forward(module,args,kwargs):
+            self.forward_calls+=1
+            x=kwargs.get("inputs_embeds")
+            if x is None:x=kwargs.get("input_ids")
+            if isinstance(x,torch.Tensor):self.compute_tokens+=x.shape[0]*x.shape[1]
+        self.model.model.register_forward_pre_hook(count_forward,with_kwargs=True)
         self.calls=0
         self.tokens=0
 
@@ -42,6 +53,17 @@ class Omni:
             batch["labels"]=labels
         return batch
 
+    def encode_many(self,prompts):
+        texts=[]
+        for prompt in prompts:
+            msg=[{"role":"system","content":[{"type":"text","text":"You are a helpful assistant."}]},{"role":"user","content":[{"type":"text","text":prompt}]}]
+            texts.append(self.processor.apply_chat_template(msg,tokenize=False,add_generation_prompt=True))
+        previous=self.tokenizer.padding_side
+        self.tokenizer.padding_side="left"
+        b=self.tokenizer(texts,return_tensors="pt",padding=True)
+        self.tokenizer.padding_side=previous
+        return {k:v.to("cuda") for k,v in b.items()}
+
     @torch.inference_mode()
     def probabilities(self,prompt,media=None):
         b=self.encode(prompt,media=media)
@@ -65,4 +87,4 @@ class Omni:
         return [self.model(**self.encode(p)).logits[0,-1].float().detach().cpu() for p in prompts]
 
     def state(self):
-        return {"query_calls":self.calls,"tokens":self.tokens,"peak_vram_gb":torch.cuda.max_memory_allocated()/2**30}
+        return {"decoder_tokens_processed":self.compute_tokens,"model_forward_calls":self.forward_calls,"query_calls":self.calls,"tokens":self.tokens,"peak_vram_gb":torch.cuda.max_memory_allocated()/2**30}

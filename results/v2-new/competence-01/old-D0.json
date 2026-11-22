@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-D0",
+    "entity": "xylophone",
+    "gold": "D",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9988625645637512,
+        0.9991114735603333
+      ],
+      "probabilities": [
+        [
+          0.0040377406403422356,
+          0.0027750961016863585,
+          0.005184561479836702,
+          0.9880025386810303
+        ],
+        [
+          0.025618456304073334,
+          0.005716250278055668,
+          0.007339810486882925,
+          0.9613255262374878
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument xylophone in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic xylophone?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9971081018447876,
+        0.9969249963760376
+      ],
+      "probabilities": [
+        [
+          0.03141609579324722,
+          0.019054826349020004,
+          0.03141609579324722,
+          0.9181129336357117
+        ],
+        [
+          0.0572841539978981,
+          0.121270552277565,
+          0.030661996454000473,
+          0.7907832860946655
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional xylophone?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional xylophone.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9966710209846497,
+        0.9959523677825928
+      ],
+      "probabilities": [
+        [
+          0.015602970495820045,
+          0.01072375476360321,
+          0.9653216004371643,
+          0.008351667784154415
+        ],
+        [
+          0.026845207437872887,
+          0.0729728415608406,
+          0.8889911770820618,
+          0.01119074784219265
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional xylophone?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional xylophone.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "legacy_source": {
+      "predictions": [
+        "D",
+        "A"
+      ],
+      "choice_mass": [
+        0.99944669008255,
+        0.9991430640220642
+      ],
+      "probabilities": [
+        [
+          0.03262181580066681,
+          0.0034383139573037624,
+          0.010590753518044949,
+          0.9533491730690002
+        ],
+        [
+          0.4920952022075653,
+          0.014859987422823906,
+          0.05877239257097244,
+          0.4342724680900574
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a xylophone?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the xylophone, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": false
+    }
+  },
+  "free_answer": "D",
+  "physical_description": "The traditional xylophone produces sound by striking the keys with mallets."
+}

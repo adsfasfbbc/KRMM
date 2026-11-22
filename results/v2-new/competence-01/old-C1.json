@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-C1",
+    "entity": "timpani",
+    "gold": "C",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "C",
+        "C"
+      ],
+      "choice_mass": [
+        0.998778223991394,
+        0.9991516470909119
+      ],
+      "probabilities": [
+        [
+          0.001493264571763575,
+          0.0016920906491577625,
+          0.9932324886322021,
+          0.003582155564799905
+        ],
+        [
+          0.003559740725904703,
+          0.002772329142317176,
+          0.9870174527168274,
+          0.00665047112852335
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument timpani in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic timpani?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "C",
+        "C"
+      ],
+      "choice_mass": [
+        0.997653603553772,
+        0.9967198967933655
+      ],
+      "probabilities": [
+        [
+          0.01565547101199627,
+          0.008379770442843437,
+          0.9685696959495544,
+          0.007395120803266764
+        ],
+        [
+          0.041691139340400696,
+          0.18684670329093933,
+          0.7389930486679077,
+          0.032469090074300766
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional timpani?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional timpani.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "C",
+        "D"
+      ],
+      "choice_mass": [
+        0.9969521164894104,
+        0.9956539273262024
+      ],
+      "probabilities": [
+        [
+          0.7881654500961304,
+          0.0941329374909401,
+          0.08307202160358429,
+          0.03462957218289375
+        ],
+        [
+          0.3051797151565552,
+          0.16335095465183258,
+          0.4440338611602783,
+          0.08743544667959213
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional timpani?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional timpani.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": false
+    },
+    "legacy_source": {
+      "predictions": [
+        "C",
+        "C"
+      ],
+      "choice_mass": [
+        0.9993991851806641,
+        0.9991300702095032
+      ],
+      "probabilities": [
+        [
+          0.002122197300195694,
+          0.0018728325376287103,
+          0.9701512455940247,
+          0.025853656232357025
+        ],
+        [
+          0.002153895329684019,
+          0.009653089568018913,
+          0.9846418499946594,
+          0.003551173023879528
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a timpani?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the timpani, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": true
+    }
+  },
+  "free_answer": "C",
+  "physical_description": "The traditional timpani produces sound through the vibration of the drumhead, which is struck by a mallet. The mallet transfers energy to the drumhead, causing it to vibrate. The frequency and amplitude of the vibration determine the pitch and volume of the sound produced. The timpani's sound can be"
+}

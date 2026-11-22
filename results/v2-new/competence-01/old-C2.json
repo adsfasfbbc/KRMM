@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-C2",
+    "entity": "bongo",
+    "gold": "C",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "C",
+        "C"
+      ],
+      "choice_mass": [
+        0.9989463090896606,
+        0.9991571307182312
+      ],
+      "probabilities": [
+        [
+          0.0031360394787043333,
+          0.004026754293590784,
+          0.9853142499923706,
+          0.007522966712713242
+        ],
+        [
+          0.0031253418419510126,
+          0.00401301821693778,
+          0.9819532036781311,
+          0.010908515192568302
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument bongo in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic bongo?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "C",
+        "C"
+      ],
+      "choice_mass": [
+        0.9979062676429749,
+        0.9975119829177856
+      ],
+      "probabilities": [
+        [
+          0.013742547482252121,
+          0.012127756141126156,
+          0.9634270071983337,
+          0.010702707804739475
+        ],
+        [
+          0.041120193898677826,
+          0.39013755321502686,
+          0.5009465217590332,
+          0.06779573857784271
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional bongo?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional bongo.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9973428249359131,
+        0.9966343641281128
+      ],
+      "probabilities": [
+        [
+          0.3219791054725647,
+          0.09224855899810791,
+          0.4134293496608734,
+          0.17234298586845398
+        ],
+        [
+          0.2589477598667145,
+          0.15705977380275726,
+          0.4269326627254486,
+          0.15705977380275726
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional bongo?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional bongo.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": false
+    },
+    "legacy_source": {
+      "predictions": [
+        "C",
+        "C"
+      ],
+      "choice_mass": [
+        0.9994053840637207,
+        0.9992803931236267
+      ],
+      "probabilities": [
+        [
+          0.00485658273100853,
+          0.002599541563540697,
+          0.9255008101463318,
+          0.06704305857419968
+        ],
+        [
+          0.008161867968738079,
+          0.011875447817146778,
+          0.9433836340904236,
+          0.0365789532661438
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a bongo?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the bongo, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": true
+    }
+  },
+  "free_answer": "C",
+  "physical_description": "The traditional bongo produces sound through the vibration of the drumheads when struck with a mallet or hand. The sound is created by the tension of the drumheads, which are stretched over a wooden frame. When the drumheads are struck, they vibrate and produce a resonant sound. The pitch and tone of"
+}

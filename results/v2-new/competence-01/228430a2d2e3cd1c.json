@@ -1,0 +1,133 @@
+{
+  "unit": {
+    "uid": "228430a2d2e3cd1c",
+    "entity": "nagara",
+    "group": "nagara",
+    "gold": "C",
+    "hs": [
+      "211.11"
+    ],
+    "source_url": "https://grinnell-omeka-s-werud.ondigitalocean.app/api/items/5172",
+    "source_id": 5172,
+    "category": "membranophone",
+    "split": "dev"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "C",
+        "C"
+      ],
+      "choice_mass": [
+        0.9988921880722046,
+        0.9992148280143738
+      ],
+      "probabilities": [
+        [
+          0.07263926416635513,
+          0.08231107145547867,
+          0.7809457182884216,
+          0.06410392373800278
+        ],
+        [
+          0.09987127780914307,
+          0.022284293547272682,
+          0.8362119197845459,
+          0.04163254052400589
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument nagara in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic nagara?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "C",
+        "B"
+      ],
+      "choice_mass": [
+        0.9981908202171326,
+        0.9975346326828003
+      ],
+      "probabilities": [
+        [
+          0.09716487675905228,
+          0.29928889870643616,
+          0.4934439957141876,
+          0.11010223627090454
+        ],
+        [
+          0.06280811131000519,
+          0.7651594281196594,
+          0.09138526022434235,
+          0.08064720779657364
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional nagara?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional nagara.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": false
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9977506995201111,
+        0.9964235424995422
+      ],
+      "probabilities": [
+        [
+          0.2253251075744629,
+          0.19884870946407318,
+          0.42096269130706787,
+          0.15486353635787964
+        ],
+        [
+          0.1526450365781784,
+          0.1960001140832901,
+          0.36617642641067505,
+          0.2851784825325012
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional nagara?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional nagara.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": false
+    },
+    "legacy_source": {
+      "predictions": [
+        "A",
+        "C"
+      ],
+      "choice_mass": [
+        0.9994142055511475,
+        0.9992307424545288
+      ],
+      "probabilities": [
+        [
+          0.544394314289093,
+          0.1071975901722908,
+          0.22693730890750885,
+          0.12147079408168793
+        ],
+        [
+          0.16278576850891113,
+          0.12677769362926483,
+          0.501415491104126,
+          0.20902107656002045
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a nagara?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the nagara, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": false
+    }
+  }
+}

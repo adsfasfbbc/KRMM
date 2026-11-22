@@ -1,0 +1,235 @@
+{
+  "unit": {
+    "uid": "1605d3da214891eb",
+    "entity": "gusle",
+    "split": "dev"
+  },
+  "eligible": true,
+  "source": "results/v2-new/association24-dev-01",
+  "gold_evaluator_only": "A",
+  "candidate": "A",
+  "structured": {
+    "compatible": [
+      "A"
+    ],
+    "paths": [
+      {
+        "index": 0,
+        "attribute": "primary_oscillator",
+        "value": "tensioned_strings",
+        "source_id": "probe_0",
+        "allowed": [
+          "A"
+        ],
+        "span": "The primary physical component that generates vibration in the gusle is the strings."
+      }
+    ],
+    "conflict": false,
+    "invalid_atoms": [],
+    "ambiguous": false,
+    "candidate": "A",
+    "reconstruction_type": "direct_residual_reaccess"
+  },
+  "facts": [
+    {
+      "entity": "gusle",
+      "attribute": "primary_oscillator",
+      "value": "tensioned_strings",
+      "modality": "internal_text",
+      "source_id": "probe_0",
+      "provenance_group": "damaged-model",
+      "span": "The primary physical component that generates vibration in the gusle is the strings.",
+      "raw_text": "The traditional musical instrument named gusle is a stringed instrument that is commonly used in Eastern Europe, particularly in the Balkans. The gusle is typically made of wood and has a long, curved neck and a flat body. The primary physical component that generates vibration in the gusle is the strings. The strings are stretched between the nut and",
+      "polarity": true,
+      "conflict": false
+    },
+    {
+      "entity": "gusle",
+      "attribute": "resonator",
+      "value": "wooden_body",
+      "modality": "internal_text",
+      "source_id": "probe_0",
+      "provenance_group": "damaged-model",
+      "span": "The gusle is typically made of wood and has a long, curved neck and a flat body.",
+      "raw_text": "The traditional musical instrument named gusle is a stringed instrument that is commonly used in Eastern Europe, particularly in the Balkans. The gusle is typically made of wood and has a long, curved neck and a flat body. The primary physical component that generates vibration in the gusle is the strings. The strings are stretched between the nut and",
+      "polarity": true,
+      "conflict": false
+    }
+  ],
+  "normalization_traces": [
+    {
+      "source_id": "probe_0",
+      "normalizations": [],
+      "errors": [],
+      "facts": [
+        {
+          "entity": "gusle",
+          "attribute": "primary_oscillator",
+          "value": "tensioned_strings",
+          "modality": "internal_text",
+          "source_id": "probe_0",
+          "provenance_group": "damaged-model",
+          "span": "The primary physical component that generates vibration in the gusle is the strings.",
+          "raw_text": "The traditional musical instrument named gusle is a stringed instrument that is commonly used in Eastern Europe, particularly in the Balkans. The gusle is typically made of wood and has a long, curved neck and a flat body. The primary physical component that generates vibration in the gusle is the strings. The strings are stretched between the nut and",
+          "polarity": true,
+          "conflict": false
+        },
+        {
+          "entity": "gusle",
+          "attribute": "resonator",
+          "value": "wooden_body",
+          "modality": "internal_text",
+          "source_id": "probe_0",
+          "provenance_group": "damaged-model",
+          "span": "The gusle is typically made of wood and has a long, curved neck and a flat body.",
+          "raw_text": "The traditional musical instrument named gusle is a stringed instrument that is commonly used in Eastern Europe, particularly in the Balkans. The gusle is typically made of wood and has a long, curved neck and a flat body. The primary physical component that generates vibration in the gusle is the strings. The strings are stretched between the nut and",
+          "polarity": true,
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "source_id": "probe_1",
+      "normalizations": [],
+      "errors": [
+        "ungrounded source span",
+        "ungrounded source span",
+        "ungrounded source span"
+      ],
+      "facts": []
+    }
+  ],
+  "features": [
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    0.5
+  ],
+  "feature_names": [
+    "support",
+    "ambiguity",
+    "conflict",
+    "key_sensitivity",
+    "sham_stability",
+    "provenance"
+  ],
+  "candidate_change": 1,
+  "mode": "P0 engineering; not G1",
+  "repairs": {
+    "generative": {
+      "variants": [
+        4,
+        5
+      ],
+      "probabilities": [
+        [
+          0.6441910862922668,
+          0.0018094002734869719,
+          0.3448106646537781,
+          0.00918889231979847
+        ],
+        [
+          0.31491711735725403,
+          0.002724566962569952,
+          0.6666795611381531,
+          0.015678800642490387
+        ]
+      ],
+      "accuracy": 0.5,
+      "retention_agreement": 1.0,
+      "success": false,
+      "rollback_required": false,
+      "probability_reload_max_error": 0.0,
+      "fresh_process_verified": true,
+      "writer_initialization_seed": 107,
+      "restoration_valid": false
+    },
+    "oracle": {
+      "variants": [
+        4,
+        5
+      ],
+      "probabilities": [
+        [
+          0.6441910862922668,
+          0.0018094002734869719,
+          0.3448106646537781,
+          0.00918889231979847
+        ],
+        [
+          0.31491711735725403,
+          0.002724566962569952,
+          0.6666795611381531,
+          0.015678800642490387
+        ]
+      ],
+      "accuracy": 0.5,
+      "retention_agreement": 1.0,
+      "success": false,
+      "rollback_required": false,
+      "probability_reload_max_error": 0.0,
+      "fresh_process_verified": true,
+      "writer_initialization_seed": 107,
+      "restoration_valid": false
+    },
+    "structured": {
+      "variants": [
+        4,
+        5
+      ],
+      "probabilities": [
+        [
+          0.6441910862922668,
+          0.0018094002734869719,
+          0.3448106646537781,
+          0.00918889231979847
+        ],
+        [
+          0.31491711735725403,
+          0.002724566962569952,
+          0.6666795611381531,
+          0.015678800642490387
+        ]
+      ],
+      "accuracy": 0.5,
+      "retention_agreement": 1.0,
+      "success": false,
+      "rollback_required": false,
+      "probability_reload_max_error": 0.0,
+      "fresh_process_verified": true,
+      "writer_initialization_seed": 107,
+      "restoration_valid": false
+    }
+  },
+  "repair": {
+    "variants": [
+      4,
+      5
+    ],
+    "probabilities": [
+      [
+        0.6441910862922668,
+        0.0018094002734869719,
+        0.3448106646537781,
+        0.00918889231979847
+      ],
+      [
+        0.31491711735725403,
+        0.002724566962569952,
+        0.6666795611381531,
+        0.015678800642490387
+      ]
+    ],
+    "accuracy": 0.5,
+    "retention_agreement": 1.0,
+    "success": false,
+    "rollback_required": false,
+    "probability_reload_max_error": 0.0,
+    "fresh_process_verified": true,
+    "writer_initialization_seed": 107,
+    "restoration_valid": false
+  },
+  "seconds": 23.866605317220092
+}

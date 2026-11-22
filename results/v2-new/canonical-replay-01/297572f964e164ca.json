@@ -1,0 +1,181 @@
+{
+  "unit": {
+    "uid": "297572f964e164ca",
+    "entity": "ngoma",
+    "split": "dev"
+  },
+  "eligible": true,
+  "source": "results/v2-new/association24-dev-01",
+  "gold_evaluator_only": "C",
+  "candidate": null,
+  "structured": {
+    "compatible": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "paths": [],
+    "conflict": false,
+    "invalid_atoms": [],
+    "ambiguous": true,
+    "candidate": null,
+    "reconstruction_type": "insufficient_or_conflicting"
+  },
+  "facts": [
+    {
+      "entity": "ngoma",
+      "attribute": "primary_oscillator",
+      "value": "unknown",
+      "modality": "internal_text",
+      "source_id": "probe_1",
+      "provenance_group": "damaged-model",
+      "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+      "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+      "polarity": false,
+      "conflict": false
+    },
+    {
+      "entity": "ngoma",
+      "attribute": "resonator",
+      "value": "wooden_body",
+      "modality": "internal_text",
+      "source_id": "probe_1",
+      "provenance_group": "damaged-model",
+      "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+      "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+      "polarity": false,
+      "conflict": false
+    }
+  ],
+  "normalization_traces": [
+    {
+      "source_id": "probe_0",
+      "normalizations": [
+        {
+          "attribute": "primary_oscillator",
+          "raw_value": "wooden frame",
+          "canonical_value": "wooden_frame"
+        },
+        {
+          "attribute": "resonator",
+          "raw_value": "wooden frame",
+          "canonical_value": "wooden_frame"
+        }
+      ],
+      "errors": [
+        "unsupported semantic atom",
+        "unsupported semantic atom"
+      ],
+      "facts": []
+    },
+    {
+      "source_id": "probe_1",
+      "normalizations": [],
+      "errors": [],
+      "facts": [
+        {
+          "entity": "ngoma",
+          "attribute": "primary_oscillator",
+          "value": "unknown",
+          "modality": "internal_text",
+          "source_id": "probe_1",
+          "provenance_group": "damaged-model",
+          "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+          "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+          "polarity": false,
+          "conflict": false
+        },
+        {
+          "entity": "ngoma",
+          "attribute": "resonator",
+          "value": "wooden_body",
+          "modality": "internal_text",
+          "source_id": "probe_1",
+          "provenance_group": "damaged-model",
+          "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+          "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+          "polarity": false,
+          "conflict": false
+        }
+      ]
+    }
+  ],
+  "features": [
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.5
+  ],
+  "feature_names": [
+    "support",
+    "ambiguity",
+    "conflict",
+    "key_sensitivity",
+    "sham_stability",
+    "provenance"
+  ],
+  "candidate_change": 0,
+  "mode": "P0 engineering; not G1",
+  "repairs": {
+    "generative": {
+      "variants": [
+        4,
+        5
+      ],
+      "probabilities": [
+        [
+          0.9880391955375671,
+          0.0051847537979483604,
+          0.0009009751374833286,
+          0.005875095725059509
+        ],
+        [
+          0.9883289337158203,
+          0.004576871171593666,
+          0.001907923724502325,
+          0.00518627418205142
+        ]
+      ],
+      "accuracy": 0.0,
+      "retention_agreement": 1.0,
+      "success": false,
+      "rollback_required": false,
+      "probability_reload_max_error": 0.0,
+      "fresh_process_verified": true,
+      "writer_initialization_seed": 107,
+      "restoration_valid": false
+    },
+    "oracle": {
+      "variants": [
+        4,
+        5
+      ],
+      "probabilities": [
+        [
+          0.00029583286959677935,
+          4.003661888418719e-05,
+          0.9992843270301819,
+          0.00037985690869390965
+        ],
+        [
+          0.0013244424480944872,
+          5.8191941207041964e-05,
+          0.9982378482818604,
+          0.000379459117539227
+        ]
+      ],
+      "accuracy": 1.0,
+      "retention_agreement": 1.0,
+      "success": true,
+      "rollback_required": false,
+      "probability_reload_max_error": 0.0,
+      "fresh_process_verified": true,
+      "writer_initialization_seed": 107,
+      "restoration_valid": false
+    }
+  },
+  "seconds": 19.37212312500924
+}

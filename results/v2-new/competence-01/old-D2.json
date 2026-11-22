@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-D2",
+    "entity": "glockenspiel",
+    "gold": "D",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9988816380500793,
+        0.9991111159324646
+      ],
+      "probabilities": [
+        [
+          0.023895127698779106,
+          0.06495369225740433,
+          0.014493127353489399,
+          0.8966580033302307
+        ],
+        [
+          0.12669305503368378,
+          0.03203301876783371,
+          0.015131328254938126,
+          0.8261424899101257
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument glockenspiel in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic glockenspiel?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "B",
+        "B"
+      ],
+      "choice_mass": [
+        0.9981027841567993,
+        0.997442364692688
+      ],
+      "probabilities": [
+        [
+          0.05440012365579605,
+          0.8509611487388611,
+          0.03299534320831299,
+          0.06164341792464256
+        ],
+        [
+          0.022886592894792557,
+          0.8588131070137024,
+          0.015729710459709167,
+          0.10257060080766678
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional glockenspiel?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional glockenspiel.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": false
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9971533417701721,
+        0.996006965637207
+      ],
+      "probabilities": [
+        [
+          0.12791486084461212,
+          0.08791451156139374,
+          0.5732746124267578,
+          0.21089595556259155
+        ],
+        [
+          0.05988217145204544,
+          0.09872900694608688,
+          0.7295141816139221,
+          0.11187463253736496
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional glockenspiel?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional glockenspiel.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "legacy_source": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9992204904556274,
+        0.9991808533668518
+      ],
+      "probabilities": [
+        [
+          0.03901411592960358,
+          0.008705226704478264,
+          0.06432340294122696,
+          0.8879572153091431
+        ],
+        [
+          0.031340595334768295,
+          0.08519256860017776,
+          0.07518217712640762,
+          0.80828458070755
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a glockenspiel?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the glockenspiel, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": true
+    }
+  },
+  "free_answer": "B",
+  "physical_description": "The traditional glockenspiel produces sound by striking the metal bars with mallets."
+}

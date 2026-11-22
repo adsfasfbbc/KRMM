@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-B1",
+    "entity": "clarinet",
+    "gold": "B",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "B",
+        "B"
+      ],
+      "choice_mass": [
+        0.9991173148155212,
+        0.9993587732315063
+      ],
+      "probabilities": [
+        [
+          0.00075287907384336,
+          0.9959024786949158,
+          0.001166081870906055,
+          0.002178527880460024
+        ],
+        [
+          0.004509071819484234,
+          0.9736883044242859,
+          0.00954570434987545,
+          0.012256926856935024
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument clarinet in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic clarinet?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "B",
+        "B"
+      ],
+      "choice_mass": [
+        0.9986648559570312,
+        0.9978048205375671
+      ],
+      "probabilities": [
+        [
+          0.006608288735151291,
+          0.9807569980621338,
+          0.005146540701389313,
+          0.007488171570003033
+        ],
+        [
+          0.005129065830260515,
+          0.9774268865585327,
+          0.0065858508460223675,
+          0.010858233086764812
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional clarinet?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional clarinet.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "B",
+        "B"
+      ],
+      "choice_mass": [
+        0.9983221888542175,
+        0.9965866208076477
+      ],
+      "probabilities": [
+        [
+          0.005797188729047775,
+          0.008434860035777092,
+          0.010830575600266457,
+          0.9749372601509094
+        ],
+        [
+          0.030421646311879158,
+          0.023692401126027107,
+          0.0568351149559021,
+          0.8890508413314819
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional clarinet?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional clarinet.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "legacy_source": {
+      "predictions": [
+        "B",
+        "B"
+      ],
+      "choice_mass": [
+        0.9996333122253418,
+        0.9992789030075073
+      ],
+      "probabilities": [
+        [
+          0.0013052149442955852,
+          0.9837460517883301,
+          0.010928431525826454,
+          0.004020345397293568
+        ],
+        [
+          0.0014786369865760207,
+          0.9835030436515808,
+          0.007509137503802776,
+          0.007509137503802776
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a clarinet?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the clarinet, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": true
+    }
+  },
+  "free_answer": "B",
+  "physical_description": "The traditional clarinet produces sound by blowing air through the mouthpiece, which vibrates the reed and causes the air to vibrate in the air column inside the instrument. This vibration creates a series of overtones, which are higher-pitched sounds that are produced when the air column vibrates at different frequencies. The"
+}

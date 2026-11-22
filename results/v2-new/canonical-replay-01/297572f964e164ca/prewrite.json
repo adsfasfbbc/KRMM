@@ -1,0 +1,122 @@
+{
+  "unit": {
+    "uid": "297572f964e164ca",
+    "entity": "ngoma",
+    "split": "dev"
+  },
+  "eligible": true,
+  "source": "results/v2-new/association24-dev-01",
+  "gold_evaluator_only": "C",
+  "candidate": null,
+  "structured": {
+    "compatible": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "paths": [],
+    "conflict": false,
+    "invalid_atoms": [],
+    "ambiguous": true,
+    "candidate": null,
+    "reconstruction_type": "insufficient_or_conflicting"
+  },
+  "facts": [
+    {
+      "entity": "ngoma",
+      "attribute": "primary_oscillator",
+      "value": "unknown",
+      "modality": "internal_text",
+      "source_id": "probe_1",
+      "provenance_group": "damaged-model",
+      "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+      "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+      "polarity": false,
+      "conflict": false
+    },
+    {
+      "entity": "ngoma",
+      "attribute": "resonator",
+      "value": "wooden_body",
+      "modality": "internal_text",
+      "source_id": "probe_1",
+      "provenance_group": "damaged-model",
+      "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+      "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+      "polarity": false,
+      "conflict": false
+    }
+  ],
+  "normalization_traces": [
+    {
+      "source_id": "probe_0",
+      "normalizations": [
+        {
+          "attribute": "primary_oscillator",
+          "raw_value": "wooden frame",
+          "canonical_value": "wooden_frame"
+        },
+        {
+          "attribute": "resonator",
+          "raw_value": "wooden frame",
+          "canonical_value": "wooden_frame"
+        }
+      ],
+      "errors": [
+        "unsupported semantic atom",
+        "unsupported semantic atom"
+      ],
+      "facts": []
+    },
+    {
+      "source_id": "probe_1",
+      "normalizations": [],
+      "errors": [],
+      "facts": [
+        {
+          "entity": "ngoma",
+          "attribute": "primary_oscillator",
+          "value": "unknown",
+          "modality": "internal_text",
+          "source_id": "probe_1",
+          "provenance_group": "damaged-model",
+          "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+          "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+          "polarity": false,
+          "conflict": false
+        },
+        {
+          "entity": "ngoma",
+          "attribute": "resonator",
+          "value": "wooden_body",
+          "modality": "internal_text",
+          "source_id": "probe_1",
+          "provenance_group": "damaged-model",
+          "span": "The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body.",
+          "raw_text": "The traditional musical instrument named ngoma is excited by the vibration of the player's hands or the instrument itself. The physical facts of how the ngoma is excited and what resonates involve the following:\n\n1. **Hand Position and Movement**: The player typically holds the ngoma with both hands, with the fingers positioned on the strings or the wooden body. The",
+          "polarity": false,
+          "conflict": false
+        }
+      ]
+    }
+  ],
+  "features": [
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.5
+  ],
+  "feature_names": [
+    "support",
+    "ambiguity",
+    "conflict",
+    "key_sensitivity",
+    "sham_stability",
+    "provenance"
+  ],
+  "candidate_change": 0,
+  "mode": "P0 engineering; not G1"
+}

@@ -282,3 +282,249 @@ Design: same32 development entities, same private wrong-target schedule, per-bra
 Results: {"independent_units": 6, "survey_units": 32, "clean_mastery_rate": 0.3125, "damage_eligibility_rate": 0.6, "oracle_success_rate": 1.0, "oracle_strict_restorations": 3, "retention_agreement": 1.0, "split_verified": true, "no_inverse_shortcut": true, "candidate_accuracy_structured_all_eligible": 0.3333333333333333, "candidate_coverage_structured": 0.6666666666666666, "candidate_accuracy_generative": 0.6666666666666666, "resources": {"decoder_tokens_processed": 1134957, "model_forward_calls": 5621, "query_calls": 190, "tokens": 22393, "peak_vram_gb": 11.157513618469238}, "status": "P0 conditional factorial; G0 mastery failure not overridden", "assignment_source": "results/v2-new/association24-dev-01", "writer_seed_every_branch": 107}
 
 Analysis: raw mastery remains below75%; this is conditional damage/writeability evidence only. G0FAIL, G1 remainsblocked. Fresh-process probabilities and strict original-heldout restoration are recorded per unit.
+
+## balanced-association24-01 — conditional randomization control
+Qualification uses only clean screen0/1. Rejection sampler accepted draw15; realizedA2/B3/C3/D2, >=2truth classes per wrongtarget, optimistically fitted inverse60%. All10qualified became effective/local under original12 retention prompts; no attrition, so target balance survived damage eligibility. Structured correct4/10(5candidates), generative6/10, oracle operational success8/10, originally independently mastered restorations5/10 before new locality audit. No affirmative G1 evidence.
+
+## Final audit plan
+Reproduce compact damage LoRA for five corrected cells, compare exact merged tensor SHA against original saved damage, and reload/merge saved adapter again. Never call an approximate reconstruction exact. Then audit all legacy/corrected branches using82per-target controls (62neighbor +20toy general) held out from KL. Freeze A: candidate_change selector at50% for both generation methods, identical seeded writer; B: same structured candidates/writer comparing candidate_change vs ERE/full LOOCV. All analysis remainsP0 exploratory because G0failed; no calibration/test queried and no formal calibration artifact produced.
+
+## v02-compact-damage-01 — exact portable damage reconstruction
+Five corrected cells contain41 eligible unit-config cases (at most10 independent entities). Recreated every damage-only LoRA with original wrong target, mode/strength,seed107 and12clean retention prompts. Merged tensor SHA matched all41 original saved damaged states; serialized adapters were unloaded, reloaded and merged again, and all41 still matched. This proves portable reconstruction on the same environment, not cross-model transfer or G3.
+
+## v02-independent-locality-01 — scientific G0 FAIL
+Audited81 unit-config cases across9 historical/corrected cells, at most10 independent new entities. Each target excluded from its own controls:62 neighbor questions +20 elementary general controls, all held out from KL training. Corrected cells damage-locality pass:association24 0/10,association48 0/10,uniform24 0/5,uniform48 1/6,balancedassociation24 0/10. Uniform repaired variants all failed independent locality. Original12 training-retention agreement was often1.0, but does not establish independent locality. Strict restorations require original heldout mastery, operational success, independent damage locality and independent repair locality; none can be counted across41 corrected unit-config cases. This invalidates repair claims under this benchmark, not proof that knowledge is permanently irreparable. No G1/cal/test or real-media stages launched.
+
+## Analysis parser failure — preserved
+First final analysis failed because controls.json is a list while per-unit audit records are objects. No model execution occurred. Add object-type guard when selecting audit records, preserve failure receipt and source5886a23, rerun uniquely named output directories. Raw predictions/metrics unchanged.
+
+
+<!-- KRMM_V02_FINAL_APPENDIX -->
+
+# v0.2 最终逐次启动索引
+
+所有失败均保留；详细设计在前述协议/实验段落，原始stdout/stderr见docs/v2/run-logs.tar.gz。
+
+| 启动标签 | 假设/设计 | 结果 | 秒 | 源码SHA |
+|---|---|---|---:|---|
+|v02-cpu-audit-01|H0-typed-evidence-contracts|SUCCEEDED|6.002|1aacf2d897a7|
+|v02-survey-dev-01|H0-new-entity-mastery|FAILED|11.002|9a7300228474|
+|v02-survey-dev-02|H0-new-entity-mastery|SUCCEEDED|14.003|386946669867|
+|v02-competence-01|H0-label-wording-vs-entity-knowledge|SUCCEEDED|34.007|6c1d91e46d51|
+|v02-association24-dev-01|H0-random-damage-conditional-writeability|SUCCEEDED|365.09|cd1624b459d5|
+|v02-canonical-replay-01|H0-typed-normalization-same-damage|SUCCEEDED|234.069|52fef43550fb|
+|v02-cpu-audit-02|H0-public-service-boundary|SUCCEEDED|6.002|359eedf26597|
+|v02-analysis-01|H0-dev-descriptive-reliability|SUCCEEDED|2.001|359eedf26597|
+|paired-association24-01|H0-paired-damage-factorial|SUCCEEDED|371.081|359eedf26597|
+|paired-association48-01|H0-paired-damage-factorial|SUCCEEDED|384.056|359eedf26597|
+|v02-physics-RED|H0-physical-constraint-validity|FAILED|1.001|fde3a82f8d72|
+|v02-physics-GREEN|H0-physical-constraint-validity|FAILED|1.001|eba65e497417|
+|v02-cpu-audit-03|H0-public-service-boundary|FAILED|1.001|eba65e497417|
+|v02-physics-GREEN-02|H0-physical-constraint-validity|SUCCEEDED|1.001|fbdd5091e270|
+|v02-cpu-audit-04|H0-public-service-boundary|SUCCEEDED|6.002|fbdd5091e270|
+|paired-association24-02|H0-physical-paired-damage-factorial|SUCCEEDED|369.05|fbdd5091e270|
+|paired-association48-02|H0-physical-paired-damage-factorial|SUCCEEDED|382.052|fbdd5091e270|
+|paired-uniform24-02|H0-physical-paired-damage-factorial|SUCCEEDED|207.029|fbdd5091e270|
+|paired-uniform48-02|H0-physical-paired-damage-factorial|SUCCEEDED|260.043|fbdd5091e270|
+|balanced-association24-01|H0-conditional-balanced-randomization|SUCCEEDED|355.06|ed5ea6fa633d|
+|v02-compact-damage-01|H0-exact-portable-damage-reconstruction|SUCCEEDED|223.036|5886a23610f8|
+|v02-independent-locality-01|H0-independent-nontarget-locality|SUCCEEDED|208.036|90fcb775dec4|
+|analysis-paired-association24-02|H0-descriptive-generation-selection-isolation|FAILED|1.001|90fcb775dec4|
+|analysis-final-paired-association24-02|H0-descriptive-generation-selection-isolation|SUCCEEDED|2.001|31f9d17d686f|
+|analysis-final-paired-association48-02|H0-descriptive-generation-selection-isolation|SUCCEEDED|2.002|31f9d17d686f|
+|analysis-final-paired-uniform24-02|H0-descriptive-generation-selection-isolation|SUCCEEDED|2.001|31f9d17d686f|
+|analysis-final-paired-uniform48-02|H0-descriptive-generation-selection-isolation|SUCCEEDED|3.001|31f9d17d686f|
+|analysis-final-balanced-association24-01|H0-descriptive-generation-selection-isolation|SUCCEEDED|2.001|31f9d17d686f|
+
+# 修订版逐单元设计、结果与分析
+
+共同设计：新开发实体；独立错误目标；rank8最后4层；writer seed107、32步、12条KL保留。原操作性结果与独立审计分开，未根据独立审计重新选择训练超参。
+
+## paired-association24-02
+
+| 实体/记录 | 筛查掌握 | 原始独立正确率 | 原操作性资格 | 结构化/生成候选 | Oracle操作成功 | 分析 |
+|---|---:|---:|---|---|---|---|
+|[nkangala](results/v2-new/paired-association24-02/01115bbe019c197a.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[chipendani](results/v2-new/paired-association24-02/039b3187d454e68f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[inanga](results/v2-new/paired-association24-02/0a017e2878a3307f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[atwreshie](results/v2-new/paired-association24-02/0a712ba814e85a17.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[jingle ring](results/v2-new/paired-association24-02/0b7ed182007d45ef.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[gandira](results/v2-new/paired-association24-02/0dbead561e097cb4.json)|1.0|0.0|True|None/C|True|损伤独立局部性未过|
+|[chiboni](results/v2-new/paired-association24-02/0dcca257dc08b6f5.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[valiha](results/v2-new/paired-association24-02/1266a78769752bf1.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[hurdy-gurdy](results/v2-new/paired-association24-02/1386178acfc8171c.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[gusle](results/v2-new/paired-association24-02/1605d3da214891eb.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[svirala](results/v2-new/paired-association24-02/16077b130ac30acc.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[dobachi](results/v2-new/paired-association24-02/160a362326b9cca7.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Lobi whistle](results/v2-new/paired-association24-02/16a5abe3c333c14b.json)|1.0|1.0|True|None/D|False|损伤独立局部性未过|
+|[mbiu](results/v2-new/paired-association24-02/182a086a1e48803e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[akukuadwo](results/v2-new/paired-association24-02/198481c123964c13.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Anglo concertina](results/v2-new/paired-association24-02/1bb8d48beb7f2eee.json)|1.0|1.0|True|None/B|True|损伤独立局部性未过|
+|[shudraga](results/v2-new/paired-association24-02/1cf12949776ae646.json)|1.0|0.5|True|A/A|True|损伤独立局部性未过|
+|[tsenatsil](results/v2-new/paired-association24-02/1d4740684ee819e1.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[yueqin](results/v2-new/paired-association24-02/1d688445d1a4ad35.json)|1.0|1.0|True|A/A|False|损伤独立局部性未过|
+|[harmonium](results/v2-new/paired-association24-02/203c6e605e81393e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[turu](results/v2-new/paired-association24-02/2184165bbaa70526.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[kā’eke’eke](results/v2-new/paired-association24-02/224594a5bdae4542.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[nagara](results/v2-new/paired-association24-02/228430a2d2e3cd1c.json)|1.0|0.0|True|A/D|False|损伤独立局部性未过|
+|[mukupela](results/v2-new/paired-association24-02/22d377519ec18a1d.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[tangi](results/v2-new/paired-association24-02/24a6e418b5c840d4.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[firikyiwa](results/v2-new/paired-association24-02/258b8707ed731e05.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[hwamanda](results/v2-new/paired-association24-02/2714bfcc0e2fc9c8.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[cajón](results/v2-new/paired-association24-02/2779987edac99a31.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[cuica](results/v2-new/paired-association24-02/2974ce8d84473269.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[ngoma](results/v2-new/paired-association24-02/297572f964e164ca.json)|1.0|0.0|True|A/A|True|损伤独立局部性未过|
+|[‘ili’ili](results/v2-new/paired-association24-02/2e4033d870a8c85f.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[agogô](results/v2-new/paired-association24-02/3800bbd8f0956b62.json)|0.0|—|False|—/—|—|not_stably_mastered|
+
+## paired-association48-02
+
+| 实体/记录 | 筛查掌握 | 原始独立正确率 | 原操作性资格 | 结构化/生成候选 | Oracle操作成功 | 分析 |
+|---|---:|---:|---|---|---|---|
+|[nkangala](results/v2-new/paired-association48-02/01115bbe019c197a.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[chipendani](results/v2-new/paired-association48-02/039b3187d454e68f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[inanga](results/v2-new/paired-association48-02/0a017e2878a3307f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[atwreshie](results/v2-new/paired-association48-02/0a712ba814e85a17.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[jingle ring](results/v2-new/paired-association48-02/0b7ed182007d45ef.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[gandira](results/v2-new/paired-association48-02/0dbead561e097cb4.json)|1.0|0.0|True|None/A|True|损伤独立局部性未过|
+|[chiboni](results/v2-new/paired-association48-02/0dcca257dc08b6f5.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[valiha](results/v2-new/paired-association48-02/1266a78769752bf1.json)|1.0|1.0|True|None/A|False|损伤独立局部性未过|
+|[hurdy-gurdy](results/v2-new/paired-association48-02/1386178acfc8171c.json)|1.0|1.0|True|A/C|False|损伤独立局部性未过|
+|[gusle](results/v2-new/paired-association48-02/1605d3da214891eb.json)|1.0|1.0|True|A/A|False|损伤独立局部性未过|
+|[svirala](results/v2-new/paired-association48-02/16077b130ac30acc.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[dobachi](results/v2-new/paired-association48-02/160a362326b9cca7.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Lobi whistle](results/v2-new/paired-association48-02/16a5abe3c333c14b.json)|1.0|1.0|True|None/D|False|损伤独立局部性未过|
+|[mbiu](results/v2-new/paired-association48-02/182a086a1e48803e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[akukuadwo](results/v2-new/paired-association48-02/198481c123964c13.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Anglo concertina](results/v2-new/paired-association48-02/1bb8d48beb7f2eee.json)|1.0|1.0|True|None/B|True|损伤独立局部性未过|
+|[shudraga](results/v2-new/paired-association48-02/1cf12949776ae646.json)|1.0|0.5|True|A/A|True|损伤独立局部性未过|
+|[tsenatsil](results/v2-new/paired-association48-02/1d4740684ee819e1.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[yueqin](results/v2-new/paired-association48-02/1d688445d1a4ad35.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[harmonium](results/v2-new/paired-association48-02/203c6e605e81393e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[turu](results/v2-new/paired-association48-02/2184165bbaa70526.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[kā’eke’eke](results/v2-new/paired-association48-02/224594a5bdae4542.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[nagara](results/v2-new/paired-association48-02/228430a2d2e3cd1c.json)|1.0|0.0|True|A/D|False|损伤独立局部性未过|
+|[mukupela](results/v2-new/paired-association48-02/22d377519ec18a1d.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[tangi](results/v2-new/paired-association48-02/24a6e418b5c840d4.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[firikyiwa](results/v2-new/paired-association48-02/258b8707ed731e05.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[hwamanda](results/v2-new/paired-association48-02/2714bfcc0e2fc9c8.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[cajón](results/v2-new/paired-association48-02/2779987edac99a31.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[cuica](results/v2-new/paired-association48-02/2974ce8d84473269.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[ngoma](results/v2-new/paired-association48-02/297572f964e164ca.json)|1.0|0.0|True|None/D|True|损伤独立局部性未过|
+|[‘ili’ili](results/v2-new/paired-association48-02/2e4033d870a8c85f.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[agogô](results/v2-new/paired-association48-02/3800bbd8f0956b62.json)|0.0|—|False|—/—|—|not_stably_mastered|
+
+## paired-uniform24-02
+
+| 实体/记录 | 筛查掌握 | 原始独立正确率 | 原操作性资格 | 结构化/生成候选 | Oracle操作成功 | 分析 |
+|---|---:|---:|---|---|---|---|
+|[nkangala](results/v2-new/paired-uniform24-02/01115bbe019c197a.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[chipendani](results/v2-new/paired-uniform24-02/039b3187d454e68f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[inanga](results/v2-new/paired-uniform24-02/0a017e2878a3307f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[atwreshie](results/v2-new/paired-uniform24-02/0a712ba814e85a17.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[jingle ring](results/v2-new/paired-uniform24-02/0b7ed182007d45ef.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[gandira](results/v2-new/paired-uniform24-02/0dbead561e097cb4.json)|1.0|0.0|False|—/—|—|damage_not_local_or_effective|
+|[chiboni](results/v2-new/paired-uniform24-02/0dcca257dc08b6f5.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[valiha](results/v2-new/paired-uniform24-02/1266a78769752bf1.json)|1.0|1.0|True|None/A|True|损伤独立局部性未过|
+|[hurdy-gurdy](results/v2-new/paired-uniform24-02/1386178acfc8171c.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[gusle](results/v2-new/paired-uniform24-02/1605d3da214891eb.json)|1.0|1.0|False|—/—|—|damage_not_local_or_effective|
+|[svirala](results/v2-new/paired-uniform24-02/16077b130ac30acc.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[dobachi](results/v2-new/paired-uniform24-02/160a362326b9cca7.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Lobi whistle](results/v2-new/paired-uniform24-02/16a5abe3c333c14b.json)|1.0|1.0|False|—/—|—|damage_not_local_or_effective|
+|[mbiu](results/v2-new/paired-uniform24-02/182a086a1e48803e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[akukuadwo](results/v2-new/paired-uniform24-02/198481c123964c13.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Anglo concertina](results/v2-new/paired-uniform24-02/1bb8d48beb7f2eee.json)|1.0|1.0|True|None/B|True|损伤独立局部性未过|
+|[shudraga](results/v2-new/paired-uniform24-02/1cf12949776ae646.json)|1.0|0.5|True|A/A|True|损伤独立局部性未过|
+|[tsenatsil](results/v2-new/paired-uniform24-02/1d4740684ee819e1.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[yueqin](results/v2-new/paired-uniform24-02/1d688445d1a4ad35.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[harmonium](results/v2-new/paired-uniform24-02/203c6e605e81393e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[turu](results/v2-new/paired-uniform24-02/2184165bbaa70526.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[kā’eke’eke](results/v2-new/paired-uniform24-02/224594a5bdae4542.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[nagara](results/v2-new/paired-uniform24-02/228430a2d2e3cd1c.json)|1.0|0.0|False|—/—|—|damage_not_local_or_effective|
+|[mukupela](results/v2-new/paired-uniform24-02/22d377519ec18a1d.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[tangi](results/v2-new/paired-uniform24-02/24a6e418b5c840d4.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[firikyiwa](results/v2-new/paired-uniform24-02/258b8707ed731e05.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[hwamanda](results/v2-new/paired-uniform24-02/2714bfcc0e2fc9c8.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[cajón](results/v2-new/paired-uniform24-02/2779987edac99a31.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[cuica](results/v2-new/paired-uniform24-02/2974ce8d84473269.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[ngoma](results/v2-new/paired-uniform24-02/297572f964e164ca.json)|1.0|0.0|False|—/—|—|damage_not_local_or_effective|
+|[‘ili’ili](results/v2-new/paired-uniform24-02/2e4033d870a8c85f.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[agogô](results/v2-new/paired-uniform24-02/3800bbd8f0956b62.json)|0.0|—|False|—/—|—|not_stably_mastered|
+
+## paired-uniform48-02
+
+| 实体/记录 | 筛查掌握 | 原始独立正确率 | 原操作性资格 | 结构化/生成候选 | Oracle操作成功 | 分析 |
+|---|---:|---:|---|---|---|---|
+|[nkangala](results/v2-new/paired-uniform48-02/01115bbe019c197a.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[chipendani](results/v2-new/paired-uniform48-02/039b3187d454e68f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[inanga](results/v2-new/paired-uniform48-02/0a017e2878a3307f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[atwreshie](results/v2-new/paired-uniform48-02/0a712ba814e85a17.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[jingle ring](results/v2-new/paired-uniform48-02/0b7ed182007d45ef.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[gandira](results/v2-new/paired-uniform48-02/0dbead561e097cb4.json)|1.0|0.0|True|None/C|True|损伤独立局部性未过|
+|[chiboni](results/v2-new/paired-uniform48-02/0dcca257dc08b6f5.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[valiha](results/v2-new/paired-uniform48-02/1266a78769752bf1.json)|1.0|1.0|True|None/A|True|损伤独立局部性未过|
+|[hurdy-gurdy](results/v2-new/paired-uniform48-02/1386178acfc8171c.json)|1.0|1.0|False|—/—|—|damage_not_local_or_effective|
+|[gusle](results/v2-new/paired-uniform48-02/1605d3da214891eb.json)|1.0|1.0|False|—/—|—|damage_not_local_or_effective|
+|[svirala](results/v2-new/paired-uniform48-02/16077b130ac30acc.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[dobachi](results/v2-new/paired-uniform48-02/160a362326b9cca7.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Lobi whistle](results/v2-new/paired-uniform48-02/16a5abe3c333c14b.json)|1.0|1.0|True|B/B|True|损伤独立局部性未过|
+|[mbiu](results/v2-new/paired-uniform48-02/182a086a1e48803e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[akukuadwo](results/v2-new/paired-uniform48-02/198481c123964c13.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Anglo concertina](results/v2-new/paired-uniform48-02/1bb8d48beb7f2eee.json)|1.0|1.0|False|—/—|—|damage_not_local_or_effective|
+|[shudraga](results/v2-new/paired-uniform48-02/1cf12949776ae646.json)|1.0|0.5|False|—/—|—|damage_not_local_or_effective|
+|[tsenatsil](results/v2-new/paired-uniform48-02/1d4740684ee819e1.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[yueqin](results/v2-new/paired-uniform48-02/1d688445d1a4ad35.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[harmonium](results/v2-new/paired-uniform48-02/203c6e605e81393e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[turu](results/v2-new/paired-uniform48-02/2184165bbaa70526.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[kā’eke’eke](results/v2-new/paired-uniform48-02/224594a5bdae4542.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[nagara](results/v2-new/paired-uniform48-02/228430a2d2e3cd1c.json)|1.0|0.0|True|A/A|True|损伤独立局部性未过|
+|[mukupela](results/v2-new/paired-uniform48-02/22d377519ec18a1d.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[tangi](results/v2-new/paired-uniform48-02/24a6e418b5c840d4.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[firikyiwa](results/v2-new/paired-uniform48-02/258b8707ed731e05.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[hwamanda](results/v2-new/paired-uniform48-02/2714bfcc0e2fc9c8.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[cajón](results/v2-new/paired-uniform48-02/2779987edac99a31.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[cuica](results/v2-new/paired-uniform48-02/2974ce8d84473269.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[ngoma](results/v2-new/paired-uniform48-02/297572f964e164ca.json)|1.0|0.0|True|A/D|True|损伤局部性通过；写回独立保留未过|
+|[‘ili’ili](results/v2-new/paired-uniform48-02/2e4033d870a8c85f.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[agogô](results/v2-new/paired-uniform48-02/3800bbd8f0956b62.json)|0.0|—|False|—/—|—|not_stably_mastered|
+
+## balanced-association24-01
+
+| 实体/记录 | 筛查掌握 | 原始独立正确率 | 原操作性资格 | 结构化/生成候选 | Oracle操作成功 | 分析 |
+|---|---:|---:|---|---|---|---|
+|[nkangala](results/v2-new/balanced-association24-01/01115bbe019c197a.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[chipendani](results/v2-new/balanced-association24-01/039b3187d454e68f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[inanga](results/v2-new/balanced-association24-01/0a017e2878a3307f.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[atwreshie](results/v2-new/balanced-association24-01/0a712ba814e85a17.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[jingle ring](results/v2-new/balanced-association24-01/0b7ed182007d45ef.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[gandira](results/v2-new/balanced-association24-01/0dbead561e097cb4.json)|1.0|0.0|True|None/C|True|损伤独立局部性未过|
+|[chiboni](results/v2-new/balanced-association24-01/0dcca257dc08b6f5.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[valiha](results/v2-new/balanced-association24-01/1266a78769752bf1.json)|1.0|1.0|True|None/A|True|损伤独立局部性未过|
+|[hurdy-gurdy](results/v2-new/balanced-association24-01/1386178acfc8171c.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[gusle](results/v2-new/balanced-association24-01/1605d3da214891eb.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[svirala](results/v2-new/balanced-association24-01/16077b130ac30acc.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[dobachi](results/v2-new/balanced-association24-01/160a362326b9cca7.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Lobi whistle](results/v2-new/balanced-association24-01/16a5abe3c333c14b.json)|1.0|1.0|True|None/A|False|损伤独立局部性未过|
+|[mbiu](results/v2-new/balanced-association24-01/182a086a1e48803e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[akukuadwo](results/v2-new/balanced-association24-01/198481c123964c13.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[Anglo concertina](results/v2-new/balanced-association24-01/1bb8d48beb7f2eee.json)|1.0|1.0|True|None/C|True|损伤独立局部性未过|
+|[shudraga](results/v2-new/balanced-association24-01/1cf12949776ae646.json)|1.0|0.5|True|A/A|True|损伤独立局部性未过|
+|[tsenatsil](results/v2-new/balanced-association24-01/1d4740684ee819e1.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[yueqin](results/v2-new/balanced-association24-01/1d688445d1a4ad35.json)|1.0|1.0|True|A/A|True|损伤独立局部性未过|
+|[harmonium](results/v2-new/balanced-association24-01/203c6e605e81393e.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[turu](results/v2-new/balanced-association24-01/2184165bbaa70526.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[kā’eke’eke](results/v2-new/balanced-association24-01/224594a5bdae4542.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[nagara](results/v2-new/balanced-association24-01/228430a2d2e3cd1c.json)|1.0|0.0|True|A/A|False|损伤独立局部性未过|
+|[mukupela](results/v2-new/balanced-association24-01/22d377519ec18a1d.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[tangi](results/v2-new/balanced-association24-01/24a6e418b5c840d4.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[firikyiwa](results/v2-new/balanced-association24-01/258b8707ed731e05.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[hwamanda](results/v2-new/balanced-association24-01/2714bfcc0e2fc9c8.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[cajón](results/v2-new/balanced-association24-01/2779987edac99a31.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[cuica](results/v2-new/balanced-association24-01/2974ce8d84473269.json)|0.5|—|False|—/—|—|not_stably_mastered|
+|[ngoma](results/v2-new/balanced-association24-01/297572f964e164ca.json)|1.0|0.0|True|None/D|True|损伤独立局部性未过|
+|[‘ili’ili](results/v2-new/balanced-association24-01/2e4033d870a8c85f.json)|0.0|—|False|—/—|—|not_stably_mastered|
+|[agogô](results/v2-new/balanced-association24-01/3800bbd8f0956b62.json)|0.0|—|False|—/—|—|not_stably_mastered|
+
+## 最终决策
+
+G0 FAIL / PIVOT。新开发掌握率10/32，独立局部性与严格恢复要求未通过。28/30次启动、41例核心损伤精确重建、81例历史/修订保留审计均记录。正式ERE校准、新测试、真实视听与第二模型未启动。详细统计见docs/v2/REPORT.md。完成同步后执行root shutdown；实际观察单列docs/v2/shutdown-observation.json。

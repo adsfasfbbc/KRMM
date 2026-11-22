@@ -1,0 +1,91 @@
+{
+  "status": "P0_EXPLORATORY_G1_BLOCKED",
+  "all_dev_entities": 32,
+  "eligible_entities": 5,
+  "valid_candidates": 3,
+  "correct_candidates": 3,
+  "candidate_accuracy_all_eligible": 0.6,
+  "candidate_gain_vs_generative": -0.4,
+  "candidate_gain_CI95": [
+    -0.8,
+    0.0
+  ],
+  "selection_gain_ERE_LOO_vs_candidate_change": 0.0,
+  "selection_gain_CI95_descriptive": [
+    -0.6,
+    0.6
+  ],
+  "oracle_successes": 5,
+  "oracle_strict_restorations": 4,
+  "minimum_confirmatory_eligible_n_for_10pp_80pct_power": 314,
+  "available_sealed_entities": 151,
+  "ERE_LOO": {
+    "n": 3,
+    "positives": 3,
+    "AUROC": null,
+    "AUPRC": null,
+    "Brier": 0.0
+  },
+  "candidate_change": {
+    "n": 3,
+    "positives": 3,
+    "AUROC": null,
+    "AUPRC": null,
+    "Brier": 0.3333333333333333
+  },
+  "feature_variance_valid": {
+    "support": 0.0,
+    "ambiguity": 0.0,
+    "conflict": 0.0,
+    "key_sensitivity": 0.22222222222222224,
+    "sham_stability": 0.0,
+    "provenance": 0.0030246913580246897
+  },
+  "limitations": [
+    "Dev-only, small sample, failed original mastery gate; no confirmatory inference.",
+    "LOO scores are descriptive, NOT an independently calibrated deployable estimator.",
+    "Bootstrap conditions on learned scores; uncertainty understates model-selection/calibration uncertainty.",
+    "Clean heldout mastery is audited; successful induction from previously wrong clean answers is not called restoration.",
+    "Related entities and museum source correlations limit independence."
+  ],
+  "candidate_generation_isolation": {
+    "structured": {
+      "selector": "candidate_change",
+      "writer_seed": 107,
+      "steps": 32,
+      "budget_coverage": 0.5,
+      "selected": 2,
+      "realized_coverage": 0.4,
+      "persistent_success_rate_all_eligible": 0.4,
+      "strict_independent_restoration_rate_all_eligible": 0.0,
+      "wrong_pseudolabels": 0
+    },
+    "generative": {
+      "selector": "candidate_change",
+      "writer_seed": 107,
+      "steps": 32,
+      "budget_coverage": 0.5,
+      "selected": 2,
+      "realized_coverage": 0.4,
+      "persistent_success_rate_all_eligible": 0.4,
+      "strict_independent_restoration_rate_all_eligible": 0.0,
+      "wrong_pseudolabels": 0
+    }
+  },
+  "candidate_generation_policy_gain": 0.0,
+  "candidate_generation_policy_gain_CI95_descriptive": [
+    -0.8,
+    0.8
+  ],
+  "direct_residual_candidate_correct": 1,
+  "strongest_simple_candidate_accuracy": 1.0,
+  "strict_independent_oracle_restorations": 0,
+  "strict_independent_structured_restorations": 0,
+  "independent_locality_audited": true,
+  "strongest_simple_candidate": "generative_correct",
+  "candidate_gain_vs_strongest_simple": -0.4,
+  "candidate_gain_vs_strongest_simple_CI95": [
+    -0.8,
+    0.0
+  ]
+}

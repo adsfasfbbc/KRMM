@@ -1,0 +1,51 @@
+{
+  "status": "P0_EXPLORATORY_G1_BLOCKED",
+  "all_dev_entities": 32,
+  "eligible_entities": 10,
+  "valid_candidates": 6,
+  "correct_candidates": 5,
+  "candidate_accuracy_all_eligible": 0.5,
+  "candidate_gain_vs_generative": -0.1,
+  "candidate_gain_CI95": [
+    -0.3,
+    0.0
+  ],
+  "selection_gain_ERE_LOO_vs_candidate_change": 0.0,
+  "selection_gain_CI95_descriptive": [
+    -0.3,
+    0.3
+  ],
+  "oracle_successes": 8,
+  "oracle_strict_restorations": 4,
+  "minimum_confirmatory_eligible_n_for_10pp_80pct_power": 128,
+  "available_sealed_entities": 151,
+  "ERE_LOO": {
+    "n": 6,
+    "positives": 5,
+    "AUROC": 0.0,
+    "AUPRC": 0.72,
+    "Brier": 0.20034133694403086
+  },
+  "candidate_change": {
+    "n": 6,
+    "positives": 5,
+    "AUROC": 0.4,
+    "AUPRC": 0.8066666666666668,
+    "Brier": 0.3333333333333333
+  },
+  "feature_variance_valid": {
+    "support": 0.0,
+    "ambiguity": 0.0,
+    "conflict": 0.0,
+    "key_sensitivity": 0.22222222222222224,
+    "sham_stability": 0.0,
+    "provenance": 0.012037037037037039
+  },
+  "limitations": [
+    "Dev-only, small sample, failed original mastery gate; no confirmatory inference.",
+    "LOO scores are descriptive, NOT an independently calibrated deployable estimator.",
+    "Bootstrap conditions on learned scores; uncertainty understates model-selection/calibration uncertainty.",
+    "Clean heldout mastery is audited; successful induction from previously wrong clean answers is not called restoration.",
+    "Related entities and museum source correlations limit independence."
+  ]
+}

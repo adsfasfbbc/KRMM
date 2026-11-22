@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-A2",
+    "entity": "guitar",
+    "gold": "A",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9988685250282288,
+        0.9994143843650818
+      ],
+      "probabilities": [
+        [
+          0.9948887228965759,
+          0.001694912207312882,
+          0.0014957545790821314,
+          0.0019205870339646935
+        ],
+        [
+          0.9856774806976318,
+          0.0027685652021318674,
+          0.004028238356113434,
+          0.007525739725679159
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument guitar in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic guitar?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9981995820999146,
+        0.997352123260498
+      ],
+      "probabilities": [
+        [
+          0.9601197838783264,
+          0.01066596806049347,
+          0.01551889069378376,
+          0.013695373199880123
+        ],
+        [
+          0.9473549127578735,
+          0.02860764041543007,
+          0.013513291254639626,
+          0.010524163022637367
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional guitar?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional guitar.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9978159666061401,
+        0.9962851405143738
+      ],
+      "probabilities": [
+        [
+          0.0012396650854498148,
+          0.9946005344390869,
+          0.0016944212839007378,
+          0.0024653682485222816
+        ],
+        [
+          0.004561547189950943,
+          0.9850198030471802,
+          0.005857141688466072,
+          0.004561547189950943
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional guitar?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional guitar.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "legacy_source": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9995617270469666,
+        0.9991908669471741
+      ],
+      "probabilities": [
+        [
+          0.9826239943504333,
+          0.0013037262251600623,
+          0.00515633774921298,
+          0.010915967635810375
+        ],
+        [
+          0.9174903631210327,
+          0.00481454748660326,
+          0.01904190517961979,
+          0.05865319445729256
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a guitar?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the guitar, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": true
+    }
+  },
+  "free_answer": "A",
+  "physical_description": "The traditional guitar produces sound through the vibration of the strings when they are plucked or strummed. The strings are attached to the body of the guitar, which contains a sound hole and a bridge. When the strings are plucked or strummed, they vibrate and create sound waves that travel through the body"
+}

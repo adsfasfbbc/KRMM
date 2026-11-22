@@ -21,18 +21,36 @@ def loo(X,y):
   pred.append(float(probability(fit_ere(np.array(X)[mask],np.array(y)[mask]),[X[i]])[0]))
  return pred
 def main():
- ap=argparse.ArgumentParser();ap.add_argument("--source",required=True);ap.add_argument("--replay");ap.add_argument("--out",required=True);a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument("--source",required=True);ap.add_argument("--replay");ap.add_argument("--locality");ap.add_argument("--out",required=True);a=ap.parse_args()
  source=Path(a.source);out=Path(a.out);out.mkdir(parents=True,exist_ok=False)
  raw=[json.loads(p.read_text()) for p in source.glob("*.json")]
  raw=[r for r in raw if "unit" in r];eligible=sorted([r for r in raw if r.get("eligible")],key=lambda r:r["unit"]["uid"])
  rep={}
  if a.replay:
   rep={r["unit"]["uid"]:r for p in Path(a.replay).glob("*.json") for r in [json.loads(p.read_text())] if "unit" in r}
+ audit={}
+ if a.locality:
+  for p in Path(a.locality).glob("*.json"):
+   row=json.loads(p.read_text())
+   if isinstance(row,dict) and row.get("source")==str(source) and "uid" in row:audit[row["uid"]]=row
  rs=[]
  for r in eligible:
   d=rep.get(r["unit"]["uid"],{})
   c=d.get("candidate",r["diagnosis"]["candidate"]);phi=d.get("features",r["diagnosis"]["features"]);ev=d.get("repair",r.get("repairs",{}).get("structured",{}))
   rs.append({"uid":r["unit"]["uid"],"entity":r["unit"]["entity"],"candidate":c,"correct":int(c==r["gold_evaluator_only"]),"features":phi,"candidate_change":int(c is not None and c!=r["diagnosis"]["direct_candidate"]),"direct_confidence":max(r["diagnosis"]["direct"][0]),"repair_success":ev.get("success",False),"strict_restoration":ev.get("restoration_valid",False),"bad_pseudolabel":c is not None and c!=r["gold_evaluator_only"],"wrong_retained_write":c is not None and c!=r["gold_evaluator_only"] and not ev.get("rollback_required",True),"generative_correct":int(r["diagnosis"]["generative_candidate"]==r["gold_evaluator_only"]),"oracle_success":d.get("repairs",r["repairs"])["oracle"]["success"],"oracle_restoration":d.get("repairs",r["repairs"])["oracle"].get("restoration_valid",False)})
+ for row,original in zip(rs,eligible):
+  loc=audit.get(row["uid"],{})
+  paired=(rep.get(row["uid"],{}).get("repairs") or original["repairs"])
+  row["direct_correct"]=int(original["diagnosis"]["direct_candidate"]==original["gold_evaluator_only"])
+  row["generative_candidate"]=original["diagnosis"]["generative_candidate"]
+  row["generative_change"]=int(original["diagnosis"]["generative_candidate"]!=original["diagnosis"]["direct_candidate"])
+  row["generative_success"]=paired["generative"]["success"]
+  def strict(branch):
+   ev=paired.get(branch,{})
+   return bool(ev.get("restoration_valid",False) and loc.get("damaged",{}).get("independent_locality_pass",False) and loc.get("repairs",{}).get(branch,{}).get("compared_to_damaged",{}).get("independent_locality_pass",False))
+  row["strict_independent_restoration"]=strict("structured")
+  row["generative_strict_independent_restoration"]=strict("generative")
+  row["oracle_strict_independent_restoration"]=strict("oracle")
  valid=[r for r in rs if r["candidate"] is not None];X=[r["features"] for r in valid];y=[r["correct"] for r in valid]
  ere=loo(X,y) if valid else [];full=loo([x+[r["candidate_change"],r["direct_confidence"]] for x,r in zip(X,valid)],y) if valid else []
  for r,e,f in zip(valid,ere,full):r.update(ere_loo=e,full_loo=f)
@@ -50,6 +68,30 @@ def main():
   acts=select(rs,.5,score);primary[score]=np.array([float(acts[r["uid"]]=="attempt" and r["repair_success"]) for r in rs])
  gain=(primary["ere_loo"]-primary["candidate_change"]).tolist()
  metrics={"status":"P0_EXPLORATORY_G1_BLOCKED","all_dev_entities":len(raw),"eligible_entities":len(rs),"valid_candidates":len(valid),"correct_candidates":sum(y),"candidate_accuracy_all_eligible":sum(y)/max(1,len(rs)),"candidate_gain_vs_generative":float(np.mean(delta)) if delta else None,"candidate_gain_CI95":ci(delta),"selection_gain_ERE_LOO_vs_candidate_change":float(np.mean(gain)) if gain else None,"selection_gain_CI95_descriptive":ci(gain),"oracle_successes":sum(r["oracle_success"] for r in rs),"oracle_strict_restorations":sum(r["oracle_restoration"] for r in rs),"minimum_confirmatory_eligible_n_for_10pp_80pct_power":required,"available_sealed_entities":151,"ERE_LOO":metric(y,ere),"candidate_change":metric(y,[r["candidate_change"] for r in valid]),"feature_variance_valid":dict(zip(FEATURES,np.var(X,axis=0).tolist())) if valid else {},"limitations":["Dev-only, small sample, failed original mastery gate; no confirmatory inference.","LOO scores are descriptive, NOT an independently calibrated deployable estimator.","Bootstrap conditions on learned scores; uncertainty understates model-selection/calibration uncertainty.","Clean heldout mastery is audited; successful induction from previously wrong clean answers is not called restoration.","Related entities and museum source correlations limit independence."]}
+ generation_policies={}
+ generation_arrays={}
+ for method in ["structured","generative"]:
+  policy_rows=[dict(r,candidate=r["candidate"] if method=="structured" else r["generative_candidate"],candidate_change=r["candidate_change"] if method=="structured" else r["generative_change"]) for r in rs]
+  actions=select(policy_rows,.5,"candidate_change")
+  chosen=[r for r in rs if actions[r["uid"]]=="attempt"]
+  successes=[float(actions[r["uid"]]=="attempt" and r["repair_success" if method=="structured" else "generative_success"]) for r in rs]
+  strict_successes=[float(actions[r["uid"]]=="attempt" and r["strict_independent_restoration" if method=="structured" else "generative_strict_independent_restoration"]) for r in rs]
+  generation_arrays[method]=successes
+  generation_policies[method]={"selector":"candidate_change","writer_seed":107,"steps":32,"budget_coverage":.5,"selected":len(chosen),"realized_coverage":len(chosen)/max(1,len(rs)),"persistent_success_rate_all_eligible":sum(successes)/max(1,len(rs)),"strict_independent_restoration_rate_all_eligible":sum(strict_successes)/max(1,len(rs)),"wrong_pseudolabels":sum(r["bad_pseudolabel"] if method=="structured" else not r["generative_correct"] for r in chosen)}
+ generation_delta=(np.array(generation_arrays["structured"])-np.array(generation_arrays["generative"])).tolist()
+ metrics["candidate_generation_isolation"]=generation_policies
+ metrics["candidate_generation_policy_gain"]=float(np.mean(generation_delta)) if generation_delta else None
+ metrics["candidate_generation_policy_gain_CI95_descriptive"]=ci(generation_delta)
+ metrics["direct_residual_candidate_correct"]=sum(r["direct_correct"] for r in rs)
+ metrics["strongest_simple_candidate_accuracy"]=max(sum(r["direct_correct"] for r in rs),sum(r["generative_correct"] for r in rs))/max(1,len(rs))
+ metrics["strict_independent_oracle_restorations"]=sum(r["oracle_strict_independent_restoration"] for r in rs)
+ metrics["strict_independent_structured_restorations"]=sum(r["strict_independent_restoration"] for r in rs)
+ metrics["independent_locality_audited"]=bool(a.locality)
+ strongest="direct_correct" if sum(r["direct_correct"] for r in rs)>sum(r["generative_correct"] for r in rs) else "generative_correct"
+ strong_delta=[r["correct"]-r[strongest] for r in rs]
+ metrics["strongest_simple_candidate"]=strongest
+ metrics["candidate_gain_vs_strongest_simple"]=float(np.mean(strong_delta)) if strong_delta else None
+ metrics["candidate_gain_vs_strongest_simple_CI95"]=ci(strong_delta)
  dump(out/"metrics.json",metrics);dump(out/"rows.json",rs);dump(out/"risk-curves.json",curves)
  import matplotlib
  matplotlib.use("Agg")

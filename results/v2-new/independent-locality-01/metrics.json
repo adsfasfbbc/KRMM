@@ -1,0 +1,98 @@
+{
+  "status": "P0 additional independently held-out-from-KL audit; original metrics unchanged",
+  "summary": {
+    "association24-dev-01": {
+      "eligible_units": 10,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 2,
+        "generative": 3,
+        "structured": 1
+      }
+    },
+    "canonical-replay-01": {
+      "eligible_units": 10,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 2,
+        "generative": 4,
+        "structured": 1
+      }
+    },
+    "paired-association24-01": {
+      "eligible_units": 10,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 2,
+        "generative": 3,
+        "structured": 4
+      }
+    },
+    "paired-association48-01": {
+      "eligible_units": 10,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 3,
+        "generative": 5,
+        "structured": 3
+      }
+    },
+    "paired-association24-02": {
+      "eligible_units": 10,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 2,
+        "generative": 3,
+        "structured": 2
+      }
+    },
+    "paired-association48-02": {
+      "eligible_units": 10,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 3,
+        "generative": 5,
+        "structured": 1
+      }
+    },
+    "paired-uniform24-02": {
+      "eligible_units": 5,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 0,
+        "generative": 0,
+        "structured": 0
+      }
+    },
+    "paired-uniform48-02": {
+      "eligible_units": 6,
+      "damage_independent_locality_pass": 1,
+      "repair_independent_locality_pass": {
+        "oracle": 0,
+        "generative": 0,
+        "structured": 0
+      }
+    },
+    "balanced-association24-01": {
+      "eligible_units": 10,
+      "damage_independent_locality_pass": 0,
+      "repair_independent_locality_pass": {
+        "oracle": 2,
+        "generative": 4,
+        "structured": 2
+      }
+    }
+  },
+  "resources": {
+    "decoder_tokens_processed": 2086128,
+    "model_forward_calls": 3267,
+    "query_calls": 0,
+    "tokens": 0,
+    "peak_vram_gb": 11.157513618469238
+  },
+  "limitations": [
+    "Toy general controls, not broad capability evaluation.",
+    "Neighbor entities are existing newdev only; no calibration/test queried.",
+    "Top-token agreement can preserve wrong baseline behavior; accuracy drops also reported."
+  ]
+}

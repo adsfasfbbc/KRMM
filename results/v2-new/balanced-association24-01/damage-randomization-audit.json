@@ -1,0 +1,34 @@
+{
+  "design": "Uniform independent wrong targets conditioned on balanced class counts and >=2 truth classes per wrong class; evaluator-only rejection sampling. No candidate/repair outcomes used.",
+  "qualification": "clean screen0/1 only",
+  "qualified_n": 10,
+  "counts": {
+    "B": 3,
+    "A": 2,
+    "C": 3,
+    "D": 2
+  },
+  "confusion_wrong_to_truth": {
+    "A": {
+      "B": 1,
+      "C": 1
+    },
+    "B": {
+      "C": 1,
+      "A": 2
+    },
+    "C": {
+      "A": 2,
+      "B": 1
+    },
+    "D": {
+      "A": 1,
+      "C": 1
+    }
+  },
+  "no_deterministic_inverse": true,
+  "best_in_sample_inverse_accuracy": 0.6,
+  "fixed_cyclic_rule": false,
+  "sampling_attempts": 15,
+  "limitations": "Balance is pre-damage among qualified attempts; effectiveness/locality attrition must still be audited separately."
+}

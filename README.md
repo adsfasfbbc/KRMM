@@ -1,3 +1,12 @@
+<!-- KRMM_V02_RELEASE -->
+# KRMM v0.2：本批结论 PIVOT / G0 FAIL
+
+[本批报告](docs/v2/REPORT.md) · [统一日志](EXPERIMENTS.md) · [复现](docs/v2/REPRODUCE.md)
+
+新开发集掌握10/32；独立保留审计未支持可靠局部修复，确认性测试与真实视听阶段未启动。实现与完整失败记录保留。Built with Qwen；模型适配器许可见[Qwen研究许可](docs/v2/QWEN_RESEARCH_LICENSE.txt)和[Notice](docs/v2/Notice)。
+
+---
+
 # KRMM：知识可修复性诊断与选择性修复
 
 已完成可运行的 v0.1 科研原型与 **20 次受控实验运行**。任务范围是多模态模型中的乐器声源知识；当前研究结论为 **PIVOT**，尚未获得 G1–G3 或创新性验证。

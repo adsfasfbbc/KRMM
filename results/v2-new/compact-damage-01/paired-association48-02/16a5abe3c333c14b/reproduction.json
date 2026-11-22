@@ -1,0 +1,30 @@
+{
+  "source": "results/v2-new/paired-association48-02",
+  "uid": "16a5abe3c333c14b",
+  "entity": "Lobi whistle",
+  "expected_state_sha256": "c9009756e4ba5e6031ae0bde7d35c42c731a5a5e4dc73f6ffdbf8d01957aecfe",
+  "reproduced_state_sha256": "c9009756e4ba5e6031ae0bde7d35c42c731a5a5e4dc73f6ffdbf8d01957aecfe",
+  "exact_match": true,
+  "adapter_path": "results/v2-new/compact-damage-01/paired-association48-02/16a5abe3c333c14b/damage-adapter",
+  "config": {
+    "model_path": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+    "revision": "f75b40e3da2003cdd6e1829b1f420ca70797c34e",
+    "seed": 107,
+    "damage_steps": 48,
+    "repair_steps": 32,
+    "lr": 0.0005,
+    "rank": 8,
+    "alpha": 16,
+    "last_layers": 4,
+    "retain_weight": 50.0,
+    "l2_weight": 0.0001,
+    "retain_tolerance": 0.1,
+    "success_accuracy": 0.75,
+    "minimum_gain": 0.5,
+    "probe_budget": 24,
+    "max_new_tokens": 48,
+    "retain_batch_size": 12,
+    "candidate_policy": "symbolic_atoms",
+    "damage_mode": "association"
+  }
+}

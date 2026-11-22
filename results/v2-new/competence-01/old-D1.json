@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-D1",
+    "entity": "marimba",
+    "gold": "D",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "A",
+        "C"
+      ],
+      "choice_mass": [
+        0.9988322854042053,
+        0.9989989399909973
+      ],
+      "probabilities": [
+        [
+          0.4564923644065857,
+          0.02005687542259693,
+          0.16793417930603027,
+          0.35551661252975464
+        ],
+        [
+          0.33763977885246277,
+          0.016810094937682152,
+          0.3825960159301758,
+          0.26295414566993713
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument marimba in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic marimba?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": false
+    },
+    "hs_defined": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9972798824310303,
+        0.9970012307167053
+      ],
+      "probabilities": [
+        [
+          0.16335095465183258,
+          0.08743544667959213,
+          0.3051797151565552,
+          0.4440338611602783
+        ],
+        [
+          0.14192694425582886,
+          0.2651544511318207,
+          0.09754486382007599,
+          0.4953737258911133
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional marimba?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional marimba.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "D",
+        "D"
+      ],
+      "choice_mass": [
+        0.9968756437301636,
+        0.9960877299308777
+      ],
+      "probabilities": [
+        [
+          0.13652212917804718,
+          0.05691089481115341,
+          0.7856306433677673,
+          0.020936347544193268
+        ],
+        [
+          0.11137570440769196,
+          0.1430092304944992,
+          0.7262608408927917,
+          0.019354194402694702
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional marimba?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional marimba.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "legacy_source": {
+      "predictions": [
+        "A",
+        "C"
+      ],
+      "choice_mass": [
+        0.999504804611206,
+        0.9990952014923096
+      ],
+      "probabilities": [
+        [
+          0.8823509812355042,
+          0.009802035056054592,
+          0.04392967000603676,
+          0.06391729414463043
+        ],
+        [
+          0.0958220437169075,
+          0.018868478015065193,
+          0.6248381733894348,
+          0.26047128438949585
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a marimba?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the marimba, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": false
+    }
+  },
+  "free_answer": "D",
+  "physical_description": "The traditional marimba produces sound by striking the keys with mallets."
+}

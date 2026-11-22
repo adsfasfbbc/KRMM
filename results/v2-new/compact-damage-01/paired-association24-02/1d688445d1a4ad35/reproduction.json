@@ -1,0 +1,30 @@
+{
+  "source": "results/v2-new/paired-association24-02",
+  "uid": "1d688445d1a4ad35",
+  "entity": "yueqin",
+  "expected_state_sha256": "ec3938fc0bc83b5f99073dcce0d4f50d7b3d1c39fc1a3d91d85e6758c8aa13e8",
+  "reproduced_state_sha256": "ec3938fc0bc83b5f99073dcce0d4f50d7b3d1c39fc1a3d91d85e6758c8aa13e8",
+  "exact_match": true,
+  "adapter_path": "results/v2-new/compact-damage-01/paired-association24-02/1d688445d1a4ad35/damage-adapter",
+  "config": {
+    "model_path": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+    "revision": "f75b40e3da2003cdd6e1829b1f420ca70797c34e",
+    "seed": 107,
+    "damage_steps": 24,
+    "repair_steps": 32,
+    "lr": 0.0005,
+    "rank": 8,
+    "alpha": 16,
+    "last_layers": 4,
+    "retain_weight": 50.0,
+    "l2_weight": 0.0001,
+    "retain_tolerance": 0.1,
+    "success_accuracy": 0.75,
+    "minimum_gain": 0.5,
+    "probe_budget": 24,
+    "max_new_tokens": 48,
+    "retain_batch_size": 12,
+    "candidate_policy": "symbolic_atoms",
+    "damage_mode": "association"
+  }
+}

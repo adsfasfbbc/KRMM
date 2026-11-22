@@ -1,0 +1,30 @@
+{
+  "eligible_n": 10,
+  "wrong_target_counts": {
+    "A": 2,
+    "B": 1,
+    "C": 2,
+    "D": 5
+  },
+  "conditional_wrong_to_truth": {
+    "A": {
+      "C": 2
+    },
+    "B": {
+      "A": 1
+    },
+    "C": {
+      "A": 2
+    },
+    "D": {
+      "C": 1,
+      "B": 2,
+      "A": 2
+    }
+  },
+  "optimistic_fitted_inverse_accuracy": 0.7,
+  "cyclic_inverse_accuracy": 0.2,
+  "algorithm_fixed_cyclic_mapping": false,
+  "balance_scope": "planned32 labels balanced8each; only10clean-mastered actually damaged, so realized counts must be separately audited",
+  "scope": "descriptive finite-sample bias audit, not evidence of an algorithmic deterministic inverse"
+}

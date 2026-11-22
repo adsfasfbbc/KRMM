@@ -1,0 +1,91 @@
+{
+  "status": "P0_EXPLORATORY_G1_BLOCKED",
+  "all_dev_entities": 32,
+  "eligible_entities": 6,
+  "valid_candidates": 4,
+  "correct_candidates": 2,
+  "candidate_accuracy_all_eligible": 0.3333333333333333,
+  "candidate_gain_vs_generative": -0.3333333333333333,
+  "candidate_gain_CI95": [
+    -0.6666666666666666,
+    0.0
+  ],
+  "selection_gain_ERE_LOO_vs_candidate_change": 0.0,
+  "selection_gain_CI95_descriptive": [
+    0.0,
+    0.0
+  ],
+  "oracle_successes": 6,
+  "oracle_strict_restorations": 3,
+  "minimum_confirmatory_eligible_n_for_10pp_80pct_power": 262,
+  "available_sealed_entities": 151,
+  "ERE_LOO": {
+    "n": 4,
+    "positives": 2,
+    "AUROC": 0.0,
+    "AUPRC": 0.41666666666666663,
+    "Brier": 0.4441990175602621
+  },
+  "candidate_change": {
+    "n": 4,
+    "positives": 2,
+    "AUROC": 0.25,
+    "AUPRC": 0.41666666666666663,
+    "Brier": 0.75
+  },
+  "feature_variance_valid": {
+    "support": 0.0,
+    "ambiguity": 0.0,
+    "conflict": 0.0,
+    "key_sensitivity": 0.0,
+    "sham_stability": 0.0,
+    "provenance": 0.0022916666666666654
+  },
+  "limitations": [
+    "Dev-only, small sample, failed original mastery gate; no confirmatory inference.",
+    "LOO scores are descriptive, NOT an independently calibrated deployable estimator.",
+    "Bootstrap conditions on learned scores; uncertainty understates model-selection/calibration uncertainty.",
+    "Clean heldout mastery is audited; successful induction from previously wrong clean answers is not called restoration.",
+    "Related entities and museum source correlations limit independence."
+  ],
+  "candidate_generation_isolation": {
+    "structured": {
+      "selector": "candidate_change",
+      "writer_seed": 107,
+      "steps": 32,
+      "budget_coverage": 0.5,
+      "selected": 3,
+      "realized_coverage": 0.5,
+      "persistent_success_rate_all_eligible": 0.16666666666666666,
+      "strict_independent_restoration_rate_all_eligible": 0.0,
+      "wrong_pseudolabels": 2
+    },
+    "generative": {
+      "selector": "candidate_change",
+      "writer_seed": 107,
+      "steps": 32,
+      "budget_coverage": 0.5,
+      "selected": 3,
+      "realized_coverage": 0.5,
+      "persistent_success_rate_all_eligible": 0.5,
+      "strict_independent_restoration_rate_all_eligible": 0.0,
+      "wrong_pseudolabels": 0
+    }
+  },
+  "candidate_generation_policy_gain": -0.3333333333333333,
+  "candidate_generation_policy_gain_CI95_descriptive": [
+    -0.6666666666666666,
+    0.0
+  ],
+  "direct_residual_candidate_correct": 1,
+  "strongest_simple_candidate_accuracy": 0.6666666666666666,
+  "strict_independent_oracle_restorations": 0,
+  "strict_independent_structured_restorations": 0,
+  "independent_locality_audited": true,
+  "strongest_simple_candidate": "generative_correct",
+  "candidate_gain_vs_strongest_simple": -0.3333333333333333,
+  "candidate_gain_vs_strongest_simple_CI95": [
+    -0.6666666666666666,
+    0.0
+  ]
+}

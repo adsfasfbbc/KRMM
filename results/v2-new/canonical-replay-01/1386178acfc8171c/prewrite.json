@@ -1,0 +1,169 @@
+{
+  "unit": {
+    "uid": "1386178acfc8171c",
+    "entity": "hurdy-gurdy",
+    "split": "dev"
+  },
+  "eligible": true,
+  "source": "results/v2-new/association24-dev-01",
+  "gold_evaluator_only": "A",
+  "candidate": "A",
+  "structured": {
+    "compatible": [
+      "A"
+    ],
+    "paths": [
+      {
+        "index": 2,
+        "attribute": "primary_oscillator",
+        "value": "tensioned_strings",
+        "source_id": "probe_1",
+        "allowed": [
+          "A"
+        ],
+        "span": "The wheel is attached to a string that is wrapped around a wooden wheel."
+      }
+    ],
+    "conflict": false,
+    "invalid_atoms": [],
+    "ambiguous": false,
+    "candidate": "A",
+    "reconstruction_type": "direct_residual_reaccess"
+  },
+  "facts": [
+    {
+      "entity": "hurdy-gurdy",
+      "attribute": "resonator",
+      "value": "none",
+      "modality": "internal_text",
+      "source_id": "probe_0",
+      "provenance_group": "damaged-model",
+      "span": "The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+      "raw_text": "The traditional musical instrument named hurdy-gurdy generates vibration through a physical component called the wheel. The primary oscillator in a hurdy-gurdy is the wheel, which is a large, flat, and usually wooden disk that is mounted on a shaft. The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+      "polarity": true,
+      "conflict": false
+    },
+    {
+      "entity": "hurdy-gurdy",
+      "attribute": "material",
+      "value": "wood",
+      "modality": "internal_text",
+      "source_id": "probe_0",
+      "provenance_group": "damaged-model",
+      "span": "The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+      "raw_text": "The traditional musical instrument named hurdy-gurdy generates vibration through a physical component called the wheel. The primary oscillator in a hurdy-gurdy is the wheel, which is a large, flat, and usually wooden disk that is mounted on a shaft. The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+      "polarity": true,
+      "conflict": false
+    },
+    {
+      "entity": "hurdy-gurdy",
+      "attribute": "primary_oscillator",
+      "value": "tensioned_strings",
+      "modality": "internal_text",
+      "source_id": "probe_1",
+      "provenance_group": "damaged-model",
+      "span": "The wheel is attached to a string that is wrapped around a wooden wheel.",
+      "raw_text": "The traditional musical instrument named hurdy-gurdy is excited by a wheel, which is turned by hand. The wheel is attached to a string that is wrapped around a wooden wheel. As the wheel is turned, the string is pulled taut, and the sound is produced by the vibration of the string. The sound is resonated by the wooden wheel, which",
+      "polarity": true,
+      "conflict": false
+    },
+    {
+      "entity": "hurdy-gurdy",
+      "attribute": "resonator",
+      "value": "wooden_body",
+      "modality": "internal_text",
+      "source_id": "probe_1",
+      "provenance_group": "damaged-model",
+      "span": "The sound is resonated by the wooden wheel, which",
+      "raw_text": "The traditional musical instrument named hurdy-gurdy is excited by a wheel, which is turned by hand. The wheel is attached to a string that is wrapped around a wooden wheel. As the wheel is turned, the string is pulled taut, and the sound is produced by the vibration of the string. The sound is resonated by the wooden wheel, which",
+      "polarity": true,
+      "conflict": false
+    }
+  ],
+  "normalization_traces": [
+    {
+      "source_id": "probe_0",
+      "normalizations": [],
+      "errors": [
+        "unsupported semantic atom"
+      ],
+      "facts": [
+        {
+          "entity": "hurdy-gurdy",
+          "attribute": "resonator",
+          "value": "none",
+          "modality": "internal_text",
+          "source_id": "probe_0",
+          "provenance_group": "damaged-model",
+          "span": "The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+          "raw_text": "The traditional musical instrument named hurdy-gurdy generates vibration through a physical component called the wheel. The primary oscillator in a hurdy-gurdy is the wheel, which is a large, flat, and usually wooden disk that is mounted on a shaft. The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+          "polarity": true,
+          "conflict": false
+        },
+        {
+          "entity": "hurdy-gurdy",
+          "attribute": "material",
+          "value": "wood",
+          "modality": "internal_text",
+          "source_id": "probe_0",
+          "provenance_group": "damaged-model",
+          "span": "The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+          "raw_text": "The traditional musical instrument named hurdy-gurdy generates vibration through a physical component called the wheel. The primary oscillator in a hurdy-gurdy is the wheel, which is a large, flat, and usually wooden disk that is mounted on a shaft. The wheel is covered with a string that is wound around it, and the player uses a wheel lever to turn",
+          "polarity": true,
+          "conflict": false
+        }
+      ]
+    },
+    {
+      "source_id": "probe_1",
+      "normalizations": [],
+      "errors": [
+        "ungrounded source span"
+      ],
+      "facts": [
+        {
+          "entity": "hurdy-gurdy",
+          "attribute": "primary_oscillator",
+          "value": "tensioned_strings",
+          "modality": "internal_text",
+          "source_id": "probe_1",
+          "provenance_group": "damaged-model",
+          "span": "The wheel is attached to a string that is wrapped around a wooden wheel.",
+          "raw_text": "The traditional musical instrument named hurdy-gurdy is excited by a wheel, which is turned by hand. The wheel is attached to a string that is wrapped around a wooden wheel. As the wheel is turned, the string is pulled taut, and the sound is produced by the vibration of the string. The sound is resonated by the wooden wheel, which",
+          "polarity": true,
+          "conflict": false
+        },
+        {
+          "entity": "hurdy-gurdy",
+          "attribute": "resonator",
+          "value": "wooden_body",
+          "modality": "internal_text",
+          "source_id": "probe_1",
+          "provenance_group": "damaged-model",
+          "span": "The sound is resonated by the wooden wheel, which",
+          "raw_text": "The traditional musical instrument named hurdy-gurdy is excited by a wheel, which is turned by hand. The wheel is attached to a string that is wrapped around a wooden wheel. As the wheel is turned, the string is pulled taut, and the sound is produced by the vibration of the string. The sound is resonated by the wooden wheel, which",
+          "polarity": true,
+          "conflict": false
+        }
+      ]
+    }
+  ],
+  "features": [
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    0.25
+  ],
+  "feature_names": [
+    "support",
+    "ambiguity",
+    "conflict",
+    "key_sensitivity",
+    "sham_stability",
+    "provenance"
+  ],
+  "candidate_change": 0,
+  "mode": "P0 engineering; not G1"
+}

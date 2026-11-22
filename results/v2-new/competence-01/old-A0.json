@@ -1,0 +1,128 @@
+{
+  "unit": {
+    "uid": "old-A0",
+    "entity": "violin",
+    "gold": "A",
+    "split": "old_dev_engineering"
+  },
+  "conditions": {
+    "hs_bare": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9989898800849915,
+        0.9995112419128418
+      ],
+      "probabilities": [
+        [
+          0.9954729676246643,
+          0.0021775884088128805,
+          0.0008527558529749513,
+          0.0014966330491006374
+        ],
+        [
+          0.9942120909690857,
+          0.0019192808540537953,
+          0.0016937595792114735,
+          0.0021748302970081568
+        ]
+      ],
+      "prompts": [
+        "Classify the acoustic instrument violin in the Hornbostel-Sachs family system.\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only.",
+        "Which Hornbostel-Sachs family contains the traditional acoustic violin?\nA: chordophone (string instrument)\nB: aerophone (wind instrument, including free reeds)\nC: membranophone (tensioned membrane instrument)\nD: idiophone (solid body instrument)\nReply with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9984553456306458,
+        0.9973682761192322
+      ],
+      "probabilities": [
+        [
+          0.9837783575057983,
+          0.007511239964514971,
+          0.005162395071238279,
+          0.003548058681190014
+        ],
+        [
+          0.7454468607902527,
+          0.2135740965604782,
+          0.015471255406737328,
+          0.025507787242531776
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional violin?\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional violin.\nA: strings vibrating under tension (chordophone)\nB: wind instrument, air driven, including free reeds (aerophone)\nC: tensioned membrane generating sound (membranophone)\nD: solid body generating sound, not strings or a tensioned membrane (idiophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "hs_defined_permuted": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9977324604988098,
+        0.9967488050460815
+      ],
+      "probabilities": [
+        [
+          0.000801695219706744,
+          0.996225118637085,
+          0.0011664596386253834,
+          0.0018066480988636613
+        ],
+        [
+          0.005155079532414675,
+          0.9823843240737915,
+          0.006619253195822239,
+          0.005841470323503017
+        ]
+      ],
+      "prompts": [
+        "Which of these four acoustic instrument families contains the traditional violin?\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only.",
+        "Choose the acoustic organological family of the traditional violin.\nA: tensioned membrane generating sound (membranophone)\nB: strings vibrating under tension (chordophone)\nC: solid body generating sound, not strings or a tensioned membrane (idiophone)\nD: wind instrument, air driven, including free reeds (aerophone)\nClassify by sound generation, not playing action or the resonating body. Air-driven free reeds are aerophones. A membrane used only as soundboard does not imply membranophone.\nAnswer with one letter only."
+      ],
+      "stable_correct": true
+    },
+    "legacy_source": {
+      "predictions": [
+        "A",
+        "A"
+      ],
+      "choice_mass": [
+        0.9996253252029419,
+        0.9993202090263367
+      ],
+      "probabilities": [
+        [
+          0.9873285293579102,
+          0.001682032598182559,
+          0.008542065508663654,
+          0.0024473429657518864
+        ],
+        [
+          0.9614641070365906,
+          0.006478294264525175,
+          0.01995455101132393,
+          0.012103047221899033
+        ]
+      ],
+      "prompts": [
+        "What primarily vibrates to produce the sound of a violin?\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only.",
+        "For the violin, identify its principal sound-producing vibrating element.\nA: vibrating strings\nB: a vibrating air column\nC: a stretched vibrating membrane\nD: the vibrating solid body itself\nReply with one letter only."
+      ],
+      "stable_correct": true
+    }
+  },
+  "free_answer": "A",
+  "physical_description": "The traditional violin produces sound through the vibration of the strings when they are plucked or bowed. The strings are stretched between the bridge and the fingerboard, and when the bow is moved across the strings, it creates a series of vibrations that are amplified by the body of the violin. The player can control the pitch,"
+}

@@ -1,0 +1,1112 @@
+[
+  {
+    "run_id": "20261122T073830768051Z-5f8e0eb65b",
+    "hypothesis": "H0-typed-evidence-contracts",
+    "gate": "G0",
+    "label": "v02-cpu-audit-01",
+    "repair_reason": null,
+    "started_at": "2026-11-22T07:38:30+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.cpu_audit",
+      "--out",
+      "results/v2-new/cpu-audit-01.json"
+    ],
+    "protocol_sha256": "e98798dc59329ad7e5e00dd0f6bb44a1deaf14a4deb1131acf14845d8aa1c1c4",
+    "git": {
+      "head": "1aacf2d897a71950b24d7dd7711f4c0a0c224e06",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 958,
+    "ended_at": "2026-11-22T07:38:36+00:00",
+    "duration_seconds": 6.002,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "1aacf2d897a71950b24d7dd7711f4c0a0c224e06",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "e98798dc59329ad7e5e00dd0f6bb44a1deaf14a4deb1131acf14845d8aa1c1c4"
+  },
+  {
+    "run_id": "20261122T074336619166Z-40d9111bdc",
+    "hypothesis": "H0-new-entity-mastery",
+    "gate": "G0",
+    "label": "v02-survey-dev-01",
+    "repair_reason": null,
+    "started_at": "2026-11-22T07:43:36+00:00",
+    "status": "FAILED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.survey",
+      "--out",
+      "results/v2-new/survey-dev-01"
+    ],
+    "protocol_sha256": "e98798dc59329ad7e5e00dd0f6bb44a1deaf14a4deb1131acf14845d8aa1c1c4",
+    "git": {
+      "head": "9a7300228474ba326522251865c6be462f55bec4",
+      "status_short": "M EXPERIMENTS.md\n M scripts/v2/deadline_watchdog.py",
+      "diff_stat": "EXPERIMENTS.md                  | 3 +++\n scripts/v2/deadline_watchdog.py | 2 +-\n 2 files changed, 4 insertions(+), 1 deletion(-)"
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 1382,
+    "ended_at": "2026-11-22T07:43:47+00:00",
+    "duration_seconds": 11.002,
+    "exit_code": 1,
+    "error": null,
+    "git_after": {
+      "head": "9a7300228474ba326522251865c6be462f55bec4",
+      "status_short": "M EXPERIMENTS.md\n M scripts/v2/deadline_watchdog.py",
+      "diff_stat": "EXPERIMENTS.md                  | 3 +++\n scripts/v2/deadline_watchdog.py | 2 +-\n 2 files changed, 4 insertions(+), 1 deletion(-)"
+    },
+    "protocol_sha256_after": "e98798dc59329ad7e5e00dd0f6bb44a1deaf14a4deb1131acf14845d8aa1c1c4"
+  },
+  {
+    "run_id": "20261122T074500688094Z-0c34df77ba",
+    "hypothesis": "H0-new-entity-mastery",
+    "gate": "G0",
+    "label": "v02-survey-dev-02",
+    "repair_reason": "missing-required-speaker-dictionary",
+    "started_at": "2026-11-22T07:45:00+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.survey",
+      "--out",
+      "results/v2-new/survey-dev-02"
+    ],
+    "protocol_sha256": "e98798dc59329ad7e5e00dd0f6bb44a1deaf14a4deb1131acf14845d8aa1c1c4",
+    "git": {
+      "head": "386946669867cbeda139aea89d8883088f6abe12",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 1612,
+    "ended_at": "2026-11-22T07:45:14+00:00",
+    "duration_seconds": 14.003,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "386946669867cbeda139aea89d8883088f6abe12",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "e98798dc59329ad7e5e00dd0f6bb44a1deaf14a4deb1131acf14845d8aa1c1c4"
+  },
+  {
+    "run_id": "20261122T074715409366Z-793248f3a1",
+    "hypothesis": "H0-label-wording-vs-entity-knowledge",
+    "gate": "G0",
+    "label": "v02-competence-01",
+    "repair_reason": "investigate-clean-mastery-failure",
+    "started_at": "2026-11-22T07:47:15+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.competence",
+      "--out",
+      "results/v2-new/competence-01"
+    ],
+    "protocol_sha256": "cff250e4172b43e7f1b4895d40fb36c55b0aba4e85354d1c63c65142621ba4f2",
+    "git": {
+      "head": "6c1d91e46d5122a2b477f4cdbf4d0f02faf54a5a",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 1928,
+    "ended_at": "2026-11-22T07:47:49+00:00",
+    "duration_seconds": 34.007,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "6c1d91e46d5122a2b477f4cdbf4d0f02faf54a5a",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "cff250e4172b43e7f1b4895d40fb36c55b0aba4e85354d1c63c65142621ba4f2"
+  },
+  {
+    "run_id": "20261122T074857316044Z-3e1bb18546",
+    "hypothesis": "H0-random-damage-conditional-writeability",
+    "gate": "G0",
+    "label": "v02-association24-dev-01",
+    "repair_reason": "diagnose-feasibility-within-failed-G0",
+    "started_at": "2026-11-22T07:48:57+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.experiment",
+      "--config",
+      "configs/v2/association-24.json",
+      "--out",
+      "results/v2-new/association24-dev-01",
+      "--limit",
+      "32"
+    ],
+    "protocol_sha256": "52800cbd200cf158fb5eee8a128d28735f8930d7f19fb953aa030552aaa81a30",
+    "git": {
+      "head": "cd1624b459d510abb678efde0a29aeebfd35f731",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 2151,
+    "ended_at": "2026-11-22T07:55:02+00:00",
+    "duration_seconds": 365.09,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "cd1624b459d510abb678efde0a29aeebfd35f731",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "52800cbd200cf158fb5eee8a128d28735f8930d7f19fb953aa030552aaa81a30"
+  },
+  {
+    "run_id": "20261122T075652335056Z-e1a716025f",
+    "hypothesis": "H0-typed-normalization-same-damage",
+    "gate": "G0",
+    "label": "v02-canonical-replay-01",
+    "repair_reason": "schema-adherence-and-common-writer-seed",
+    "started_at": "2026-11-22T07:56:52+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.replay",
+      "--source",
+      "results/v2-new/association24-dev-01",
+      "--out",
+      "results/v2-new/canonical-replay-01"
+    ],
+    "protocol_sha256": "d03fd323be0d578ba87ec855ff9b55fe9e86ac995710f8b3740fcfdb10bd581d",
+    "git": {
+      "head": "52fef43550fbe3e11c5faea05ab61d9a9af22db5",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 3973,
+    "ended_at": "2026-11-22T08:00:46+00:00",
+    "duration_seconds": 234.069,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "52fef43550fbe3e11c5faea05ab61d9a9af22db5",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "d03fd323be0d578ba87ec855ff9b55fe9e86ac995710f8b3740fcfdb10bd581d"
+  },
+  {
+    "run_id": "20261122T080142238595Z-61b0f8c40b",
+    "hypothesis": "H0-public-service-boundary",
+    "gate": "G0",
+    "label": "v02-cpu-audit-02",
+    "repair_reason": "validate-canonical-public-service",
+    "started_at": "2026-11-22T08:01:42+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.cpu_audit",
+      "--out",
+      "results/v2-new/cpu-audit-02.json"
+    ],
+    "protocol_sha256": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7",
+    "git": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 5728,
+    "ended_at": "2026-11-22T08:01:48+00:00",
+    "duration_seconds": 6.002,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7"
+  },
+  {
+    "run_id": "20261122T080148348642Z-9c628f3223",
+    "hypothesis": "H0-dev-descriptive-reliability",
+    "gate": "G0",
+    "label": "v02-analysis-01",
+    "repair_reason": "describe-failed-G0-without-promotion",
+    "started_at": "2026-11-22T08:01:48+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze",
+      "--source",
+      "results/v2-new/association24-dev-01",
+      "--replay",
+      "results/v2-new/canonical-replay-01",
+      "--out",
+      "results/v2-new/analysis-01"
+    ],
+    "protocol_sha256": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7",
+    "git": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 5865,
+    "ended_at": "2026-11-22T08:01:50+00:00",
+    "duration_seconds": 2.001,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7"
+  },
+  {
+    "run_id": "20261122T080202337358Z-489e3e389a",
+    "hypothesis": "H0-paired-damage-factorial",
+    "gate": "G0",
+    "label": "paired-association24-01",
+    "repair_reason": "controlled-strength-mode-comparison-with-failed-G0",
+    "started_at": "2026-11-22T08:02:02+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.sweep",
+      "--config",
+      "configs/v2/association-24.json",
+      "--out",
+      "results/v2-new/paired-association24-01",
+      "--assignment-source",
+      "results/v2-new/association24-dev-01"
+    ],
+    "protocol_sha256": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7",
+    "git": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 6021,
+    "ended_at": "2026-11-22T08:08:13+00:00",
+    "duration_seconds": 371.081,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7"
+  },
+  {
+    "run_id": "20261122T080813546207Z-ba6e02dbe6",
+    "hypothesis": "H0-paired-damage-factorial",
+    "gate": "G0",
+    "label": "paired-association48-01",
+    "repair_reason": "controlled-strength-mode-comparison-with-failed-G0",
+    "started_at": "2026-11-22T08:08:13+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.sweep",
+      "--config",
+      "configs/v2/association-48.json",
+      "--out",
+      "results/v2-new/paired-association48-01",
+      "--assignment-source",
+      "results/v2-new/association24-dev-01"
+    ],
+    "protocol_sha256": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7",
+    "git": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "M EXPERIMENTS.md",
+      "diff_stat": "EXPERIMENTS.md | 8 ++++++++\n 1 file changed, 8 insertions(+)"
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 8381,
+    "ended_at": "2026-11-22T08:14:37+00:00",
+    "duration_seconds": 384.056,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "359eedf265971cde3140df0d2c3e7399a857f62d",
+      "status_short": "M EXPERIMENTS.md",
+      "diff_stat": "EXPERIMENTS.md | 8 ++++++++\n 1 file changed, 8 insertions(+)"
+    },
+    "protocol_sha256_after": "290486169fa3e28865488463f2f720abbe1caa581873fafafb5dcc5afcf12df7"
+  },
+  {
+    "run_id": "20261122T081538607967Z-fe71414d18",
+    "hypothesis": "H0-physical-constraint-validity",
+    "gate": "G0",
+    "label": "v02-physics-RED",
+    "repair_reason": "falsify-overstrong-unary-constraints",
+    "started_at": "2026-11-22T08:15:38+00:00",
+    "status": "FAILED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.physics_regression",
+      "--out",
+      "results/v2-new/physics-RED.json"
+    ],
+    "protocol_sha256": "d353ad8e4e7f7898b39e0ab27fd3f095ef903c68def797eebf1e8ae94b04b972",
+    "git": {
+      "head": "fde3a82f8d72f94e224ea8d51dfa6c475b1cee4d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 10984,
+    "ended_at": "2026-11-22T08:15:39+00:00",
+    "duration_seconds": 1.001,
+    "exit_code": 1,
+    "error": null,
+    "git_after": {
+      "head": "fde3a82f8d72f94e224ea8d51dfa6c475b1cee4d",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "d353ad8e4e7f7898b39e0ab27fd3f095ef903c68def797eebf1e8ae94b04b972"
+  },
+  {
+    "run_id": "20261122T081627156999Z-68075cc128",
+    "hypothesis": "H0-physical-constraint-validity",
+    "gate": "G0",
+    "label": "v02-physics-GREEN",
+    "repair_reason": "correct-physical-rules-with-unchanged-counterexamples",
+    "started_at": "2026-11-22T08:16:27+00:00",
+    "status": "FAILED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.physics_regression",
+      "--out",
+      "results/v2-new/physics-GREEN.json"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "eba65e497417e3f54a29e56b6c396c813b4ce487",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 11115,
+    "ended_at": "2026-11-22T08:16:28+00:00",
+    "duration_seconds": 1.001,
+    "exit_code": 1,
+    "error": null,
+    "git_after": {
+      "head": "eba65e497417e3f54a29e56b6c396c813b4ce487",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T081628311787Z-e28dba74e2",
+    "hypothesis": "H0-public-service-boundary",
+    "gate": "G0",
+    "label": "v02-cpu-audit-03",
+    "repair_reason": "corrected-ontology-and-source-boundary",
+    "started_at": "2026-11-22T08:16:28+00:00",
+    "status": "FAILED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.cpu_audit",
+      "--out",
+      "results/v2-new/cpu-audit-03.json"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "eba65e497417e3f54a29e56b6c396c813b4ce487",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 11128,
+    "ended_at": "2026-11-22T08:16:29+00:00",
+    "duration_seconds": 1.001,
+    "exit_code": 1,
+    "error": null,
+    "git_after": {
+      "head": "eba65e497417e3f54a29e56b6c396c813b4ce487",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T081705571292Z-cece2d40c6",
+    "hypothesis": "H0-physical-constraint-validity",
+    "gate": "G0",
+    "label": "v02-physics-GREEN-02",
+    "repair_reason": "newline-encoding-only-after-compile-check",
+    "started_at": "2026-11-22T08:17:05+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.physics_regression",
+      "--out",
+      "results/v2-new/physics-GREEN-02.json"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 11240,
+    "ended_at": "2026-11-22T08:17:06+00:00",
+    "duration_seconds": 1.001,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T081706730827Z-3ebb59b745",
+    "hypothesis": "H0-public-service-boundary",
+    "gate": "G0",
+    "label": "v02-cpu-audit-04",
+    "repair_reason": "newline-encoding-only-after-compile-check",
+    "started_at": "2026-11-22T08:17:06+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.cpu_audit",
+      "--out",
+      "results/v2-new/cpu-audit-04.json"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 11252,
+    "ended_at": "2026-11-22T08:17:12+00:00",
+    "duration_seconds": 6.002,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T081728039972Z-4854546f1e",
+    "hypothesis": "H0-physical-paired-damage-factorial",
+    "gate": "G0",
+    "label": "paired-association24-02",
+    "repair_reason": "physical-ontology-v2-controls-with-failed-G0",
+    "started_at": "2026-11-22T08:17:28+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.sweep",
+      "--config",
+      "configs/v2/association-24.json",
+      "--out",
+      "results/v2-new/paired-association24-02",
+      "--assignment-source",
+      "results/v2-new/association24-dev-01"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 11445,
+    "ended_at": "2026-11-22T08:23:37+00:00",
+    "duration_seconds": 369.05,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T082337242998Z-9e220efcb7",
+    "hypothesis": "H0-physical-paired-damage-factorial",
+    "gate": "G0",
+    "label": "paired-association48-02",
+    "repair_reason": "physical-ontology-v2-controls-with-failed-G0",
+    "started_at": "2026-11-22T08:23:37+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.sweep",
+      "--config",
+      "configs/v2/association-48.json",
+      "--out",
+      "results/v2-new/paired-association48-02",
+      "--assignment-source",
+      "results/v2-new/association24-dev-01"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "M EXPERIMENTS.md",
+      "diff_stat": "EXPERIMENTS.md | 8 ++++++++\n 1 file changed, 8 insertions(+)"
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 13912,
+    "ended_at": "2026-11-22T08:29:59+00:00",
+    "duration_seconds": 382.052,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "M EXPERIMENTS.md",
+      "diff_stat": "EXPERIMENTS.md | 8 ++++++++\n 1 file changed, 8 insertions(+)"
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T082959409726Z-a72d10bf73",
+    "hypothesis": "H0-physical-paired-damage-factorial",
+    "gate": "G0",
+    "label": "paired-uniform24-02",
+    "repair_reason": "physical-ontology-v2-controls-with-failed-G0",
+    "started_at": "2026-11-22T08:29:59+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.sweep",
+      "--config",
+      "configs/v2/uniform-24.json",
+      "--out",
+      "results/v2-new/paired-uniform24-02",
+      "--assignment-source",
+      "results/v2-new/association24-dev-01"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "M EXPERIMENTS.md",
+      "diff_stat": "EXPERIMENTS.md | 16 ++++++++++++++++\n 1 file changed, 16 insertions(+)"
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 17094,
+    "ended_at": "2026-11-22T08:33:26+00:00",
+    "duration_seconds": 207.029,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "M EXPERIMENTS.md",
+      "diff_stat": "EXPERIMENTS.md | 16 ++++++++++++++++\n 1 file changed, 16 insertions(+)"
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T083326556796Z-ef9ac04f71",
+    "hypothesis": "H0-physical-paired-damage-factorial",
+    "gate": "G0",
+    "label": "paired-uniform48-02",
+    "repair_reason": "physical-ontology-v2-controls-with-failed-G0",
+    "started_at": "2026-11-22T08:33:26+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.sweep",
+      "--config",
+      "configs/v2/uniform-48.json",
+      "--out",
+      "results/v2-new/paired-uniform48-02",
+      "--assignment-source",
+      "results/v2-new/association24-dev-01"
+    ],
+    "protocol_sha256": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b",
+    "git": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "M EXPERIMENTS.md",
+      "diff_stat": "EXPERIMENTS.md | 24 ++++++++++++++++++++++++\n 1 file changed, 24 insertions(+)"
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 18532,
+    "ended_at": "2026-11-22T08:37:46+00:00",
+    "duration_seconds": 260.043,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "fbdd5091e2703dc7f77faefcf302d906b1a7e1b6",
+      "status_short": "M EXPERIMENTS.md\n M krmm/v2/locality_audit.py",
+      "diff_stat": "EXPERIMENTS.md            | 27 +++++++++++++++++++++++++++\n krmm/v2/locality_audit.py |  6 +++---\n 2 files changed, 30 insertions(+), 3 deletions(-)"
+    },
+    "protocol_sha256_after": "faafe0b8f239212dc42707ed27be8ff28eaf85e3c188920578265d46c09ca62b"
+  },
+  {
+    "run_id": "20261122T083914274932Z-eb7cfdbae7",
+    "hypothesis": "H0-conditional-balanced-randomization",
+    "gate": "G0",
+    "label": "balanced-association24-01",
+    "repair_reason": "remove-post-qualification-target-imbalance",
+    "started_at": "2026-11-22T08:39:14+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.balanced_trial",
+      "--out",
+      "results/v2-new/balanced-association24-01"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "ed5ea6fa633df32ace82313c2ac85afe3be35d46",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 20934,
+    "ended_at": "2026-11-22T08:45:09+00:00",
+    "duration_seconds": 355.06,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "ed5ea6fa633df32ace82313c2ac85afe3be35d46",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T084807315733Z-fb862aca27",
+    "hypothesis": "H0-exact-portable-damage-reconstruction",
+    "gate": "G0",
+    "label": "v02-compact-damage-01",
+    "repair_reason": "verify-portable-damage-artifacts-before-release",
+    "started_at": "2026-11-22T08:48:07+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.compact_damage",
+      "--sources",
+      "results/v2-new/paired-association24-02",
+      "results/v2-new/paired-association48-02",
+      "results/v2-new/paired-uniform24-02",
+      "results/v2-new/paired-uniform48-02",
+      "results/v2-new/balanced-association24-01",
+      "--out",
+      "results/v2-new/compact-damage-01"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "5886a23610f8ab3771284c866af6df7321db2ed2",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 24142,
+    "ended_at": "2026-11-22T08:51:50+00:00",
+    "duration_seconds": 223.036,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "5886a23610f8ab3771284c866af6df7321db2ed2",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T085247266076Z-b13d3c5fdc",
+    "hypothesis": "H0-independent-nontarget-locality",
+    "gate": "G0",
+    "label": "v02-independent-locality-01",
+    "repair_reason": "evaluate-untrained-neighbor-and-general-controls",
+    "started_at": "2026-11-22T08:52:47+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.locality_audit",
+      "--sources",
+      "results/v2-new/association24-dev-01",
+      "results/v2-new/canonical-replay-01",
+      "results/v2-new/paired-association24-01",
+      "results/v2-new/paired-association48-01",
+      "results/v2-new/paired-association24-02",
+      "results/v2-new/paired-association48-02",
+      "results/v2-new/paired-uniform24-02",
+      "results/v2-new/paired-uniform48-02",
+      "results/v2-new/balanced-association24-01",
+      "--out",
+      "results/v2-new/independent-locality-01"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "90fcb775dec430c9126f7370097f1814eea33e82",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 25173,
+    "ended_at": "2026-11-22T08:56:15+00:00",
+    "duration_seconds": 208.036,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "90fcb775dec430c9126f7370097f1814eea33e82",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T090015511632Z-5ad856f940",
+    "hypothesis": "H0-descriptive-generation-selection-isolation",
+    "gate": "G0",
+    "label": "analysis-paired-association24-02",
+    "repair_reason": "finalize-P0-only-with-independent-locality",
+    "started_at": "2026-11-22T09:00:15+00:00",
+    "status": "FAILED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze",
+      "--source",
+      "results/v2-new/paired-association24-02",
+      "--locality",
+      "results/v2-new/independent-locality-01",
+      "--out",
+      "results/v2-new/analysis-paired-association24-02"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "90fcb775dec430c9126f7370097f1814eea33e82",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 26810,
+    "ended_at": "2026-11-22T09:00:16+00:00",
+    "duration_seconds": 1.001,
+    "exit_code": 1,
+    "error": null,
+    "git_after": {
+      "head": "90fcb775dec430c9126f7370097f1814eea33e82",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T090127534836Z-c3e46c48d3",
+    "hypothesis": "H0-descriptive-generation-selection-isolation",
+    "gate": "G0",
+    "label": "analysis-final-paired-association24-02",
+    "repair_reason": "typed-audit-record-reader-no-metric-change",
+    "started_at": "2026-11-22T09:01:27+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze",
+      "--source",
+      "results/v2-new/paired-association24-02",
+      "--locality",
+      "results/v2-new/independent-locality-01",
+      "--out",
+      "results/v2-new/analysis-final-paired-association24-02"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 27046,
+    "ended_at": "2026-11-22T09:01:29+00:00",
+    "duration_seconds": 2.001,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T090129690806Z-e203df5a97",
+    "hypothesis": "H0-descriptive-generation-selection-isolation",
+    "gate": "G0",
+    "label": "analysis-final-paired-association48-02",
+    "repair_reason": "typed-audit-record-reader-no-metric-change",
+    "started_at": "2026-11-22T09:01:29+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze",
+      "--source",
+      "results/v2-new/paired-association48-02",
+      "--locality",
+      "results/v2-new/independent-locality-01",
+      "--out",
+      "results/v2-new/analysis-final-paired-association48-02"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 27182,
+    "ended_at": "2026-11-22T09:01:31+00:00",
+    "duration_seconds": 2.002,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T090131847176Z-54c8a423f1",
+    "hypothesis": "H0-descriptive-generation-selection-isolation",
+    "gate": "G0",
+    "label": "analysis-final-paired-uniform24-02",
+    "repair_reason": "typed-audit-record-reader-no-metric-change",
+    "started_at": "2026-11-22T09:01:31+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze",
+      "--source",
+      "results/v2-new/paired-uniform24-02",
+      "--locality",
+      "results/v2-new/independent-locality-01",
+      "--out",
+      "results/v2-new/analysis-final-paired-uniform24-02"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 27318,
+    "ended_at": "2026-11-22T09:01:33+00:00",
+    "duration_seconds": 2.001,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T090133973948Z-d22100a2ad",
+    "hypothesis": "H0-descriptive-generation-selection-isolation",
+    "gate": "G0",
+    "label": "analysis-final-paired-uniform48-02",
+    "repair_reason": "typed-audit-record-reader-no-metric-change",
+    "started_at": "2026-11-22T09:01:33+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze",
+      "--source",
+      "results/v2-new/paired-uniform48-02",
+      "--locality",
+      "results/v2-new/independent-locality-01",
+      "--out",
+      "results/v2-new/analysis-final-paired-uniform48-02"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 27454,
+    "ended_at": "2026-11-22T09:01:36+00:00",
+    "duration_seconds": 3.001,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  },
+  {
+    "run_id": "20261122T090137144600Z-8ccaba3420",
+    "hypothesis": "H0-descriptive-generation-selection-isolation",
+    "gate": "G0",
+    "label": "analysis-final-balanced-association24-01",
+    "repair_reason": "typed-audit-record-reader-no-metric-change",
+    "started_at": "2026-11-22T09:01:37+00:00",
+    "status": "SUCCEEDED",
+    "command": [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze",
+      "--source",
+      "results/v2-new/balanced-association24-01",
+      "--locality",
+      "results/v2-new/independent-locality-01",
+      "--out",
+      "results/v2-new/analysis-final-balanced-association24-01"
+    ],
+    "protocol_sha256": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3",
+    "git": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "budget_seconds_allowed": 6000,
+    "gpu_ids": [
+      "0"
+    ],
+    "pid": 27590,
+    "ended_at": "2026-11-22T09:01:39+00:00",
+    "duration_seconds": 2.001,
+    "exit_code": 0,
+    "error": null,
+    "git_after": {
+      "head": "31f9d17d686f48435ffdb16db78404df13fe48b7",
+      "status_short": "",
+      "diff_stat": ""
+    },
+    "protocol_sha256_after": "ba987fbd7095c59f2e491732f3c42d8b7d10171b75881b03e4db15f75b7dc2d3"
+  }
+]

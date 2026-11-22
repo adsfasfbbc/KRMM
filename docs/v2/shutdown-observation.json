@@ -1,0 +1,33 @@
+{
+  "root_command": "/usr/bin/shutdown",
+  "effective_uid": 0,
+  "requested_utc": "2026-11-22T09:58:11.526029+00:00",
+  "terminal_evidence": "ROOT_SHUTDOWN_REQUEST ... uid=0 command=/usr/bin/shutdown",
+  "ssh_channel_closed_after_request": true,
+  "helper_exit_code": null,
+  "checks": [
+    {
+      "attempt": 1,
+      "utc": "2026-11-22T09:58:46.448217+00:00",
+      "status": "unreachable",
+      "failure_kind": "TCP connection to the authorized SSH endpoint unavailable"
+    },
+    {
+      "attempt": 2,
+      "utc": "2026-11-22T09:58:51.750705+00:00",
+      "status": "unreachable",
+      "failure_kind": "TCP connection to the authorized SSH endpoint unavailable"
+    },
+    {
+      "attempt": 3,
+      "utc": "2026-11-22T09:58:58.111764+00:00",
+      "status": "unreachable",
+      "failure_kind": "TCP connection to the authorized SSH endpoint unavailable"
+    }
+  ],
+  "consecutive_unreachable": 3,
+  "outcome": "Root shutdown command executed; three subsequent independent SSH connection checks were unreachable.",
+  "scientific_release_commit": "c2bb578c720a3f54f240b89be3e6c1612c47ca32",
+  "scientific_tree_sha": "d98a5360d6a73be27e650037415660c79cd2ce2b",
+  "completed_before_approved_deadline_utc": "2026-11-22T15:23:25+00:00"
+}

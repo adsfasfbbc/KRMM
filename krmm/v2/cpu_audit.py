@@ -14,7 +14,7 @@ class Audit(unittest.TestCase):
   f=[fact("primary_oscillator","tensioned_strings"),fact("resonator","membrane_soundboard")]
   self.assertEqual(reconstruct(f)["candidate"],"A")
  def test_reed_not_solid(self):
-  f=[fact("primary_oscillator","flexible_reed"),fact("excitation_mechanism","air_flow")]
+  f=[fact("primary_oscillator","flexible_reed"),fact("excitation_mechanism","direct_air_flow")]
   r=reconstruct(f);self.assertEqual(r["candidate"],"B");self.assertEqual(r["reconstruction_type"],"compositional")
   self.assertTrue(all(reconstruct([x])["candidate"] is None for x in f))
  def test_no_rule_no_fallback(self):self.assertIsNone(reconstruct([fact("material","wood")])["candidate"])
@@ -41,7 +41,7 @@ class Audit(unittest.TestCase):
   for p,h in old.items():
    if p not in {"README.md","EXPERIMENTS.md"}:self.assertEqual(hashlib.sha256(Path(p).read_bytes()).hexdigest(),h,p)
  def test_code_information_boundary(self):
-  for name in ["ontology","extractor","evidence_graph","reconstruct","reliability","selector","repairer"]:
+  for name in ["ontology","extractor","evidence_graph","reconstruct","reliability","selector","repairer","extractor_canonical","pipeline","service"]:
    src=Path(f"krmm/v2/{name}.py").read_text();tree=ast.parse(src)
    for n in ast.walk(tree):
     if isinstance(n,ast.ImportFrom):self.assertNotIn(n.module,{"evaluation","krmm.v2.evaluation","krmm.benchmark","krmm.v2.io"})
@@ -53,6 +53,24 @@ class Audit(unittest.TestCase):
   from krmm.calibration_extension import EXTRA
   old={n.lower() for names in list(GROUPS.values())+list(EXTRA.values()) for n in names}
   self.assertTrue(all(r["entity"].lower() not in old for r in d))
+
+ def test_canonical_roles(self):
+  from .extractor_canonical import canonical_parse
+  for attr,expected in [("primary_oscillator","C"),("resonator",None)]:
+   raw=json.dumps([dict(attribute=attr,value="membrane",span="a membrane vibrates")])
+   facts,_,_=canonical_parse(raw,"anon","p","a membrane vibrates")
+   self.assertEqual(reconstruct(facts)["candidate"],expected)
+ def test_reject_answer_label_as_atom(self):
+  from .extractor_canonical import canonical_parse
+  raw=json.dumps([dict(attribute="primary_oscillator",value="A",span="A")])
+  self.assertFalse(canonical_parse(raw,"anon","p","A")[0])
+ def test_service_without_calibration_never_writes(self):
+  from unittest.mock import patch
+  from .service import ecr
+  with patch("krmm.v2.service.infer",return_value={"candidate":"A","features":[1,0,0,1,1,1]}):
+   result=ecr(None,None,{},None,"unused")
+   self.assertEqual(result["decision"],"insufficient");self.assertFalse(result["updated"])
+
 def main():
  p=argparse.ArgumentParser();p.add_argument("--out",required=True);a=p.parse_args()
  suite=unittest.defaultTestLoader.loadTestsFromTestCase(Audit)

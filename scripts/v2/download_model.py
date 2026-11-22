@@ -14,7 +14,7 @@ proxy={}
 # Fetch required small files with bounded retries through working proxy.
 for f in info.siblings:
  name=f.rfilename
- if name.endswith('.safetensors') or name in ['README.md','.gitattributes','spk_dict.pt']:continue
+ if name.endswith('.safetensors') or name in ['README.md','.gitattributes']:continue
  p=root/name
  if p.exists() and p.stat().st_size:continue
  for attempt in range(3):

@@ -1,6 +1,6 @@
 from .evidence_graph import graph
 def reconstruct(facts):
- g=graph(facts);candidate=g["compatible"][0] if len(g["compatible"])==1 and not g["invalid_atoms"] else None
+ g=graph(facts);candidate=g["compatible"][0] if len(g["compatible"])==1 and not g["invalid_atoms"] and not g["conflict"] else None
  # Multiple facts only count as compositional if every singleton remains ambiguous.
  singletons=[graph([f]) for f in facts]
  composition=bool(candidate) and all(len(x["compatible"])>1 for x in singletons)

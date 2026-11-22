@@ -19,4 +19,5 @@ def main():
   ev["rollback_required"]=ev["retention_agreement"]<0.9
   out[name]=ev;o.model=o.model.unload()
  dump(d["output"],out)
+ dump(str(Path(d["output"]).with_name("fresh-evaluation-resources.json")),o.state())
 if __name__=="__main__":main()

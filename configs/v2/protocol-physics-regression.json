@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "project_id": "KRMM-v02",
+  "research_question": "Does intervenable structured evidence improve reliability over candidate_change?",
+  "target_venue": "undecided",
+  "repo_root": "/root/rivermind-data/KRMM",
+  "protocol_version": "v02-p0-physics-regression-1",
+  "primary_metric": "Retained persistent successful repairs / ALL eligible damaged units at fixed 0.5 coverage",
+  "dataset_manifest": "configs/v2/dataset.json museum HS-family entity-disjoint new benchmark",
+  "holdout_policy": "NEW grouped entities only; old60 and aliases excluded. Dev first; calibration then NEW confirmatory test only after G0 and power freeze. See docs/v2/HYPOTHESES.md",
+  "approved_command_prefixes": [
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.cpu_audit"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.survey"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.experiment"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.verify"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.analyze"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.competence"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.replay"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.sweep"
+    ],
+    [
+      "/root/rivermind-data/krmm-env/bin/python",
+      "-m",
+      "krmm.v2.physics_regression"
+    ]
+  ],
+  "allowed_edit_globs": [
+    "krmm/v2/**",
+    "scripts/v2/**",
+    "configs/v2/**",
+    "docs/v2/**",
+    "EXPERIMENTS.md",
+    "README.md"
+  ],
+  "protected_paths": [
+    "krmm/model.py",
+    "krmm/repair.py",
+    "krmm/experiment.py",
+    "configs/FROZEN_FINAL.json",
+    "results/v2-test/**",
+    "tests/**",
+    ".git/**"
+  ],
+  "budget": {
+    "max_runs": 30,
+    "per_run_timeout_minutes": 100,
+    "max_total_run_minutes": 480,
+    "min_free_disk_gb": 8,
+    "require_gpu": true,
+    "gpu_ids": [
+      "0"
+    ],
+    "min_free_gpu_memory_mb": 1000,
+    "disk_check_interval_seconds": 10
+  },
+  "gates": [
+    {
+      "id": "G0",
+      "title": "Validity and feasibility",
+      "criteria": [
+        {
+          "metric": "independent_units",
+          "op": ">=",
+          "value": 8
+        },
+        {
+          "metric": "clean_mastery_rate",
+          "op": ">=",
+          "value": 0.75
+        },
+        {
+          "metric": "damage_eligibility_rate",
+          "op": ">=",
+          "value": 0.5
+        },
+        {
+          "metric": "oracle_success_rate",
+          "op": ">=",
+          "value": 0.75
+        },
+        {
+          "metric": "retention_agreement",
+          "op": ">=",
+          "value": 0.9
+        },
+        {
+          "metric": "split_verified",
+          "op": "is_true"
+        },
+        {
+          "metric": "no_inverse_shortcut",
+          "op": "is_true"
+        }
+      ]
+    },
+    {
+      "id": "G1",
+      "title": "Incremental method value",
+      "criteria": [
+        {
+          "metric": "candidate_gain_ci_low",
+          "op": ">",
+          "value": 0
+        },
+        {
+          "metric": "selection_gain_ci_low",
+          "op": ">",
+          "value": 0
+        },
+        {
+          "metric": "independent_units",
+          "op": ">=",
+          "value": 128
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "title": "Transfer",
+      "criteria": [
+        {
+          "metric": "independent_seeds",
+          "op": ">=",
+          "value": 3
+        },
+        {
+          "metric": "second_damage_ci_low",
+          "op": ">",
+          "value": 0
+        },
+        {
+          "metric": "second_model_ci_low",
+          "op": ">",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "title": "Reproduction",
+      "criteria": [
+        {
+          "metric": "frozen_commit_reproduced",
+          "op": "is_true"
+        },
+        {
+          "metric": "independent_holdout_verified",
+          "op": "is_true"
+        },
+        {
+          "metric": "claim_boundary_audited",
+          "op": "is_true"
+        }
+      ]
+    }
+  ],
+  "approval": "User approved existing single GPU 8h 30 launches +80GB and autonomous P0-P2 plus sync/shutdown, 2026-11-22",
+  "additional_storage_limit_gb": 80,
+  "stop_policy": "Absolute deadline2026-11-22T15:23:25Z,30 launches,disk<8GB or +80GB, repeated OOM/provenance error. Failed G0 prevents G1; next trial for engineering repair only. Never overwrite results.",
+  "amendment": "Preserve two completed ontology-v1 paired association cells; prevent unlaunched uniform-v1 cells. Run independent physical counterexamples RED on original rules then GREEN after fixing rules, same regression file. Generic actions/airflow alone cannot identify family. Explicit direct aerodynamic excitation plus reed may identify aerophone; generic airflow cannot. Explicit conflict blocks update. No thresholds/splits/annotations changed; G0 stays failed."
+}

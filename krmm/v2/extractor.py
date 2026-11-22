@@ -9,6 +9,8 @@ def parse(raw,entity,source_id,text):
  facts=[];errors=[]
  for row in rows:
   try:
+   if not isinstance(row,dict):raise ValueError("atom must be object")
+   if type(row.get("conflict",False)) is not bool:raise ValueError("conflict must be bool")
    # Explicit boolean polarity prevents truthiness of strings.
    if type(row.get("polarity",True)) is not bool:raise ValueError("polarity must be bool")
    f=Fact(entity,row["attribute"],row["value"],"internal_text",source_id,"damaged-model",row["span"],text,row.get("polarity",True),row.get("conflict",False))
@@ -16,13 +18,13 @@ def parse(raw,entity,source_id,text):
   except (KeyError,ValueError,TypeError) as e:errors.append(str(e))
  return facts,errors
 def extract(omni,entity):
- probes=[f"What physical component generates vibration in the traditional {entity}? Describe the primary oscillator and distinguish it from the resonating body. Do not name an instrument family.",
- f"How is the traditional {entity} excited, and what resonates? Describe physical facts only, without a family label."]
+ probes=[f"What physical component generates vibration in the traditional musical instrument named {entity}? Describe the primary oscillator and distinguish it from the resonating body. Do not name an instrument family.",
+ f"How is the traditional musical instrument named {entity} excited, and what resonates? Describe physical facts only, without a family label."]
  records=[];allfacts=[]
  schema=json.dumps({k:sorted(v) for k,v in VALUES.items()})
  for i,prompt in enumerate(probes):
   text=omni.generate(prompt,72)
-  query="Extract only explicitly stated physical facts from the quoted observation. Do not add outside knowledge. Use these attribute/value enums: "+schema+". Return JSON array only, each object: attribute, value, span (exact quote proving this fact), polarity (boolean, false for negation). Distinguish primary oscillator from resonator; unknown is allowed. Observation: "+json.dumps(text)
+  query="Extract only explicitly stated physical facts from the quoted observation. Do not add outside knowledge. Use these attribute/value enums: "+schema+". Return at most 3 facts in a JSON array only, each object: attribute, value, span (exact quote proving this fact), polarity (boolean, false for negation). Distinguish primary oscillator from resonator. Use direct_air_flow only if the observation explicitly states airflow directly drives the oscillator; otherwise use air_flow. Unknown is allowed. Observation: "+json.dumps(text)
   raw=omni.generate(query,224);facts,errors=parse(raw,entity,f"probe_{i}",text)
   allfacts.extend(facts);records.append({"prompt":prompt,"text":text,"extraction_prompt":query,"extraction_raw":raw,"errors":errors,"facts":[f.serial() for f in facts]})
  return allfacts,records

@@ -204,3 +204,81 @@ Setup: dependencies installed, public GitHub cloned; museum canonicalAPI403, off
 
 ## v02-cpu-audit-01 — semantic and boundary contracts
 Design: synthetic typed facts, source spans, role distinctions, key deletion/sham material, duplicate provenance, random wrong-label mapping over3200 artificial units, frozen-source checks. Fixed source1aacf2d. Result:13/13 pass,6.002s runner duration. This validates implementation contracts only; empirical reconstruction and independent expert annotation remain unproven. An initial preflight rejected an overlong hypothesis identifier before launching; corrected safe ID, no failed execution hidden.
+
+## v02-survey-dev-01 — FAILED dependency preflight
+Design:32 prospective dev entities, screen0/1 and independent4/5. Result: no entity queried; transformers4.57.6 loader requires spk_dict.pt even when speech is subsequently disabled. Original downloader skipped it. Failure receipt and full traceback preserved. Fix: downloaded revision-pinned259544-byte speaker dictionary, SHA2566a05609b28f5d42b7b748f0f07592545c8f1f6885b9ae8fff64baf56e86b2a18; include it in v0.2 downloader. No prompt/label/metric change. Restart as separate launch.
+
+## v02-survey-dev-02 — G0 FAIL
+Design unchanged after missing file fix.32 newdev entities; templates0/1 screen,4/5 independent. Results:10/32 stable screen(31.25%),7/32 independent(21.875%), peak11.158GiB. Baseline gate requires75%; G1 BLOCKED. Every idiophone failed stable screening; severe class/prompt/knowledge limitation. Next P0 diagnostic separates taxonomy wording from entity unfamiliarity using paired definitions, permutation, olddev controls. Dataset/splits and thresholds remain fixed; no newtest touched.
+
+## v02-competence-01 — entity familiarity failure persists
+44 entities (32 newdev +12 olddev engineering), four paired prompt conditions and fixed label permutation. Newdev stable accuracy: bareHS10/32, definedHS10/32, permuted14/32, legacy7/32. Olddev:11/12,11/12,10/12,10/12 respectively. Mean choice mass>0.996 in all conditions, so low answer-letter mass does not explain failure. Definitions do not improve newdev; rare-entity hallucinations (e.g. nkangala described as wing vibration) suggest unfamiliarity/homonym errors. Label permutation sensitivity is a further limitation. G0 remainsFAIL; no threshold/prompt tuning to claim pass. Next planned P0 association damage/oracle assay retains original task and all32dev including exclusions, solely to diagnose conditional writer feasibility.
+
+## v02-association24-dev-01 — randomized local damage, G0 FAIL overall
+32 raw dev entities,10 stably screened. All10 suffered effective local damage after24steps; retention minimum11/12. Oracle persistent success8/10; structured candidates correct4/10 with6/10 coverage; generative6/10. Fresh-process serialization checks retained. Raw mastery10/32 remainsbelow75%, so G1blocked. This cohort includes initially wrong independent answers; strict restoration flag prevents counting their successful induction as restoration.
+
+## Canonical normalization replay preregistration
+Model sometimes emitted semantically equivalent but out-of-schema values such as primary_oscillator=membrane. Normalize ONLY typed JSON values through generic aliases; never search raw prose or look up entities. Role test: primary membrane->C, resonator membrane->no candidate; reed alone ambiguous; negated strings ignored.4/4 pass. New replay preserves same damage snapshots/raw probes, reinitializes every writer branch withseed107, and evaluates all candidates regardless of later selection. It is P0 engineering, not G1 evidence.
+
+## v02-canonical-replay-01 — typed normalization, common writer seed
+Same10 eligible damage snapshots/probes; all branches seed107,32steps,12retention.6 candidates,5 correct;4 persistent writes, only2 strict restorations of independently mastered original answers. Role-aware normalization removed one wrong candidate and recovered one correct candidate, but aggregate candidate correctness5/10 remains below generative6/10. No heldout newtest used. No G1 claim.
+
+## Paired factorial preregistration
+The first trial used sequential RNG states for adapter initialization. To isolate damage strength, next four cells all share the evaluator-private wrong targets and reset damage/writer seeds107. Compare association24/48 and uniform24/48. Child resource counters added as sidecars; metric semantics unchanged. Corpus mastery remains a failed prerequisite. This finite queue diagnoses damage sensitivity only and stops on any failed execution.
+
+## paired-association24-01 — controlled P0 cell
+
+Design: same32 development entities, same private wrong-target schedule, per-branch writer seed107, rank8 last4 layers,32repair steps,12retention prompts. Only damage mode/strength changes among these four cells. Canonical typed normalization fixed across cells. All available candidates receive counterfactual writes, without selecting by truth.
+
+Results: {"independent_units": 10, "survey_units": 32, "clean_mastery_rate": 0.3125, "damage_eligibility_rate": 1.0, "oracle_success_rate": 0.7, "oracle_strict_restorations": 4, "retention_agreement": 1.0, "split_verified": true, "no_inverse_shortcut": true, "candidate_accuracy_structured_all_eligible": 0.7, "candidate_coverage_structured": 1.0, "candidate_accuracy_generative": 0.7, "resources": {"decoder_tokens_processed": 1382678, "model_forward_calls": 7880, "query_calls": 254, "tokens": 31128, "peak_vram_gb": 11.157513618469238}, "status": "P0 conditional factorial; G0 mastery failure not overridden", "assignment_source": "results/v2-new/association24-dev-01", "writer_seed_every_branch": 107}
+
+Analysis: raw mastery remains below75%; this is conditional damage/writeability evidence only. G0FAIL, G1 remainsblocked. Fresh-process probabilities and strict original-heldout restoration are recorded per unit.
+
+## paired-association48-01 and ontology-v1 audit
+All32dev,10 eligible; fixed writer seed107 and same wrong targets as paired24. Oracle success5/10 (paired24:7/10), strict restorations2 vs4. Structured candidate correct5/10, generative5/10. This points to strength sensitivity, not method superiority. Before remaining uniform cells, scientific audit rejected unary action restrictions: airflow can excite strings (Aeolian harp); generic actions do not determine primary oscillator. Queue parent stopped after active48 cell completed; two uniform-v1 cells were never launched. Existing v1 outputs retained as rejected heuristic variant.
+
+Primary counterexample sources verified2026-11-22: Detroit Historical Society Aeolian harp https://www.detroithistorical.org/learn/online-research/collection/object/harp-aeolian ; Met museum https://www.metmuseum.org/art/collection/search/503711 ; MIMO2011 https://mimo-international.com/documents/Hornbostel%20Sachs.pdf explicitly classifies air-driven reeds as aerophones. New RED/GREEN regression is frozen before rule correction. Prior CPU tests passed limited examples but encoded an overstrong generic-airflow assumption; they were insufficient physical validation.
+
+## v02-physics-RED — rejected ontology-v1
+Frozen independent counterexamples executed against original ontology; failure receipt retained. Generic airflow excited strings, plucked/bowed membranes, generic reed ambiguity and explicit conflict handling exposed invalid assumptions. These are model-independent physical validity failures, not heldout tuning. Corrected rules remove ALL unary action restrictions; only explicit primary oscillator taxonomy and explicitly direct air-driven reed conjunction constrain class. A direct relation is never inferred from generic airflow. Old source and RED tests retained in Git history; same regression rerun GREEN. Original CPU reed example is clarified to explicitly direct airflow, because its old generic assumption was invalid; independent regression source remainsunchanged.
+
+## Corrected four-cell factorial and independent locality audit
+Run fresh suffix02 cells consistently under corrected ontology/schema; preserve suffix01 failures. Wrong-target assignments and all neural settings unchanged. Also freeze62 non-target newdev heldout-template questions plus20 elementary general controls, none used in12-prompt KL training. Per-target82 controls exclude its own2questions. Thresholds token agreement>=0.9, neighbor/general accuracy drop<=0.05. Additional strict restoration combines original success, originally correct independent answers, and independent damage/repair locality. This can only narrow claims; original metrics remainimmutable. G0 stillfailed; cal/newtest untouched.
+
+## Physics correction startup failures — preserved
+The unchanged6counterexamples all failed against ontologyv1 (RED), as predicted. First corrected GREEN launch and CPU-audit03 failed before tests due to a literal backslash-n inserted while transferring the graph source. No model predictions or training occurred. Both failure receipts and sourceeba65e4 preserved. Fix only newline encoding, compile all v2 modules, then launch separately named retries; no metric/test changes.
+
+## paired-association24-02 — controlled P0 cell
+
+Design: same32 development entities, same private wrong-target schedule, per-branch writer seed107, rank8 last4 layers,32repair steps,12retention prompts. Only damage mode/strength changes among these four cells. Canonical typed normalization fixed across cells. All available candidates receive counterfactual writes, without selecting by truth.
+
+Results: {"independent_units": 10, "survey_units": 32, "clean_mastery_rate": 0.3125, "damage_eligibility_rate": 1.0, "oracle_success_rate": 0.7, "oracle_strict_restorations": 4, "retention_agreement": 1.0, "split_verified": true, "no_inverse_shortcut": true, "candidate_accuracy_structured_all_eligible": 0.5, "candidate_coverage_structured": 0.7, "candidate_accuracy_generative": 0.7, "resources": {"decoder_tokens_processed": 1275750, "model_forward_calls": 8042, "query_calls": 248, "tokens": 31513, "peak_vram_gb": 11.157513618469238}, "status": "P0 conditional factorial; G0 mastery failure not overridden", "assignment_source": "results/v2-new/association24-dev-01", "writer_seed_every_branch": 107}
+
+Analysis: raw mastery remains below75%; this is conditional damage/writeability evidence only. G0FAIL, G1 remainsblocked. Fresh-process probabilities and strict original-heldout restoration are recorded per unit.
+
+## paired-association48-02 — controlled P0 cell
+
+Design: same32 development entities, same private wrong-target schedule, per-branch writer seed107, rank8 last4 layers,32repair steps,12retention prompts. Only damage mode/strength changes among these four cells. Canonical typed normalization fixed across cells. All available candidates receive counterfactual writes, without selecting by truth.
+
+Results: {"independent_units": 10, "survey_units": 32, "clean_mastery_rate": 0.3125, "damage_eligibility_rate": 1.0, "oracle_success_rate": 0.5, "oracle_strict_restorations": 2, "retention_agreement": 1.0, "split_verified": true, "no_inverse_shortcut": true, "candidate_accuracy_structured_all_eligible": 0.4, "candidate_coverage_structured": 0.5, "candidate_accuracy_generative": 0.5, "resources": {"decoder_tokens_processed": 1466382, "model_forward_calls": 8398, "query_calls": 244, "tokens": 31191, "peak_vram_gb": 11.157513618469238}, "status": "P0 conditional factorial; G0 mastery failure not overridden", "assignment_source": "results/v2-new/association24-dev-01", "writer_seed_every_branch": 107}
+
+Analysis: raw mastery remains below75%; this is conditional damage/writeability evidence only. G0FAIL, G1 remainsblocked. Fresh-process probabilities and strict original-heldout restoration are recorded per unit.
+
+## paired-uniform24-02 — controlled P0 cell
+
+Design: same32 development entities, same private wrong-target schedule, per-branch writer seed107, rank8 last4 layers,32repair steps,12retention prompts. Only damage mode/strength changes among these four cells. Canonical typed normalization fixed across cells. All available candidates receive counterfactual writes, without selecting by truth.
+
+Results: {"independent_units": 5, "survey_units": 32, "clean_mastery_rate": 0.3125, "damage_eligibility_rate": 0.5, "oracle_success_rate": 1.0, "oracle_strict_restorations": 4, "retention_agreement": 1.0, "split_verified": true, "no_inverse_shortcut": true, "candidate_accuracy_structured_all_eligible": 0.6, "candidate_coverage_structured": 0.6, "candidate_accuracy_generative": 1.0, "resources": {"decoder_tokens_processed": 763640, "model_forward_calls": 4468, "query_calls": 175, "tokens": 20225, "peak_vram_gb": 11.157513618469238}, "status": "P0 conditional factorial; G0 mastery failure not overridden", "assignment_source": "results/v2-new/association24-dev-01", "writer_seed_every_branch": 107}
+
+Analysis: raw mastery remains below75%; this is conditional damage/writeability evidence only. G0FAIL, G1 remainsblocked. Fresh-process probabilities and strict original-heldout restoration are recorded per unit.
+
+## Realized wrong-target balance audit and prospective control
+Original schedule balanced8each across planned32, but only10 qualified: realizedA2/B1/C2/D5, optimistically fitted inverse70%, cyclic inverse20%. This is not the old deterministic cyclic algorithm, but planned-pool balance does not survive mastery filtering and cannot justify a shortcut-free claim for the realized cohort. New preregistered control randomizes AFTER clean screen qualification; accept only class count spread<=1 and >=2 possible truth classes per wrong target. It never reads candidate/repair outcomes or independent-clean answers to choose assignments. One new association24 trial; do not resample on its success. All four original physical cells remaindescriptive sensitivity evidence, not confirmatory.
+
+## paired-uniform48-02 — controlled P0 cell
+
+Design: same32 development entities, same private wrong-target schedule, per-branch writer seed107, rank8 last4 layers,32repair steps,12retention prompts. Only damage mode/strength changes among these four cells. Canonical typed normalization fixed across cells. All available candidates receive counterfactual writes, without selecting by truth.
+
+Results: {"independent_units": 6, "survey_units": 32, "clean_mastery_rate": 0.3125, "damage_eligibility_rate": 0.6, "oracle_success_rate": 1.0, "oracle_strict_restorations": 3, "retention_agreement": 1.0, "split_verified": true, "no_inverse_shortcut": true, "candidate_accuracy_structured_all_eligible": 0.3333333333333333, "candidate_coverage_structured": 0.6666666666666666, "candidate_accuracy_generative": 0.6666666666666666, "resources": {"decoder_tokens_processed": 1134957, "model_forward_calls": 5621, "query_calls": 190, "tokens": 22393, "peak_vram_gb": 11.157513618469238}, "status": "P0 conditional factorial; G0 mastery failure not overridden", "assignment_source": "results/v2-new/association24-dev-01", "writer_seed_every_branch": 107}
+
+Analysis: raw mastery remains below75%; this is conditional damage/writeability evidence only. G0FAIL, G1 remainsblocked. Fresh-process probabilities and strict original-heldout restoration are recorded per unit.

@@ -26,6 +26,7 @@ def one(o,r,cfg,out,wrong):
  res={"unit":u.__dict__,"gold_evaluator_only":r["gold"],"eligible":False}
  res["clean"]=evaluate(o,u.entity,r["gold"],(0,1))
  if res["clean"]["accuracy"]!=1:res["exclusion"]="not_stably_mastered";return res
+ res["clean_heldout_audit"]=evaluate(o,u.entity,r["gold"],(4,5))
  original=snapshot(o,cfg);retains=retain_prompts();tc=o.retain_logits(retains)
  res["damage_training"]=train(o,u,wrong,retains,tc,cfg,cfg["damage_steps"],cfg["damage_mode"],variants=(0,1))
  o.model=o.model.merge_and_unload()
@@ -62,6 +63,7 @@ def one(o,r,cfg,out,wrong):
   error=float(np.max(np.abs(np.array(local[name]["probabilities"])-np.array(ev["probabilities"]))))
   ev["probability_reload_max_error"]=error;ev["fresh_process_verified"]=error<=1e-6
   ev["success"]=ev["success"] and ev["fresh_process_verified"]
+  ev["restoration_valid"]=ev["success"] and res["clean_heldout_audit"]["accuracy"]==1
  res["repairs"]=fresh;res["seconds"]=time.monotonic()-t
  restore(o,original);gc.collect();torch.cuda.empty_cache()
  return res

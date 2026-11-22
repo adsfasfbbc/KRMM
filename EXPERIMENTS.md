@@ -194,3 +194,13 @@ All entries are exploratory until a frozen, independent confirmatory experiment 
 - Real data: 60 unique entities, 40 independently mastered, 39 eligible primary damaged units. Constrained persistent success: 26/39 overall; frozen-test success 11/16 eligible (11/24 originally screened). All 39 oracle controls succeed. All 117 primary adapters reproduce exactly in a fresh process.
 - Full diagnostic has no demonstrated increment over the strongest simple predictor. Coverage gates fail on independent calibration/test cohorts. Real media show no benefit. H3 is underidentified under the constrained 32-step writer. G1-G3 remain unconfirmed; decision PIVOT, with no novelty/publication claim.
 - Nineteen named unit-test contracts pass, plus dtype/hash, selector and exact deployed-score preflights. No local project checkout or environment was created. Source/config integrity remains intact. All source, raw per-unit outputs, configs, command logs, figures and negative evidence are synchronized before root shutdown.
+
+
+# KRMM v0.2 — new batch 2026-11-22
+
+User-approved 8h / 30 launches / +80GB; deadline15:23:25 UTC. New server RTX4090D24GB. Old source and results preserved. Target P0-P2; no real AV claim before G1. Model download uses verified official hashes. Protocol docs/v2/HYPOTHESES.md.
+
+Setup: dependencies installed, public GitHub cloned; museum canonicalAPI403, official alternateAPI200 with442 instrument rows. Raw descriptions remain cloud-private; label metadata only enters evaluator dataset.
+
+## v02-cpu-audit-01 — semantic and boundary contracts
+Design: synthetic typed facts, source spans, role distinctions, key deletion/sham material, duplicate provenance, random wrong-label mapping over3200 artificial units, frozen-source checks. Fixed source1aacf2d. Result:13/13 pass,6.002s runner duration. This validates implementation contracts only; empirical reconstruction and independent expert annotation remain unproven. An initial preflight rejected an overlong hypothesis identifier before launching; corrected safe ID, no failed execution hidden.

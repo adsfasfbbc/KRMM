@@ -1,0 +1,218 @@
+{
+  "unit": {
+    "unit_id": "44aca33ddd1adc9f",
+    "entity_id": "cotton t-shirt",
+    "relation_id": "primary_material",
+    "modality": "text",
+    "source_group": "mat_cotton_shirt",
+    "probe_template_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "split": "calibration",
+    "domain": "everyday_material",
+    "options": {
+      "A": "metal (metallic alloy or pure metal)",
+      "B": "wood or plant-based fiber (cellulose or timber)",
+      "C": "stone, ceramic, or glass (mineral or silicate)",
+      "D": "synthetic polymer or elastomer (plastic or rubber)"
+    }
+  },
+  "gold_evaluator_only": "B",
+  "mastery": {
+    "unit_id": "44aca33ddd1adc9f",
+    "entity_id": "cotton t-shirt",
+    "domain": "everyday_material",
+    "stably_mastered": false,
+    "exclusion_reason": "failed_screen_accuracy",
+    "screen": {
+      "accuracy": 0.3333333333333333,
+      "checks": [
+        {
+          "variant": 0,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9989734888076782,
+          "canonical_probs": {
+            "A": 0.0008529736660420895,
+            "B": 0.22217680513858795,
+            "C": 0.001497015473432839,
+            "D": 0.7754732370376587
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9991975426673889,
+          "canonical_probs": {
+            "A": 0.001614656881429255,
+            "B": 0.04718718305230141,
+            "C": 0.003418228356167674,
+            "D": 0.9477799534797668
+          }
+        },
+        {
+          "variant": 2,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9990142583847046,
+          "canonical_probs": {
+            "A": 0.0008444478153251112,
+            "B": 0.527647078037262,
+            "C": 0.005861629731953144,
+            "D": 0.465646892786026
+          }
+        },
+        {
+          "variant": 3,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9991351366043091,
+          "canonical_probs": {
+            "A": 0.0004968282300978899,
+            "B": 0.04201342165470123,
+            "C": 0.0012686953414231539,
+            "D": 0.9562210440635681
+          }
+        },
+        {
+          "variant": 0,
+          "permutation": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9993716478347778,
+          "canonical_probs": {
+            "D": 0.03711956366896629,
+            "C": 0.004433299880474806,
+            "B": 0.9573261737823486,
+            "A": 0.0011209136573597789
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9993616938591003,
+          "canonical_probs": {
+            "B": 0.01786426641047001,
+            "D": 0.9753559231758118,
+            "A": 0.0016616358188912272,
+            "C": 0.005118198227137327
+          }
+        }
+      ]
+    },
+    "heldout_clean_audit": {
+      "accuracy": 0.0,
+      "checks": [
+        {
+          "variant": 4,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9991328120231628,
+          "canonical_probs": {
+            "A": 0.0009197495528496802,
+            "B": 0.04717415198683739,
+            "C": 0.0043878802098333836,
+            "D": 0.9475182294845581
+          }
+        },
+        {
+          "variant": 5,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9987483024597168,
+          "canonical_probs": {
+            "A": 0.0014501458499580622,
+            "B": 0.24387702345848083,
+            "C": 0.0034787191543728113,
+            "D": 0.7511941194534302
+          }
+        },
+        {
+          "variant": 4,
+          "permutation": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9991195201873779,
+          "canonical_probs": {
+            "C": 0.0015358149539679289,
+            "A": 0.0017403063829988241,
+            "D": 0.7955718040466309,
+            "B": 0.20115205645561218
+          }
+        }
+      ]
+    },
+    "heldout_clean_mastered": false
+  },
+  "operational_eligible": false,
+  "strict_eligible": false,
+  "exclusion_reason": "failed_screen_accuracy"
+}

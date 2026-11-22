@@ -1,0 +1,85 @@
+{
+  "utc_start": "2026-11-22T14:27:37.824418+00:00",
+  "git_commit": "bbf4ab0eabffff4b8443ef286bdb920f17df8fbd",
+  "v3_source_sha256": "6ac3d0c8ca316d8cc4147106eae7d54ac9baaa1afb495f3fb0805d2efb42bd85",
+  "config_sha256": "b4695d61f96efa8411e1fe360483456069a16a4497ffa735fd98838ea54a9681",
+  "catalog_manifest": {
+    "catalog_sha256": "3c6e3b2f7c020bcc90d713de003f54069e1c251039810673ed2326846b3edb15",
+    "integrity": {
+      "counts": {
+        "dev": 36,
+        "calibration": 36,
+        "test": 48,
+        "anchor": 12,
+        "unknown_control": 8
+      },
+      "unique_entities": 140,
+      "unique_source_groups": 140,
+      "train_retain_count": 56,
+      "disjoint_verified": true
+    }
+  },
+  "resources_precheck": {
+    "free_disk_gib": 34.302520751953125,
+    "free_vram_mib": 23859.0,
+    "gpu_name": "NVIDIA GeForce RTX 3090"
+  },
+  "split": "dev",
+  "domain": null,
+  "limit": 12,
+  "config": {
+    "schema_version": 1,
+    "project_id": "KRMM-v03",
+    "experiment_id": "p0-d2-steps64",
+    "model_path": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+    "revision": "f75b40e3da2003cdd6e1829b1f420ca70797c34e",
+    "seed": 107,
+    "damage_type": "D2_suppression",
+    "damage_steps": 64,
+    "damage_lr": 0.0005,
+    "damage_retain_weight": 50.0,
+    "damage_l2_weight": 0.0001,
+    "damage_use_permuted_target": true,
+    "repair_steps": 32,
+    "repair_lr": 0.0005,
+    "repair_retain_weight": 50.0,
+    "repair_l2_weight": 0.0001,
+    "repair_use_permuted_target": true,
+    "write_strategy": "standard_kl",
+    "rank": 8,
+    "alpha": 16,
+    "last_layers": 4,
+    "target_modules": [
+      "q_proj",
+      "v_proj",
+      "down_proj"
+    ],
+    "multi_template_retain": true,
+    "retain_batch_size": 24,
+    "min_choice_mass": 0.25,
+    "max_damaged_accuracy": 0.0,
+    "min_damage_drop": 0.5,
+    "min_retain_agreement": 0.9,
+    "min_locality_token_agreement": 0.9,
+    "max_locality_accuracy_drop": 0.05,
+    "success_accuracy": 1.0,
+    "probe_budget": 24,
+    "max_new_tokens": 32,
+    "use_fresh_subprocess": true,
+    "run_non_oracle_branches": true,
+    "run_unconstrained_ablation": false,
+    "evaluate_counterfactual_even_if_damage_locality_failed": true,
+    "allow_sealed_test": false,
+    "max_launches": 25,
+    "per_run_timeout_minutes": 90,
+    "min_free_disk_gb": 8.0,
+    "min_free_vram_mb": 1000.0,
+    "gate_thresholds": {
+      "min_independent_units": 8,
+      "min_clean_mastery_rate": 0.75,
+      "min_damage_eligibility_rate": 0.5,
+      "min_oracle_success_rate": 0.75,
+      "min_retention_agreement": 0.9
+    }
+  }
+}

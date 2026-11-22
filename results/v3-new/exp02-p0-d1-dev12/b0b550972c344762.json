@@ -1,0 +1,517 @@
+{
+  "unit": {
+    "unit_id": "b0b550972c344762",
+    "entity_id": "bald eagle",
+    "relation_id": "taxonomic_class",
+    "modality": "text",
+    "source_group": "vert_accipitrid",
+    "probe_template_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "split": "dev",
+    "domain": "vertebrate_class",
+    "options": {
+      "A": "mammal",
+      "B": "bird",
+      "C": "reptile",
+      "D": "fish"
+    }
+  },
+  "gold_evaluator_only": "B",
+  "mastery": {
+    "unit_id": "b0b550972c344762",
+    "entity_id": "bald eagle",
+    "domain": "vertebrate_class",
+    "stably_mastered": true,
+    "exclusion_reason": null,
+    "screen": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 0,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9994432926177979,
+          "canonical_probs": {
+            "A": 0.00027794335619546473,
+            "B": 0.9994069337844849,
+            "C": 8.47679257276468e-05,
+            "D": 0.0002304231165908277
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9995148777961731,
+          "canonical_probs": {
+            "A": 0.0001488140260335058,
+            "B": 0.9996869564056396,
+            "C": 6.203491648193449e-05,
+            "D": 0.00010227828897768632
+          }
+        },
+        {
+          "variant": 2,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9995149374008179,
+          "canonical_probs": {
+            "A": 0.0002611026575323194,
+            "B": 0.9994033575057983,
+            "C": 9.023467282531783e-05,
+            "D": 0.0002452832995913923
+          }
+        },
+        {
+          "variant": 3,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9991790056228638,
+          "canonical_probs": {
+            "A": 0.00021645441302098334,
+            "B": 0.9993696808815002,
+            "C": 0.0001685748720774427,
+            "D": 0.0002452750049997121
+          }
+        },
+        {
+          "variant": 0,
+          "permutation": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9992113709449768,
+          "canonical_probs": {
+            "D": 0.00033510083449073136,
+            "C": 0.00019093469018116593,
+            "B": 0.9989215135574341,
+            "A": 0.0005524878506548703
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9993648529052734,
+          "canonical_probs": {
+            "B": 0.9993602633476257,
+            "D": 0.000277930375887081,
+            "A": 0.0002958553668577224,
+            "C": 6.601424684049562e-05
+          }
+        }
+      ]
+    },
+    "heldout_clean_audit": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 4,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9995443224906921,
+          "canonical_probs": {
+            "A": 0.0010317724663764238,
+            "B": 0.998524010181427,
+            "C": 0.00014864091644994915,
+            "D": 0.00029560778057202697
+          }
+        },
+        {
+          "variant": 5,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9995454549789429,
+          "canonical_probs": {
+            "A": 0.0002033746859524399,
+            "B": 0.9995396137237549,
+            "C": 6.602609209949151e-05,
+            "D": 0.00019105282262898982
+          }
+        },
+        {
+          "variant": 4,
+          "permutation": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9990280270576477,
+          "canonical_probs": {
+            "C": 0.00013804376067128032,
+            "A": 0.012426302768290043,
+            "D": 0.0002922386338468641,
+            "B": 0.9871434569358826
+          }
+        }
+      ]
+    },
+    "heldout_clean_mastered": true
+  },
+  "operational_eligible": false,
+  "strict_eligible": false,
+  "exclusion_reason": "damage_not_effective_or_train_retain_failed",
+  "damage_type": "D1_wrong_association",
+  "damage_logs": [
+    {
+      "step": 0,
+      "target_loss": 8.126248359680176,
+      "retain_kl": 1.1793413250416052e-05,
+      "l2": 31.95149040222168
+    },
+    {
+      "step": 1,
+      "target_loss": 8.625870704650879,
+      "retain_kl": 0.0005158516578376293,
+      "l2": 29.036083221435547
+    },
+    {
+      "step": 2,
+      "target_loss": 7.377378940582275,
+      "retain_kl": 0.0008649545488879085,
+      "l2": 29.119619369506836
+    },
+    {
+      "step": 3,
+      "target_loss": 7.502807140350342,
+      "retain_kl": 0.007219603285193443,
+      "l2": 29.29998016357422
+    },
+    {
+      "step": 4,
+      "target_loss": 5.134909152984619,
+      "retain_kl": 0.008546453900635242,
+      "l2": 29.53825569152832
+    },
+    {
+      "step": 5,
+      "target_loss": 4.02620792388916,
+      "retain_kl": 0.02015697956085205,
+      "l2": 29.928058624267578
+    },
+    {
+      "step": 6,
+      "target_loss": 4.167186260223389,
+      "retain_kl": 0.07875417917966843,
+      "l2": 30.39309310913086
+    },
+    {
+      "step": 7,
+      "target_loss": 4.181793689727783,
+      "retain_kl": 0.08347028493881226,
+      "l2": 30.812192916870117
+    },
+    {
+      "step": 8,
+      "target_loss": 1.7768118381500244,
+      "retain_kl": 0.0642857775092125,
+      "l2": 31.131742477416992
+    },
+    {
+      "step": 9,
+      "target_loss": 1.568215250968933,
+      "retain_kl": 0.0641532614827156,
+      "l2": 31.422775268554688
+    },
+    {
+      "step": 10,
+      "target_loss": 4.5253520011901855,
+      "retain_kl": 0.03287512809038162,
+      "l2": 31.64011573791504
+    },
+    {
+      "step": 11,
+      "target_loss": 4.773001194000244,
+      "retain_kl": 0.024577293545007706,
+      "l2": 31.840578079223633
+    },
+    {
+      "step": 12,
+      "target_loss": 3.1936306953430176,
+      "retain_kl": 0.011856643483042717,
+      "l2": 32.035221099853516
+    },
+    {
+      "step": 13,
+      "target_loss": 3.1905677318573,
+      "retain_kl": 0.02870100736618042,
+      "l2": 32.29837417602539
+    },
+    {
+      "step": 14,
+      "target_loss": 4.032381534576416,
+      "retain_kl": 0.01579633168876171,
+      "l2": 32.58332824707031
+    },
+    {
+      "step": 15,
+      "target_loss": 3.0806543827056885,
+      "retain_kl": 0.01890428364276886,
+      "l2": 32.90584945678711
+    },
+    {
+      "step": 16,
+      "target_loss": 3.094360113143921,
+      "retain_kl": 0.027799025177955627,
+      "l2": 33.27035903930664
+    },
+    {
+      "step": 17,
+      "target_loss": 2.6418352127075195,
+      "retain_kl": 0.011347758583724499,
+      "l2": 33.58529281616211
+    },
+    {
+      "step": 18,
+      "target_loss": 1.7615487575531006,
+      "retain_kl": 0.03150361403822899,
+      "l2": 33.951927185058594
+    },
+    {
+      "step": 19,
+      "target_loss": 1.1029517650604248,
+      "retain_kl": 0.01756427064538002,
+      "l2": 34.29539108276367
+    },
+    {
+      "step": 20,
+      "target_loss": 2.648233652114868,
+      "retain_kl": 0.011095154099166393,
+      "l2": 34.68963623046875
+    },
+    {
+      "step": 21,
+      "target_loss": 2.2115933895111084,
+      "retain_kl": 0.033834658563137054,
+      "l2": 35.15065002441406
+    },
+    {
+      "step": 22,
+      "target_loss": 0.8585841059684753,
+      "retain_kl": 0.006963550113141537,
+      "l2": 35.54883575439453
+    },
+    {
+      "step": 23,
+      "target_loss": 0.38773825764656067,
+      "retain_kl": 0.03278731927275658,
+      "l2": 36.014564514160156
+    }
+  ],
+  "damage_screen": {
+    "accuracy": 1.0,
+    "checks": [
+      {
+        "variant": 0,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "B",
+        "canonical_pred": "B",
+        "correct": true,
+        "choice_mass": 0.9962975382804871,
+        "canonical_probs": {
+          "A": 0.08033733814954758,
+          "B": 0.8637077808380127,
+          "C": 0.0007398813031613827,
+          "D": 0.05521498993039131
+        }
+      },
+      {
+        "variant": 1,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "B",
+        "canonical_pred": "B",
+        "correct": true,
+        "choice_mass": 0.9951173663139343,
+        "canonical_probs": {
+          "A": 0.11278975009918213,
+          "B": 0.8334097862243652,
+          "C": 0.0005223201587796211,
+          "D": 0.05327810347080231
+        }
+      }
+    ]
+  },
+  "damaged_heldout": {
+    "accuracy": 1.0,
+    "checks": [
+      {
+        "variant": 4,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "B",
+        "canonical_pred": "B",
+        "correct": true,
+        "choice_mass": 0.9976533651351929,
+        "canonical_probs": {
+          "A": 0.08173614740371704,
+          "B": 0.8787463903427124,
+          "C": 0.0009080065647140145,
+          "D": 0.038609422743320465
+        }
+      },
+      {
+        "variant": 5,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "B",
+        "canonical_pred": "B",
+        "correct": true,
+        "choice_mass": 0.9968170523643494,
+        "canonical_probs": {
+          "A": 0.07247597724199295,
+          "B": 0.8829381465911865,
+          "C": 0.0006270400481298566,
+          "D": 0.04395889863371849
+        }
+      },
+      {
+        "variant": 4,
+        "permutation": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ],
+        "displayed_pred": "D",
+        "canonical_pred": "B",
+        "correct": true,
+        "choice_mass": 0.9990904331207275,
+        "canonical_probs": {
+          "C": 0.001316733774729073,
+          "A": 0.005901190917938948,
+          "D": 0.0003543940547388047,
+          "B": 0.9924277663230896
+        }
+      }
+    ]
+  },
+  "damage_train_retention": 1.0,
+  "damage_independent_locality": {
+    "all": {
+      "n": 126,
+      "token_agreement": 0.9841269841269841,
+      "baseline_accuracy": 0.9285714285714286,
+      "after_accuracy": 0.9126984126984127,
+      "accuracy_drop": 0.015873015873015928,
+      "mean_kl_shift": 0.011514536558010572
+    },
+    "same_entity_other_relation": {
+      "n": 1,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 1.0,
+      "after_accuracy": 1.0,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.006795283518327246
+    },
+    "other_entity_unseen_template": {
+      "n": 70,
+      "token_agreement": 0.9857142857142858,
+      "baseline_accuracy": 0.9571428571428572,
+      "after_accuracy": 0.9428571428571428,
+      "accuracy_drop": 0.014285714285714346,
+      "mean_kl_shift": 0.01443533097855589
+    },
+    "near_neighbor_invariant": {
+      "n": 35,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.9428571428571428,
+      "after_accuracy": 0.9428571428571428,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.0029758842479602173
+    },
+    "general_commonsense": {
+      "n": 20,
+      "token_agreement": 0.95,
+      "baseline_accuracy": 0.8,
+      "after_accuracy": 0.75,
+      "accuracy_drop": 0.050000000000000044,
+      "mean_kl_shift": 0.01647036028067424
+    },
+    "independent_locality_pass": true,
+    "target_entity": "bald eagle"
+  },
+  "damage_state_sha256": "889b25d27aba7137eeac7c37dc707bf8723a6499ede0a670f41c54ae94fe4a6f",
+  "damage_effective": false
+}

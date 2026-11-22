@@ -1,0 +1,52 @@
+{
+  "n_mastered": 33,
+  "n_damaged": 16,
+  "n_healthy": 17,
+  "n_unknown_ctrl": 8,
+  "simple_direct_baseline": {
+    "n_total": 41,
+    "n_known": 33,
+    "n_damaged": 16,
+    "n_unknown_ctrl": 8,
+    "auroc": 0.5992647058823529,
+    "auprc": 0.7562969077042874,
+    "recall_at_damaged_budget": 0.625,
+    "precision_at_damaged_budget": 0.625,
+    "healthy_false_positive_rate": 0.0,
+    "unknown_false_positive_rate": 1.0,
+    "mean_query_cost": 3.0
+  },
+  "m2_reference_free": {
+    "n_total": 41,
+    "n_known": 33,
+    "n_damaged": 16,
+    "n_unknown_ctrl": 8,
+    "auroc": 0.5863970588235294,
+    "auprc": 0.7025721602295398,
+    "recall_at_damaged_budget": 0.625,
+    "precision_at_damaged_budget": 0.625,
+    "healthy_false_positive_rate": 0.11764705882352941,
+    "unknown_false_positive_rate": 1.0,
+    "mean_query_cost": 4.463414634146342
+  },
+  "m2_reference_based": {
+    "n_total": 41,
+    "n_known": 33,
+    "n_damaged": 16,
+    "n_unknown_ctrl": 8,
+    "auroc": 1.0,
+    "auprc": 1.0,
+    "recall_at_damaged_budget": 1.0,
+    "precision_at_damaged_budget": 1.0,
+    "healthy_false_positive_rate": 0.0,
+    "unknown_false_positive_rate": 1.0,
+    "mean_query_cost": 4.682926829268292
+  },
+  "resources": {
+    "decoder_tokens_processed": 2361680,
+    "model_forward_calls": 3796,
+    "query_calls": 866,
+    "tokens": 68101,
+    "peak_vram_gb": 11.157513618469238
+  }
+}

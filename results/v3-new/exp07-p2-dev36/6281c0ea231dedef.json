@@ -1,0 +1,757 @@
+{
+  "unit": {
+    "unit_id": "6281c0ea231dedef",
+    "entity_id": "glass windowpane",
+    "relation_id": "primary_material",
+    "modality": "text",
+    "source_group": "mat_windowpane",
+    "probe_template_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "split": "dev",
+    "domain": "everyday_material",
+    "options": {
+      "A": "metal (metallic alloy or pure metal)",
+      "B": "wood or plant-based fiber (cellulose or timber)",
+      "C": "stone, ceramic, or glass (mineral or silicate)",
+      "D": "synthetic polymer or elastomer (plastic or rubber)"
+    }
+  },
+  "gold_evaluator_only": "C",
+  "mastery": {
+    "unit_id": "6281c0ea231dedef",
+    "entity_id": "glass windowpane",
+    "domain": "everyday_material",
+    "stably_mastered": true,
+    "exclusion_reason": null,
+    "screen": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 0,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9988466501235962,
+          "canonical_probs": {
+            "A": 0.00440722843632102,
+            "B": 0.002081827260553837,
+            "C": 0.9516962766647339,
+            "D": 0.041814617812633514
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9986165165901184,
+          "canonical_probs": {
+            "A": 0.014901043847203255,
+            "B": 0.004269220866262913,
+            "C": 0.9218949675559998,
+            "D": 0.0589347705245018
+          }
+        },
+        {
+          "variant": 2,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9991406798362732,
+          "canonical_probs": {
+            "A": 0.0007914581801742315,
+            "B": 0.001675517181865871,
+            "C": 0.983504056930542,
+            "D": 0.01402893103659153
+          }
+        },
+        {
+          "variant": 3,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9989564418792725,
+          "canonical_probs": {
+            "A": 0.010007476434111595,
+            "B": 0.005356615874916315,
+            "C": 0.9008442759513855,
+            "D": 0.0837915688753128
+          }
+        },
+        {
+          "variant": 0,
+          "permutation": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9993648529052734,
+          "canonical_probs": {
+            "D": 0.0024668609257787466,
+            "C": 0.9952026605606079,
+            "B": 0.0011652624234557152,
+            "A": 0.0011652624234557152
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9985277056694031,
+          "canonical_probs": {
+            "B": 0.023209216073155403,
+            "D": 0.09179423004388809,
+            "A": 0.014077101834118366,
+            "C": 0.870919406414032
+          }
+        }
+      ]
+    },
+    "heldout_clean_audit": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 4,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.999025285243988,
+          "canonical_probs": {
+            "A": 0.0006565747899003327,
+            "B": 0.0011523246066644788,
+            "C": 0.9841529726982117,
+            "D": 0.014038187451660633
+          }
+        },
+        {
+          "variant": 5,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9987984299659729,
+          "canonical_probs": {
+            "A": 0.005758230108767748,
+            "B": 0.0030821587424725294,
+            "C": 0.9683854579925537,
+            "D": 0.022774243727326393
+          }
+        },
+        {
+          "variant": 4,
+          "permutation": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9991933107376099,
+          "canonical_probs": {
+            "C": 0.9577769637107849,
+            "A": 0.0016316879773512483,
+            "D": 0.03713704273104668,
+            "B": 0.0034542831126600504
+          }
+        }
+      ]
+    },
+    "heldout_clean_mastered": true
+  },
+  "operational_eligible": false,
+  "strict_eligible": false,
+  "exclusion_reason": "damage_not_effective_or_train_retain_failed",
+  "damage_type": "D1_wrong_association",
+  "damage_logs": [
+    {
+      "step": 0,
+      "target_loss": 3.175663471221924,
+      "retain_kl": 1.1793413250416052e-05,
+      "l2": 31.933189392089844
+    },
+    {
+      "step": 1,
+      "target_loss": 2.7180869579315186,
+      "retain_kl": 0.0006079846061766148,
+      "l2": 29.020009994506836
+    },
+    {
+      "step": 2,
+      "target_loss": 5.882607936859131,
+      "retain_kl": 0.0013820528984069824,
+      "l2": 29.077957153320312
+    },
+    {
+      "step": 3,
+      "target_loss": 4.787851810455322,
+      "retain_kl": 0.010492543689906597,
+      "l2": 29.22566795349121
+    },
+    {
+      "step": 4,
+      "target_loss": 1.6207516193389893,
+      "retain_kl": 0.022790469229221344,
+      "l2": 29.353713989257812
+    },
+    {
+      "step": 5,
+      "target_loss": 1.5599839687347412,
+      "retain_kl": 0.004488651640713215,
+      "l2": 29.43446922302246
+    },
+    {
+      "step": 6,
+      "target_loss": 4.767150402069092,
+      "retain_kl": 0.016939107328653336,
+      "l2": 29.614927291870117
+    },
+    {
+      "step": 7,
+      "target_loss": 3.9263877868652344,
+      "retain_kl": 0.0021668411791324615,
+      "l2": 29.81690216064453
+    },
+    {
+      "step": 8,
+      "target_loss": 1.730942726135254,
+      "retain_kl": 0.014185687527060509,
+      "l2": 30.10967445373535
+    },
+    {
+      "step": 9,
+      "target_loss": 1.58087158203125,
+      "retain_kl": 0.0026252332609146833,
+      "l2": 30.418155670166016
+    },
+    {
+      "step": 10,
+      "target_loss": 3.6673336029052734,
+      "retain_kl": 0.007865908555686474,
+      "l2": 30.800678253173828
+    },
+    {
+      "step": 11,
+      "target_loss": 2.761223077774048,
+      "retain_kl": 0.009380847215652466,
+      "l2": 31.27271270751953
+    },
+    {
+      "step": 12,
+      "target_loss": 1.2930059432983398,
+      "retain_kl": 0.011643476784229279,
+      "l2": 31.82025146484375
+    },
+    {
+      "step": 13,
+      "target_loss": 1.1292576789855957,
+      "retain_kl": 0.02012835256755352,
+      "l2": 32.33363723754883
+    },
+    {
+      "step": 14,
+      "target_loss": 2.2760119438171387,
+      "retain_kl": 0.006160418502986431,
+      "l2": 32.8497314453125
+    },
+    {
+      "step": 15,
+      "target_loss": 1.6135023832321167,
+      "retain_kl": 0.01311845239251852,
+      "l2": 33.44443893432617
+    },
+    {
+      "step": 16,
+      "target_loss": 1.2847870588302612,
+      "retain_kl": 0.002469251397997141,
+      "l2": 34.09326934814453
+    },
+    {
+      "step": 17,
+      "target_loss": 1.0463948249816895,
+      "retain_kl": 0.011638536117970943,
+      "l2": 34.776729583740234
+    },
+    {
+      "step": 18,
+      "target_loss": 1.5528829097747803,
+      "retain_kl": 0.003245971165597439,
+      "l2": 35.420387268066406
+    },
+    {
+      "step": 19,
+      "target_loss": 1.1295831203460693,
+      "retain_kl": 0.005184214562177658,
+      "l2": 36.10015106201172
+    },
+    {
+      "step": 20,
+      "target_loss": 0.714346706867218,
+      "retain_kl": 0.006539736874401569,
+      "l2": 36.8167724609375
+    },
+    {
+      "step": 21,
+      "target_loss": 0.4804091155529022,
+      "retain_kl": 0.008512898348271847,
+      "l2": 37.53187942504883
+    },
+    {
+      "step": 22,
+      "target_loss": 0.3692305386066437,
+      "retain_kl": 0.012884268537163734,
+      "l2": 38.17837905883789
+    },
+    {
+      "step": 23,
+      "target_loss": 0.5163928270339966,
+      "retain_kl": 0.002885701134800911,
+      "l2": 38.808616638183594
+    },
+    {
+      "step": 24,
+      "target_loss": 0.22165031731128693,
+      "retain_kl": 0.014670882374048233,
+      "l2": 39.438682556152344
+    },
+    {
+      "step": 25,
+      "target_loss": 0.26582932472229004,
+      "retain_kl": 0.005001764744520187,
+      "l2": 39.99766540527344
+    },
+    {
+      "step": 26,
+      "target_loss": 0.17497092485427856,
+      "retain_kl": 0.013382397592067719,
+      "l2": 40.47944641113281
+    },
+    {
+      "step": 27,
+      "target_loss": 0.3032713532447815,
+      "retain_kl": 0.009422378614544868,
+      "l2": 40.87188720703125
+    },
+    {
+      "step": 28,
+      "target_loss": 0.14521387219429016,
+      "retain_kl": 0.003906783647835255,
+      "l2": 41.21227264404297
+    },
+    {
+      "step": 29,
+      "target_loss": 0.17648500204086304,
+      "retain_kl": 0.01687295362353325,
+      "l2": 41.496665954589844
+    },
+    {
+      "step": 30,
+      "target_loss": 0.11624665558338165,
+      "retain_kl": 0.0027046375907957554,
+      "l2": 41.706233978271484
+    },
+    {
+      "step": 31,
+      "target_loss": 0.2249903529882431,
+      "retain_kl": 0.01728672720491886,
+      "l2": 41.9403076171875
+    },
+    {
+      "step": 32,
+      "target_loss": 0.10379625856876373,
+      "retain_kl": 0.005974717438220978,
+      "l2": 42.1416130065918
+    },
+    {
+      "step": 33,
+      "target_loss": 0.16350805759429932,
+      "retain_kl": 0.007569769397377968,
+      "l2": 42.3536491394043
+    },
+    {
+      "step": 34,
+      "target_loss": 0.10080482065677643,
+      "retain_kl": 0.009165228344500065,
+      "l2": 42.53278350830078
+    },
+    {
+      "step": 35,
+      "target_loss": 0.15596207976341248,
+      "retain_kl": 0.0017999685369431973,
+      "l2": 42.69227981567383
+    },
+    {
+      "step": 36,
+      "target_loss": 0.17647011578083038,
+      "retain_kl": 0.009452974423766136,
+      "l2": 42.92051696777344
+    },
+    {
+      "step": 37,
+      "target_loss": 0.23263435065746307,
+      "retain_kl": 0.0010392265394330025,
+      "l2": 43.11298751831055
+    },
+    {
+      "step": 38,
+      "target_loss": 0.019012242555618286,
+      "retain_kl": 0.008666874840855598,
+      "l2": 43.34324264526367
+    },
+    {
+      "step": 39,
+      "target_loss": 0.04929396137595177,
+      "retain_kl": 0.003901895834133029,
+      "l2": 43.56776809692383
+    },
+    {
+      "step": 40,
+      "target_loss": 0.09620267897844315,
+      "retain_kl": 0.004727725870907307,
+      "l2": 43.81011962890625
+    },
+    {
+      "step": 41,
+      "target_loss": 0.11932361871004105,
+      "retain_kl": 0.004635032266378403,
+      "l2": 44.052520751953125
+    },
+    {
+      "step": 42,
+      "target_loss": 0.016618279740214348,
+      "retain_kl": 0.000734698842279613,
+      "l2": 44.26052474975586
+    },
+    {
+      "step": 43,
+      "target_loss": 0.0446128286421299,
+      "retain_kl": 0.008297020569443703,
+      "l2": 44.535736083984375
+    },
+    {
+      "step": 44,
+      "target_loss": 0.10617133229970932,
+      "retain_kl": 0.0012431035283952951,
+      "l2": 44.76650619506836
+    },
+    {
+      "step": 45,
+      "target_loss": 0.08003537356853485,
+      "retain_kl": 0.004896807484328747,
+      "l2": 45.014034271240234
+    },
+    {
+      "step": 46,
+      "target_loss": 0.00621363241225481,
+      "retain_kl": 0.0021569791715592146,
+      "l2": 45.21775817871094
+    },
+    {
+      "step": 47,
+      "target_loss": 0.02449287846684456,
+      "retain_kl": 0.0039039747789502144,
+      "l2": 45.42820358276367
+    },
+    {
+      "step": 48,
+      "target_loss": 0.042209163308143616,
+      "retain_kl": 0.003995908424258232,
+      "l2": 45.6352424621582
+    },
+    {
+      "step": 49,
+      "target_loss": 0.05384959653019905,
+      "retain_kl": 0.000823878450319171,
+      "l2": 45.85717010498047
+    },
+    {
+      "step": 50,
+      "target_loss": 0.0037435467820614576,
+      "retain_kl": 0.005787733942270279,
+      "l2": 46.132545471191406
+    },
+    {
+      "step": 51,
+      "target_loss": 0.013952572830021381,
+      "retain_kl": 0.0014092375058680773,
+      "l2": 46.364227294921875
+    },
+    {
+      "step": 52,
+      "target_loss": 0.044851645827293396,
+      "retain_kl": 0.003706554416567087,
+      "l2": 46.57395553588867
+    },
+    {
+      "step": 53,
+      "target_loss": 0.02676166594028473,
+      "retain_kl": 0.002751123858615756,
+      "l2": 46.75991439819336
+    },
+    {
+      "step": 54,
+      "target_loss": 0.003020369913429022,
+      "retain_kl": 0.0017333445139229298,
+      "l2": 46.921295166015625
+    },
+    {
+      "step": 55,
+      "target_loss": 0.011806845664978027,
+      "retain_kl": 0.005471421405673027,
+      "l2": 47.06840133666992
+    },
+    {
+      "step": 56,
+      "target_loss": 0.015439392998814583,
+      "retain_kl": 0.0005784756503999233,
+      "l2": 47.221641540527344
+    },
+    {
+      "step": 57,
+      "target_loss": 0.011801897548139095,
+      "retain_kl": 0.00391766894608736,
+      "l2": 47.45005798339844
+    },
+    {
+      "step": 58,
+      "target_loss": 0.0024748193100094795,
+      "retain_kl": 0.000588008260820061,
+      "l2": 47.67230987548828
+    },
+    {
+      "step": 59,
+      "target_loss": 0.009562638588249683,
+      "retain_kl": 0.0021274485625326633,
+      "l2": 47.8619384765625
+    },
+    {
+      "step": 60,
+      "target_loss": 0.00589738367125392,
+      "retain_kl": 0.0016502955695614219,
+      "l2": 48.01412582397461
+    },
+    {
+      "step": 61,
+      "target_loss": 0.006500764284282923,
+      "retain_kl": 0.0013026536908000708,
+      "l2": 48.13886260986328
+    },
+    {
+      "step": 62,
+      "target_loss": 0.0009717986104078591,
+      "retain_kl": 0.0025646486319601536,
+      "l2": 48.24563217163086
+    },
+    {
+      "step": 63,
+      "target_loss": 0.0021785590797662735,
+      "retain_kl": 0.00024001553538255394,
+      "l2": 48.36063766479492
+    }
+  ],
+  "damage_screen": {
+    "accuracy": 0.0,
+    "checks": [
+      {
+        "variant": 0,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "D",
+        "canonical_pred": "D",
+        "correct": false,
+        "choice_mass": 0.9998785853385925,
+        "canonical_probs": {
+          "A": 0.0021713431924581528,
+          "B": 1.8600459270601277e-06,
+          "C": 0.0052087814547121525,
+          "D": 0.9926180243492126
+        }
+      },
+      {
+        "variant": 1,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "D",
+        "canonical_pred": "D",
+        "correct": false,
+        "choice_mass": 0.9998757839202881,
+        "canonical_probs": {
+          "A": 0.007558621000498533,
+          "B": 3.46580236509908e-06,
+          "C": 0.002453925320878625,
+          "D": 0.9899840354919434
+        }
+      }
+    ]
+  },
+  "damaged_heldout": {
+    "accuracy": 0.6666666666666666,
+    "checks": [
+      {
+        "variant": 4,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "C",
+        "canonical_pred": "C",
+        "correct": true,
+        "choice_mass": 0.9989736080169678,
+        "canonical_probs": {
+          "A": 0.0007286622421815991,
+          "B": 0.00012662251538131386,
+          "C": 0.7051814198493958,
+          "D": 0.29396334290504456
+        }
+      },
+      {
+        "variant": 5,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "D",
+        "canonical_pred": "D",
+        "correct": false,
+        "choice_mass": 0.999583899974823,
+        "canonical_probs": {
+          "A": 0.009458670392632484,
+          "B": 1.9437167793512344e-05,
+          "C": 0.02571132965385914,
+          "D": 0.9648105502128601
+        }
+      },
+      {
+        "variant": 4,
+        "permutation": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "C",
+        "correct": true,
+        "choice_mass": 0.9998208284378052,
+        "canonical_probs": {
+          "C": 0.9970853924751282,
+          "A": 5.406444415712031e-06,
+          "D": 0.00010859134636120871,
+          "B": 0.0028006078209728003
+        }
+      }
+    ]
+  },
+  "damage_train_retention": 1.0,
+  "damage_independent_locality": {
+    "all": {
+      "n": 126,
+      "token_agreement": 0.9682539682539683,
+      "baseline_accuracy": 0.9285714285714286,
+      "after_accuracy": 0.9126984126984127,
+      "accuracy_drop": 0.015873015873015928,
+      "mean_kl_shift": 0.035956233772840296
+    },
+    "same_entity_other_relation": {
+      "n": 1,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.0,
+      "after_accuracy": 0.0,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.12357211200519538
+    },
+    "other_entity_unseen_template": {
+      "n": 70,
+      "token_agreement": 0.9571428571428572,
+      "baseline_accuracy": 0.9571428571428572,
+      "after_accuracy": 0.9142857142857143,
+      "accuracy_drop": 0.04285714285714293,
+      "mean_kl_shift": 0.055899955268371
+    },
+    "near_neighbor_invariant": {
+      "n": 35,
+      "token_agreement": 0.9714285714285714,
+      "baseline_accuracy": 0.9714285714285714,
+      "after_accuracy": 1.0,
+      "accuracy_drop": -0.02857142857142858,
+      "mean_kl_shift": 0.0121236358350123
+    },
+    "general_commonsense": {
+      "n": 20,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.8,
+      "after_accuracy": 0.8,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.0034794610180640616
+    },
+    "independent_locality_pass": true,
+    "target_entity": "glass windowpane"
+  },
+  "damage_state_sha256": "7dc7146928851e74777dd80e95ed478aca221a5a681e29caee64e4dbfe02e188",
+  "damage_effective": false
+}

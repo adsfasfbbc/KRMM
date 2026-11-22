@@ -1,0 +1,218 @@
+{
+  "unit": {
+    "unit_id": "2125c12bd1628749",
+    "entity_id": "concert flute",
+    "relation_id": "hornbostel_sachs_class",
+    "modality": "text",
+    "source_group": "snd_flute",
+    "probe_template_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "split": "calibration",
+    "domain": "sound_source_mechanism",
+    "options": {
+      "A": "chordophone (vibrating stretched string)",
+      "B": "aerophone (vibrating air column or air-driven reed)",
+      "C": "membranophone (vibrating stretched membrane)",
+      "D": "idiophone (vibrating solid body itself)"
+    }
+  },
+  "gold_evaluator_only": "B",
+  "mastery": {
+    "unit_id": "2125c12bd1628749",
+    "entity_id": "concert flute",
+    "domain": "sound_source_mechanism",
+    "stably_mastered": false,
+    "exclusion_reason": "failed_screen_accuracy",
+    "screen": {
+      "accuracy": 0.8333333333333334,
+      "checks": [
+        {
+          "variant": 0,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9989983439445496,
+          "canonical_probs": {
+            "A": 0.007344743702560663,
+            "B": 0.961971640586853,
+            "C": 0.005047963932156563,
+            "D": 0.025635674595832825
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9991180896759033,
+          "canonical_probs": {
+            "A": 0.014557919465005398,
+            "B": 0.9006665945053101,
+            "C": 0.02719777636229992,
+            "D": 0.05757768824696541
+          }
+        },
+        {
+          "variant": 2,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9985283613204956,
+          "canonical_probs": {
+            "A": 0.002165144309401512,
+            "B": 0.989784300327301,
+            "C": 0.002165144309401512,
+            "D": 0.005885472521185875
+          }
+        },
+        {
+          "variant": 3,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9968951940536499,
+          "canonical_probs": {
+            "A": 0.026814591139554977,
+            "B": 0.8879773020744324,
+            "C": 0.0208832249045372,
+            "D": 0.06432486325502396
+          }
+        },
+        {
+          "variant": 0,
+          "permutation": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9986998438835144,
+          "canonical_probs": {
+            "D": 0.14110641181468964,
+            "C": 0.019096678122878075,
+            "B": 0.8120114207267761,
+            "A": 0.02778550237417221
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "D",
+          "correct": false,
+          "choice_mass": 0.9990447163581848,
+          "canonical_probs": {
+            "B": 0.28479787707328796,
+            "D": 0.41437846422195435,
+            "A": 0.04949045181274414,
+            "C": 0.25133323669433594
+          }
+        }
+      ]
+    },
+    "heldout_clean_audit": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 4,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9992867112159729,
+          "canonical_probs": {
+            "A": 0.0035577495582401752,
+            "B": 0.986465334892273,
+            "C": 0.0024452032521367073,
+            "D": 0.0075317551381886005
+          }
+        },
+        {
+          "variant": 5,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9992073178291321,
+          "canonical_probs": {
+            "A": 0.005832289345562458,
+            "B": 0.980840265750885,
+            "C": 0.0024312599562108517,
+            "D": 0.010896151885390282
+          }
+        },
+        {
+          "variant": 4,
+          "permutation": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "B",
+          "correct": true,
+          "choice_mass": 0.9993584752082825,
+          "canonical_probs": {
+            "C": 0.019650021567940712,
+            "A": 0.004968303721398115,
+            "D": 0.02859061397612095,
+            "B": 0.9467911124229431
+          }
+        }
+      ]
+    },
+    "heldout_clean_mastered": true
+  },
+  "operational_eligible": false,
+  "strict_eligible": false,
+  "exclusion_reason": "failed_screen_accuracy"
+}

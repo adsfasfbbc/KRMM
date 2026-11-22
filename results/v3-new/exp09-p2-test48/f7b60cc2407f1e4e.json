@@ -1,0 +1,757 @@
+{
+  "unit": {
+    "unit_id": "f7b60cc2407f1e4e",
+    "entity_id": "taiko drum",
+    "relation_id": "hornbostel_sachs_class",
+    "modality": "text",
+    "source_group": "snd_taiko",
+    "probe_template_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "split": "test",
+    "domain": "sound_source_mechanism",
+    "options": {
+      "A": "chordophone (vibrating stretched string)",
+      "B": "aerophone (vibrating air column or air-driven reed)",
+      "C": "membranophone (vibrating stretched membrane)",
+      "D": "idiophone (vibrating solid body itself)"
+    }
+  },
+  "gold_evaluator_only": "C",
+  "mastery": {
+    "unit_id": "f7b60cc2407f1e4e",
+    "entity_id": "taiko drum",
+    "domain": "sound_source_mechanism",
+    "stably_mastered": true,
+    "exclusion_reason": null,
+    "screen": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 0,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9986395835876465,
+          "canonical_probs": {
+            "A": 0.007375994231551886,
+            "B": 0.006509292405098677,
+            "C": 0.9660646319389343,
+            "D": 0.020050032064318657
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9987225532531738,
+          "canonical_probs": {
+            "A": 0.0024410018231719732,
+            "B": 0.003134308382868767,
+            "C": 0.9847704172134399,
+            "D": 0.009654349647462368
+          }
+        },
+        {
+          "variant": 2,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9983761310577393,
+          "canonical_probs": {
+            "A": 0.005743079818785191,
+            "B": 0.010729486122727394,
+            "C": 0.9658375382423401,
+            "D": 0.017689932137727737
+          }
+        },
+        {
+          "variant": 3,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9979100227355957,
+          "canonical_probs": {
+            "A": 0.004002158064395189,
+            "B": 0.0058231051079928875,
+            "C": 0.9792957305908203,
+            "D": 0.010878993198275566
+          }
+        },
+        {
+          "variant": 0,
+          "permutation": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9991490244865417,
+          "canonical_probs": {
+            "D": 0.04697691276669502,
+            "C": 0.9435564875602722,
+            "B": 0.003856099909171462,
+            "A": 0.005610591731965542
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9989790916442871,
+          "canonical_probs": {
+            "B": 0.0014267251826822758,
+            "D": 0.047246649861335754,
+            "A": 0.00235227239318192,
+            "C": 0.9489743709564209
+          }
+        }
+      ]
+    },
+    "heldout_clean_audit": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 4,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.998587429523468,
+          "canonical_probs": {
+            "A": 0.004552419763058424,
+            "B": 0.002761182142421603,
+            "C": 0.9830489158630371,
+            "D": 0.009637473151087761
+          }
+        },
+        {
+          "variant": 5,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9988303184509277,
+          "canonical_probs": {
+            "A": 0.019337154924869537,
+            "B": 0.017064979299902916,
+            "C": 0.9317163228988647,
+            "D": 0.031881578266620636
+          }
+        },
+        {
+          "variant": 4,
+          "permutation": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "C",
+          "correct": true,
+          "choice_mass": 0.9991298913955688,
+          "canonical_probs": {
+            "C": 0.9786385893821716,
+            "A": 0.0024258026387542486,
+            "D": 0.017924390733242035,
+            "B": 0.0010112249292433262
+          }
+        }
+      ]
+    },
+    "heldout_clean_mastered": true
+  },
+  "operational_eligible": true,
+  "strict_eligible": false,
+  "exclusion_reason": "damage_independent_locality_failed",
+  "damage_type": "D1_wrong_association",
+  "damage_logs": [
+    {
+      "step": 0,
+      "target_loss": 4.910885810852051,
+      "retain_kl": 1.1793413250416052e-05,
+      "l2": 31.978816986083984
+    },
+    {
+      "step": 1,
+      "target_loss": 5.892085075378418,
+      "retain_kl": 0.0006766666192561388,
+      "l2": 29.0537109375
+    },
+    {
+      "step": 2,
+      "target_loss": 5.214023590087891,
+      "retain_kl": 0.0029685422778129578,
+      "l2": 29.11602783203125
+    },
+    {
+      "step": 3,
+      "target_loss": 5.892441749572754,
+      "retain_kl": 0.004768730141222477,
+      "l2": 29.233640670776367
+    },
+    {
+      "step": 4,
+      "target_loss": 3.122976541519165,
+      "retain_kl": 0.013343945145606995,
+      "l2": 29.420719146728516
+    },
+    {
+      "step": 5,
+      "target_loss": 3.9372048377990723,
+      "retain_kl": 0.009743357077240944,
+      "l2": 29.60700035095215
+    },
+    {
+      "step": 6,
+      "target_loss": 3.7385332584381104,
+      "retain_kl": 0.041242264211177826,
+      "l2": 29.912921905517578
+    },
+    {
+      "step": 7,
+      "target_loss": 4.318994998931885,
+      "retain_kl": 0.01493083219975233,
+      "l2": 30.144445419311523
+    },
+    {
+      "step": 8,
+      "target_loss": 2.437776565551758,
+      "retain_kl": 0.04117263853549957,
+      "l2": 30.376480102539062
+    },
+    {
+      "step": 9,
+      "target_loss": 3.454451560974121,
+      "retain_kl": 0.007173116318881512,
+      "l2": 30.53599739074707
+    },
+    {
+      "step": 10,
+      "target_loss": 3.5677006244659424,
+      "retain_kl": 0.01687919721007347,
+      "l2": 30.789154052734375
+    },
+    {
+      "step": 11,
+      "target_loss": 4.060354709625244,
+      "retain_kl": 0.015197998844087124,
+      "l2": 31.015743255615234
+    },
+    {
+      "step": 12,
+      "target_loss": 2.9988901615142822,
+      "retain_kl": 0.006678424775600433,
+      "l2": 31.26543426513672
+    },
+    {
+      "step": 13,
+      "target_loss": 3.577807664871216,
+      "retain_kl": 0.028972720727324486,
+      "l2": 31.568397521972656
+    },
+    {
+      "step": 14,
+      "target_loss": 2.883023738861084,
+      "retain_kl": 0.004182393662631512,
+      "l2": 31.811750411987305
+    },
+    {
+      "step": 15,
+      "target_loss": 3.1108431816101074,
+      "retain_kl": 0.026477273553609848,
+      "l2": 32.13687515258789
+    },
+    {
+      "step": 16,
+      "target_loss": 3.004314661026001,
+      "retain_kl": 0.001412615878507495,
+      "l2": 32.45478820800781
+    },
+    {
+      "step": 17,
+      "target_loss": 3.6977758407592773,
+      "retain_kl": 0.01694503426551819,
+      "l2": 32.82109451293945
+    },
+    {
+      "step": 18,
+      "target_loss": 2.2848575115203857,
+      "retain_kl": 0.01408424787223339,
+      "l2": 33.18625259399414
+    },
+    {
+      "step": 19,
+      "target_loss": 2.4517364501953125,
+      "retain_kl": 0.0018756333738565445,
+      "l2": 33.56607437133789
+    },
+    {
+      "step": 20,
+      "target_loss": 2.7667219638824463,
+      "retain_kl": 0.028021126985549927,
+      "l2": 34.02909469604492
+    },
+    {
+      "step": 21,
+      "target_loss": 3.459644317626953,
+      "retain_kl": 0.0013336328556761146,
+      "l2": 34.44797897338867
+    },
+    {
+      "step": 22,
+      "target_loss": 1.5279510021209717,
+      "retain_kl": 0.03063143603503704,
+      "l2": 34.9162483215332
+    },
+    {
+      "step": 23,
+      "target_loss": 1.4218591451644897,
+      "retain_kl": 0.0016847243532538414,
+      "l2": 35.34010314941406
+    },
+    {
+      "step": 24,
+      "target_loss": 2.3334429264068604,
+      "retain_kl": 0.012970401905477047,
+      "l2": 35.827999114990234
+    },
+    {
+      "step": 25,
+      "target_loss": 2.764274835586548,
+      "retain_kl": 0.02740969881415367,
+      "l2": 36.301334381103516
+    },
+    {
+      "step": 26,
+      "target_loss": 1.1380889415740967,
+      "retain_kl": 0.0010219693649560213,
+      "l2": 36.698577880859375
+    },
+    {
+      "step": 27,
+      "target_loss": 0.7456438541412354,
+      "retain_kl": 0.02890586107969284,
+      "l2": 37.174468994140625
+    },
+    {
+      "step": 28,
+      "target_loss": 2.3157622814178467,
+      "retain_kl": 0.0013751189690083265,
+      "l2": 37.589027404785156
+    },
+    {
+      "step": 29,
+      "target_loss": 2.648602247238159,
+      "retain_kl": 0.021689942106604576,
+      "l2": 38.03692626953125
+    },
+    {
+      "step": 30,
+      "target_loss": 0.6791524291038513,
+      "retain_kl": 0.007276368327438831,
+      "l2": 38.44523620605469
+    },
+    {
+      "step": 31,
+      "target_loss": 0.3653522729873657,
+      "retain_kl": 0.0048060049302875996,
+      "l2": 38.85548782348633
+    },
+    {
+      "step": 32,
+      "target_loss": 1.976058840751648,
+      "retain_kl": 0.01911798119544983,
+      "l2": 39.27199935913086
+    },
+    {
+      "step": 33,
+      "target_loss": 2.3978960514068604,
+      "retain_kl": 0.0022243079729378223,
+      "l2": 39.617164611816406
+    },
+    {
+      "step": 34,
+      "target_loss": 0.35233426094055176,
+      "retain_kl": 0.025715503841638565,
+      "l2": 40.018741607666016
+    },
+    {
+      "step": 35,
+      "target_loss": 0.16930049657821655,
+      "retain_kl": 0.00149279716424644,
+      "l2": 40.36351013183594
+    },
+    {
+      "step": 36,
+      "target_loss": 1.7456711530685425,
+      "retain_kl": 0.025425776839256287,
+      "l2": 40.709190368652344
+    },
+    {
+      "step": 37,
+      "target_loss": 2.0633339881896973,
+      "retain_kl": 0.002360280603170395,
+      "l2": 41.02106475830078
+    },
+    {
+      "step": 38,
+      "target_loss": 0.09178145974874496,
+      "retain_kl": 0.0055672889575362206,
+      "l2": 41.39484786987305
+    },
+    {
+      "step": 39,
+      "target_loss": 0.030232947319746017,
+      "retain_kl": 0.01961784064769745,
+      "l2": 41.7427978515625
+    },
+    {
+      "step": 40,
+      "target_loss": 1.9627082347869873,
+      "retain_kl": 0.0013827804941684008,
+      "l2": 42.022300720214844
+    },
+    {
+      "step": 41,
+      "target_loss": 1.884546160697937,
+      "retain_kl": 0.017328036949038506,
+      "l2": 42.346927642822266
+    },
+    {
+      "step": 42,
+      "target_loss": 0.029700426384806633,
+      "retain_kl": 0.0006632923032157123,
+      "l2": 42.71512985229492
+    },
+    {
+      "step": 43,
+      "target_loss": 0.008134804666042328,
+      "retain_kl": 0.023064713925123215,
+      "l2": 43.08782196044922
+    },
+    {
+      "step": 44,
+      "target_loss": 1.244786024093628,
+      "retain_kl": 0.0010412416886538267,
+      "l2": 43.3754768371582
+    },
+    {
+      "step": 45,
+      "target_loss": 1.080697774887085,
+      "retain_kl": 0.005421094596385956,
+      "l2": 43.7325325012207
+    },
+    {
+      "step": 46,
+      "target_loss": 0.006886675488203764,
+      "retain_kl": 0.03514974191784859,
+      "l2": 44.126468658447266
+    },
+    {
+      "step": 47,
+      "target_loss": 0.002116346498951316,
+      "retain_kl": 0.0023427060805261135,
+      "l2": 44.44381332397461
+    },
+    {
+      "step": 48,
+      "target_loss": 0.5976563096046448,
+      "retain_kl": 0.03201746195554733,
+      "l2": 44.73430252075195
+    },
+    {
+      "step": 49,
+      "target_loss": 0.7989975214004517,
+      "retain_kl": 0.0005870104068890214,
+      "l2": 44.95088577270508
+    },
+    {
+      "step": 50,
+      "target_loss": 0.003596268827095628,
+      "retain_kl": 0.02312670275568962,
+      "l2": 45.26872253417969
+    },
+    {
+      "step": 51,
+      "target_loss": 0.0011023165425285697,
+      "retain_kl": 0.001038676593452692,
+      "l2": 45.456356048583984
+    },
+    {
+      "step": 52,
+      "target_loss": 0.628147542476654,
+      "retain_kl": 0.004516759887337685,
+      "l2": 45.607234954833984
+    },
+    {
+      "step": 53,
+      "target_loss": 0.42409247159957886,
+      "retain_kl": 0.01006479375064373,
+      "l2": 45.84324264526367
+    },
+    {
+      "step": 54,
+      "target_loss": 0.0023059463128447533,
+      "retain_kl": 0.0014661687891930342,
+      "l2": 46.13331604003906
+    },
+    {
+      "step": 55,
+      "target_loss": 0.0010931475553661585,
+      "retain_kl": 0.01396698784083128,
+      "l2": 46.33629608154297
+    },
+    {
+      "step": 56,
+      "target_loss": 0.14219827950000763,
+      "retain_kl": 0.0005450823227874935,
+      "l2": 46.51408767700195
+    },
+    {
+      "step": 57,
+      "target_loss": 0.06687082350254059,
+      "retain_kl": 0.010959414765238762,
+      "l2": 46.82014465332031
+    },
+    {
+      "step": 58,
+      "target_loss": 0.006027141585946083,
+      "retain_kl": 0.0004862483765464276,
+      "l2": 47.09321212768555
+    },
+    {
+      "step": 59,
+      "target_loss": 0.004132304340600967,
+      "retain_kl": 0.0025942043866962194,
+      "l2": 47.33883285522461
+    },
+    {
+      "step": 60,
+      "target_loss": 0.014953779987990856,
+      "retain_kl": 0.005716484971344471,
+      "l2": 47.51789093017578
+    },
+    {
+      "step": 61,
+      "target_loss": 0.01178882084786892,
+      "retain_kl": 0.0007720080902799964,
+      "l2": 47.696502685546875
+    },
+    {
+      "step": 62,
+      "target_loss": 0.006766856648027897,
+      "retain_kl": 0.005545471794903278,
+      "l2": 47.908958435058594
+    },
+    {
+      "step": 63,
+      "target_loss": 0.0041068983264267445,
+      "retain_kl": 0.0003691321180667728,
+      "l2": 48.13008499145508
+    }
+  ],
+  "damage_screen": {
+    "accuracy": 0.0,
+    "checks": [
+      {
+        "variant": 0,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": false,
+        "choice_mass": 0.9997435808181763,
+        "canonical_probs": {
+          "A": 0.9930506944656372,
+          "B": 0.00010159933299291879,
+          "C": 0.0027892752550542355,
+          "D": 0.004058371298015118
+        }
+      },
+      {
+        "variant": 1,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": false,
+        "choice_mass": 0.9998195767402649,
+        "canonical_probs": {
+          "A": 0.9944041967391968,
+          "B": 8.978330879472196e-05,
+          "C": 0.001919651753269136,
+          "D": 0.003586381673812866
+        }
+      }
+    ]
+  },
+  "damaged_heldout": {
+    "accuracy": 0.3333333333333333,
+    "checks": [
+      {
+        "variant": 4,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": false,
+        "choice_mass": 0.9994469285011292,
+        "canonical_probs": {
+          "A": 0.9805480241775513,
+          "B": 0.00022607501887250692,
+          "C": 0.009612955152988434,
+          "D": 0.009612955152988434
+        }
+      },
+      {
+        "variant": 5,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": false,
+        "choice_mass": 0.9994084239006042,
+        "canonical_probs": {
+          "A": 0.9293120503425598,
+          "B": 0.0017939943354576826,
+          "C": 0.028062792494893074,
+          "D": 0.04083112254738808
+        }
+      },
+      {
+        "variant": 4,
+        "permutation": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "C",
+        "correct": true,
+        "choice_mass": 0.9998176097869873,
+        "canonical_probs": {
+          "C": 0.9958206415176392,
+          "A": 0.00010188273154199123,
+          "D": 0.00048605535994283855,
+          "B": 0.0035914902109652758
+        }
+      }
+    ]
+  },
+  "damage_train_retention": 0.9821428571428571,
+  "damage_independent_locality": {
+    "all": {
+      "n": 162,
+      "token_agreement": 0.9938271604938271,
+      "baseline_accuracy": 0.9259259259259259,
+      "after_accuracy": 0.9197530864197531,
+      "accuracy_drop": 0.006172839506172867,
+      "mean_kl_shift": 0.021866034042214277
+    },
+    "same_entity_other_relation": {
+      "n": 1,
+      "token_agreement": 0.0,
+      "baseline_accuracy": 1.0,
+      "after_accuracy": 0.0,
+      "accuracy_drop": 1.0,
+      "mean_kl_shift": 2.6418136839968303
+    },
+    "other_entity_unseen_template": {
+      "n": 94,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.9361702127659575,
+      "after_accuracy": 0.9361702127659575,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.006872743144911853
+    },
+    "near_neighbor_invariant": {
+      "n": 47,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.9574468085106383,
+      "after_accuracy": 0.9574468085106383,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.00317023184402904
+    },
+    "general_commonsense": {
+      "n": 20,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.8,
+      "after_accuracy": 0.8,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.005272253927540164
+    },
+    "independent_locality_pass": false,
+    "target_entity": "taiko drum"
+  },
+  "damage_state_sha256": "504b0680eb5a7f49c38c2c37abf7e9797661abf7f969d98dd745e5c75c92104a",
+  "damage_effective": true
+}

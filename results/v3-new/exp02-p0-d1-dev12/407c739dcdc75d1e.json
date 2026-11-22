@@ -1,0 +1,517 @@
+{
+  "unit": {
+    "unit_id": "407c739dcdc75d1e",
+    "entity_id": "stainless steel frying pan",
+    "relation_id": "primary_material",
+    "modality": "text",
+    "source_group": "mat_steel_pan",
+    "probe_template_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "split": "dev",
+    "domain": "everyday_material",
+    "options": {
+      "A": "metal (metallic alloy or pure metal)",
+      "B": "wood or plant-based fiber (cellulose or timber)",
+      "C": "stone, ceramic, or glass (mineral or silicate)",
+      "D": "synthetic polymer or elastomer (plastic or rubber)"
+    }
+  },
+  "gold_evaluator_only": "A",
+  "mastery": {
+    "unit_id": "407c739dcdc75d1e",
+    "entity_id": "stainless steel frying pan",
+    "domain": "everyday_material",
+    "stably_mastered": true,
+    "exclusion_reason": null,
+    "screen": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 0,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9994820356369019,
+          "canonical_probs": {
+            "A": 0.9931829571723938,
+            "B": 0.0019172942265868187,
+            "C": 0.003581977216526866,
+            "D": 0.0013177356449887156
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9994648098945618,
+          "canonical_probs": {
+            "A": 0.9956592321395874,
+            "B": 0.0011657970026135445,
+            "C": 0.0024679924827069044,
+            "D": 0.0007070916472002864
+          }
+        },
+        {
+          "variant": 2,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.999446451663971,
+          "canonical_probs": {
+            "A": 0.9966256618499756,
+            "B": 0.0007077779737301171,
+            "C": 0.0021801097318530083,
+            "D": 0.00048644826165400445
+          }
+        },
+        {
+          "variant": 3,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.999182403087616,
+          "canonical_probs": {
+            "A": 0.9922558069229126,
+            "B": 0.0019155043410137296,
+            "C": 0.005206880625337362,
+            "D": 0.0006218731869012117
+          }
+        },
+        {
+          "variant": 0,
+          "permutation": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.999306321144104,
+          "canonical_probs": {
+            "D": 0.0006252185557968915,
+            "C": 0.0013235878432169557,
+            "B": 0.0004574197228066623,
+            "A": 0.9975937008857727
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9990541934967041,
+          "canonical_probs": {
+            "B": 0.0005505032022483647,
+            "D": 0.0013205885188654065,
+            "A": 0.9953331351280212,
+            "C": 0.0027956862468272448
+          }
+        }
+      ]
+    },
+    "heldout_clean_audit": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 4,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9993772506713867,
+          "canonical_probs": {
+            "A": 0.994762122631073,
+            "B": 0.0011647465871647,
+            "C": 0.0031661097891628742,
+            "D": 0.0009071056265383959
+          }
+        },
+        {
+          "variant": 5,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9993075728416443,
+          "canonical_probs": {
+            "A": 0.9913229942321777,
+            "B": 0.002457244088873267,
+            "C": 0.00405131047591567,
+            "D": 0.002168510342016816
+          }
+        },
+        {
+          "variant": 4,
+          "permutation": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9994035363197327,
+          "canonical_probs": {
+            "C": 0.00055132363922894,
+            "A": 0.9968165755271912,
+            "D": 0.0019243087153881788,
+            "B": 0.0007079135975800455
+          }
+        }
+      ]
+    },
+    "heldout_clean_mastered": true
+  },
+  "operational_eligible": false,
+  "strict_eligible": false,
+  "exclusion_reason": "damage_not_effective_or_train_retain_failed",
+  "damage_type": "D1_wrong_association",
+  "damage_logs": [
+    {
+      "step": 0,
+      "target_loss": 6.257358551025391,
+      "retain_kl": 1.1793413250416052e-05,
+      "l2": 32.04985809326172
+    },
+    {
+      "step": 1,
+      "target_loss": 6.63013219833374,
+      "retain_kl": 0.0003272178000770509,
+      "l2": 29.13469123840332
+    },
+    {
+      "step": 2,
+      "target_loss": 7.504627704620361,
+      "retain_kl": 0.0016352253733202815,
+      "l2": 29.22056007385254
+    },
+    {
+      "step": 3,
+      "target_loss": 6.383855819702148,
+      "retain_kl": 0.011571484617888927,
+      "l2": 29.40363121032715
+    },
+    {
+      "step": 4,
+      "target_loss": 3.919829845428467,
+      "retain_kl": 0.005620047450065613,
+      "l2": 29.61419105529785
+    },
+    {
+      "step": 5,
+      "target_loss": 3.3289783000946045,
+      "retain_kl": 0.0163790974766016,
+      "l2": 29.976987838745117
+    },
+    {
+      "step": 6,
+      "target_loss": 4.0758771896362305,
+      "retain_kl": 0.06858661025762558,
+      "l2": 30.36338996887207
+    },
+    {
+      "step": 7,
+      "target_loss": 3.2682595252990723,
+      "retain_kl": 0.07088738679885864,
+      "l2": 30.705347061157227
+    },
+    {
+      "step": 8,
+      "target_loss": 1.812777042388916,
+      "retain_kl": 0.07083135843276978,
+      "l2": 30.930761337280273
+    },
+    {
+      "step": 9,
+      "target_loss": 1.8950555324554443,
+      "retain_kl": 0.03829733282327652,
+      "l2": 31.10203742980957
+    },
+    {
+      "step": 10,
+      "target_loss": 4.302942752838135,
+      "retain_kl": 0.04385846108198166,
+      "l2": 31.20042610168457
+    },
+    {
+      "step": 11,
+      "target_loss": 4.29135274887085,
+      "retain_kl": 0.011107226833701134,
+      "l2": 31.298179626464844
+    },
+    {
+      "step": 12,
+      "target_loss": 3.3184359073638916,
+      "retain_kl": 0.010492226108908653,
+      "l2": 31.46622085571289
+    },
+    {
+      "step": 13,
+      "target_loss": 3.432077407836914,
+      "retain_kl": 0.011871829628944397,
+      "l2": 31.694761276245117
+    },
+    {
+      "step": 14,
+      "target_loss": 4.531216621398926,
+      "retain_kl": 0.008439045399427414,
+      "l2": 31.968334197998047
+    },
+    {
+      "step": 15,
+      "target_loss": 3.320746421813965,
+      "retain_kl": 0.010457605123519897,
+      "l2": 32.297096252441406
+    },
+    {
+      "step": 16,
+      "target_loss": 3.084533214569092,
+      "retain_kl": 0.00806292612105608,
+      "l2": 32.6885986328125
+    },
+    {
+      "step": 17,
+      "target_loss": 2.6217753887176514,
+      "retain_kl": 0.030647655948996544,
+      "l2": 33.14978790283203
+    },
+    {
+      "step": 18,
+      "target_loss": 2.220609664916992,
+      "retain_kl": 0.009842279367148876,
+      "l2": 33.572471618652344
+    },
+    {
+      "step": 19,
+      "target_loss": 1.4021754264831543,
+      "retain_kl": 0.03863159567117691,
+      "l2": 34.09443664550781
+    },
+    {
+      "step": 20,
+      "target_loss": 2.290112018585205,
+      "retain_kl": 0.020998334512114525,
+      "l2": 34.56602096557617
+    },
+    {
+      "step": 21,
+      "target_loss": 1.9658201932907104,
+      "retain_kl": 0.02636570855975151,
+      "l2": 35.0793571472168
+    },
+    {
+      "step": 22,
+      "target_loss": 1.2963968515396118,
+      "retain_kl": 0.014337651431560516,
+      "l2": 35.57583999633789
+    },
+    {
+      "step": 23,
+      "target_loss": 0.9896010160446167,
+      "retain_kl": 0.0037306752055883408,
+      "l2": 36.1603889465332
+    }
+  ],
+  "damage_screen": {
+    "accuracy": 1.0,
+    "checks": [
+      {
+        "variant": 0,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.998583197593689,
+        "canonical_probs": {
+          "A": 0.8688575625419617,
+          "B": 0.09157691150903702,
+          "C": 0.038174938410520554,
+          "D": 0.001390522113069892
+        }
+      },
+      {
+        "variant": 1,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9984987378120422,
+        "canonical_probs": {
+          "A": 0.8344979882240295,
+          "B": 0.12797440588474274,
+          "C": 0.036665283143520355,
+          "D": 0.0008622847381047904
+        }
+      }
+    ]
+  },
+  "damaged_heldout": {
+    "accuracy": 1.0,
+    "checks": [
+      {
+        "variant": 4,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9981681108474731,
+        "canonical_probs": {
+          "A": 0.8946821689605713,
+          "B": 0.07343998551368713,
+          "C": 0.03061433881521225,
+          "D": 0.0012636047322303057
+        }
+      },
+      {
+        "variant": 5,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9982491731643677,
+        "canonical_probs": {
+          "A": 0.8535710573196411,
+          "B": 0.10194452852010727,
+          "C": 0.04249680042266846,
+          "D": 0.001987601863220334
+        }
+      },
+      {
+        "variant": 4,
+        "permutation": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ],
+        "displayed_pred": "B",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9994390606880188,
+        "canonical_probs": {
+          "C": 0.0007050660788081586,
+          "A": 0.9928069114685059,
+          "D": 0.005903445649892092,
+          "B": 0.0005845202831551433
+        }
+      }
+    ]
+  },
+  "damage_train_retention": 1.0,
+  "damage_independent_locality": {
+    "all": {
+      "n": 126,
+      "token_agreement": 0.9920634920634921,
+      "baseline_accuracy": 0.9285714285714286,
+      "after_accuracy": 0.9285714285714286,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.010405260026647014
+    },
+    "same_entity_other_relation": {
+      "n": 1,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 1.0,
+      "after_accuracy": 1.0,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.014029724051792291
+    },
+    "other_entity_unseen_template": {
+      "n": 70,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.9571428571428572,
+      "after_accuracy": 0.9571428571428572,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.01134393169809099
+    },
+    "near_neighbor_invariant": {
+      "n": 35,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.9428571428571428,
+      "after_accuracy": 0.9428571428571428,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.00749230245326248
+    },
+    "general_commonsense": {
+      "n": 20,
+      "token_agreement": 0.95,
+      "baseline_accuracy": 0.8,
+      "after_accuracy": 0.8,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.012036361728758776
+    },
+    "independent_locality_pass": true,
+    "target_entity": "stainless steel frying pan"
+  },
+  "damage_state_sha256": "5d942d6936b61b4261218b9025cc9b45b5a7d05c59ba8bd7f6223aad27a7c455",
+  "damage_effective": false
+}

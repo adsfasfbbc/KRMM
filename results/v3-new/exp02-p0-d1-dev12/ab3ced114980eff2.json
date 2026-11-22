@@ -1,0 +1,517 @@
+{
+  "unit": {
+    "unit_id": "ab3ced114980eff2",
+    "entity_id": "copper electrical wire",
+    "relation_id": "primary_material",
+    "modality": "text",
+    "source_group": "mat_copper_wire",
+    "probe_template_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "split": "dev",
+    "domain": "everyday_material",
+    "options": {
+      "A": "metal (metallic alloy or pure metal)",
+      "B": "wood or plant-based fiber (cellulose or timber)",
+      "C": "stone, ceramic, or glass (mineral or silicate)",
+      "D": "synthetic polymer or elastomer (plastic or rubber)"
+    }
+  },
+  "gold_evaluator_only": "A",
+  "mastery": {
+    "unit_id": "ab3ced114980eff2",
+    "entity_id": "copper electrical wire",
+    "domain": "everyday_material",
+    "stably_mastered": true,
+    "exclusion_reason": null,
+    "screen": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 0,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9994096159934998,
+          "canonical_probs": {
+            "A": 0.9928337335586548,
+            "B": 0.001916619949042797,
+            "C": 0.0027886657044291496,
+            "D": 0.002460988936945796
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.999435544013977,
+          "canonical_probs": {
+            "A": 0.9953389167785645,
+            "B": 0.00116542202886194,
+            "C": 0.0024671985302120447,
+            "D": 0.0010284814052283764
+          }
+        },
+        {
+          "variant": 2,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9995579719543457,
+          "canonical_probs": {
+            "A": 0.9965708255767822,
+            "B": 0.0006245775148272514,
+            "C": 0.0021799898240715265,
+            "D": 0.0006245775148272514
+          }
+        },
+        {
+          "variant": 3,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9991071820259094,
+          "canonical_probs": {
+            "A": 0.992396891117096,
+            "B": 0.0016906671226024628,
+            "C": 0.004595709964632988,
+            "D": 0.00131669279653579
+          }
+        },
+        {
+          "variant": 0,
+          "permutation": [
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "displayed_pred": "D",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9991294145584106,
+          "canonical_probs": {
+            "D": 0.0014975728699937463,
+            "C": 0.001696972525678575,
+            "B": 0.000707403349224478,
+            "A": 0.9960980415344238
+          }
+        },
+        {
+          "variant": 1,
+          "permutation": [
+            "B",
+            "D",
+            "A",
+            "C"
+          ],
+          "displayed_pred": "C",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9990206360816956,
+          "canonical_probs": {
+            "B": 0.0006239079521037638,
+            "D": 0.0016959579661488533,
+            "A": 0.9955025315284729,
+            "C": 0.0021776529029011726
+          }
+        }
+      ]
+    },
+    "heldout_clean_audit": {
+      "accuracy": 1.0,
+      "checks": [
+        {
+          "variant": 4,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9994209408760071,
+          "canonical_probs": {
+            "A": 0.9907214641571045,
+            "B": 0.0019125423859804869,
+            "C": 0.005198828876018524,
+            "D": 0.0021671943832188845
+          }
+        },
+        {
+          "variant": 5,
+          "permutation": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "displayed_pred": "A",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9993736147880554,
+          "canonical_probs": {
+            "A": 0.9908170700073242,
+            "B": 0.0031535536982119083,
+            "C": 0.0024559900630265474,
+            "D": 0.003573444439098239
+          }
+        },
+        {
+          "variant": 4,
+          "permutation": [
+            "C",
+            "A",
+            "D",
+            "B"
+          ],
+          "displayed_pred": "B",
+          "canonical_pred": "A",
+          "correct": true,
+          "choice_mass": 0.9993711113929749,
+          "canonical_probs": {
+            "C": 0.0010286151664331555,
+            "A": 0.9954683780670166,
+            "D": 0.0027960659936070442,
+            "B": 0.0007069561397656798
+          }
+        }
+      ]
+    },
+    "heldout_clean_mastered": true
+  },
+  "operational_eligible": false,
+  "strict_eligible": false,
+  "exclusion_reason": "damage_not_effective_or_train_retain_failed",
+  "damage_type": "D1_wrong_association",
+  "damage_logs": [
+    {
+      "step": 0,
+      "target_loss": 6.007782459259033,
+      "retain_kl": 1.1793413250416052e-05,
+      "l2": 32.01817321777344
+    },
+    {
+      "step": 1,
+      "target_loss": 6.630520820617676,
+      "retain_kl": 0.0004812967381440103,
+      "l2": 29.123584747314453
+    },
+    {
+      "step": 2,
+      "target_loss": 7.003686904907227,
+      "retain_kl": 0.0005530361086130142,
+      "l2": 29.2185001373291
+    },
+    {
+      "step": 3,
+      "target_loss": 7.8781890869140625,
+      "retain_kl": 0.014060018584132195,
+      "l2": 29.381986618041992
+    },
+    {
+      "step": 4,
+      "target_loss": 4.153261184692383,
+      "retain_kl": 0.0035951300524175167,
+      "l2": 29.550207138061523
+    },
+    {
+      "step": 5,
+      "target_loss": 3.9122846126556396,
+      "retain_kl": 0.007738132029771805,
+      "l2": 29.856090545654297
+    },
+    {
+      "step": 6,
+      "target_loss": 5.634294509887695,
+      "retain_kl": 0.042430467903614044,
+      "l2": 30.313743591308594
+    },
+    {
+      "step": 7,
+      "target_loss": 6.009151935577393,
+      "retain_kl": 0.044060152024030685,
+      "l2": 30.752723693847656
+    },
+    {
+      "step": 8,
+      "target_loss": 1.951507329940796,
+      "retain_kl": 0.04790746420621872,
+      "l2": 31.119272232055664
+    },
+    {
+      "step": 9,
+      "target_loss": 2.1755800247192383,
+      "retain_kl": 0.0223403237760067,
+      "l2": 31.406858444213867
+    },
+    {
+      "step": 10,
+      "target_loss": 4.030034065246582,
+      "retain_kl": 0.03408792242407799,
+      "l2": 31.61210823059082
+    },
+    {
+      "step": 11,
+      "target_loss": 4.523360252380371,
+      "retain_kl": 0.008847177028656006,
+      "l2": 31.82761001586914
+    },
+    {
+      "step": 12,
+      "target_loss": 3.1855459213256836,
+      "retain_kl": 0.010974569246172905,
+      "l2": 32.09953308105469
+    },
+    {
+      "step": 13,
+      "target_loss": 3.304621696472168,
+      "retain_kl": 0.015274662524461746,
+      "l2": 32.42577362060547
+    },
+    {
+      "step": 14,
+      "target_loss": 3.0633296966552734,
+      "retain_kl": 0.009171376936137676,
+      "l2": 32.787967681884766
+    },
+    {
+      "step": 15,
+      "target_loss": 3.304192304611206,
+      "retain_kl": 0.018513189628720284,
+      "l2": 33.176753997802734
+    },
+    {
+      "step": 16,
+      "target_loss": 3.0594024658203125,
+      "retain_kl": 0.01727481000125408,
+      "l2": 33.623756408691406
+    },
+    {
+      "step": 17,
+      "target_loss": 2.5932669639587402,
+      "retain_kl": 0.027381837368011475,
+      "l2": 34.077396392822266
+    },
+    {
+      "step": 18,
+      "target_loss": 1.7164905071258545,
+      "retain_kl": 0.0174665916711092,
+      "l2": 34.53268051147461
+    },
+    {
+      "step": 19,
+      "target_loss": 1.8193509578704834,
+      "retain_kl": 0.0464976541697979,
+      "l2": 34.98783493041992
+    },
+    {
+      "step": 20,
+      "target_loss": 2.1369316577911377,
+      "retain_kl": 0.02530086040496826,
+      "l2": 35.269168853759766
+    },
+    {
+      "step": 21,
+      "target_loss": 2.0284812450408936,
+      "retain_kl": 0.028881441801786423,
+      "l2": 35.55990219116211
+    },
+    {
+      "step": 22,
+      "target_loss": 1.7105648517608643,
+      "retain_kl": 0.015095194801688194,
+      "l2": 35.813018798828125
+    },
+    {
+      "step": 23,
+      "target_loss": 2.0277769565582275,
+      "retain_kl": 0.013354046270251274,
+      "l2": 36.15418243408203
+    }
+  ],
+  "damage_screen": {
+    "accuracy": 1.0,
+    "checks": [
+      {
+        "variant": 0,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9981378316879272,
+        "canonical_probs": {
+          "A": 0.8755611777305603,
+          "B": 0.002786719473078847,
+          "C": 0.003157766768708825,
+          "D": 0.11849431693553925
+        }
+      },
+      {
+        "variant": 1,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9975178837776184,
+        "canonical_probs": {
+          "A": 0.861723780632019,
+          "B": 0.002135999733582139,
+          "C": 0.003990573342889547,
+          "D": 0.13214963674545288
+        }
+      }
+    ]
+  },
+  "damaged_heldout": {
+    "accuracy": 1.0,
+    "checks": [
+      {
+        "variant": 4,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9985479116439819,
+        "canonical_probs": {
+          "A": 0.9251852035522461,
+          "B": 0.00229330500587821,
+          "C": 0.005501352250576019,
+          "D": 0.06702019274234772
+        }
+      },
+      {
+        "variant": 5,
+        "permutation": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "displayed_pred": "A",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9982813596725464,
+        "canonical_probs": {
+          "A": 0.8750628232955933,
+          "B": 0.004052345175296068,
+          "C": 0.0024578715674579144,
+          "D": 0.11842687427997589
+        }
+      },
+      {
+        "variant": 4,
+        "permutation": [
+          "C",
+          "A",
+          "D",
+          "B"
+        ],
+        "displayed_pred": "B",
+        "canonical_pred": "A",
+        "correct": true,
+        "choice_mass": 0.9995108842849731,
+        "canonical_probs": {
+          "C": 0.002463653916493058,
+          "A": 0.9939088821411133,
+          "D": 0.002463653916493058,
+          "B": 0.001163747627288103
+        }
+      }
+    ]
+  },
+  "damage_train_retention": 1.0,
+  "damage_independent_locality": {
+    "all": {
+      "n": 126,
+      "token_agreement": 0.9920634920634921,
+      "baseline_accuracy": 0.9285714285714286,
+      "after_accuracy": 0.9206349206349206,
+      "accuracy_drop": 0.00793650793650802,
+      "mean_kl_shift": 0.020225081162534943
+    },
+    "same_entity_other_relation": {
+      "n": 1,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 1.0,
+      "after_accuracy": 1.0,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.0018312206121244541
+    },
+    "other_entity_unseen_template": {
+      "n": 70,
+      "token_agreement": 0.9857142857142858,
+      "baseline_accuracy": 0.9571428571428572,
+      "after_accuracy": 0.9428571428571428,
+      "accuracy_drop": 0.014285714285714346,
+      "mean_kl_shift": 0.025657199176969507
+    },
+    "near_neighbor_invariant": {
+      "n": 35,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.9428571428571428,
+      "after_accuracy": 0.9428571428571428,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.015350365577110368
+    },
+    "general_commonsense": {
+      "n": 20,
+      "token_agreement": 1.0,
+      "baseline_accuracy": 0.8,
+      "after_accuracy": 0.8,
+      "accuracy_drop": 0.0,
+      "mean_kl_shift": 0.01066311341402753
+    },
+    "independent_locality_pass": true,
+    "target_entity": "copper electrical wire"
+  },
+  "damage_state_sha256": "750c2220d75ade84c18f61839dd3d3e46e06246c7153f0df9d31068562536353",
+  "damage_effective": false
+}

@@ -1,0 +1,512 @@
+{
+  "dev": {
+    "p0": {
+      "total_candidates": 36,
+      "stably_mastered": 33,
+      "heldout_clean_mastered": 33,
+      "clean_mastery_rate": 0.9166666666666666,
+      "damage_effective": 25,
+      "operational_eligible": 25,
+      "operational_eligibility_rate": 0.7575757575757576,
+      "damage_independent_locality_pass": 21,
+      "strict_eligible": 21,
+      "strict_eligibility_rate": 0.6363636363636364,
+      "evaluated_counterfactual": 21,
+      "oracle_operational_success": 21,
+      "oracle_operational_rate": 1.0,
+      "oracle_write_feasible_count": 21,
+      "oracle_write_feasible_rate": 1.0,
+      "oracle_strict_restorations": 21,
+      "oracle_strict_rate_among_strict_eligible": 1.0,
+      "min_damage_train_retention": 0.9821428571428571,
+      "exclusion_breakdown": {
+        "damage_not_effective_or_train_retain_failed": 8,
+        "damage_independent_locality_failed": 4,
+        "failed_screen_accuracy": 3
+      },
+      "gate_g0": {
+        "pass": true,
+        "A_clean_mastery_ok": true,
+        "B_damage_local_and_effective_ok": true,
+        "C_oracle_strict_writeback_ok": true,
+        "operational_only_ok": true
+      }
+    },
+    "n_strict_eligible": 21,
+    "e0_damaged_heldout_mean_acc": 0.33333333333333326,
+    "e1_direct_candidate_acc": 0.0,
+    "e1_generative_candidate_acc": 0.5714285714285714,
+    "e2_structured_coverage": 0.7142857142857143,
+    "e2_structured_candidate_acc_all_eligible": 0.6666666666666666,
+    "e2_structured_precision_when_non_null": 0.9333333333333333,
+    "e2_true_composition_count": 0,
+    "e2_true_composition_correct": 0,
+    "e2_single_hop_count": 15,
+    "e2_single_hop_correct": 14,
+    "branches_strict": {
+      "direct": {
+        "strict_restoration_count": 0,
+        "strict_restoration_rate": 0.0,
+        "attempted": 21,
+        "locality_pass_rate_attempted": 0.9523809523809523,
+        "wrong_pseudolabels_written": 21
+      },
+      "generative": {
+        "strict_restoration_count": 12,
+        "strict_restoration_rate": 0.5714285714285714,
+        "attempted": 21,
+        "locality_pass_rate_attempted": 0.9047619047619048,
+        "wrong_pseudolabels_written": 9
+      },
+      "structured": {
+        "strict_restoration_count": 14,
+        "strict_restoration_rate": 0.6666666666666666,
+        "attempted": 15,
+        "locality_pass_rate_attempted": 1.0,
+        "wrong_pseudolabels_written": 1
+      },
+      "oracle": {
+        "strict_restoration_count": 21,
+        "strict_restoration_rate": 1.0,
+        "attempted": 21,
+        "locality_pass_rate_attempted": 1.0,
+        "wrong_pseudolabels_written": 0
+      }
+    },
+    "paired_ci_structured_vs_generative_candidate": {
+      "mean_diff": 0.09523809523809523,
+      "ci95": [
+        -0.14285714285714285,
+        0.38095238095238093
+      ],
+      "clusters": 21
+    },
+    "paired_ci_structured_vs_direct_candidate": {
+      "mean_diff": 0.6666666666666666,
+      "ci95": [
+        0.47619047619047616,
+        0.8571428571428571
+      ],
+      "clusters": 21
+    },
+    "paired_ci_structured_vs_generative_strict": {
+      "mean_diff": 0.09523809523809523,
+      "ci95": [
+        -0.14285714285714285,
+        0.38095238095238093
+      ],
+      "clusters": 21
+    },
+    "paired_ci_structured_vs_direct_strict": {
+      "mean_diff": 0.6666666666666666,
+      "ci95": [
+        0.47619047619047616,
+        0.8571428571428571
+      ],
+      "clusters": 21
+    }
+  },
+  "calibration": {
+    "p0": {
+      "total_candidates": 36,
+      "stably_mastered": 32,
+      "heldout_clean_mastered": 32,
+      "clean_mastery_rate": 0.8888888888888888,
+      "damage_effective": 24,
+      "operational_eligible": 24,
+      "operational_eligibility_rate": 0.75,
+      "damage_independent_locality_pass": 16,
+      "strict_eligible": 16,
+      "strict_eligibility_rate": 0.5,
+      "evaluated_counterfactual": 16,
+      "oracle_operational_success": 15,
+      "oracle_operational_rate": 0.9375,
+      "oracle_write_feasible_count": 14,
+      "oracle_write_feasible_rate": 0.875,
+      "oracle_strict_restorations": 14,
+      "oracle_strict_rate_among_strict_eligible": 0.875,
+      "min_damage_train_retention": 0.9821428571428571,
+      "exclusion_breakdown": {
+        "damage_not_effective_or_train_retain_failed": 8,
+        "failed_screen_accuracy": 4,
+        "damage_independent_locality_failed": 8
+      },
+      "gate_g0": {
+        "pass": true,
+        "A_clean_mastery_ok": true,
+        "B_damage_local_and_effective_ok": true,
+        "C_oracle_strict_writeback_ok": true,
+        "operational_only_ok": true
+      }
+    },
+    "n_strict_eligible": 16,
+    "e0_damaged_heldout_mean_acc": 0.3333333333333333,
+    "e1_direct_candidate_acc": 0.0625,
+    "e1_generative_candidate_acc": 0.625,
+    "e2_structured_coverage": 0.9375,
+    "e2_structured_candidate_acc_all_eligible": 0.875,
+    "e2_structured_precision_when_non_null": 0.9333333333333333,
+    "e2_true_composition_count": 3,
+    "e2_true_composition_correct": 2,
+    "e2_single_hop_count": 12,
+    "e2_single_hop_correct": 12,
+    "branches_strict": {
+      "direct": {
+        "strict_restoration_count": 1,
+        "strict_restoration_rate": 0.0625,
+        "attempted": 16,
+        "locality_pass_rate_attempted": 1.0,
+        "wrong_pseudolabels_written": 15
+      },
+      "generative": {
+        "strict_restoration_count": 8,
+        "strict_restoration_rate": 0.5,
+        "attempted": 16,
+        "locality_pass_rate_attempted": 0.9375,
+        "wrong_pseudolabels_written": 6
+      },
+      "structured": {
+        "strict_restoration_count": 12,
+        "strict_restoration_rate": 0.75,
+        "attempted": 15,
+        "locality_pass_rate_attempted": 0.9333333333333333,
+        "wrong_pseudolabels_written": 1
+      },
+      "oracle": {
+        "strict_restoration_count": 14,
+        "strict_restoration_rate": 0.875,
+        "attempted": 16,
+        "locality_pass_rate_attempted": 0.9375,
+        "wrong_pseudolabels_written": 0
+      }
+    },
+    "paired_ci_structured_vs_generative_candidate": {
+      "mean_diff": 0.25,
+      "ci95": [
+        0.0625,
+        0.5
+      ],
+      "clusters": 16
+    },
+    "paired_ci_structured_vs_direct_candidate": {
+      "mean_diff": 0.8125,
+      "ci95": [
+        0.625,
+        1.0
+      ],
+      "clusters": 16
+    },
+    "paired_ci_structured_vs_generative_strict": {
+      "mean_diff": 0.25,
+      "ci95": [
+        0.0625,
+        0.5
+      ],
+      "clusters": 16
+    },
+    "paired_ci_structured_vs_direct_strict": {
+      "mean_diff": 0.6875,
+      "ci95": [
+        0.4375,
+        0.875
+      ],
+      "clusters": 16
+    }
+  },
+  "e7_fit_dev_eval_calibration_structured": {
+    "calibration_status": "calibrated",
+    "train_n": 15,
+    "comparison": {
+      "n": 15,
+      "positives": 12,
+      "methods": {
+        "random": {
+          "auroc": 0.47222222222222227,
+          "auprc": 0.8011285011285012,
+          "brier": 0.38678671997360237,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.75,
+          "strict_success_all_eligible": 0.4
+        },
+        "direct_confidence": {
+          "auroc": 0.8333333333333334,
+          "auprc": 0.960479797979798,
+          "brier": 0.14834623271695999,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "entropy": {
+          "auroc": 0.16666666666666669,
+          "auprc": 0.7158792596292597,
+          "brier": 0.7073397102578961,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.625,
+          "strict_success_all_eligible": 0.3333333333333333
+        },
+        "self_consistency": {
+          "auroc": 0.5416666666666666,
+          "auprc": 0.8166666666666668,
+          "brier": 0.75,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "candidate_change": {
+          "auroc": 0.625,
+          "auprc": 0.8423076923076922,
+          "brier": 0.2,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "support_completeness": {
+          "auroc": 0.5,
+          "auprc": 0.8,
+          "brier": 0.2,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "decomposed_ere": {
+          "auroc": 0.888888888888889,
+          "auprc": 0.9707362082362084,
+          "brier": 0.1491002825930135,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "ere_vs_candidate_change_ci": {
+          "mean_diff": 0.0,
+          "ci95": [
+            -0.2,
+            0.2
+          ],
+          "clusters": 15
+        }
+      }
+    }
+  },
+  "e7_fit_dev_eval_calibration_generative": {
+    "calibration_status": "calibrated",
+    "train_n": 21,
+    "comparison": {
+      "n": 16,
+      "positives": 8,
+      "methods": {
+        "random": {
+          "auroc": 0.65625,
+          "auprc": 0.692739898989899,
+          "brier": 0.2714345383525495,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.5,
+          "strict_success_all_eligible": 0.25
+        },
+        "direct_confidence": {
+          "auroc": 0.71875,
+          "auprc": 0.793452380952381,
+          "brier": 0.42071142599810285,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.75,
+          "strict_success_all_eligible": 0.375
+        },
+        "entropy": {
+          "auroc": 0.28125,
+          "auprc": 0.4931547619047619,
+          "brier": 0.47715337695127,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.25,
+          "strict_success_all_eligible": 0.125
+        },
+        "self_consistency": {
+          "auroc": 0.5625,
+          "auprc": 0.5625,
+          "brier": 0.453125,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.75,
+          "strict_success_all_eligible": 0.375
+        },
+        "candidate_change": {
+          "auroc": 0.5625,
+          "auprc": 0.5336538461538461,
+          "brier": 0.4375,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.75,
+          "strict_success_all_eligible": 0.375
+        },
+        "support_completeness": {
+          "auroc": 0.5625,
+          "auprc": 0.5333333333333333,
+          "brier": 0.4375,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.75,
+          "strict_success_all_eligible": 0.375
+        },
+        "decomposed_ere": {
+          "auroc": 0.875,
+          "auprc": 0.8976076007326008,
+          "brier": 0.14710183683322392,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.875,
+          "strict_success_all_eligible": 0.4375
+        },
+        "ere_vs_candidate_change_ci": {
+          "mean_diff": 0.0625,
+          "ci95": [
+            0.0,
+            0.1875
+          ],
+          "clusters": 16
+        }
+      }
+    }
+  },
+  "e7_fit_calibration_eval_dev_structured": {
+    "calibration_status": "calibrated",
+    "train_n": 15,
+    "comparison": {
+      "n": 15,
+      "positives": 14,
+      "methods": {
+        "random": {
+          "auroc": 0.8571428571428571,
+          "auprc": 0.9901360544217686,
+          "brier": 0.3578985537562637,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "direct_confidence": {
+          "auroc": 1.0,
+          "auprc": 0.9999999999999998,
+          "brier": 0.03487328559052874,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "entropy": {
+          "auroc": 0.0,
+          "auprc": 0.8344122147693577,
+          "brier": 0.6989041013795035,
+          "selected_count": 8,
+          "strict_success_among_selected": 0.875,
+          "strict_success_all_eligible": 0.4666666666666667
+        },
+        "self_consistency": {
+          "auroc": 0.5357142857142857,
+          "auprc": 0.9380952380952381,
+          "brier": 0.8833333333333333,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "candidate_change": {
+          "auroc": 0.5,
+          "auprc": 0.9333333333333333,
+          "brier": 0.06666666666666667,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "support_completeness": {
+          "auroc": 0.5,
+          "auprc": 0.9333333333333333,
+          "brier": 0.06666666666666667,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "decomposed_ere": {
+          "auroc": 1.0,
+          "auprc": 0.9999999999999998,
+          "brier": 0.08351934801162017,
+          "selected_count": 8,
+          "strict_success_among_selected": 1.0,
+          "strict_success_all_eligible": 0.5333333333333333
+        },
+        "ere_vs_candidate_change_ci": {
+          "mean_diff": 0.0,
+          "ci95": [
+            -0.3333333333333333,
+            0.3333333333333333
+          ],
+          "clusters": 15
+        }
+      }
+    }
+  },
+  "e7_fit_calibration_eval_dev_generative": {
+    "calibration_status": "calibrated",
+    "train_n": 16,
+    "comparison": {
+      "n": 21,
+      "positives": 12,
+      "methods": {
+        "random": {
+          "auroc": 0.5833333333333335,
+          "auprc": 0.7187379749879751,
+          "brier": 0.29683594336421887,
+          "selected_count": 10,
+          "strict_success_among_selected": 0.6,
+          "strict_success_all_eligible": 0.2857142857142857
+        },
+        "direct_confidence": {
+          "auroc": 0.6111111111111112,
+          "auprc": 0.7663177039821778,
+          "brier": 0.385882843450188,
+          "selected_count": 10,
+          "strict_success_among_selected": 0.7,
+          "strict_success_all_eligible": 0.3333333333333333
+        },
+        "entropy": {
+          "auroc": 0.38888888888888895,
+          "auprc": 0.5725011057054401,
+          "brier": 0.46145387444981656,
+          "selected_count": 10,
+          "strict_success_among_selected": 0.5,
+          "strict_success_all_eligible": 0.23809523809523808
+        },
+        "self_consistency": {
+          "auroc": 0.5416666666666666,
+          "auprc": 0.6071428571428571,
+          "brier": 0.5357142857142857,
+          "selected_count": 10,
+          "strict_success_among_selected": 0.6,
+          "strict_success_all_eligible": 0.2857142857142857
+        },
+        "candidate_change": {
+          "auroc": 0.5416666666666667,
+          "auprc": 0.5928571428571427,
+          "brier": 0.42857142857142855,
+          "selected_count": 10,
+          "strict_success_among_selected": 0.6,
+          "strict_success_all_eligible": 0.2857142857142857
+        },
+        "support_completeness": {
+          "auroc": 0.5416666666666667,
+          "auprc": 0.5928571428571427,
+          "brier": 0.42857142857142855,
+          "selected_count": 10,
+          "strict_success_among_selected": 0.6,
+          "strict_success_all_eligible": 0.2857142857142857
+        },
+        "decomposed_ere": {
+          "auroc": 0.7685185185185185,
+          "auprc": 0.8803554023948762,
+          "brier": 0.2741195351047827,
+          "selected_count": 10,
+          "strict_success_among_selected": 0.9,
+          "strict_success_all_eligible": 0.42857142857142855
+        },
+        "ere_vs_candidate_change_ci": {
+          "mean_diff": 0.14285714285714285,
+          "ci95": [
+            0.0,
+            0.2857142857142857
+          ],
+          "clusters": 21
+        }
+      }
+    }
+  }
+}

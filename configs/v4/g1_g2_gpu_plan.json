@@ -1,0 +1,34 @@
+{
+  "version": "v0.4.0-plan",
+  "status": "AWAITING_GPU_AUTHORIZATION",
+  "study_condition": "internal_only",
+  "write_strategy_primary": "standard_kl",
+  "damage_types": ["D1_wrong_association", "D2_bounded_suppression"],
+  "discovery_methods": [
+    "direct_confidence",
+    "self_consistency",
+    "direct_paraphrases",
+    "constraint_conflict_only",
+    "full_m2"
+  ],
+  "equal_query_budgets_per_unit": [2, 3, 4, 5],
+  "random_seeds": [2026, 2027, 2028],
+  "gpu_authorization_required": {
+    "approved_commit": "TBD_AFTER_PLAN_COMMIT",
+    "allowed_commands": [
+      "scripts/v4/run_blind_discovery.py --mode gpu --authorized-gpu-plan configs/v4/g1_g2_gpu_plan.json",
+      "scripts/v4/run_repair_matrix.py --mode gpu --authorized-gpu-plan configs/v4/g1_g2_gpu_plan.json"
+    ],
+    "allowed_edit_paths": ["configs/v4/", "results/v4-new/"],
+    "gpu_device": "cuda:0 (RTX 3090 24GB)",
+    "max_launches": 6,
+    "max_total_runtime_minutes": 180,
+    "max_disk_usage_gb": 10,
+    "stop_conditions": [
+      "clean_mastery_rate < 0.75 on pilot",
+      "strict_eligibility_rate < 0.50 on pilot",
+      "collateral_damage_rate > 0.15 in multi-unit sequential injection",
+      "any protected v0.3 artifact hash changes"
+    ]
+  }
+}

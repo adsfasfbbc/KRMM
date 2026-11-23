@@ -1,0 +1,168 @@
+{
+  "scope_warning": "SYNTHETIC_CPU_MECHANISM_ONLY \u2014 NOT real neural model repair performance.",
+  "stratified_conditions": {
+    "1_no_decisive_evidence": {
+      "evidence_category": "insufficient_support",
+      "identifiable": false,
+      "candidate_answer": null,
+      "gold_synthetic": "A",
+      "candidate_matches_synthetic_gold": false,
+      "n_minimal_sets": 0,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal"
+      ],
+      "estimated_reliability": 0.0,
+      "policy_action": "REQUEST_EXTERNAL_EVIDENCE",
+      "policy_reason": "insufficient_support_unidentifiable"
+    },
+    "2_single_decisive": {
+      "evidence_category": "single_decisive",
+      "identifiable": true,
+      "candidate_answer": "B",
+      "gold_synthetic": "B",
+      "candidate_matches_synthetic_gold": true,
+      "n_minimal_sets": 1,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal"
+      ],
+      "estimated_reliability": 0.72,
+      "policy_action": "ATTEMPT_PARAMETRIC_REPAIR",
+      "policy_reason": "verified_structure_single_decisive"
+    },
+    "3_single_chain_multi_premise": {
+      "evidence_category": "single_chain",
+      "identifiable": true,
+      "candidate_answer": "C",
+      "gold_synthetic": "C",
+      "candidate_matches_synthetic_gold": true,
+      "n_minimal_sets": 1,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal"
+      ],
+      "estimated_reliability": 0.4,
+      "policy_action": "REQUEST_EXTERNAL_EVIDENCE",
+      "policy_reason": "low_reliability_single_chain"
+    },
+    "4_same_source_spurious_redundancy": {
+      "evidence_category": "redundant_same_source",
+      "identifiable": true,
+      "candidate_answer": "B",
+      "gold_synthetic": "B",
+      "candidate_matches_synthetic_gold": true,
+      "n_minimal_sets": 2,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal"
+      ],
+      "estimated_reliability": 0.5,
+      "policy_action": "REQUEST_EXTERNAL_EVIDENCE",
+      "policy_reason": "low_reliability_redundant_same_source"
+    },
+    "5_distinct_semantic_paths_same_model": {
+      "evidence_category": "redundant_distinct_paths",
+      "identifiable": true,
+      "candidate_answer": "B",
+      "gold_synthetic": "B",
+      "candidate_matches_synthetic_gold": true,
+      "n_minimal_sets": 2,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal"
+      ],
+      "estimated_reliability": 0.85,
+      "policy_action": "ATTEMPT_PARAMETRIC_REPAIR",
+      "policy_reason": "verified_structure_redundant_distinct_paths"
+    },
+    "6_independent_source_support": {
+      "evidence_category": "independent_source_support",
+      "identifiable": true,
+      "candidate_answer": "B",
+      "gold_synthetic": "B",
+      "candidate_matches_synthetic_gold": true,
+      "n_minimal_sets": 2,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal",
+        "external_verified_source"
+      ],
+      "estimated_reliability": 0.9,
+      "policy_action": "ATTEMPT_PARAMETRIC_REPAIR",
+      "policy_reason": "verified_structure_independent_source_support"
+    },
+    "7_correlated_wrong_consensus": {
+      "evidence_category": "redundant_same_source",
+      "identifiable": true,
+      "candidate_answer": "A",
+      "gold_synthetic": "D",
+      "candidate_matches_synthetic_gold": false,
+      "n_minimal_sets": 2,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal"
+      ],
+      "estimated_reliability": 0.5,
+      "policy_action": "REQUEST_EXTERNAL_EVIDENCE",
+      "policy_reason": "low_reliability_redundant_same_source"
+    },
+    "8_conflicting_premises": {
+      "evidence_category": "conflicting_support",
+      "identifiable": false,
+      "candidate_answer": null,
+      "gold_synthetic": "A",
+      "candidate_matches_synthetic_gold": false,
+      "n_minimal_sets": 0,
+      "dependency_overlap": 0.0,
+      "provenance_groups": [
+        "damaged_model_internal"
+      ],
+      "estimated_reliability": 0.0,
+      "policy_action": "ABSTAIN",
+      "policy_reason": "conflicting_support"
+    }
+  },
+  "causal_interventions": {
+    "complete_support": {
+      "evidence_category": "redundant_distinct_paths",
+      "candidate_answer": "B",
+      "identifiable": true,
+      "conflict_status": false,
+      "estimated_reliability": 0.85,
+      "policy_action": "ATTEMPT_PARAMETRIC_REPAIR"
+    },
+    "key_removal": {
+      "evidence_category": "single_chain",
+      "candidate_answer": "B",
+      "identifiable": true,
+      "conflict_status": false,
+      "estimated_reliability": 0.4,
+      "policy_action": "REQUEST_EXTERNAL_EVIDENCE"
+    },
+    "counterfactual_replacement": {
+      "evidence_category": "conflicting_support",
+      "candidate_answer": null,
+      "identifiable": false,
+      "conflict_status": true,
+      "estimated_reliability": 0.0,
+      "policy_action": "ABSTAIN"
+    },
+    "sham_removal": {
+      "evidence_category": "redundant_distinct_paths",
+      "candidate_answer": "B",
+      "identifiable": true,
+      "conflict_status": false,
+      "estimated_reliability": 0.85,
+      "policy_action": "ATTEMPT_PARAMETRIC_REPAIR"
+    },
+    "correlated_wrong_support": {
+      "evidence_category": "redundant_same_source",
+      "candidate_answer": "A",
+      "identifiable": true,
+      "conflict_status": false,
+      "estimated_reliability": 0.5,
+      "policy_action": "REQUEST_EXTERNAL_EVIDENCE"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "discovery": {
+    "method": "full_m2",
+    "query_budget": 36,
+    "total_queries": 28
+  },
+  "method_trace": [
+    {
+      "unit_id": "432991202848df16",
+      "detected_suspected": true,
+      "candidate_produced": true,
+      "candidate_answer": "A",
+      "evidence_category": "redundant_distinct_paths",
+      "estimated_reliability": 0.85,
+      "action": "ATTEMPT_PARAMETRIC_REPAIR",
+      "reason": "verified_structure_redundant_distinct_paths",
+      "repair_out": {
+        "unit_id": "432991202848df16",
+        "strategy": "standard_kl",
+        "candidate_written": "A",
+        "adapter_saved": true,
+        "mock_executed": true
+      }
+    },
+    {
+      "unit_id": "ef0aba665d8db763",
+      "detected_suspected": true,
+      "candidate_produced": true,
+      "candidate_answer": "A",
+      "evidence_category": "redundant_distinct_paths",
+      "estimated_reliability": 0.85,
+      "action": "ATTEMPT_PARAMETRIC_REPAIR",
+      "reason": "verified_structure_redundant_distinct_paths",
+      "repair_out": {
+        "unit_id": "ef0aba665d8db763",
+        "strategy": "standard_kl",
+        "candidate_written": "A",
+        "adapter_saved": true,
+        "mock_executed": true
+      }
+    },
+    {
+      "unit_id": "90a0a91fcc0252bc",
+      "detected_suspected": false,
+      "candidate_produced": false,
+      "action": "ABSTAIN",
+      "reason": "not_suspected_no_evidence_of_damage",
+      "candidate_answer": null,
+      "evidence_category": null
+    },
+    {
+      "unit_id": "b0b550972c344762",
+      "detected_suspected": false,
+      "candidate_produced": false,
+      "action": "ABSTAIN",
+      "reason": "not_suspected_no_evidence_of_damage",
+      "candidate_answer": null,
+      "evidence_category": null
+    },
+    {
+      "unit_id": "094543ea0f33734f",
+      "detected_suspected": false,
+      "candidate_produced": false,
+      "action": "ABSTAIN",
+      "reason": "not_suspected_unknown",
+      "candidate_answer": null,
+      "evidence_category": null
+    },
+    {
+      "unit_id": "f9a4e72a3a078fa5",
+      "detected_suspected": false,
+      "candidate_produced": false,
+      "action": "ABSTAIN",
+      "reason": "not_suspected_unknown",
+      "candidate_answer": null,
+      "evidence_category": null
+    }
+  ],
+  "evaluator_discovery_metrics": {
+    "n_pool": 6,
+    "n_true_degraded": 2,
+    "full_pool_auroc": 1.0,
+    "full_pool_auprc": 1.0,
+    "full_pool_recall_at_k": 1.0,
+    "healthy_fpr": 0.0,
+    "originally_unknown_fpr": 0.0,
+    "total_query_cost": 28,
+    "cost_per_true_damage_found": 14.0
+  },
+  "evaluator_end_to_end_metrics": {
+    "n_pool_total": 6,
+    "n_eligible_damaged": 2,
+    "n_healthy_mastered": 2,
+    "n_originally_unknown": 2,
+    "n_detected_damaged": 2,
+    "n_attempted_all": 2,
+    "n_attempted_damaged": 2,
+    "n_strict_safe_repaired": 2,
+    "end_to_end_strict_safe_repair_yield": 1.0,
+    "wrong_write_count": 0,
+    "wrong_write_rate_among_attempted": 0.0,
+    "wrong_write_rate_over_eligible_damaged": 0.0,
+    "healthy_unit_harm_count": 0,
+    "healthy_unit_harm_rate": 0.0,
+    "candidate_coverage_damaged": 1.0,
+    "repair_attempt_rate_damaged": 1.0,
+    "abstention_rate_damaged": 0.0,
+    "strict_success_among_attempted_damaged": 1.0,
+    "opportunity_cost_missed_repairable_count": 0,
+    "total_query_cost": 28,
+    "gpu_train_steps": 0
+  }
+}

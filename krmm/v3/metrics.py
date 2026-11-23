@@ -1,8 +1,7 @@
 """Metrics, statistical inference, and G0/G1 gate computation (M6.3, M6.4)."""
 from __future__ import annotations
 
-import math
-from typing import Dict, List, Optional, Sequence, Tuple
+from typing import Dict, List, Optional, Sequence
 import numpy as np
 from sklearn.metrics import average_precision_score, brier_score_loss, roc_auc_score
 
@@ -31,41 +30,76 @@ def paired_cluster_bootstrap_ci(
     cluster_ids: Sequence[str],
     n_boot: int = 2000,
     seed: int = 107,
+    statistical_unit: str = "source_group",
+    exploratory_or_confirmatory: str = "exploratory",
 ) -> Dict[str, object]:
     """Entity/source-group clustered paired bootstrap 95% CI for mean(a - b)."""
     if len(a_values) != len(b_values) or len(a_values) != len(cluster_ids):
         raise ValueError("Paired arrays and cluster_ids must match in length")
     if not a_values:
-        return {"mean_diff": 0.0, "ci95": [0.0, 0.0], "clusters": 0}
+        return {
+            "mean_diff": 0.0,
+            "effect_size": 0.0,
+            "point_estimate": 0.0,
+            "ci95": [0.0, 0.0],
+            "confidence_interval": [0.0, 0.0],
+            "clusters": 0,
+            "n_pairs": 0,
+            "statistical_unit": statistical_unit,
+            "exploratory_or_confirmatory": exploratory_or_confirmatory,
+            "degenerate_zero_variance": True,
+            "seed": int(seed),
+        }
     diffs = np.asarray(a_values, dtype=np.float64) - np.asarray(b_values, dtype=np.float64)
     groups: Dict[str, List[float]] = {}
     for d, cid in zip(diffs, cluster_ids):
-        groups.setdefault(cid, []).append(float(d))
+        groups.setdefault(str(cid), []).append(float(d))
     cluster_means = [float(np.mean(v)) for v in groups.values()]
     rng = np.random.default_rng(seed)
     k = len(cluster_means)
     arr = np.asarray(cluster_means, dtype=np.float64)
+    point = float(np.mean(arr))
     boots = []
     for _ in range(n_boot):
         idx = rng.integers(0, k, size=k)
         boots.append(float(np.mean(arr[idx])))
     lo, hi = np.percentile(boots, [2.5, 97.5])
-    return {"mean_diff": float(np.mean(arr)), "ci95": [float(lo), float(hi)], "clusters": k}
+    return {
+        "mean_diff": point,
+        "effect_size": point,
+        "point_estimate": point,
+        "ci95": [float(lo), float(hi)],
+        "confidence_interval": [float(lo), float(hi)],
+        "clusters": k,
+        "n_pairs": len(a_values),
+        "has_duplicate_clusters": k < len(a_values),
+        "statistical_unit": statistical_unit,
+        "exploratory_or_confirmatory": exploratory_or_confirmatory,
+        "degenerate_zero_variance": bool(np.std(arr) == 0.0),
+        "seed": int(seed),
+    }
 
 
-def detection_metrics(reports: Sequence[dict], is_damaged: Sequence[int], is_unknown_ctrl: Sequence[int]) -> Dict[str, object]:
-    """Compute M2 detection AUROC, AUPRC, Recall@Budget, and unknown false-positive rate."""
+def detection_metrics(
+    reports: Sequence[dict],
+    is_damaged: Sequence[int],
+    is_unknown_ctrl: Sequence[int],
+    k_budget: Optional[int] = None,
+) -> Dict[str, object]:
+    """Compute both conditional (known-only) and full-pool M2 detection metrics."""
     scores = [float(r["anomaly_score"]) for r in reports]
     y = [int(v) for v in is_damaged]
     known_idx = [i for i, unk in enumerate(is_unknown_ctrl) if not unk]
     unk_idx = [i for i, unk in enumerate(is_unknown_ctrl) if unk]
+    unk_set = set(unk_idx)
 
+    # 1. Conditional metrics (known-only subset, preserved for backward compatibility)
     y_known = [y[i] for i in known_idx]
     s_known = [scores[i] for i in known_idx]
-    k_budget = max(1, sum(y_known))
-    top_k = set(sorted(known_idx, key=lambda i: scores[i], reverse=True)[:k_budget])
-    recall_at_k = sum(y[i] for i in top_k) / max(1, sum(y_known))
-    prec_at_k = sum(y[i] for i in top_k) / max(1, len(top_k))
+    k_cond = int(k_budget) if k_budget is not None else max(1, sum(y_known))
+    top_k_cond = set(sorted(known_idx, key=lambda i: scores[i], reverse=True)[:k_cond])
+    recall_at_k = sum(y[i] for i in top_k_cond) / max(1, sum(y_known))
+    prec_at_k = sum(y[i] for i in top_k_cond) / max(1, len(top_k_cond))
     healthy_fpr = (
         sum(1 for i in known_idx if y[i] == 0 and reports[i]["status"] == "suspected")
         / max(1, sum(1 for i in known_idx if y[i] == 0))
@@ -74,19 +108,64 @@ def detection_metrics(reports: Sequence[dict], is_damaged: Sequence[int], is_unk
         sum(1 for i in unk_idx if reports[i]["status"] == "suspected")
         / max(1, len(unk_idx))
     )
-    mean_cost = float(np.mean([r["query_cost"] for r in reports])) if reports else 0.0
-    return {
-        "n_total": len(reports),
+
+    # 2. Full-pool metrics (healthy + damaged + unknown_control ranked together blindly)
+    all_idx = list(range(len(reports)))
+    y_full = [1 if (y[i] == 1 and i not in unk_set) else 0 for i in all_idx]
+    k_full = int(k_budget) if k_budget is not None else max(1, sum(y_full))
+    top_k_full = set(sorted(all_idx, key=lambda i: scores[i], reverse=True)[:k_full])
+    full_recall = sum(y_full[i] for i in top_k_full) / max(1, sum(y_full))
+    full_prec = sum(y_full[i] for i in top_k_full) / max(1, len(top_k_full))
+    full_unk_in_topk = sum(1 for i in top_k_full if i in unk_set)
+    full_unk_topk_rate = full_unk_in_topk / max(1, len(unk_idx))
+
+    total_cost = int(sum(int(r.get("query_cost", 0)) for r in reports))
+    mean_cost = float(total_cost / len(reports)) if reports else 0.0
+
+    cond_dict = {
         "n_known": len(known_idx),
         "n_damaged": sum(y_known),
-        "n_unknown_ctrl": len(unk_idx),
+        "k_budget": k_cond,
         "auroc": safe_auroc(y_known, s_known),
         "auprc": safe_auprc(y_known, s_known),
         "recall_at_damaged_budget": float(recall_at_k),
         "precision_at_damaged_budget": float(prec_at_k),
         "healthy_false_positive_rate": float(healthy_fpr),
+    }
+    full_dict = {
+        "n_total": len(reports),
+        "n_damaged": sum(y_full),
+        "n_unknown_ctrl": len(unk_idx),
+        "k_budget": k_full,
+        "auroc": safe_auroc(y_full, scores),
+        "auprc": safe_auprc(y_full, scores),
+        "recall_at_damaged_budget": float(full_recall),
+        "precision_at_damaged_budget": float(full_prec),
+        "unknown_in_topk_count": int(full_unk_in_topk),
+        "unknown_in_topk_rate": float(full_unk_topk_rate),
         "unknown_false_positive_rate": float(unknown_fpr),
+    }
+
+    return {
+        "n_total": len(reports),
+        "n_known": len(known_idx),
+        "n_damaged": sum(y_known),
+        "n_unknown_ctrl": len(unk_idx),
+        "auroc": cond_dict["auroc"],
+        "auprc": cond_dict["auprc"],
+        "recall_at_damaged_budget": cond_dict["recall_at_damaged_budget"],
+        "precision_at_damaged_budget": cond_dict["precision_at_damaged_budget"],
+        "healthy_false_positive_rate": cond_dict["healthy_false_positive_rate"],
+        "unknown_false_positive_rate": float(unknown_fpr),
+        "total_query_cost": total_cost,
         "mean_query_cost": mean_cost,
+        "full_pool_auroc": full_dict["auroc"],
+        "full_pool_auprc": full_dict["auprc"],
+        "full_pool_recall_at_damaged_budget": full_dict["recall_at_damaged_budget"],
+        "full_pool_precision_at_damaged_budget": full_dict["precision_at_damaged_budget"],
+        "full_pool_unknown_in_topk": full_dict["unknown_in_topk_count"],
+        "conditional_known_only": cond_dict,
+        "full_pool": full_dict,
     }
 
 
@@ -129,7 +208,6 @@ def summarize_p0_results(records: Sequence[dict], gate_thresholds: Optional[Dict
             reason = str(r.get("exclusion_reason") or "unknown")
             exclusions[reason] = exclusions.get(reason, 0) + 1
 
-    # G0 strict criteria: A (mastery >= 0.75), B (strict_eligible >= 8 & rate >= 0.5), C (oracle_strict >= 0.75)
     g0_a_ok = clean_mastery_rate >= thresh["min_clean_mastery_rate"]
     g0_b_ok = (
         len(strict_elig) >= thresh["min_independent_units"]
@@ -139,7 +217,6 @@ def summarize_p0_results(records: Sequence[dict], gate_thresholds: Optional[Dict
     g0_c_ok = len(strict_elig) > 0 and oracle_strict_rate_strict_elig >= thresh["min_oracle_success_rate"]
     g0_pass = bool(g0_a_ok and g0_b_ok and g0_c_ok)
 
-    # Diagnostic operational check (without independent locality filter)
     diag_op_ok = (
         clean_mastery_rate >= thresh["min_clean_mastery_rate"]
         and len(op_elig) >= thresh["min_independent_units"]

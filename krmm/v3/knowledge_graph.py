@@ -1,7 +1,8 @@
 """Domain-general knowledge constraint graph for KRMM v0.3 (M2.3)."""
 from __future__ import annotations
 
-from typing import Dict, List, Set, Tuple
+import itertools
+from typing import Dict, List, Optional, Set, Tuple
 from .schemas import AtomicFact
 
 ALL_OPTIONS: Set[str] = {"A", "B", "C", "D"}
@@ -46,7 +47,7 @@ SINGLETON_CONSTRAINTS: Dict[Tuple[str, str, str], Tuple[Set[str], str]] = {
 
 
 class EvidenceGraph:
-    """Evaluates support edges, logical constraints, conflicts, and provenance groups."""
+    """Evaluates support edges, logical constraints, minimal support sets, conflicts, and provenance groups."""
 
     def __init__(self, domain: str) -> None:
         self.domain = domain
@@ -54,6 +55,7 @@ class EvidenceGraph:
     def evaluate(self, facts: List[AtomicFact]) -> Dict[str, object]:
         compatible: Set[str] = set(ALL_OPTIONS)
         support_paths: List[Dict[str, object]] = []
+        rule_trace: List[Dict[str, object]] = []
         conflicts: List[Dict[str, object]] = []
         invalid_atoms: List[Dict[str, object]] = []
         valid_facts: List[Tuple[int, AtomicFact]] = []
@@ -66,17 +68,17 @@ class EvidenceGraph:
             allowed, rule_name = SINGLETON_CONSTRAINTS[key]
             valid_facts.append((idx, fact))
             compatible.intersection_update(allowed)
-            support_paths.append(
-                {
-                    "indices": [idx],
-                    "rule": rule_name,
-                    "attribute": fact.attribute,
-                    "value": fact.value,
-                    "allowed": sorted(allowed),
-                    "source": fact.source,
-                    "provenance_group": fact.provenance_group,
-                }
-            )
+            path = {
+                "indices": [idx],
+                "rule": rule_name,
+                "attribute": fact.attribute,
+                "value": fact.value,
+                "allowed": sorted(allowed),
+                "source": fact.source,
+                "provenance_group": fact.provenance_group,
+            }
+            support_paths.append(path)
+            rule_trace.append({**path, "compatible_after": sorted(compatible)})
 
         # Joint compositional rule: flexible_reed + direct_air_flow -> B (aerophone)
         if self.domain == "sound_source_mechanism":
@@ -86,16 +88,15 @@ class EvidenceGraph:
                 for j, f_fact in flows:
                     if r_fact.entity == f_fact.entity:
                         compatible.intersection_update({"B"})
-                        support_paths.append(
-                            {
-                                "indices": [i, j],
-                                "rule": "hs_air_driven_reed_joint",
-                                "allowed": ["B"],
-                                "provenance_groups": [r_fact.provenance_group, f_fact.provenance_group],
-                            }
-                        )
+                        joint_path = {
+                            "indices": [i, j],
+                            "rule": "hs_air_driven_reed_joint",
+                            "allowed": ["B"],
+                            "provenance_groups": [r_fact.provenance_group, f_fact.provenance_group],
+                        }
+                        support_paths.append(joint_path)
+                        rule_trace.append({**joint_path, "compatible_after": sorted(compatible)})
 
-        # Check conflict (empty intersection when constraints fired)
         conflict = bool(support_paths) and len(compatible) == 0
         if conflict:
             conflicts.append(
@@ -105,7 +106,6 @@ class EvidenceGraph:
                 }
             )
 
-        # Check provenance independence: count unique provenance groups among active constraints
         active_indices = {idx for p in support_paths for idx in p["indices"]}
         active_groups = {facts[i].provenance_group for i in active_indices}
         same_model_only = len(active_groups) <= 1 and len(active_indices) > 1
@@ -113,10 +113,87 @@ class EvidenceGraph:
         return {
             "compatible": sorted(compatible),
             "support_paths": support_paths,
+            "rule_trace": rule_trace,
             "conflicts": conflicts,
             "conflict": conflict,
             "invalid_atoms": invalid_atoms,
+            "active_indices": sorted(active_indices),
             "unique_provenance_groups": sorted(active_groups),
             "same_model_correlated_only": same_model_only,
             "ambiguous": len(compatible) != 1,
+        }
+
+    def find_minimal_support_sets(self, facts: List[AtomicFact]) -> Dict[str, object]:
+        """Enumerate minimal sufficient subsets of active facts determining a unique candidate."""
+        full_eval = self.evaluate(facts)
+        if full_eval["conflict"]:
+            return {
+                "candidate": None,
+                "explanation_class": "conflicting_evidence",
+                "minimal_support_sets": [],
+                "min_support_size": None,
+                "full_eval": full_eval,
+            }
+
+        compatible = full_eval["compatible"]
+        if len(compatible) != 1:
+            return {
+                "candidate": None,
+                "explanation_class": "insufficient_evidence",
+                "minimal_support_sets": [],
+                "min_support_size": None,
+                "full_eval": full_eval,
+            }
+
+        candidate = compatible[0]
+        active_indices: List[int] = list(full_eval["active_indices"])
+        minimal_tuples: List[Tuple[int, ...]] = []
+        minimal_details: List[Dict[str, object]] = []
+
+        # Enumerate subsets in increasing cardinality; skip supersets of already found minimal sets
+        max_k = min(len(active_indices), 10)
+        for k in range(1, max_k + 1):
+            for comb in itertools.combinations(active_indices, k):
+                comb_set = set(comb)
+                if any(set(prev).issubset(comb_set) for prev in minimal_tuples):
+                    continue
+                sub_facts = [facts[i] for i in comb]
+                sub_eval = self.evaluate(sub_facts)
+                if not sub_eval["conflict"] and sub_eval["compatible"] == [candidate]:
+                    minimal_tuples.append(comb)
+                    minimal_details.append(
+                        {
+                            "indices": list(comb),
+                            "size": len(comb),
+                            "attributes": [facts[i].attribute for i in comb],
+                            "values": [facts[i].value for i in comb],
+                            "rules": [p["rule"] for p in sub_eval["support_paths"]],
+                            "provenance_groups": sorted({facts[i].provenance_group for i in comb}),
+                        }
+                    )
+
+        if not minimal_tuples:
+            return {
+                "candidate": candidate,
+                "explanation_class": "insufficient_evidence",
+                "minimal_support_sets": [],
+                "min_support_size": None,
+                "full_eval": full_eval,
+            }
+
+        min_size: Optional[int] = min(len(t) for t in minimal_tuples)
+        if len(minimal_tuples) >= 2:
+            explanation_class = "redundant_support"
+        elif min_size == 1:
+            explanation_class = "single_hop"
+        else:
+            explanation_class = "minimal_multi_premise"
+
+        return {
+            "candidate": candidate,
+            "explanation_class": explanation_class,
+            "minimal_support_sets": minimal_details,
+            "min_support_size": min_size,
+            "all_minimal_require_multi_premise": bool(min_size is not None and min_size >= 2),
+            "full_eval": full_eval,
         }

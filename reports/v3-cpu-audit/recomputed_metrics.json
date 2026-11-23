@@ -1,0 +1,1297 @@
+{
+  "dev": {
+    "split": "dev",
+    "denominators": {
+      "n_total_catalog": 36,
+      "n_stably_mastered": 33,
+      "n_damage_effective": 25,
+      "n_strict_eligible": 21,
+      "n_unique_source_groups_eligible": 21,
+      "has_duplicate_source_groups_eligible": false,
+      "n_structured_candidate_produced": 15,
+      "n_structured_repair_attempted": 15,
+      "n_structured_strict_restored": 14
+    },
+    "branches": {
+      "direct": {
+        "n_strict_eligible": 21,
+        "n_repair_attempted": 21,
+        "n_strict_restored": 0,
+        "rate_over_eligible": 0.0,
+        "rate_over_attempted": 0.0
+      },
+      "generative": {
+        "n_strict_eligible": 21,
+        "n_repair_attempted": 21,
+        "n_strict_restored": 12,
+        "rate_over_eligible": 0.5714285714285714,
+        "rate_over_attempted": 0.5714285714285714
+      },
+      "structured": {
+        "n_strict_eligible": 21,
+        "n_repair_attempted": 15,
+        "n_strict_restored": 14,
+        "rate_over_eligible": 0.6666666666666666,
+        "rate_over_attempted": 0.9333333333333333
+      },
+      "oracle": {
+        "n_strict_eligible": 21,
+        "n_repair_attempted": 21,
+        "n_strict_restored": 21,
+        "rate_over_eligible": 1.0,
+        "rate_over_attempted": 1.0
+      }
+    },
+    "evidence_graph_audit": {
+      "candidate_differences_orig_vs_corrected": 0,
+      "orig_true_composition_count": 0,
+      "corrected_true_composition_count": 0,
+      "explanation_class_counts": {
+        "single_hop": 8,
+        "minimal_multi_premise": 0,
+        "redundant_support": 7,
+        "conflicting_evidence": 6,
+        "insufficient_evidence": 0
+      },
+      "explanation_class_correct_counts": {
+        "single_hop": 7,
+        "minimal_multi_premise": 0,
+        "redundant_support": 7,
+        "conflicting_evidence": 0,
+        "insufficient_evidence": 0
+      },
+      "per_unit": [
+        {
+          "unit_id": "0597019dd098a38f",
+          "entity_id": "cardboard shipping box",
+          "domain": "everyday_material",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "094543ea0f33734f",
+          "entity_id": "emperor penguin",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "159eb9d9a020adf9",
+          "entity_id": "cello",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "297add39f4b57fb2",
+          "entity_id": "nylon raincoat",
+          "domain": "everyday_material",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "407c739dcdc75d1e",
+          "entity_id": "stainless steel frying pan",
+          "domain": "everyday_material",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "432991202848df16",
+          "entity_id": "african elephant",
+          "domain": "vertebrate_class",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "5714aa93426249b5",
+          "entity_id": "galapagos tortoise",
+          "domain": "vertebrate_class",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "9027e4636ead7ac8",
+          "entity_id": "PVC plumbing pipe",
+          "domain": "everyday_material",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "90a0a91fcc0252bc",
+          "entity_id": "gray wolf",
+          "domain": "vertebrate_class",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "a4190f26ea7cbb38",
+          "entity_id": "atlantic salmon",
+          "domain": "vertebrate_class",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "ab3ced114980eff2",
+          "entity_id": "copper electrical wire",
+          "domain": "everyday_material",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "b0b550972c344762",
+          "entity_id": "bald eagle",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "bf3d48c8a15f2317",
+          "entity_id": "bamboo chopsticks",
+          "domain": "everyday_material",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "c3bb7bc94f3398b7",
+          "entity_id": "porcelain teacup",
+          "domain": "everyday_material",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "c908fb67a7f1a6be",
+          "entity_id": "bluefin tuna",
+          "domain": "vertebrate_class",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "d3b9a1a58715d1f9",
+          "entity_id": "concert harp",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "e7f48a81b58e7c74",
+          "entity_id": "xylophone",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "ef0aba665d8db763",
+          "entity_id": "bottlenose dolphin",
+          "domain": "vertebrate_class",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "f9a4e72a3a078fa5",
+          "entity_id": "barn owl",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "fbde7bbb6263af32",
+          "entity_id": "silicone baking spatula",
+          "domain": "everyday_material",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "fc6a21f2fe587eec",
+          "entity_id": "trumpet",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        }
+      ]
+    },
+    "bootstrap_seed_stability_structured_vs_generative": {
+      "107": {
+        "point_estimate": 0.09523809523809523,
+        "ci95": [
+          -0.14285714285714285,
+          0.38095238095238093
+        ],
+        "clusters": 21
+      },
+      "202": {
+        "point_estimate": 0.09523809523809523,
+        "ci95": [
+          -0.14285714285714285,
+          0.3333333333333333
+        ],
+        "clusters": 21
+      },
+      "303": {
+        "point_estimate": 0.09523809523809523,
+        "ci95": [
+          -0.19047619047619047,
+          0.3333333333333333
+        ],
+        "clusters": 21
+      },
+      "404": {
+        "point_estimate": 0.09523809523809523,
+        "ci95": [
+          -0.14404761904761898,
+          0.3333333333333333
+        ],
+        "clusters": 21
+      },
+      "505": {
+        "point_estimate": 0.09523809523809523,
+        "ci95": [
+          -0.14285714285714285,
+          0.3333333333333333
+        ],
+        "clusters": 21
+      }
+    }
+  },
+  "calibration": {
+    "split": "calibration",
+    "denominators": {
+      "n_total_catalog": 36,
+      "n_stably_mastered": 32,
+      "n_damage_effective": 24,
+      "n_strict_eligible": 16,
+      "n_unique_source_groups_eligible": 16,
+      "has_duplicate_source_groups_eligible": false,
+      "n_structured_candidate_produced": 15,
+      "n_structured_repair_attempted": 15,
+      "n_structured_strict_restored": 12
+    },
+    "branches": {
+      "direct": {
+        "n_strict_eligible": 16,
+        "n_repair_attempted": 16,
+        "n_strict_restored": 1,
+        "rate_over_eligible": 0.0625,
+        "rate_over_attempted": 0.0625
+      },
+      "generative": {
+        "n_strict_eligible": 16,
+        "n_repair_attempted": 16,
+        "n_strict_restored": 8,
+        "rate_over_eligible": 0.5,
+        "rate_over_attempted": 0.5
+      },
+      "structured": {
+        "n_strict_eligible": 16,
+        "n_repair_attempted": 15,
+        "n_strict_restored": 12,
+        "rate_over_eligible": 0.75,
+        "rate_over_attempted": 0.8
+      },
+      "oracle": {
+        "n_strict_eligible": 16,
+        "n_repair_attempted": 16,
+        "n_strict_restored": 14,
+        "rate_over_eligible": 0.875,
+        "rate_over_attempted": 0.875
+      }
+    },
+    "evidence_graph_audit": {
+      "candidate_differences_orig_vs_corrected": 0,
+      "orig_true_composition_count": 3,
+      "corrected_true_composition_count": 3,
+      "explanation_class_counts": {
+        "single_hop": 5,
+        "minimal_multi_premise": 2,
+        "redundant_support": 8,
+        "conflicting_evidence": 1,
+        "insufficient_evidence": 0
+      },
+      "explanation_class_correct_counts": {
+        "single_hop": 5,
+        "minimal_multi_premise": 1,
+        "redundant_support": 8,
+        "conflicting_evidence": 0,
+        "insufficient_evidence": 0
+      },
+      "per_unit": [
+        {
+          "unit_id": "000960a0e21fbc3a",
+          "entity_id": "borosilicate laboratory beaker",
+          "domain": "everyday_material",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": true,
+          "new_explanation_class": "minimal_multi_premise",
+          "min_support_size": 2,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "011b06be5a777eac",
+          "entity_id": "alto saxophone",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "12589d78642cfd45",
+          "entity_id": "swordfish",
+          "domain": "vertebrate_class",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "137a73220b28b77c",
+          "entity_id": "peregrine falcon",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "29205afab4e9bdfd",
+          "entity_id": "african lion",
+          "domain": "vertebrate_class",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "3661cb63ccf57b07",
+          "entity_id": "largemouth bass",
+          "domain": "vertebrate_class",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "4564d0d9657d8d9d",
+          "entity_id": "giraffe",
+          "domain": "vertebrate_class",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "4ca0e7251ddbe93a",
+          "entity_id": "atlantic puffin",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "79a48a1103b0e55e",
+          "entity_id": "green iguana",
+          "domain": "vertebrate_class",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": true,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 2,
+          "n_minimal_sets": 4,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "89839eb2c400579e",
+          "entity_id": "hammerhead shark",
+          "domain": "vertebrate_class",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "928f2967723c9f8d",
+          "entity_id": "wooden rolling pin",
+          "domain": "everyday_material",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "94487e67dcdd0db3",
+          "entity_id": "polyester fleece jacket",
+          "domain": "everyday_material",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "94f2e1e9fcca0016",
+          "entity_id": "violin",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "a894c23732eab6d1",
+          "entity_id": "concert bass drum",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "a93fae2b120002b7",
+          "entity_id": "timpani",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "e795513c97de48f5",
+          "entity_id": "brass doorknob",
+          "domain": "everyday_material",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": true,
+          "new_explanation_class": "minimal_multi_premise",
+          "min_support_size": 2,
+          "n_minimal_sets": 1,
+          "candidate_correct": false
+        }
+      ]
+    },
+    "bootstrap_seed_stability_structured_vs_generative": {
+      "107": {
+        "point_estimate": 0.25,
+        "ci95": [
+          0.0625,
+          0.5
+        ],
+        "clusters": 16
+      },
+      "202": {
+        "point_estimate": 0.25,
+        "ci95": [
+          0.0625,
+          0.4375
+        ],
+        "clusters": 16
+      },
+      "303": {
+        "point_estimate": 0.25,
+        "ci95": [
+          0.0625,
+          0.4375
+        ],
+        "clusters": 16
+      },
+      "404": {
+        "point_estimate": 0.25,
+        "ci95": [
+          0.0625,
+          0.4375
+        ],
+        "clusters": 16
+      },
+      "505": {
+        "point_estimate": 0.25,
+        "ci95": [
+          0.0625,
+          0.4390624999999915
+        ],
+        "clusters": 16
+      }
+    }
+  },
+  "test_post_hoc_audit": {
+    "split": "test",
+    "denominators": {
+      "n_total_catalog": 48,
+      "n_stably_mastered": 43,
+      "n_damage_effective": 33,
+      "n_strict_eligible": 29,
+      "n_unique_source_groups_eligible": 29,
+      "has_duplicate_source_groups_eligible": false,
+      "n_structured_candidate_produced": 24,
+      "n_structured_repair_attempted": 24,
+      "n_structured_strict_restored": 20
+    },
+    "branches": {
+      "direct": {
+        "n_strict_eligible": 29,
+        "n_repair_attempted": 29,
+        "n_strict_restored": 0,
+        "rate_over_eligible": 0.0,
+        "rate_over_attempted": 0.0
+      },
+      "generative": {
+        "n_strict_eligible": 29,
+        "n_repair_attempted": 29,
+        "n_strict_restored": 13,
+        "rate_over_eligible": 0.4482758620689655,
+        "rate_over_attempted": 0.4482758620689655
+      },
+      "structured": {
+        "n_strict_eligible": 29,
+        "n_repair_attempted": 24,
+        "n_strict_restored": 20,
+        "rate_over_eligible": 0.6896551724137931,
+        "rate_over_attempted": 0.8333333333333334
+      },
+      "oracle": {
+        "n_strict_eligible": 29,
+        "n_repair_attempted": 29,
+        "n_strict_restored": 27,
+        "rate_over_eligible": 0.9310344827586207,
+        "rate_over_attempted": 0.9310344827586207
+      }
+    },
+    "evidence_graph_audit": {
+      "candidate_differences_orig_vs_corrected": 0,
+      "orig_true_composition_count": 5,
+      "corrected_true_composition_count": 5,
+      "explanation_class_counts": {
+        "single_hop": 10,
+        "minimal_multi_premise": 2,
+        "redundant_support": 12,
+        "conflicting_evidence": 5,
+        "insufficient_evidence": 0
+      },
+      "explanation_class_correct_counts": {
+        "single_hop": 8,
+        "minimal_multi_premise": 0,
+        "redundant_support": 12,
+        "conflicting_evidence": 0,
+        "insufficient_evidence": 0
+      },
+      "per_unit": [
+        {
+          "unit_id": "040affb57c74f395",
+          "entity_id": "cedarwood pencil shaft",
+          "domain": "everyday_material",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "133d7cdb76abc44c",
+          "entity_id": "djembe",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "1600699ac45772ba",
+          "entity_id": "rubber garden hose",
+          "domain": "everyday_material",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "1703dc182c5df505",
+          "entity_id": "brass handbell",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "323e17febf5d1aab",
+          "entity_id": "steel hex bolt",
+          "domain": "everyday_material",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "4735f3c39f652955",
+          "entity_id": "veiled chameleon",
+          "domain": "vertebrate_class",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": true,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 2,
+          "n_minimal_sets": 4,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "517f066eefe77f14",
+          "entity_id": "kraft paper envelope",
+          "domain": "everyday_material",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "570ade82c6c2af40",
+          "entity_id": "mahi-mahi",
+          "domain": "vertebrate_class",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "611a2b221897d918",
+          "entity_id": "silver soup spoon",
+          "domain": "everyday_material",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "6271b4435a4fc375",
+          "entity_id": "titanium orthopedic screw",
+          "domain": "everyday_material",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": true,
+          "new_explanation_class": "minimal_multi_premise",
+          "min_support_size": 2,
+          "n_minimal_sets": 1,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "67bb087bebbc0e8a",
+          "entity_id": "neoprene diving wetsuit",
+          "domain": "everyday_material",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "688ddd7a23105ed9",
+          "entity_id": "osprey",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "77e8d8093745d5a0",
+          "entity_id": "french horn",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "7b6e709b6f27629d",
+          "entity_id": "northern pike",
+          "domain": "vertebrate_class",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "82581a1f0ad81918",
+          "entity_id": "wandering albatross",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "9813b46aebb51cb7",
+          "entity_id": "boa constrictor",
+          "domain": "vertebrate_class",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": true,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 2,
+          "n_minimal_sets": 4,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "98851c8127123cd0",
+          "entity_id": "maple wooden spoon",
+          "domain": "everyday_material",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "9cd794db526633af",
+          "entity_id": "shortfin mako shark",
+          "domain": "vertebrate_class",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "a353404d8b196761",
+          "entity_id": "gila monster",
+          "domain": "vertebrate_class",
+          "orig_candidate": "C",
+          "new_candidate": "C",
+          "orig_true_composition": true,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 2,
+          "n_minimal_sets": 4,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "af2038f6967234f9",
+          "entity_id": "plains zebra",
+          "domain": "vertebrate_class",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "b026f657792e9168",
+          "entity_id": "american white pelican",
+          "domain": "vertebrate_class",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "ba97f9fd01887c41",
+          "entity_id": "atlantic cod",
+          "domain": "vertebrate_class",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "d8c94a5787f826d2",
+          "entity_id": "bodhran",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": true,
+          "new_explanation_class": "minimal_multi_premise",
+          "min_support_size": 2,
+          "n_minimal_sets": 1,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "dc262caec46cd222",
+          "entity_id": "crystal wine glass",
+          "domain": "everyday_material",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "e09ce7b6b1aab6fa",
+          "entity_id": "plastic measuring cup",
+          "domain": "everyday_material",
+          "orig_candidate": "D",
+          "new_candidate": "D",
+          "orig_true_composition": false,
+          "new_explanation_class": "single_hop",
+          "min_support_size": 1,
+          "n_minimal_sets": 1,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "e795de67b05cf2db",
+          "entity_id": "bengal tiger",
+          "domain": "vertebrate_class",
+          "orig_candidate": "A",
+          "new_candidate": "A",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "e7ada88650dc51ed",
+          "entity_id": "common kingfisher",
+          "domain": "vertebrate_class",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        },
+        {
+          "unit_id": "eabe7138cf5af850",
+          "entity_id": "oboe",
+          "domain": "sound_source_mechanism",
+          "orig_candidate": "B",
+          "new_candidate": "B",
+          "orig_true_composition": false,
+          "new_explanation_class": "redundant_support",
+          "min_support_size": 1,
+          "n_minimal_sets": 2,
+          "candidate_correct": true
+        },
+        {
+          "unit_id": "f7c3a9ce6d40ed7a",
+          "entity_id": "humpback whale",
+          "domain": "vertebrate_class",
+          "orig_candidate": null,
+          "new_candidate": null,
+          "orig_true_composition": false,
+          "new_explanation_class": "conflicting_evidence",
+          "min_support_size": null,
+          "n_minimal_sets": 0,
+          "candidate_correct": false
+        }
+      ]
+    },
+    "bootstrap_seed_stability_structured_vs_generative": {
+      "107": {
+        "point_estimate": 0.2413793103448276,
+        "ci95": [
+          0.06896551724137931,
+          0.41379310344827586
+        ],
+        "clusters": 29
+      },
+      "202": {
+        "point_estimate": 0.2413793103448276,
+        "ci95": [
+          0.06896551724137931,
+          0.41379310344827586
+        ],
+        "clusters": 29
+      },
+      "303": {
+        "point_estimate": 0.2413793103448276,
+        "ci95": [
+          0.06896551724137931,
+          0.41379310344827586
+        ],
+        "clusters": 29
+      },
+      "404": {
+        "point_estimate": 0.2413793103448276,
+        "ci95": [
+          0.06896551724137931,
+          0.41379310344827586
+        ],
+        "clusters": 29
+      },
+      "505": {
+        "point_estimate": 0.2413793103448276,
+        "ci95": [
+          0.06896551724137931,
+          0.41379310344827586
+        ],
+        "clusters": 29
+      }
+    }
+  },
+  "m2_historical_artifacts": {
+    "results/v3-new/exp05c-m2-discovery-dev36": {
+      "exists": true,
+      "files": [
+        "m2_discovery_metrics.json"
+      ],
+      "has_per_unit_raw_scores": false,
+      "full_pool_and_equal_budget_status": "NOT_RECOMPUTABLE_FROM_AVAILABLE_ARTIFACTS",
+      "historical_summary": {
+        "n_mastered": 33,
+        "n_damaged": 16,
+        "n_healthy": 17,
+        "n_unknown_ctrl": 8,
+        "simple_direct_baseline": {
+          "n_total": 41,
+          "n_known": 33,
+          "n_damaged": 16,
+          "n_unknown_ctrl": 8,
+          "auroc": 0.6286764705882353,
+          "auprc": 0.7588354462833995,
+          "recall_at_damaged_budget": 0.625,
+          "precision_at_damaged_budget": 0.625,
+          "healthy_false_positive_rate": 0.0,
+          "unknown_false_positive_rate": 0.875,
+          "mean_query_cost": 3.0
+        },
+        "m2_reference_free": {
+          "n_total": 41,
+          "n_known": 33,
+          "n_damaged": 16,
+          "n_unknown_ctrl": 8,
+          "auroc": 0.8125,
+          "auprc": 0.8844151762389909,
+          "recall_at_damaged_budget": 0.8125,
+          "precision_at_damaged_budget": 0.8125,
+          "healthy_false_positive_rate": 0.058823529411764705,
+          "unknown_false_positive_rate": 0.0,
+          "mean_query_cost": 4.097560975609756
+        },
+        "m2_reference_based": {
+          "n_total": 41,
+          "n_known": 33,
+          "n_damaged": 16,
+          "n_unknown_ctrl": 8,
+          "auroc": 1.0,
+          "auprc": 1.0,
+          "recall_at_damaged_budget": 1.0,
+          "precision_at_damaged_budget": 1.0,
+          "healthy_false_positive_rate": 0.0,
+          "unknown_false_positive_rate": 0.875,
+          "mean_query_cost": 4.097560975609756
+        },
+        "resources": {
+          "decoder_tokens_processed": 2357308,
+          "model_forward_calls": 4035,
+          "query_calls": 827,
+          "tokens": 63772,
+          "peak_vram_gb": 11.157513618469238
+        }
+      }
+    },
+    "results/v3-new/exp10-m2-discovery-cal36": {
+      "exists": true,
+      "files": [
+        "m2_discovery_metrics.json"
+      ],
+      "has_per_unit_raw_scores": false,
+      "full_pool_and_equal_budget_status": "NOT_RECOMPUTABLE_FROM_AVAILABLE_ARTIFACTS",
+      "historical_summary": {
+        "n_mastered": 32,
+        "n_damaged": 16,
+        "n_healthy": 16,
+        "n_unknown_ctrl": 8,
+        "simple_direct_baseline": {
+          "n_total": 40,
+          "n_known": 32,
+          "n_damaged": 16,
+          "n_unknown_ctrl": 8,
+          "auroc": 0.765625,
+          "auprc": 0.8431095825426945,
+          "recall_at_damaged_budget": 0.6875,
+          "precision_at_damaged_budget": 0.6875,
+          "healthy_false_positive_rate": 0.0,
+          "unknown_false_positive_rate": 0.625,
+          "mean_query_cost": 3.0
+        },
+        "m2_reference_free": {
+          "n_total": 40,
+          "n_known": 32,
+          "n_damaged": 16,
+          "n_unknown_ctrl": 8,
+          "auroc": 0.990234375,
+          "auprc": 0.9846047794117647,
+          "recall_at_damaged_budget": 0.9375,
+          "precision_at_damaged_budget": 0.9375,
+          "healthy_false_positive_rate": 0.0625,
+          "unknown_false_positive_rate": 0.0,
+          "mean_query_cost": 4.425
+        },
+        "m2_reference_based": {
+          "n_total": 40,
+          "n_known": 32,
+          "n_damaged": 16,
+          "n_unknown_ctrl": 8,
+          "auroc": 1.0,
+          "auprc": 1.0,
+          "recall_at_damaged_budget": 1.0,
+          "precision_at_damaged_budget": 1.0,
+          "healthy_false_positive_rate": 0.0,
+          "unknown_false_positive_rate": 0.75,
+          "mean_query_cost": 4.425
+        },
+        "resources": {
+          "decoder_tokens_processed": 2355627,
+          "model_forward_calls": 4130,
+          "query_calls": 842,
+          "tokens": 64225,
+          "peak_vram_gb": 11.157513618469238
+        }
+      }
+    },
+    "results/v3-new/exp11-m2-discovery-test48": {
+      "exists": true,
+      "files": [
+        "m2_discovery_metrics.json"
+      ],
+      "has_per_unit_raw_scores": false,
+      "full_pool_and_equal_budget_status": "NOT_RECOMPUTABLE_FROM_AVAILABLE_ARTIFACTS",
+      "historical_summary": {
+        "n_mastered": 43,
+        "n_damaged": 22,
+        "n_healthy": 21,
+        "n_unknown_ctrl": 8,
+        "simple_direct_baseline": {
+          "n_total": 51,
+          "n_known": 43,
+          "n_damaged": 22,
+          "n_unknown_ctrl": 8,
+          "auroc": 0.8181818181818183,
+          "auprc": 0.7409882849490469,
+          "recall_at_damaged_budget": 0.8181818181818182,
+          "precision_at_damaged_budget": 0.8181818181818182,
+          "healthy_false_positive_rate": 0.09523809523809523,
+          "unknown_false_positive_rate": 0.875,
+          "mean_query_cost": 3.0
+        },
+        "m2_reference_free": {
+          "n_total": 51,
+          "n_known": 43,
+          "n_damaged": 22,
+          "n_unknown_ctrl": 8,
+          "auroc": 0.9177489177489178,
+          "auprc": 0.8645104895104895,
+          "recall_at_damaged_budget": 0.9090909090909091,
+          "precision_at_damaged_budget": 0.9090909090909091,
+          "healthy_false_positive_rate": 0.19047619047619047,
+          "unknown_false_positive_rate": 0.0,
+          "mean_query_cost": 4.568627450980392
+        },
+        "m2_reference_based": {
+          "n_total": 51,
+          "n_known": 43,
+          "n_damaged": 22,
+          "n_unknown_ctrl": 8,
+          "auroc": 1.0,
+          "auprc": 1.0,
+          "recall_at_damaged_budget": 1.0,
+          "precision_at_damaged_budget": 1.0,
+          "healthy_false_positive_rate": 0.09523809523809523,
+          "unknown_false_positive_rate": 0.875,
+          "mean_query_cost": 4.568627450980392
+        },
+        "resources": {
+          "decoder_tokens_processed": 3235147,
+          "model_forward_calls": 5545,
+          "query_calls": 1107,
+          "tokens": 84229,
+          "peak_vram_gb": 11.157513618469238
+        }
+      }
+    }
+  }
+}

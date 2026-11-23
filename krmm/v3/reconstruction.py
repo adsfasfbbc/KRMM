@@ -15,19 +15,20 @@ def _choose(probs: List[float]) -> str:
 
 
 def reconstruct_structured(domain: str, facts: List[AtomicFact]) -> Dict[str, object]:
-    """Evaluate structured graph over atomic facts and distinguish true multi-premise composition from 1-hop."""
+    """Evaluate structured graph over atomic facts using minimal support-set analysis."""
     valid_facts = [f for f in facts if f.value != "unparsed"]
     graph = EvidenceGraph(domain)
-    eval_res = graph.evaluate(valid_facts)
-    compatible = eval_res["compatible"]
-    candidate = compatible[0] if len(compatible) == 1 and not eval_res["conflict"] else None
+    min_res = graph.find_minimal_support_sets(valid_facts)
+    eval_res = min_res["full_eval"]
+    candidate = min_res["candidate"]
+    explanation_class = str(min_res["explanation_class"])
+    min_support_size = min_res["min_support_size"]
 
-    # Check whether >=2 premises jointly determine candidate while every singleton remains ambiguous
-    singletons = [graph.evaluate([f]) for f in valid_facts]
-    true_composition = (
+    # True multi-premise composition requires that NO singleton subset uniquely determines candidate
+    true_composition = bool(
         candidate is not None
-        and len(valid_facts) >= 2
-        and all(len(s["compatible"]) > 1 for s in singletons)
+        and min_support_size is not None
+        and int(min_support_size) >= 2
     )
     source_type = "insufficient_or_conflicting"
     if candidate is not None:
@@ -36,8 +37,12 @@ def reconstruct_structured(domain: str, facts: List[AtomicFact]) -> Dict[str, ob
     return {
         "candidate": candidate,
         "source_type": source_type,
+        "explanation_class": explanation_class,
+        "minimal_support_sets": min_res["minimal_support_sets"],
+        "min_support_size": min_support_size,
         "true_composition": true_composition,
         "graph": eval_res,
+        "rule_trace": eval_res["rule_trace"],
         "valid_facts": valid_facts,
     }
 
@@ -52,7 +57,6 @@ def reconstruct(
     """Run M3 reconstruction: direct residual, structured composition, and generative reconstruction."""
     calls = 0
 
-    # 1. Direct residual probes (alternative templates 2, 3)
     direct_probs: List[List[float]] = []
     for v in (2, 3):
         p, _, _ = question_prompt(unit, variant=v)
@@ -61,18 +65,15 @@ def reconstruct(
         calls += 1
     direct_candidate = _choose(direct_probs[0])
 
-    # 2. Extract atomic facts from alternative probing paths
     facts, probe_calls = extract_atomic_facts(
         omni, unit, max_new_tokens=max_new_tokens, extra_evidence=allowed_evidence
     )
     calls += probe_calls
 
-    # 3. Structured reconstruction via EvidenceGraph
     struct_res = reconstruct_structured(unit.domain, facts)
     structured_candidate = struct_res["candidate"]
     valid_facts: List[AtomicFact] = struct_res["valid_facts"]
 
-    # 4. Generative reconstruction from extracted observations (without entity label bias)
     obs_lines = [f"- {f.attribute}: {f.raw_output or f.value}" for f in facts]
     opt_lines = [f"{k}: {v}" for k, v in unit.options.items()]
     gen_prompt = (
@@ -86,7 +87,7 @@ def reconstruct(
     calls += 1
     generative_candidate = _choose(gen_probs)
 
-    # 5. Sufficiency diagnostics: key-premise ablation & sham-premise stability
+    # Rule-level sufficiency diagnostics: key-premise ablation & sham-premise stability
     key_drops: List[Dict[str, object]] = []
     for i in range(len(valid_facts)):
         reduced = valid_facts[:i] + valid_facts[i + 1 :]
@@ -145,6 +146,9 @@ def reconstruct(
         "generative_probs": gen_probs,
         "generative_candidate": generative_candidate,
         "true_composition": struct_res["true_composition"],
+        "explanation_class": struct_res["explanation_class"],
+        "minimal_support_sets": struct_res["minimal_support_sets"],
+        "min_support_size": struct_res["min_support_size"],
         "unique_provenance_groups": graph_info["unique_provenance_groups"],
         "same_model_correlated_only": graph_info["same_model_correlated_only"],
         "candidate_change_vs_direct": int(

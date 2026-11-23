@@ -1,0 +1,36 @@
+{
+  "audit_mode": "CPU_ONLY_OFFLINE",
+  "historical_artifacts_unchanged": true,
+  "krmm_model_imported": false,
+  "key_findings": {
+    "write_strategy_actual_full_splits": "standard_kl (exp07/exp08/exp09); orthogonal_retain_proj only in exp06 (dev12)",
+    "d2_actual_regularization": "KL retain_weight=50.0 + L2=1e-4 WERE active; fragility came from unbounded unlikelihood target loss",
+    "m4_conditional_write_sparsity_dev_cal_structured": {
+      "cond_pos": 26,
+      "cond_neg": 2,
+      "oracle_pos": 28,
+      "oracle_neg": 2,
+      "status": "fitted_uncalibrated"
+    },
+    "m4_conditional_write_sparsity_dev_cal_generative": {
+      "cond_pos": 20,
+      "cond_neg": 2,
+      "oracle_pos": 35,
+      "oracle_neg": 2,
+      "status": "fitted_uncalibrated"
+    },
+    "m2_historical_recomputability": "NOT_RECOMPUTABLE_FROM_AVAILABLE_ARTIFACTS",
+    "evidence_graph_candidate_diffs": {
+      "dev": 0,
+      "cal": 0,
+      "test": 0
+    }
+  },
+  "pending_gpu_validation": [
+    "orthogonal_retain_proj full dev/cal/test evaluation",
+    "bounded/margin D2_suppression G0 validation",
+    "M2 stratified randomization + post-injection behavioral truth + equal-budget curve + disjoint unknown controls",
+    "M4 independent calibration & write-risk validation on higher-failure-rate write regime",
+    "Model-level causal dependence intervention on EvidenceGraph premises"
+  ]
+}

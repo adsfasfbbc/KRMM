@@ -1,0 +1,100 @@
+{
+  "version": "krmm-v0.5",
+  "files_present": {
+    "g1_discovery": true,
+    "g2_mechanism": true,
+    "g2_repair": true,
+    "g3a_d2_bounded": true,
+    "g3b_second_model": true
+  },
+  "g1_discovery": {
+    "pool_counts": null,
+    "behavioral_truth_counts": null,
+    "collateral_damage_count": null,
+    "budget_curves": null
+  },
+  "g2_mechanism": {
+    "n_targets": null,
+    "baseline_comparison": null,
+    "support_class_breakdown": null,
+    "intervention_summary": null
+  },
+  "g2_repair": {
+    "n_targets": null,
+    "strategy_summary": {
+      "direct": {
+        "n_strict_eligible": 13,
+        "n_attempted": 13,
+        "n_strict_restored": 0,
+        "strict_restoration_rate_eligible": 0.0,
+        "strict_restoration_rate_attempted": 0.0,
+        "wrong_write_count": 13,
+        "wrong_write_rate_eligible": 1.0,
+        "abstention_rate_eligible": 0.0,
+        "mean_same_entity_preservation": 1.0,
+        "mean_expected_ripple_consistency": 0.8461538461538461
+      },
+      "generative": {
+        "n_strict_eligible": 13,
+        "n_attempted": 13,
+        "n_strict_restored": 8,
+        "strict_restoration_rate_eligible": 0.6153846153846154,
+        "strict_restoration_rate_attempted": 0.6153846153846154,
+        "wrong_write_count": 5,
+        "wrong_write_rate_eligible": 0.38461538461538464,
+        "abstention_rate_eligible": 0.0,
+        "mean_same_entity_preservation": 1.0,
+        "mean_expected_ripple_consistency": 0.7692307692307693
+      },
+      "structured": {
+        "n_strict_eligible": 13,
+        "n_attempted": 12,
+        "n_strict_restored": 11,
+        "strict_restoration_rate_eligible": 0.8461538461538461,
+        "strict_restoration_rate_attempted": 0.9166666666666666,
+        "wrong_write_count": 1,
+        "wrong_write_rate_eligible": 0.07692307692307693,
+        "abstention_rate_eligible": 0.07692307692307693,
+        "mean_same_entity_preservation": 1.0,
+        "mean_expected_ripple_consistency": 0.8333333333333334
+      },
+      "evidence_gated": {
+        "n_strict_eligible": 13,
+        "n_attempted": 9,
+        "n_strict_restored": 9,
+        "strict_restoration_rate_eligible": 0.6923076923076923,
+        "strict_restoration_rate_attempted": 1.0,
+        "wrong_write_count": 0,
+        "wrong_write_rate_eligible": 0.0,
+        "abstention_rate_eligible": 0.3076923076923077,
+        "mean_same_entity_preservation": 1.0,
+        "mean_expected_ripple_consistency": 0.7777777777777778
+      },
+      "oracle": {
+        "n_strict_eligible": 13,
+        "n_attempted": 13,
+        "n_strict_restored": 13,
+        "strict_restoration_rate_eligible": 1.0,
+        "strict_restoration_rate_attempted": 1.0,
+        "wrong_write_count": 0,
+        "wrong_write_rate_eligible": 0.0,
+        "abstention_rate_eligible": 0.0,
+        "mean_same_entity_preservation": 1.0,
+        "mean_expected_ripple_consistency": 0.8461538461538461
+      }
+    },
+    "paired_bootstrap": null,
+    "locality_summary": null,
+    "reliability_summary": null
+  },
+  "g3a_d2_bounded": {
+    "mode": "d2_bounded",
+    "model_path": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+    "summary": null
+  },
+  "g3b_second_model": {
+    "mode": "second_model",
+    "model_path": "/root/rivermind-data/models/SmolLM2-1.7B-Instruct",
+    "summary": null
+  }
+}

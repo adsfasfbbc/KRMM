@@ -1,0 +1,450 @@
+{
+  "n_catalog": 18,
+  "n_mastered": 14,
+  "n_damage_effective": 12,
+  "n_strict_eligible": 9,
+  "strategy_summary": {
+    "direct": {
+      "n_strict_eligible": 9,
+      "n_attempted": 9,
+      "n_strict_restored": 0,
+      "rate_eligible": 0.0,
+      "wrong_write_count": 9
+    },
+    "generative": {
+      "n_strict_eligible": 9,
+      "n_attempted": 9,
+      "n_strict_restored": 4,
+      "rate_eligible": 0.4444444444444444,
+      "wrong_write_count": 5
+    },
+    "structured": {
+      "n_strict_eligible": 9,
+      "n_attempted": 6,
+      "n_strict_restored": 5,
+      "rate_eligible": 0.5555555555555556,
+      "wrong_write_count": 1
+    },
+    "evidence_gated": {
+      "n_strict_eligible": 9,
+      "n_attempted": 5,
+      "n_strict_restored": 5,
+      "rate_eligible": 0.5555555555555556,
+      "wrong_write_count": 0
+    },
+    "oracle": {
+      "n_strict_eligible": 9,
+      "n_attempted": 9,
+      "n_strict_restored": 9,
+      "rate_eligible": 1.0,
+      "wrong_write_count": 0
+    }
+  },
+  "per_unit": [
+    {
+      "unit_id": "0a1d23f79e1e23ab",
+      "entity_id": "snow leopard",
+      "support_class": "conflicting_support",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "8b5133755088055f",
+      "entity_id": "capybara",
+      "support_class": "conflicting_support",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "D",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "D",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "a45bb8b31c30b7d3",
+      "entity_id": "scarlet macaw",
+      "support_class": "redundant_distinct_attributes",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "0567e21889b20bee",
+      "entity_id": "great horned owl",
+      "support_class": "redundant_distinct_attributes",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "D",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "4abbbcef329e13a2",
+      "entity_id": "canada goose",
+      "support_class": "redundant_distinct_attributes",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "3f224103de647b6e",
+      "entity_id": "stainless steel thermos",
+      "support_class": "single_chain",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "46209cfaac369b04",
+      "entity_id": "oak cutting board",
+      "support_class": "single_decisive",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "deb51fdc89fda0df",
+      "entity_id": "cork wine stopper",
+      "support_class": "insufficient_support",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "3fd3eb6ed6e33bbb",
+      "entity_id": "soprano recorder",
+      "support_class": "single_decisive",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": true,
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": true,
+          "strict_restoration": true
+        }
+      }
+    }
+  ],
+  "mode": "second_model",
+  "model_path": "/root/rivermind-data/models/Llama-3.2-3B-Instruct",
+  "elapsed_seconds": 785.7578313350677
+}

@@ -1,0 +1,1729 @@
+{
+  "n_catalog": 36,
+  "n_mastered": 29,
+  "n_damage_effective": 22,
+  "n_strict_eligible": 13,
+  "assignment_audit": {
+    "counts": {
+      "D": 10,
+      "B": 9,
+      "C": 8,
+      "A": 9
+    },
+    "confusion_wrong_to_truth": {
+      "A": {
+        "B": 4,
+        "C": 1,
+        "D": 4
+      },
+      "B": {
+        "A": 2,
+        "C": 4,
+        "D": 3
+      },
+      "C": {
+        "B": 2,
+        "D": 2,
+        "A": 4
+      },
+      "D": {
+        "A": 3,
+        "B": 3,
+        "C": 4
+      }
+    },
+    "best_in_sample_inverse_accuracy": 0.4444444444444444,
+    "cyclic_inverse_accuracy": 0.3333333333333333,
+    "no_deterministic_inverse": true
+  },
+  "strategy_summary": {
+    "direct": {
+      "n_strict_eligible": 13,
+      "n_attempted": 13,
+      "n_strict_restored": 0,
+      "strict_restoration_rate_eligible": 0.0,
+      "strict_restoration_rate_attempted": 0.0,
+      "wrong_write_count": 13,
+      "wrong_write_rate_eligible": 1.0,
+      "abstention_rate_eligible": 0.0,
+      "mean_same_entity_preservation": 1.0,
+      "mean_expected_ripple_consistency": 0.8461538461538461
+    },
+    "generative": {
+      "n_strict_eligible": 13,
+      "n_attempted": 13,
+      "n_strict_restored": 8,
+      "strict_restoration_rate_eligible": 0.6153846153846154,
+      "strict_restoration_rate_attempted": 0.6153846153846154,
+      "wrong_write_count": 5,
+      "wrong_write_rate_eligible": 0.38461538461538464,
+      "abstention_rate_eligible": 0.0,
+      "mean_same_entity_preservation": 1.0,
+      "mean_expected_ripple_consistency": 0.7692307692307693
+    },
+    "structured": {
+      "n_strict_eligible": 13,
+      "n_attempted": 12,
+      "n_strict_restored": 11,
+      "strict_restoration_rate_eligible": 0.8461538461538461,
+      "strict_restoration_rate_attempted": 0.9166666666666666,
+      "wrong_write_count": 1,
+      "wrong_write_rate_eligible": 0.07692307692307693,
+      "abstention_rate_eligible": 0.07692307692307693,
+      "mean_same_entity_preservation": 1.0,
+      "mean_expected_ripple_consistency": 0.8333333333333334
+    },
+    "evidence_gated": {
+      "n_strict_eligible": 13,
+      "n_attempted": 9,
+      "n_strict_restored": 9,
+      "strict_restoration_rate_eligible": 0.6923076923076923,
+      "strict_restoration_rate_attempted": 1.0,
+      "wrong_write_count": 0,
+      "wrong_write_rate_eligible": 0.0,
+      "abstention_rate_eligible": 0.3076923076923077,
+      "mean_same_entity_preservation": 1.0,
+      "mean_expected_ripple_consistency": 0.7777777777777778
+    },
+    "oracle": {
+      "n_strict_eligible": 13,
+      "n_attempted": 13,
+      "n_strict_restored": 13,
+      "strict_restoration_rate_eligible": 1.0,
+      "strict_restoration_rate_attempted": 1.0,
+      "wrong_write_count": 0,
+      "wrong_write_rate_eligible": 0.0,
+      "abstention_rate_eligible": 0.0,
+      "mean_same_entity_preservation": 1.0,
+      "mean_expected_ripple_consistency": 0.8461538461538461
+    }
+  },
+  "paired_bootstrap_cis": {
+    "structured_vs_generative": {
+      "mean_diff": 0.23076923076923078,
+      "effect_size": 0.23076923076923078,
+      "point_estimate": 0.23076923076923078,
+      "ci95": [
+        -0.07692307692307693,
+        0.5384615384615384
+      ],
+      "confidence_interval": [
+        -0.07692307692307693,
+        0.5384615384615384
+      ],
+      "clusters": 13,
+      "n_pairs": 13,
+      "has_duplicate_clusters": false,
+      "statistical_unit": "source_group",
+      "exploratory_or_confirmatory": "confirmatory_v5",
+      "degenerate_zero_variance": false,
+      "seed": 107
+    },
+    "evidence_gated_vs_generative": {
+      "mean_diff": 0.07692307692307693,
+      "effect_size": 0.07692307692307693,
+      "point_estimate": 0.07692307692307693,
+      "ci95": [
+        -0.15384615384615385,
+        0.3076923076923077
+      ],
+      "confidence_interval": [
+        -0.15384615384615385,
+        0.3076923076923077
+      ],
+      "clusters": 13,
+      "n_pairs": 13,
+      "has_duplicate_clusters": false,
+      "statistical_unit": "source_group",
+      "exploratory_or_confirmatory": "confirmatory_v5",
+      "degenerate_zero_variance": false,
+      "seed": 107
+    },
+    "evidence_gated_vs_direct": {
+      "mean_diff": 0.6923076923076923,
+      "effect_size": 0.6923076923076923,
+      "point_estimate": 0.6923076923076923,
+      "ci95": [
+        0.46153846153846156,
+        0.9230769230769231
+      ],
+      "confidence_interval": [
+        0.46153846153846156,
+        0.9230769230769231
+      ],
+      "clusters": 13,
+      "n_pairs": 13,
+      "has_duplicate_clusters": false,
+      "statistical_unit": "source_group",
+      "exploratory_or_confirmatory": "confirmatory_v5",
+      "degenerate_zero_variance": false,
+      "seed": 107
+    }
+  },
+  "per_unit": [
+    {
+      "unit_id": "a45bb8b31c30b7d3",
+      "entity_id": "scarlet macaw",
+      "domain": "vertebrate_class",
+      "source_group": "v5_ara_macao",
+      "gold_evaluator_only": "B",
+      "support_class": "redundant_distinct_attributes",
+      "estimated_reliability": 0.84,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "a45bb8b31c30b7d3",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a45bb8b31c30b7d3",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "redundant_distinct_attributes",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a45bb8b31c30b7d3",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::redundant_distinct_attributes::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a45bb8b31c30b7d3",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a45bb8b31c30b7d3",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "0567e21889b20bee",
+      "entity_id": "great horned owl",
+      "domain": "vertebrate_class",
+      "source_group": "v5_bubo_virginianus",
+      "gold_evaluator_only": "B",
+      "support_class": "redundant_distinct_attributes",
+      "estimated_reliability": 0.84,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "A",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "0567e21889b20bee",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "0567e21889b20bee",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "redundant_distinct_attributes",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "0567e21889b20bee",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::redundant_distinct_attributes::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "0567e21889b20bee",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "0567e21889b20bee",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "4abbbcef329e13a2",
+      "entity_id": "canada goose",
+      "domain": "vertebrate_class",
+      "source_group": "v5_branta_canadensis",
+      "gold_evaluator_only": "B",
+      "support_class": "redundant_distinct_attributes",
+      "estimated_reliability": 0.84,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "4abbbcef329e13a2",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "4abbbcef329e13a2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "redundant_distinct_attributes",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "4abbbcef329e13a2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::redundant_distinct_attributes::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "4abbbcef329e13a2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "4abbbcef329e13a2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "af1ec73d96df5abc",
+      "entity_id": "american alligator",
+      "domain": "vertebrate_class",
+      "source_group": "v5_alligator_miss",
+      "gold_evaluator_only": "C",
+      "support_class": "redundant_distinct_attributes",
+      "estimated_reliability": 0.7933333333333333,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "af1ec73d96df5abc",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "af1ec73d96df5abc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 0.9583333333333333,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "redundant_distinct_attributes",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "af1ec73d96df5abc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 0.9583333333333333,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::redundant_distinct_attributes::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "af1ec73d96df5abc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 0.9583333333333333,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "af1ec73d96df5abc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 0.9583333333333333,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "a95229618fec31d2",
+      "entity_id": "diamondback rattlesnake",
+      "domain": "vertebrate_class",
+      "source_group": "v5_crotalus_atrox",
+      "gold_evaluator_only": "C",
+      "support_class": "redundant_distinct_attributes",
+      "estimated_reliability": 0.7699999999999999,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "a95229618fec31d2",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a95229618fec31d2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "redundant_distinct_attributes",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a95229618fec31d2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::redundant_distinct_attributes::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a95229618fec31d2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "a95229618fec31d2",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "9306ba116f0938cc",
+      "entity_id": "green sea turtle",
+      "domain": "vertebrate_class",
+      "source_group": "v5_chelonia_mydas",
+      "gold_evaluator_only": "C",
+      "support_class": "redundant_distinct_attributes",
+      "estimated_reliability": 0.7933333333333333,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "A",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "9306ba116f0938cc",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "9306ba116f0938cc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "redundant_distinct_attributes",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "9306ba116f0938cc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::redundant_distinct_attributes::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "9306ba116f0938cc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "9306ba116f0938cc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "7023a98ddd5ab025",
+      "entity_id": "electric eel",
+      "domain": "vertebrate_class",
+      "source_group": "v5_electrophorus",
+      "gold_evaluator_only": "D",
+      "support_class": "conflicting_support",
+      "estimated_reliability": 0.0,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "7023a98ddd5ab025",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "7023a98ddd5ab025",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": false,
+          "candidate": null,
+          "candidate_matches_gold": false,
+          "strict_restoration": false,
+          "wrong_write": false,
+          "reason": "conflicting_support"
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "candidate": null,
+          "candidate_matches_gold": false,
+          "strict_restoration": false,
+          "wrong_write": false,
+          "reason": "evidence_gated::conflicting_support::ABSTAIN"
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "7023a98ddd5ab025",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "0a686c2fb2706c6a",
+      "entity_id": "cast iron skillet",
+      "domain": "everyday_material",
+      "source_group": "v5_cast_iron",
+      "gold_evaluator_only": "A",
+      "support_class": "single_chain",
+      "estimated_reliability": 0.38,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "0a686c2fb2706c6a",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "0a686c2fb2706c6a",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "single_chain",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "0a686c2fb2706c6a",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "candidate": null,
+          "candidate_matches_gold": false,
+          "strict_restoration": false,
+          "wrong_write": false,
+          "reason": "evidence_gated::single_chain::REQUEST_EXTERNAL_EVIDENCE"
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "A",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "0a686c2fb2706c6a",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "26499a6e83c1cf26",
+      "entity_id": "pine bookshelf",
+      "domain": "everyday_material",
+      "source_group": "v5_pine_shelf",
+      "gold_evaluator_only": "B",
+      "support_class": "single_decisive",
+      "estimated_reliability": 0.72,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "26499a6e83c1cf26",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "26499a6e83c1cf26",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "single_decisive",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "26499a6e83c1cf26",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::single_decisive::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "26499a6e83c1cf26",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "26499a6e83c1cf26",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "1c9066e7265381a9",
+      "entity_id": "granite mortar",
+      "domain": "everyday_material",
+      "source_group": "v5_granite_mortar",
+      "gold_evaluator_only": "C",
+      "support_class": "single_chain",
+      "estimated_reliability": 0.38,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "1c9066e7265381a9",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "1c9066e7265381a9",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 0.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "single_chain",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "1c9066e7265381a9",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "candidate": null,
+          "candidate_matches_gold": false,
+          "strict_restoration": false,
+          "wrong_write": false,
+          "reason": "evidence_gated::single_chain::REQUEST_EXTERNAL_EVIDENCE"
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "1c9066e7265381a9",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "8a32521d85c68ca1",
+      "entity_id": "quartz countertop",
+      "domain": "everyday_material",
+      "source_group": "v5_quartz_counter",
+      "gold_evaluator_only": "C",
+      "support_class": "single_chain",
+      "estimated_reliability": 0.38,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "8a32521d85c68ca1",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "8a32521d85c68ca1",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "single_chain",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "8a32521d85c68ca1",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "candidate": null,
+          "candidate_matches_gold": false,
+          "strict_restoration": false,
+          "wrong_write": false,
+          "reason": "evidence_gated::single_chain::REQUEST_EXTERNAL_EVIDENCE"
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "C",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "8a32521d85c68ca1",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "baec3c19ad198c73",
+      "entity_id": "acrylic ruler",
+      "domain": "everyday_material",
+      "source_group": "v5_acrylic_ruler",
+      "gold_evaluator_only": "D",
+      "support_class": "single_decisive",
+      "estimated_reliability": 0.72,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "baec3c19ad198c73",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "baec3c19ad198c73",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "single_decisive",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "baec3c19ad198c73",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::single_decisive::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "baec3c19ad198c73",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "baec3c19ad198c73",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    },
+    {
+      "unit_id": "3b313a3a3325e9bc",
+      "entity_id": "polypropylene storage bin",
+      "domain": "everyday_material",
+      "source_group": "v5_pp_bin",
+      "gold_evaluator_only": "D",
+      "support_class": "single_decisive",
+      "estimated_reliability": 0.72,
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "A",
+          "candidate_matches_gold": false,
+          "wrong_write": true,
+          "reason": "direct_unfiltered",
+          "target_heldout_acc": 0.3333333333333333,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": false,
+          "locality_graph": {
+            "unit_id": "3b313a3a3325e9bc",
+            "target_restored": false,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": false,
+            "strict_locality_pass": false,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "generative_unfiltered",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "3b313a3a3325e9bc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "structured": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "single_decisive",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "3b313a3a3325e9bc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "evidence_gated": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "evidence_gated::single_decisive::ATTEMPT_PARAMETRIC_REPAIR",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "3b313a3a3325e9bc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "D",
+          "candidate_matches_gold": true,
+          "wrong_write": false,
+          "reason": "oracle_upper_bound",
+          "target_heldout_acc": 1.0,
+          "independent_locality_pass": true,
+          "fresh_reload_passed": true,
+          "locality_graph": {
+            "unit_id": "3b313a3a3325e9bc",
+            "target_restored": true,
+            "same_entity_relation_preservation": 1.0,
+            "neighbor_relation_preservation": 1.0,
+            "unrelated_knowledge_preservation": 1.0,
+            "expected_ripple_consistency": 1.0,
+            "general_capability_retention": 1.0,
+            "fresh_process_reload_passed": true,
+            "strict_locality_pass": true,
+            "collateral_damage_detected": false
+          },
+          "strict_restoration": true
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 1350.4655034542084
+}

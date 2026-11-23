@@ -1,0 +1,130 @@
+{
+  "n_catalog": 18,
+  "n_mastered": 2,
+  "n_damage_effective": 2,
+  "n_strict_eligible": 2,
+  "strategy_summary": {
+    "direct": {
+      "n_strict_eligible": 2,
+      "n_attempted": 2,
+      "n_strict_restored": 0,
+      "rate_eligible": 0.0,
+      "wrong_write_count": 2
+    },
+    "generative": {
+      "n_strict_eligible": 2,
+      "n_attempted": 2,
+      "n_strict_restored": 0,
+      "rate_eligible": 0.0,
+      "wrong_write_count": 2
+    },
+    "structured": {
+      "n_strict_eligible": 2,
+      "n_attempted": 0,
+      "n_strict_restored": 0,
+      "rate_eligible": 0.0,
+      "wrong_write_count": 0
+    },
+    "evidence_gated": {
+      "n_strict_eligible": 2,
+      "n_attempted": 0,
+      "n_strict_restored": 0,
+      "rate_eligible": 0.0,
+      "wrong_write_count": 0
+    },
+    "oracle": {
+      "n_strict_eligible": 2,
+      "n_attempted": 2,
+      "n_strict_restored": 0,
+      "rate_eligible": 0.0,
+      "wrong_write_count": 0
+    }
+  },
+  "per_unit": [
+    {
+      "unit_id": "0a1d23f79e1e23ab",
+      "entity_id": "snow leopard",
+      "support_class": "conflicting_support",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": false,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": false,
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "A",
+          "wrong_write": false,
+          "target_acc": 1.0,
+          "locality_pass": false,
+          "strict_restoration": false
+        }
+      }
+    },
+    {
+      "unit_id": "a45bb8b31c30b7d3",
+      "entity_id": "scarlet macaw",
+      "support_class": "conflicting_support",
+      "branches": {
+        "direct": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": false,
+          "strict_restoration": false
+        },
+        "generative": {
+          "attempted": true,
+          "candidate": "C",
+          "wrong_write": true,
+          "target_acc": 0.3333333333333333,
+          "locality_pass": false,
+          "strict_restoration": false
+        },
+        "structured": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "evidence_gated": {
+          "attempted": false,
+          "strict_restoration": false,
+          "wrong_write": false
+        },
+        "oracle": {
+          "attempted": true,
+          "candidate": "B",
+          "wrong_write": false,
+          "target_acc": 0.6666666666666666,
+          "locality_pass": false,
+          "strict_restoration": false
+        }
+      }
+    }
+  ],
+  "mode": "second_model",
+  "model_path": "/root/rivermind-data/models/SmolLM2-1.7B-Instruct",
+  "elapsed_seconds": 100.85794615745544
+}

@@ -1,0 +1,80 @@
+{
+  "version": "krmm-v0.5",
+  "branch": "codex/krmm-v05-blind-repair",
+  "baseline_commit": "8136f3e",
+  "primary_model": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+  "entity_pool": {
+    "known_count": 36,
+    "unknown_control_count": 12,
+    "ambiguous_count": 4,
+    "total_count": 52,
+    "disjoint_from_v3": true
+  },
+  "batch_1_mechanism": {
+    "g1_discovery": {
+      "script": "scripts/v5/run_g1_discovery.py",
+      "output": "results/v5-new/g1_discovery_results.json",
+      "budgets": ["2N", "3N", "4N", "5N"],
+      "detectors": [
+        "direct_confidence",
+        "self_consistency",
+        "entropy_uncertainty",
+        "single_constraint_violation",
+        "access_path_discrepancy",
+        "constraint_plus_access_path",
+        "full_blind_detector"
+      ],
+      "damage_profile": "D1_wrong_fact",
+      "inject_per_domain": 4,
+      "random_seed": 202505
+    },
+    "g2_mechanism": {
+      "script": "scripts/v5/run_g2_mechanism.py",
+      "output": "results/v5-new/g2_mechanism_results.json",
+      "interventions": ["A_support_deletion", "B_contradiction_injection", "C_irrelevant_fact_perturbation", "D_chain_break", "E_correlated_redundancy_collapse"],
+      "baselines": [
+        "rule_only",
+        "entity_name_only",
+        "direct_probing",
+        "self_consistency",
+        "generic_cot",
+        "generative_reconstruction",
+        "existing_evidence_graph",
+        "full_evidence_gated"
+      ]
+    }
+  },
+  "batch_2_selective_repair": {
+    "g2_repair": {
+      "script": "scripts/v5/run_g2_repair.py",
+      "output": "results/v5-new/g2_repair_results.json",
+      "damage_profile": "D1_wrong_fact",
+      "repair_method": "standard_kl",
+      "strategies": ["direct", "generative", "structured", "evidence_gated", "oracle"],
+      "locality_graph_gates": [
+        "same_entity_relation_preservation",
+        "neighbor_relation_preservation",
+        "unrelated_knowledge_preservation",
+        "expected_ripple_consistency",
+        "general_capability_retention",
+        "fresh_process_reload"
+      ]
+    }
+  },
+  "batch_3_generalization": {
+    "g3a_d2_bounded": {
+      "script": "scripts/v5/run_g3_transfer.py",
+      "mode": "d2_bounded",
+      "output": "results/v5-new/g3a_d2_bounded_results.json",
+      "unlikelihood_max": 2.0,
+      "retain_weight": 50.0,
+      "limit": 18
+    },
+    "g3b_second_model": {
+      "script": "scripts/v5/run_g3_transfer.py",
+      "mode": "second_model",
+      "output": "results/v5-new/g3b_second_model_results.json",
+      "limit": 18
+    }
+  }
+}

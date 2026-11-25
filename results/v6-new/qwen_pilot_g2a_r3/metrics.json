@@ -1,0 +1,1548 @@
+{
+  "run_id": "qwen_pilot_g2a_r3",
+  "discovery_run_id": "qwen_pilot_g1_r2",
+  "n_degraded_D": 19,
+  "candidate_generation_comparison": {
+    "generative_accuracy": 0.21052631578947367,
+    "structured_accuracy_overall": 0.7368421052631579,
+    "structured_coverage": 0.8421052631578947
+  },
+  "risk_coverage_curves": {
+    "score_random": {
+      "n_pool": 19,
+      "n_reachable": 16,
+      "max_reachable_coverage": 0.8421052631578947,
+      "aurc_reachable": 0.09843212343212344,
+      "fixed_coverage_risk": {
+        "25%": 0.2,
+        "50%": 0.1,
+        "75%": 0.14285714285714285
+      },
+      "points": [
+        {
+          "k": 1,
+          "coverage": 0.05263157894736842,
+          "risk": 0.0
+        },
+        {
+          "k": 2,
+          "coverage": 0.10526315789473684,
+          "risk": 0.0
+        },
+        {
+          "k": 3,
+          "coverage": 0.15789473684210525,
+          "risk": 0.0
+        },
+        {
+          "k": 4,
+          "coverage": 0.21052631578947367,
+          "risk": 0.0
+        },
+        {
+          "k": 5,
+          "coverage": 0.2631578947368421,
+          "risk": 0.2
+        },
+        {
+          "k": 6,
+          "coverage": 0.3157894736842105,
+          "risk": 0.16666666666666666
+        },
+        {
+          "k": 7,
+          "coverage": 0.3684210526315789,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 8,
+          "coverage": 0.42105263157894735,
+          "risk": 0.125
+        },
+        {
+          "k": 9,
+          "coverage": 0.47368421052631576,
+          "risk": 0.1111111111111111
+        },
+        {
+          "k": 10,
+          "coverage": 0.5263157894736842,
+          "risk": 0.1
+        },
+        {
+          "k": 11,
+          "coverage": 0.5789473684210527,
+          "risk": 0.09090909090909091
+        },
+        {
+          "k": 12,
+          "coverage": 0.631578947368421,
+          "risk": 0.08333333333333333
+        },
+        {
+          "k": 13,
+          "coverage": 0.6842105263157895,
+          "risk": 0.15384615384615385
+        },
+        {
+          "k": 14,
+          "coverage": 0.7368421052631579,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 15,
+          "coverage": 0.7894736842105263,
+          "risk": 0.13333333333333333
+        },
+        {
+          "k": 16,
+          "coverage": 0.8421052631578947,
+          "risk": 0.125
+        }
+      ]
+    },
+    "score_direct_confidence": {
+      "n_pool": 19,
+      "n_reachable": 16,
+      "max_reachable_coverage": 0.8421052631578947,
+      "aurc_reachable": 0.07179521867021868,
+      "fixed_coverage_risk": {
+        "25%": 0.0,
+        "50%": 0.1,
+        "75%": 0.14285714285714285
+      },
+      "points": [
+        {
+          "k": 1,
+          "coverage": 0.05263157894736842,
+          "risk": 0.0
+        },
+        {
+          "k": 2,
+          "coverage": 0.10526315789473684,
+          "risk": 0.0
+        },
+        {
+          "k": 3,
+          "coverage": 0.15789473684210525,
+          "risk": 0.0
+        },
+        {
+          "k": 4,
+          "coverage": 0.21052631578947367,
+          "risk": 0.0
+        },
+        {
+          "k": 5,
+          "coverage": 0.2631578947368421,
+          "risk": 0.0
+        },
+        {
+          "k": 6,
+          "coverage": 0.3157894736842105,
+          "risk": 0.0
+        },
+        {
+          "k": 7,
+          "coverage": 0.3684210526315789,
+          "risk": 0.0
+        },
+        {
+          "k": 8,
+          "coverage": 0.42105263157894735,
+          "risk": 0.125
+        },
+        {
+          "k": 9,
+          "coverage": 0.47368421052631576,
+          "risk": 0.1111111111111111
+        },
+        {
+          "k": 10,
+          "coverage": 0.5263157894736842,
+          "risk": 0.1
+        },
+        {
+          "k": 11,
+          "coverage": 0.5789473684210527,
+          "risk": 0.09090909090909091
+        },
+        {
+          "k": 12,
+          "coverage": 0.631578947368421,
+          "risk": 0.16666666666666666
+        },
+        {
+          "k": 13,
+          "coverage": 0.6842105263157895,
+          "risk": 0.15384615384615385
+        },
+        {
+          "k": 14,
+          "coverage": 0.7368421052631579,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 15,
+          "coverage": 0.7894736842105263,
+          "risk": 0.13333333333333333
+        },
+        {
+          "k": 16,
+          "coverage": 0.8421052631578947,
+          "risk": 0.125
+        }
+      ]
+    },
+    "score_candidate_change": {
+      "n_pool": 19,
+      "n_reachable": 16,
+      "max_reachable_coverage": 0.8421052631578947,
+      "aurc_reachable": 0.15686847874347873,
+      "fixed_coverage_risk": {
+        "25%": 0.2,
+        "50%": 0.1,
+        "75%": 0.07142857142857142
+      },
+      "points": [
+        {
+          "k": 1,
+          "coverage": 0.05263157894736842,
+          "risk": 0.0
+        },
+        {
+          "k": 2,
+          "coverage": 0.10526315789473684,
+          "risk": 0.5
+        },
+        {
+          "k": 3,
+          "coverage": 0.15789473684210525,
+          "risk": 0.3333333333333333
+        },
+        {
+          "k": 4,
+          "coverage": 0.21052631578947367,
+          "risk": 0.25
+        },
+        {
+          "k": 5,
+          "coverage": 0.2631578947368421,
+          "risk": 0.2
+        },
+        {
+          "k": 6,
+          "coverage": 0.3157894736842105,
+          "risk": 0.16666666666666666
+        },
+        {
+          "k": 7,
+          "coverage": 0.3684210526315789,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 8,
+          "coverage": 0.42105263157894735,
+          "risk": 0.125
+        },
+        {
+          "k": 9,
+          "coverage": 0.47368421052631576,
+          "risk": 0.1111111111111111
+        },
+        {
+          "k": 10,
+          "coverage": 0.5263157894736842,
+          "risk": 0.1
+        },
+        {
+          "k": 11,
+          "coverage": 0.5789473684210527,
+          "risk": 0.09090909090909091
+        },
+        {
+          "k": 12,
+          "coverage": 0.631578947368421,
+          "risk": 0.08333333333333333
+        },
+        {
+          "k": 13,
+          "coverage": 0.6842105263157895,
+          "risk": 0.07692307692307693
+        },
+        {
+          "k": 14,
+          "coverage": 0.7368421052631579,
+          "risk": 0.07142857142857142
+        },
+        {
+          "k": 15,
+          "coverage": 0.7894736842105263,
+          "risk": 0.13333333333333333
+        },
+        {
+          "k": 16,
+          "coverage": 0.8421052631578947,
+          "risk": 0.125
+        }
+      ]
+    },
+    "score_fact_count": {
+      "n_pool": 19,
+      "n_reachable": 16,
+      "max_reachable_coverage": 0.8421052631578947,
+      "aurc_reachable": 0.07551545676545676,
+      "fixed_coverage_risk": {
+        "25%": 0.0,
+        "50%": 0.1,
+        "75%": 0.14285714285714285
+      },
+      "points": [
+        {
+          "k": 1,
+          "coverage": 0.05263157894736842,
+          "risk": 0.0
+        },
+        {
+          "k": 2,
+          "coverage": 0.10526315789473684,
+          "risk": 0.0
+        },
+        {
+          "k": 3,
+          "coverage": 0.15789473684210525,
+          "risk": 0.0
+        },
+        {
+          "k": 4,
+          "coverage": 0.21052631578947367,
+          "risk": 0.0
+        },
+        {
+          "k": 5,
+          "coverage": 0.2631578947368421,
+          "risk": 0.0
+        },
+        {
+          "k": 6,
+          "coverage": 0.3157894736842105,
+          "risk": 0.0
+        },
+        {
+          "k": 7,
+          "coverage": 0.3684210526315789,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 8,
+          "coverage": 0.42105263157894735,
+          "risk": 0.125
+        },
+        {
+          "k": 9,
+          "coverage": 0.47368421052631576,
+          "risk": 0.1111111111111111
+        },
+        {
+          "k": 10,
+          "coverage": 0.5263157894736842,
+          "risk": 0.1
+        },
+        {
+          "k": 11,
+          "coverage": 0.5789473684210527,
+          "risk": 0.09090909090909091
+        },
+        {
+          "k": 12,
+          "coverage": 0.631578947368421,
+          "risk": 0.08333333333333333
+        },
+        {
+          "k": 13,
+          "coverage": 0.6842105263157895,
+          "risk": 0.15384615384615385
+        },
+        {
+          "k": 14,
+          "coverage": 0.7368421052631579,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 15,
+          "coverage": 0.7894736842105263,
+          "risk": 0.13333333333333333
+        },
+        {
+          "k": 16,
+          "coverage": 0.8421052631578947,
+          "risk": 0.125
+        }
+      ]
+    },
+    "score_minset_count": {
+      "n_pool": 19,
+      "n_reachable": 16,
+      "max_reachable_coverage": 0.8421052631578947,
+      "aurc_reachable": 0.08372703685203686,
+      "fixed_coverage_risk": {
+        "25%": 0.0,
+        "50%": 0.2,
+        "75%": 0.14285714285714285
+      },
+      "points": [
+        {
+          "k": 1,
+          "coverage": 0.05263157894736842,
+          "risk": 0.0
+        },
+        {
+          "k": 2,
+          "coverage": 0.10526315789473684,
+          "risk": 0.0
+        },
+        {
+          "k": 3,
+          "coverage": 0.15789473684210525,
+          "risk": 0.0
+        },
+        {
+          "k": 4,
+          "coverage": 0.21052631578947367,
+          "risk": 0.0
+        },
+        {
+          "k": 5,
+          "coverage": 0.2631578947368421,
+          "risk": 0.0
+        },
+        {
+          "k": 6,
+          "coverage": 0.3157894736842105,
+          "risk": 0.0
+        },
+        {
+          "k": 7,
+          "coverage": 0.3684210526315789,
+          "risk": 0.0
+        },
+        {
+          "k": 8,
+          "coverage": 0.42105263157894735,
+          "risk": 0.125
+        },
+        {
+          "k": 9,
+          "coverage": 0.47368421052631576,
+          "risk": 0.1111111111111111
+        },
+        {
+          "k": 10,
+          "coverage": 0.5263157894736842,
+          "risk": 0.2
+        },
+        {
+          "k": 11,
+          "coverage": 0.5789473684210527,
+          "risk": 0.18181818181818182
+        },
+        {
+          "k": 12,
+          "coverage": 0.631578947368421,
+          "risk": 0.16666666666666666
+        },
+        {
+          "k": 13,
+          "coverage": 0.6842105263157895,
+          "risk": 0.15384615384615385
+        },
+        {
+          "k": 14,
+          "coverage": 0.7368421052631579,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 15,
+          "coverage": 0.7894736842105263,
+          "risk": 0.13333333333333333
+        },
+        {
+          "k": 16,
+          "coverage": 0.8421052631578947,
+          "risk": 0.125
+        }
+      ]
+    },
+    "score_evidence_gate": {
+      "n_pool": 19,
+      "n_reachable": 16,
+      "max_reachable_coverage": 0.8421052631578947,
+      "aurc_reachable": 0.08372703685203686,
+      "fixed_coverage_risk": {
+        "25%": 0.0,
+        "50%": 0.2,
+        "75%": 0.14285714285714285
+      },
+      "points": [
+        {
+          "k": 1,
+          "coverage": 0.05263157894736842,
+          "risk": 0.0
+        },
+        {
+          "k": 2,
+          "coverage": 0.10526315789473684,
+          "risk": 0.0
+        },
+        {
+          "k": 3,
+          "coverage": 0.15789473684210525,
+          "risk": 0.0
+        },
+        {
+          "k": 4,
+          "coverage": 0.21052631578947367,
+          "risk": 0.0
+        },
+        {
+          "k": 5,
+          "coverage": 0.2631578947368421,
+          "risk": 0.0
+        },
+        {
+          "k": 6,
+          "coverage": 0.3157894736842105,
+          "risk": 0.0
+        },
+        {
+          "k": 7,
+          "coverage": 0.3684210526315789,
+          "risk": 0.0
+        },
+        {
+          "k": 8,
+          "coverage": 0.42105263157894735,
+          "risk": 0.125
+        },
+        {
+          "k": 9,
+          "coverage": 0.47368421052631576,
+          "risk": 0.1111111111111111
+        },
+        {
+          "k": 10,
+          "coverage": 0.5263157894736842,
+          "risk": 0.2
+        },
+        {
+          "k": 11,
+          "coverage": 0.5789473684210527,
+          "risk": 0.18181818181818182
+        },
+        {
+          "k": 12,
+          "coverage": 0.631578947368421,
+          "risk": 0.16666666666666666
+        },
+        {
+          "k": 13,
+          "coverage": 0.6842105263157895,
+          "risk": 0.15384615384615385
+        },
+        {
+          "k": 14,
+          "coverage": 0.7368421052631579,
+          "risk": 0.14285714285714285
+        },
+        {
+          "k": 15,
+          "coverage": 0.7894736842105263,
+          "risk": 0.13333333333333333
+        },
+        {
+          "k": 16,
+          "coverage": 0.8421052631578947,
+          "risk": 0.125
+        }
+      ]
+    }
+  },
+  "full_policy_intervention_summary": {
+    "n_degraded_D": 19,
+    "n_accepted_at_A": 15,
+    "sham_action_invariance_rate": 1.0,
+    "hitting_set_removal_abstain_rate_given_A_accept": 1.0,
+    "cf_action_or_cand_change_rate": 0.9473684210526315,
+    "correlated_wrong_fooled_gate_rate": 0.0,
+    "twin_world_negative_control_pass_rate": 1.0
+  },
+  "twin_world_results": [
+    {
+      "pair_id": "twin_world_01",
+      "support_class": "insufficient_support",
+      "action": "REQUEST_EVIDENCE",
+      "correctly_abstained_or_requested": true
+    },
+    {
+      "pair_id": "twin_world_02",
+      "support_class": "insufficient_support",
+      "action": "REQUEST_EVIDENCE",
+      "correctly_abstained_or_requested": true
+    }
+  ],
+  "per_unit_fixed_candidate": [
+    {
+      "unit_id": "a3d4210ba4a126ef",
+      "entity_id": "polystyrene foam cooler",
+      "domain": "everyday_material",
+      "support_class": "single_decisive",
+      "candidate": "D",
+      "generative_candidate": "A",
+      "gold_evaluator_only": "D",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.17777903219167587,
+      "score_direct_confidence": 0.8322511315345764,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 3.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    },
+    {
+      "unit_id": "3ff749c3c5330103",
+      "entity_id": "titanium watch case",
+      "domain": "everyday_material",
+      "support_class": "single_decisive",
+      "candidate": "A",
+      "generative_candidate": "C",
+      "gold_evaluator_only": "A",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.07994899411684578,
+      "score_direct_confidence": 0.999924898147583,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 3.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    },
+    {
+      "unit_id": "3d1615368c76ea9a",
+      "entity_id": "cedar shoe tree",
+      "domain": "everyday_material",
+      "support_class": "single_decisive",
+      "candidate": "D",
+      "generative_candidate": "D",
+      "gold_evaluator_only": "B",
+      "candidate_is_wrong": true,
+      "generative_is_wrong": true,
+      "score_random": 0.4444347609403624,
+      "score_direct_confidence": 0.9520008563995361,
+      "score_candidate_change": 0.0,
+      "score_fact_count": 2.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    },
+    {
+      "unit_id": "802b35e3528ffaff",
+      "entity_id": "mahogany chess board",
+      "domain": "everyday_material",
+      "support_class": "single_decisive",
+      "candidate": "B",
+      "generative_candidate": "D",
+      "gold_evaluator_only": "B",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.7142092945785748,
+      "score_direct_confidence": 0.7502632141113281,
+      "score_candidate_change": 0.0,
+      "score_fact_count": 3.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    },
+    {
+      "unit_id": "dde18d9be281c752",
+      "entity_id": "narwhal",
+      "domain": "vertebrate_class",
+      "support_class": "conflicting_support",
+      "candidate": null,
+      "generative_candidate": "C",
+      "gold_evaluator_only": "A",
+      "candidate_is_wrong": true,
+      "generative_is_wrong": true,
+      "score_random": 0.37302511124243615,
+      "score_direct_confidence": 0.9999208450317383,
+      "score_candidate_change": 0.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 0.0,
+      "score_evidence_gate": 0.0
+    },
+    {
+      "unit_id": "295e768bde818c9d",
+      "entity_id": "slate chalkboard",
+      "domain": "everyday_material",
+      "support_class": "single_chain",
+      "candidate": "C",
+      "generative_candidate": "B",
+      "gold_evaluator_only": "C",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.1835711577868953,
+      "score_direct_confidence": 0.9998339414596558,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 2.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.38
+    },
+    {
+      "unit_id": "4cfe7b43ba8a3c07",
+      "entity_id": "halibut",
+      "domain": "vertebrate_class",
+      "support_class": "redundant_distinct_attributes",
+      "candidate": "D",
+      "generative_candidate": "C",
+      "gold_evaluator_only": "D",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.8078695400170678,
+      "score_direct_confidence": 0.6693214774131775,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 2.0,
+      "score_evidence_gate": 0.84
+    },
+    {
+      "unit_id": "bb026e876fc737e3",
+      "entity_id": "barracuda",
+      "domain": "vertebrate_class",
+      "support_class": "redundant_distinct_attributes",
+      "candidate": "D",
+      "generative_candidate": "B",
+      "gold_evaluator_only": "D",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.9317507340879531,
+      "score_direct_confidence": 0.9975190162658691,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 2.0,
+      "score_evidence_gate": 0.84
+    },
+    {
+      "unit_id": "58df120a86bf1ebd",
+      "entity_id": "nylon backpack",
+      "domain": "everyday_material",
+      "support_class": "single_decisive",
+      "candidate": "D",
+      "generative_candidate": "A",
+      "gold_evaluator_only": "D",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.5376960957743451,
+      "score_direct_confidence": 0.4992907643318176,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 3.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    },
+    {
+      "unit_id": "ca090a0b27cef3c3",
+      "entity_id": "toucan",
+      "domain": "vertebrate_class",
+      "support_class": "redundant_distinct_attributes",
+      "candidate": "B",
+      "generative_candidate": "D",
+      "gold_evaluator_only": "B",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.5907503628616105,
+      "score_direct_confidence": 0.9889664053916931,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 2.0,
+      "score_evidence_gate": 0.84
+    },
+    {
+      "unit_id": "d3c904cbed82909a",
+      "entity_id": "clownfish",
+      "domain": "vertebrate_class",
+      "support_class": "redundant_distinct_attributes",
+      "candidate": "D",
+      "generative_candidate": "C",
+      "gold_evaluator_only": "D",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.5978405793658087,
+      "score_direct_confidence": 0.9999593496322632,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 2.0,
+      "score_evidence_gate": 0.84
+    },
+    {
+      "unit_id": "ec42450ba2239c14",
+      "entity_id": "flamingo",
+      "domain": "vertebrate_class",
+      "support_class": "redundant_distinct_attributes",
+      "candidate": "B",
+      "generative_candidate": "B",
+      "gold_evaluator_only": "B",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": false,
+      "score_random": 0.9581325559313718,
+      "score_direct_confidence": 0.9898507595062256,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 2.0,
+      "score_evidence_gate": 0.84
+    },
+    {
+      "unit_id": "f7344edddb4ebf6c",
+      "entity_id": "panpipes",
+      "domain": "sound_source_mechanism",
+      "support_class": "redundant_distinct_attributes",
+      "candidate": "B",
+      "generative_candidate": "B",
+      "gold_evaluator_only": "B",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": false,
+      "score_random": 0.5761530107297359,
+      "score_direct_confidence": 0.9882946014404297,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 2.0,
+      "score_minset_count": 2.0,
+      "score_evidence_gate": 0.84
+    },
+    {
+      "unit_id": "42445ae94c5869ac",
+      "entity_id": "surdo drum",
+      "domain": "sound_source_mechanism",
+      "support_class": "single_decisive",
+      "candidate": "C",
+      "generative_candidate": "C",
+      "gold_evaluator_only": "C",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": false,
+      "score_random": 0.696696590561582,
+      "score_direct_confidence": 0.9209751486778259,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 2.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    },
+    {
+      "unit_id": "64a68e79c502cf8c",
+      "entity_id": "bakelite rotary knob",
+      "domain": "everyday_material",
+      "support_class": "single_decisive",
+      "candidate": "D",
+      "generative_candidate": "A",
+      "gold_evaluator_only": "D",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.9709890827003376,
+      "score_direct_confidence": 0.5304877161979675,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 3.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    },
+    {
+      "unit_id": "9a8c51d3f9967952",
+      "entity_id": "solenodon",
+      "domain": "vertebrate_class",
+      "support_class": "conflicting_support",
+      "candidate": null,
+      "generative_candidate": "A",
+      "gold_evaluator_only": "A",
+      "candidate_is_wrong": true,
+      "generative_is_wrong": false,
+      "score_random": 0.5015303542608233,
+      "score_direct_confidence": 0.596983015537262,
+      "score_candidate_change": 0.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 0.0,
+      "score_evidence_gate": 0.0
+    },
+    {
+      "unit_id": "68eb06be257a60cd",
+      "entity_id": "coelacanth",
+      "domain": "vertebrate_class",
+      "support_class": "redundant_distinct_attributes",
+      "candidate": "D",
+      "generative_candidate": "C",
+      "gold_evaluator_only": "D",
+      "candidate_is_wrong": false,
+      "generative_is_wrong": true,
+      "score_random": 0.8257510875877345,
+      "score_direct_confidence": 0.531457245349884,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 4.0,
+      "score_minset_count": 2.0,
+      "score_evidence_gate": 0.84
+    },
+    {
+      "unit_id": "cdf8b32ca832a16f",
+      "entity_id": "pewter goblet",
+      "domain": "everyday_material",
+      "support_class": "conflicting_support",
+      "candidate": null,
+      "generative_candidate": "C",
+      "gold_evaluator_only": "A",
+      "candidate_is_wrong": true,
+      "generative_is_wrong": true,
+      "score_random": 0.12873192297498043,
+      "score_direct_confidence": 0.9999580383300781,
+      "score_candidate_change": 0.0,
+      "score_fact_count": 3.0,
+      "score_minset_count": 0.0,
+      "score_evidence_gate": 0.0
+    },
+    {
+      "unit_id": "03a5f042456bd5fc",
+      "entity_id": "marble rolling pin",
+      "domain": "everyday_material",
+      "support_class": "single_decisive",
+      "candidate": "B",
+      "generative_candidate": "B",
+      "gold_evaluator_only": "C",
+      "candidate_is_wrong": true,
+      "generative_is_wrong": true,
+      "score_random": 0.8090127072783683,
+      "score_direct_confidence": 0.6757641434669495,
+      "score_candidate_change": 1.0,
+      "score_fact_count": 3.0,
+      "score_minset_count": 1.0,
+      "score_evidence_gate": 0.72
+    }
+  ],
+  "per_unit_interventions": [
+    {
+      "unit_id": "a3d4210ba4a126ef",
+      "entity_id": "polystyrene foam cooler",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "3ff749c3c5330103",
+      "entity_id": "titanium watch case",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "A",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "A",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "3d1615368c76ea9a",
+      "entity_id": "cedar shoe tree",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "802b35e3528ffaff",
+      "entity_id": "mahogany chess board",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "dde18d9be281c752",
+      "entity_id": "narwhal",
+      "A_complete": {
+        "action": "ABSTAIN",
+        "candidate": null,
+        "support_class": "conflicting_support"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "single_chain"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "single_chain"
+      },
+      "D_sham_removed": {
+        "action": "ABSTAIN",
+        "candidate": null,
+        "support_class": "conflicting_support"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": false,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "295e768bde818c9d",
+      "entity_id": "slate chalkboard",
+      "A_complete": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "single_chain"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "single_chain"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": false,
+      "cf_changes_action_or_cand": false,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "4cfe7b43ba8a3c07",
+      "entity_id": "halibut",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "bb026e876fc737e3",
+      "entity_id": "barracuda",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "58df120a86bf1ebd",
+      "entity_id": "nylon backpack",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "ca090a0b27cef3c3",
+      "entity_id": "toucan",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "d3c904cbed82909a",
+      "entity_id": "clownfish",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "ec42450ba2239c14",
+      "entity_id": "flamingo",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "f7344edddb4ebf6c",
+      "entity_id": "panpipes",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "42445ae94c5869ac",
+      "entity_id": "surdo drum",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "C",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "C",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "64a68e79c502cf8c",
+      "entity_id": "bakelite rotary knob",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "9a8c51d3f9967952",
+      "entity_id": "solenodon",
+      "A_complete": {
+        "action": "ABSTAIN",
+        "candidate": null,
+        "support_class": "conflicting_support"
+      },
+      "B_hitting_set_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "A",
+        "support_class": "single_decisive"
+      },
+      "C_counterfactual_replaced": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "A",
+        "support_class": "single_decisive"
+      },
+      "D_sham_removed": {
+        "action": "ABSTAIN",
+        "candidate": null,
+        "support_class": "conflicting_support"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": false,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "68eb06be257a60cd",
+      "entity_id": "coelacanth",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "D",
+        "support_class": "redundant_distinct_attributes"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "cdf8b32ca832a16f",
+      "entity_id": "pewter goblet",
+      "A_complete": {
+        "action": "ABSTAIN",
+        "candidate": null,
+        "support_class": "conflicting_support"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ABSTAIN",
+        "candidate": null,
+        "support_class": "conflicting_support"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": false,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    },
+    {
+      "unit_id": "03a5f042456bd5fc",
+      "entity_id": "marble rolling pin",
+      "A_complete": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "single_decisive"
+      },
+      "B_hitting_set_removed": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "C_counterfactual_replaced": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "D_sham_removed": {
+        "action": "ATTEMPT_REPAIR",
+        "candidate": "B",
+        "support_class": "single_decisive"
+      },
+      "E_correlated_wrong_dup": {
+        "action": "REQUEST_EVIDENCE",
+        "candidate": null,
+        "support_class": "insufficient_support"
+      },
+      "sham_action_invariant": true,
+      "hitting_set_stops_accept": true,
+      "cf_changes_action_or_cand": true,
+      "correlated_wrong_fooled_gate": false
+    }
+  ],
+  "elapsed_seconds": 23.222914695739746
+}

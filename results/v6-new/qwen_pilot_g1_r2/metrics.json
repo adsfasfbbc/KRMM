@@ -1,0 +1,2837 @@
+{
+  "run_id": "qwen_pilot_g1_r2",
+  "model_path": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+  "backend_kind": "omni",
+  "seed": 2026,
+  "clean_state_sha256": "1a2d396c11fbd9f406eae06822d909db19e353637ff7b4274b14616217287b1c",
+  "damaged_state_sha256": "0b3ce4f5a21c224f7e89083c5d6d92f41666b656d05ddaca3d311ab8abc02030",
+  "n_pool": 50,
+  "n_mastered_known": 28,
+  "n_planned_damage": 12,
+  "paired_truth_counts": {
+    "original_mastered_healthy": 14,
+    "effective_planned_damage": 12,
+    "previously_unmastered": 9,
+    "unverifiable": 8,
+    "collateral_damaged": 7
+  },
+  "denominator_D": 19,
+  "budget_curves": {
+    "2N": {
+      "low_confidence": {
+        "method": "low_confidence",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 50,
+          "physical_calls": 50,
+          "cache_hits": 0,
+          "cache_misses": 50,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 1.5345265619107522,
+          "wall_seconds_physical": 1.524754648853559,
+          "cold_cache_timing_valid": true
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.36256397514992295,
+          "auroc_secondary": 0.3616298811544992,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.4166666666666667,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.26,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 17,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.394471921532129,
+          "auroc_secondary": 0.37037037037037035,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.45454545454545453,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.2826086956521739,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "high_confidence_rev": {
+        "method": "high_confidence_rev",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.00737807631958276,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6717008120018777,
+          "auroc_secondary": 0.6383701188455009,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.23529411764705882,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.68432018346206,
+          "auroc_secondary": 0.6296296296296297,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.3076923076923077,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 9,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "entropy": {
+        "method": "entropy",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.007095266133546829,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.33982279184113456,
+          "auroc_secondary": 0.3531409168081494,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 15,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3910142199629723,
+          "auroc_secondary": 0.3742690058479532,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "neg_entropy_rev": {
+        "method": "neg_entropy_rev",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.007077869842760265,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6757286961073867,
+          "auroc_secondary": 0.6468590831918506,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 13,
+              "uncertain": 2
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6841266379996873,
+          "auroc_secondary": 0.6257309941520468,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.15384615384615385,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.30434782608695654,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 11,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "self_consistency": {
+        "method": "self_consistency",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 100,
+          "physical_calls": 50,
+          "cache_hits": 50,
+          "cache_misses": 50,
+          "generate_calls": 0,
+          "total_tokens": 6106,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 1.5443390542641282,
+          "wall_seconds_physical": 1.5278673630673438,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3121916695280979,
+          "auroc_secondary": 0.3242784380305603,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.16666666666666666,
+          "recall_at_fixed_k": 0.10526315789473684,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.058823529411764705,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.24,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 16,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.34309091328399544,
+          "auroc_secondary": 0.32943469785575047,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.2727272727272727,
+          "recall_at_fixed_k": 0.15789473684210525,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.07692307692307693,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.2608695652173913,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 12,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "repeated_paraphrases_perm": {
+        "method": "repeated_paraphrases_perm",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 100,
+          "physical_calls": 0,
+          "cache_hits": 100,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 6106,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.014905667107086629,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3202214637803458,
+          "auroc_secondary": 0.32767402376910015,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.3333333333333333,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.058823529411764705,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.28,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 15,
+              "uncertain": 2
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 9,
+              "uncertain": 1
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 13,
+              "uncertain": 3
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3569920254323861,
+          "auroc_secondary": 0.341130604288499,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.36363636363636365,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.07692307692307693,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.2608695652173913,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 15,
+              "uncertain": 2
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 9,
+              "uncertain": 1
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 11,
+              "uncertain": 1
+            }
+          }
+        }
+      },
+      "direct_vs_constraint": {
+        "method": "direct_vs_constraint",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 100,
+          "physical_calls": 75,
+          "cache_hits": 25,
+          "cache_misses": 75,
+          "generate_calls": 75,
+          "total_tokens": 4435,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 16.361308276071213,
+          "wall_seconds_physical": 16.33477954979753,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.4845037809147294,
+          "auroc_secondary": 0.5067911714770797,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.29411764705882354,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.46,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 1,
+              "uncertain": 12
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 7,
+              "uncertain": 7
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 5,
+              "healthy": 2,
+              "uncertain": 10
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.517997512350516,
+          "auroc_secondary": 0.5097465886939572,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.3076923076923077,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.45652173913043476,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 1,
+              "uncertain": 12
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 7,
+              "uncertain": 7
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 1,
+              "uncertain": 8
+            }
+          }
+        }
+      },
+      "m2_reference_free": {
+        "method": "m2_reference_free",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 100,
+          "physical_calls": 20,
+          "cache_hits": 80,
+          "cache_misses": 20,
+          "generate_calls": 60,
+          "total_tokens": 4759,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.6326670515700243,
+          "wall_seconds_physical": 0.6143043179763481,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5214307865480904,
+          "auroc_secondary": 0.5356536502546689,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.2631578947368421,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.17647058823529413,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.46,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 5,
+              "healthy": 1,
+              "uncertain": 13
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 6,
+              "uncertain": 8
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 3,
+              "healthy": 2,
+              "uncertain": 12
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5665893444254768,
+          "auroc_secondary": 0.550682261208577,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.2631578947368421,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.15384615384615385,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.45652173913043476,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 5,
+              "healthy": 1,
+              "uncertain": 13
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 6,
+              "uncertain": 8
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 1,
+              "uncertain": 10
+            }
+          }
+        }
+      },
+      "full_m2": {
+        "method": "full_m2",
+        "accounting": {
+          "query_budget": 100,
+          "logical_queries": 100,
+          "physical_calls": 0,
+          "cache_hits": 100,
+          "cache_misses": 0,
+          "generate_calls": 60,
+          "total_tokens": 4759,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.014568318671081215,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5214307865480904,
+          "auroc_secondary": 0.5356536502546689,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.21428571428571427,
+          "unknown_fpr": 0.35294117647058826,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.4,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 0,
+              "uncertain": 13
+            },
+            "healthy": {
+              "damaged": 3,
+              "healthy": 3,
+              "uncertain": 8
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 6,
+              "healthy": 0,
+              "uncertain": 11
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5665893444254768,
+          "auroc_secondary": 0.550682261208577,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.21428571428571427,
+          "unknown_fpr": 0.3076923076923077,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.391304347826087,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 0,
+              "uncertain": 13
+            },
+            "healthy": {
+              "damaged": 3,
+              "healthy": 3,
+              "uncertain": 8
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 0,
+              "uncertain": 9
+            }
+          }
+        }
+      }
+    },
+    "3N": {
+      "low_confidence": {
+        "method": "low_confidence",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.007877942931372672,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.36256397514992295,
+          "auroc_secondary": 0.3616298811544992,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.4166666666666667,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.26,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 17,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.394471921532129,
+          "auroc_secondary": 0.37037037037037035,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.45454545454545453,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.2826086956521739,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "high_confidence_rev": {
+        "method": "high_confidence_rev",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.007081274932716042,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6717008120018777,
+          "auroc_secondary": 0.6383701188455009,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.23529411764705882,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.68432018346206,
+          "auroc_secondary": 0.6296296296296297,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.3076923076923077,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 9,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "entropy": {
+        "method": "entropy",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.00699940777849406,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.33982279184113456,
+          "auroc_secondary": 0.3531409168081494,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 15,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3910142199629723,
+          "auroc_secondary": 0.3742690058479532,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "neg_entropy_rev": {
+        "method": "neg_entropy_rev",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006983826227951795,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6757286961073867,
+          "auroc_secondary": 0.6468590831918506,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 13,
+              "uncertain": 2
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6841266379996873,
+          "auroc_secondary": 0.6257309941520468,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.15384615384615385,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.30434782608695654,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 11,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "self_consistency": {
+        "method": "self_consistency",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 100,
+          "physical_calls": 0,
+          "cache_hits": 100,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 6106,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.013933122099842876,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3121916695280979,
+          "auroc_secondary": 0.3242784380305603,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.16666666666666666,
+          "recall_at_fixed_k": 0.10526315789473684,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.058823529411764705,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.24,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 16,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.34309091328399544,
+          "auroc_secondary": 0.32943469785575047,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.2727272727272727,
+          "recall_at_fixed_k": 0.15789473684210525,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.07692307692307693,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.2608695652173913,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 12,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "repeated_paraphrases_perm": {
+        "method": "repeated_paraphrases_perm",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 150,
+          "physical_calls": 30,
+          "cache_hits": 120,
+          "cache_misses": 30,
+          "generate_calls": 0,
+          "total_tokens": 9209,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.9409296435769647,
+          "wall_seconds_physical": 0.9178388468571939,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3083085828066834,
+          "auroc_secondary": 0.33446519524617996,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.3333333333333333,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 0.3684210526315789,
+          "healthy_fpr": 0.5,
+          "unknown_fpr": 0.5294117647058824,
+          "collateral_recall": 0.5714285714285714,
+          "three_class_accuracy": 0.28,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 7,
+              "healthy": 12,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 7,
+              "healthy": 7,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 9,
+              "healthy": 8,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3528462215560772,
+          "auroc_secondary": 0.36062378167641324,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.36363636363636365,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 0.3684210526315789,
+          "healthy_fpr": 0.5,
+          "unknown_fpr": 0.46153846153846156,
+          "collateral_recall": 0.5714285714285714,
+          "three_class_accuracy": 0.30434782608695654,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 7,
+              "healthy": 12,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 7,
+              "healthy": 7,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 6,
+              "healthy": 7,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "direct_vs_constraint": {
+        "method": "direct_vs_constraint",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 150,
+          "physical_calls": 37,
+          "cache_hits": 113,
+          "cache_misses": 37,
+          "generate_calls": 112,
+          "total_tokens": 6551,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 6.542599830834661,
+          "wall_seconds_physical": 6.517315260018222,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5965603987266073,
+          "auroc_secondary": 0.6358234295415959,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.631578947368421,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.5294117647058824,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.52,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 12,
+              "healthy": 2,
+              "uncertain": 5
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 9,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 9,
+              "healthy": 3,
+              "uncertain": 5
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.633026776579776,
+          "auroc_secondary": 0.6500974658869396,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.631578947368421,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.5384615384615384,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.5434782608695652,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 12,
+              "healthy": 2,
+              "uncertain": 5
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 9,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 7,
+              "healthy": 2,
+              "uncertain": 4
+            }
+          }
+        }
+      },
+      "m2_reference_free": {
+        "method": "m2_reference_free",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 150,
+          "physical_calls": 0,
+          "cache_hits": 150,
+          "cache_misses": 0,
+          "generate_calls": 90,
+          "total_tokens": 7150,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.02174090693006292,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.44613845291214377,
+          "auroc_secondary": 0.5356536502546689,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.42105263157894735,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.47058823529411764,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.44,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 8,
+              "healthy": 1,
+              "uncertain": 10
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 7,
+              "uncertain": 7
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 8,
+              "healthy": 2,
+              "uncertain": 7
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.46969947401936113,
+          "auroc_secondary": 0.5350877192982456,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.42105263157894735,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.5384615384615384,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.43478260869565216,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 8,
+              "healthy": 1,
+              "uncertain": 10
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 7,
+              "uncertain": 7
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 7,
+              "healthy": 1,
+              "uncertain": 5
+            }
+          }
+        }
+      },
+      "full_m2": {
+        "method": "full_m2",
+        "accounting": {
+          "query_budget": 150,
+          "logical_queries": 150,
+          "physical_calls": 0,
+          "cache_hits": 150,
+          "cache_misses": 0,
+          "generate_calls": 90,
+          "total_tokens": 7150,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.020633026084396988,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.44613845291214377,
+          "auroc_secondary": 0.5356536502546689,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.47368421052631576,
+          "healthy_fpr": 0.21428571428571427,
+          "unknown_fpr": 0.6470588235294118,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.38,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 9,
+              "healthy": 0,
+              "uncertain": 10
+            },
+            "healthy": {
+              "damaged": 3,
+              "healthy": 4,
+              "uncertain": 7
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 11,
+              "healthy": 0,
+              "uncertain": 6
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.46969947401936113,
+          "auroc_secondary": 0.5350877192982456,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.47368421052631576,
+          "healthy_fpr": 0.21428571428571427,
+          "unknown_fpr": 0.6923076923076923,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.3695652173913043,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 9,
+              "healthy": 0,
+              "uncertain": 10
+            },
+            "healthy": {
+              "damaged": 3,
+              "healthy": 4,
+              "uncertain": 7
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 9,
+              "healthy": 0,
+              "uncertain": 4
+            }
+          }
+        }
+      }
+    },
+    "4N": {
+      "low_confidence": {
+        "method": "low_confidence",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006982115155551583,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.36256397514992295,
+          "auroc_secondary": 0.3616298811544992,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.4166666666666667,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.26,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 17,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.394471921532129,
+          "auroc_secondary": 0.37037037037037035,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.45454545454545453,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.2826086956521739,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "high_confidence_rev": {
+        "method": "high_confidence_rev",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006931984098628163,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6717008120018777,
+          "auroc_secondary": 0.6383701188455009,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.23529411764705882,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.68432018346206,
+          "auroc_secondary": 0.6296296296296297,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.3076923076923077,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 9,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "entropy": {
+        "method": "entropy",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006916397134773433,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.33982279184113456,
+          "auroc_secondary": 0.3531409168081494,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 15,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3910142199629723,
+          "auroc_secondary": 0.3742690058479532,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "neg_entropy_rev": {
+        "method": "neg_entropy_rev",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.00703409209381789,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6757286961073867,
+          "auroc_secondary": 0.6468590831918506,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 13,
+              "uncertain": 2
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6841266379996873,
+          "auroc_secondary": 0.6257309941520468,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.15384615384615385,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.30434782608695654,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 11,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "self_consistency": {
+        "method": "self_consistency",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 100,
+          "physical_calls": 0,
+          "cache_hits": 100,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 6106,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.013835543766617775,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3121916695280979,
+          "auroc_secondary": 0.3242784380305603,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.16666666666666666,
+          "recall_at_fixed_k": 0.10526315789473684,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.058823529411764705,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.24,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 16,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.34309091328399544,
+          "auroc_secondary": 0.32943469785575047,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.2727272727272727,
+          "recall_at_fixed_k": 0.15789473684210525,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.07692307692307693,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.2608695652173913,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 12,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "repeated_paraphrases_perm": {
+        "method": "repeated_paraphrases_perm",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 200,
+          "physical_calls": 50,
+          "cache_hits": 150,
+          "cache_misses": 50,
+          "generate_calls": 0,
+          "total_tokens": 12294,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 1.5544242546893656,
+          "wall_seconds_physical": 1.5227189508732408,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.376066201502586,
+          "auroc_secondary": 0.4685908319185059,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.3333333333333333,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 1.0,
+          "healthy_fpr": 0.5714285714285714,
+          "unknown_fpr": 0.9411764705882353,
+          "collateral_recall": 1.0,
+          "three_class_accuracy": 0.5,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 19,
+              "healthy": 0,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 8,
+              "healthy": 6,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 16,
+              "healthy": 1,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.4287224901603955,
+          "auroc_secondary": 0.49902534113060426,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.36363636363636365,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 1.0,
+          "healthy_fpr": 0.5714285714285714,
+          "unknown_fpr": 0.9230769230769231,
+          "collateral_recall": 1.0,
+          "three_class_accuracy": 0.5434782608695652,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 19,
+              "healthy": 0,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 8,
+              "healthy": 6,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 12,
+              "healthy": 1,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "direct_vs_constraint": {
+        "method": "direct_vs_constraint",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 200,
+          "physical_calls": 38,
+          "cache_hits": 162,
+          "cache_misses": 38,
+          "generate_calls": 150,
+          "total_tokens": 8768,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 8.496548717375845,
+          "wall_seconds_physical": 8.462971276778262,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6260252777674994,
+          "auroc_secondary": 0.7258064516129032,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.14285714285714285,
+          "unknown_fpr": 0.5882352941176471,
+          "collateral_recall": 0.7142857142857143,
+          "three_class_accuracy": 0.52,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 2,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 2,
+              "healthy": 10,
+              "uncertain": 2
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 10,
+              "healthy": 5,
+              "uncertain": 2
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6629760076007369,
+          "auroc_secondary": 0.7378167641325536,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.14285714285714285,
+          "unknown_fpr": 0.6153846153846154,
+          "collateral_recall": 0.7142857142857143,
+          "three_class_accuracy": 0.5652173913043478,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 2,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 2,
+              "healthy": 10,
+              "uncertain": 2
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 8,
+              "healthy": 3,
+              "uncertain": 2
+            }
+          }
+        }
+      },
+      "m2_reference_free": {
+        "method": "m2_reference_free",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 200,
+          "physical_calls": 0,
+          "cache_hits": 200,
+          "cache_misses": 0,
+          "generate_calls": 120,
+          "total_tokens": 9459,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.030261389911174774,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.4997020384993815,
+          "auroc_secondary": 0.6570458404074703,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5833333333333334,
+          "recall_at_fixed_k": 0.3684210526315789,
+          "damaged_recall_thresholded": 0.6842105263157895,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.5294117647058824,
+          "collateral_recall": 0.5714285714285714,
+          "three_class_accuracy": 0.54,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 13,
+              "healthy": 1,
+              "uncertain": 5
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 9,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 9,
+              "healthy": 3,
+              "uncertain": 5
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5627695911330364,
+          "auroc_secondary": 0.6783625730994152,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.6363636363636364,
+          "recall_at_fixed_k": 0.3684210526315789,
+          "damaged_recall_thresholded": 0.6842105263157895,
+          "healthy_fpr": 0.0,
+          "unknown_fpr": 0.5384615384615384,
+          "collateral_recall": 0.5714285714285714,
+          "three_class_accuracy": 0.5652173913043478,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 13,
+              "healthy": 1,
+              "uncertain": 5
+            },
+            "healthy": {
+              "damaged": 0,
+              "healthy": 9,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 7,
+              "healthy": 2,
+              "uncertain": 4
+            }
+          }
+        }
+      },
+      "full_m2": {
+        "method": "full_m2",
+        "accounting": {
+          "query_budget": 200,
+          "logical_queries": 200,
+          "physical_calls": 0,
+          "cache_hits": 200,
+          "cache_misses": 0,
+          "generate_calls": 120,
+          "total_tokens": 9459,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.02706338732969016,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.4997020384993815,
+          "auroc_secondary": 0.6570458404074703,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5833333333333334,
+          "recall_at_fixed_k": 0.3684210526315789,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.7058823529411765,
+          "collateral_recall": 0.5714285714285714,
+          "three_class_accuracy": 0.46,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 0,
+              "uncertain": 5
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 5,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 12,
+              "healthy": 1,
+              "uncertain": 4
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5627695911330364,
+          "auroc_secondary": 0.6783625730994152,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.6363636363636364,
+          "recall_at_fixed_k": 0.3684210526315789,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.6923076923076923,
+          "collateral_recall": 0.5714285714285714,
+          "three_class_accuracy": 0.4782608695652174,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 0,
+              "uncertain": 5
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 5,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 9,
+              "healthy": 1,
+              "uncertain": 3
+            }
+          }
+        }
+      }
+    },
+    "5N": {
+      "low_confidence": {
+        "method": "low_confidence",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006932956806849688,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.36256397514992295,
+          "auroc_secondary": 0.3616298811544992,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.4166666666666667,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.26,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 17,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.394471921532129,
+          "auroc_secondary": 0.37037037037037035,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.45454545454545453,
+          "recall_at_fixed_k": 0.2631578947368421,
+          "damaged_recall_thresholded": 0.15789473684210525,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.42857142857142855,
+          "three_class_accuracy": 0.2826086956521739,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 3,
+              "healthy": 16,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "high_confidence_rev": {
+        "method": "high_confidence_rev",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006870797427836806,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6717008120018777,
+          "auroc_secondary": 0.6383701188455009,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.23529411764705882,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.68432018346206,
+          "auroc_secondary": 0.6296296296296297,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5789473684210527,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.3076923076923077,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 11,
+              "healthy": 5,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 4,
+              "uncertain": 4
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 4,
+              "healthy": 9,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "entropy": {
+        "method": "entropy",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006838942295871675,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.33982279184113456,
+          "auroc_secondary": 0.3531409168081494,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.3,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 15,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3910142199629723,
+          "auroc_secondary": 0.3742690058479532,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.3157894736842105,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.0,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.32608695652173914,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 6,
+              "healthy": 13,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 9,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 0,
+              "healthy": 13,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "neg_entropy_rev": {
+        "method": "neg_entropy_rev",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 50,
+          "physical_calls": 0,
+          "cache_hits": 50,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 3069,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.006793030188418925,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6757286961073867,
+          "auroc_secondary": 0.6468590831918506,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.6666666666666666,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.11764705882352941,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.32,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 13,
+              "uncertain": 2
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6841266379996873,
+          "auroc_secondary": 0.6257309941520468,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.7272727272727273,
+          "recall_at_fixed_k": 0.42105263157894735,
+          "damaged_recall_thresholded": 0.5263157894736842,
+          "healthy_fpr": 0.35714285714285715,
+          "unknown_fpr": 0.15384615384615385,
+          "collateral_recall": 0.0,
+          "three_class_accuracy": 0.30434782608695654,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 10,
+              "healthy": 3,
+              "uncertain": 6
+            },
+            "healthy": {
+              "damaged": 5,
+              "healthy": 4,
+              "uncertain": 5
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 2,
+              "healthy": 11,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "self_consistency": {
+        "method": "self_consistency",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 100,
+          "physical_calls": 0,
+          "cache_hits": 100,
+          "cache_misses": 0,
+          "generate_calls": 0,
+          "total_tokens": 6106,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.013724343269132078,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.3121916695280979,
+          "auroc_secondary": 0.3242784380305603,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.16666666666666666,
+          "recall_at_fixed_k": 0.10526315789473684,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.058823529411764705,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.24,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 16,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.34309091328399544,
+          "auroc_secondary": 0.32943469785575047,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.2727272727272727,
+          "recall_at_fixed_k": 0.15789473684210525,
+          "damaged_recall_thresholded": 0.10526315789473684,
+          "healthy_fpr": 0.2857142857142857,
+          "unknown_fpr": 0.07692307692307693,
+          "collateral_recall": 0.2857142857142857,
+          "three_class_accuracy": 0.2608695652173913,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 2,
+              "healthy": 17,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 4,
+              "healthy": 10,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 1,
+              "healthy": 12,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "repeated_paraphrases_perm": {
+        "method": "repeated_paraphrases_perm",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 250,
+          "physical_calls": 50,
+          "cache_hits": 200,
+          "cache_misses": 50,
+          "generate_calls": 0,
+          "total_tokens": 15363,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 1.549377933202777,
+          "wall_seconds_physical": 1.5108954060124233,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.42009722294910773,
+          "auroc_secondary": 0.5908319185059423,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.3333333333333333,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 1.0,
+          "healthy_fpr": 0.7142857142857143,
+          "unknown_fpr": 1.0,
+          "collateral_recall": 1.0,
+          "three_class_accuracy": 0.46,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 19,
+              "healthy": 0,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 10,
+              "healthy": 4,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 17,
+              "healthy": 0,
+              "uncertain": 0
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.4617978984371078,
+          "auroc_secondary": 0.6140350877192983,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.36363636363636365,
+          "recall_at_fixed_k": 0.21052631578947367,
+          "damaged_recall_thresholded": 1.0,
+          "healthy_fpr": 0.7142857142857143,
+          "unknown_fpr": 1.0,
+          "collateral_recall": 1.0,
+          "three_class_accuracy": 0.5,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 19,
+              "healthy": 0,
+              "uncertain": 0
+            },
+            "healthy": {
+              "damaged": 10,
+              "healthy": 4,
+              "uncertain": 0
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 13,
+              "healthy": 0,
+              "uncertain": 0
+            }
+          }
+        }
+      },
+      "direct_vs_constraint": {
+        "method": "direct_vs_constraint",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 201,
+          "physical_calls": 1,
+          "cache_hits": 200,
+          "cache_misses": 1,
+          "generate_calls": 151,
+          "total_tokens": 8797,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.1190854522283189,
+          "wall_seconds_physical": 0.09199922299012542,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6260252777674994,
+          "auroc_secondary": 0.7241086587436333,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.14285714285714285,
+          "unknown_fpr": 0.5882352941176471,
+          "collateral_recall": 0.7142857142857143,
+          "three_class_accuracy": 0.54,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 2,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 2,
+              "healthy": 11,
+              "uncertain": 1
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 10,
+              "healthy": 5,
+              "uncertain": 2
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.6629760076007369,
+          "auroc_secondary": 0.7358674463937622,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.14285714285714285,
+          "unknown_fpr": 0.6153846153846154,
+          "collateral_recall": 0.7142857142857143,
+          "three_class_accuracy": 0.5869565217391305,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 2,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 2,
+              "healthy": 11,
+              "uncertain": 1
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 8,
+              "healthy": 3,
+              "uncertain": 2
+            }
+          }
+        }
+      },
+      "m2_reference_free": {
+        "method": "m2_reference_free",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 250,
+          "physical_calls": 0,
+          "cache_hits": 250,
+          "cache_misses": 0,
+          "generate_calls": 150,
+          "total_tokens": 11871,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.034030170005280524,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.4788065872313488,
+          "auroc_secondary": 0.6502546689303905,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.14285714285714285,
+          "unknown_fpr": 0.5882352941176471,
+          "collateral_recall": 0.7142857142857143,
+          "three_class_accuracy": 0.52,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 2,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 2,
+              "healthy": 10,
+              "uncertain": 2
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 10,
+              "healthy": 5,
+              "uncertain": 2
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5357048748353096,
+          "auroc_secondary": 0.6695906432748538,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.7368421052631579,
+          "healthy_fpr": 0.14285714285714285,
+          "unknown_fpr": 0.6153846153846154,
+          "collateral_recall": 0.7142857142857143,
+          "three_class_accuracy": 0.5652173913043478,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 14,
+              "healthy": 2,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 2,
+              "healthy": 10,
+              "uncertain": 2
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 8,
+              "healthy": 3,
+              "uncertain": 2
+            }
+          }
+        }
+      },
+      "full_m2": {
+        "method": "full_m2",
+        "accounting": {
+          "query_budget": 250,
+          "logical_queries": 250,
+          "physical_calls": 0,
+          "cache_hits": 250,
+          "cache_misses": 0,
+          "generate_calls": 150,
+          "total_tokens": 11871,
+          "token_counter_mode": "real_tokenizer",
+          "wall_seconds_total": 0.03356844402151182,
+          "wall_seconds_physical": 0.0,
+          "cold_cache_timing_valid": false
+        },
+        "full_pool": {
+          "n_units": 50,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.4788065872313488,
+          "auroc_secondary": 0.6502546689303905,
+          "fixed_k": 12,
+          "precision_at_fixed_k": 0.5,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.8421052631578947,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.8235294117647058,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.46,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 16,
+              "healthy": 0,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 6,
+              "uncertain": 2
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 14,
+              "healthy": 2,
+              "uncertain": 1
+            }
+          }
+        },
+        "sensitivity_without_ambiguous": {
+          "n_units": 46,
+          "n_degraded_D": 19,
+          "auprc_primary": 0.5357048748353096,
+          "auroc_secondary": 0.6695906432748538,
+          "fixed_k": 11,
+          "precision_at_fixed_k": 0.5454545454545454,
+          "recall_at_fixed_k": 0.3157894736842105,
+          "damaged_recall_thresholded": 0.8421052631578947,
+          "healthy_fpr": 0.42857142857142855,
+          "unknown_fpr": 0.7692307692307693,
+          "collateral_recall": 0.8571428571428571,
+          "three_class_accuracy": 0.5,
+          "three_class_confusion": {
+            "damaged": {
+              "damaged": 16,
+              "healthy": 0,
+              "uncertain": 3
+            },
+            "healthy": {
+              "damaged": 6,
+              "healthy": 6,
+              "uncertain": 2
+            },
+            "unknown_or_unverifiable": {
+              "damaged": 10,
+              "healthy": 2,
+              "uncertain": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

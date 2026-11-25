@@ -1,0 +1,8 @@
+# KRMM v0.6 arXiv v1 Release Checklist (`RELEASE_CHECKLIST.md`)
+
+- [x] **P0 Read-Only Audit Complete:** `reports/v6/legacy_recompute.json` & `docs/v6/PREPRINT_AUDIT.md` document v0.5 `clean_accuracy=0`, reversed confidence/entropy (`AUPRC 0.851/0.862`), Qwen/Llama overlap (`19` distinct entities), and Clopper-Pearson `0/14` upper bound (`19.27%`).
+- [x] **True Multi-Target Blind E2E + Fresh-Subprocess Audit Complete:** `qwen_pilot_e2e_r2` ran all 9 strategies sequentially on one shared `M_d` with unknown/healthy false positives entering the pipeline untouched, verified in isolated fresh subprocesses.
+- [x] **Fair Strong Baselines & Cost Accounting Complete:** `qwen_pilot_g1_r2` includes `high_confidence_rev` and `neg_entropy_rev`, real tokenizer tokens, logical vs physical query accounting, and fixed top-25% precision.
+- [x] **Same-Candidate Risk-Coverage & Full-Policy Interventions A–F Complete:** `qwen_pilot_g2a_r3` separates candidate generation (`73.7%` vs `21.1%`) from within-coverage ranking (`AURC 0.084` vs `0.072/0.076`) and passes `100%` sham/hitting-set/twin-world controls.
+- [x] **Honest Scope Narrowing Enforced:** Because strict `Y = 0.0` under 8 cumulative LoRA merges (even for Oracle with `3` same-entity regressions), the draft frames KRMM v0.6 as a *Selective Repair Feasibility & Sequential-Interference Diagnosis Study* rather than claiming "solved safe blind repair".
+- [ ] **Human Author Review Required:** Author names, affiliations, BibTeX author verification for `PENDING_VERIFICATION` entries, final LaTeX compilation (`pdflatex` not installed on compute node), and arXiv submission approval rest solely with human authors.

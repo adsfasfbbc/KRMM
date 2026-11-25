@@ -1,0 +1,45 @@
+{
+  "version": "krmm-v0.6-pilot",
+  "seed": 2026,
+  "model_path": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+  "backend_kind": "omni",
+  "public_manifest": "data/v6/pilot_manifest.json",
+  "evaluator_hidden": "data/v6/evaluator_only/pilot_hidden.json",
+  "damage_fraction": 0.45,
+  "damage_type": "D1_wrong_association",
+  "lora": {
+    "last_layers": 4,
+    "target_modules": ["q_proj", "v_proj", "down_proj"],
+    "rank": 8,
+    "alpha": 16
+  },
+  "damage_cfg": {
+    "damage_lr": 5e-4,
+    "damage_steps": 64,
+    "damage_retain_weight": 50.0,
+    "damage_l2_weight": 1e-4,
+    "retain_batch_size": 24
+  },
+  "repair_cfg": {
+    "repair_lr": 5e-4,
+    "repair_steps": 32,
+    "repair_retain_weight": 50.0,
+    "repair_l2_weight": 1e-4,
+    "write_strategy": "standard_kl",
+    "retain_batch_size": 24,
+    "min_public_retain_agreement": 0.90
+  },
+  "budgets": {
+    "discovery_multipliers": [2, 3, 4, 5],
+    "primary_discovery_multiplier": 5,
+    "fixed_top_k_fraction": 0.25,
+    "max_writes_per_episode": 8,
+    "max_repair_steps_per_episode": 256
+  },
+  "locality_gates": {
+    "max_group_acc_drop": 0.05,
+    "min_token_agreement": 0.90,
+    "same_entity_zero_regression": true,
+    "prob_diff_tolerance": 1e-4
+  }
+}

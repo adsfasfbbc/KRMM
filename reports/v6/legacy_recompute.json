@@ -1,0 +1,117 @@
+{
+  "baseline_ref": "7a41d02",
+  "v5_artifact_sha256": {
+    "g1_discovery_results.json": "6c128093a3c626f53129eeab9679c1ff0ea29c20bf558b6edcb9e594742592a5",
+    "g2_mechanism_results.json": "9ae114d4e5363eebd26e7ebaa1464bc75333e12d6571b0ba29c608754959b800",
+    "g2_repair_results.json": "79e4f3a8972f901e6208dd0cf735bc8d507317fd13c7bf978073ddceb46d1c64",
+    "g3a_d2_bounded_results.json": "117545367ec02d0e85c25aa12bcd5308af0108061757c5621fa342b954e4e86c",
+    "g3b_llama32_3b_results.json": "742043eb6f683a66e39be2f6b830ee11b9a311a57259a500682f0983a423e9a0",
+    "g3b_second_model_results.json": "304542e704b450552ed5157c11fa91062cd0a38829c034beeebe64a24b08d9a8",
+    "g3b_smollm2_1.7b_results.json": "304542e704b450552ed5157c11fa91062cd0a38829c034beeebe64a24b08d9a8",
+    "v5_blind_pool_manifest.json": "727b0a6d69defce4889177022eb5cc989d2bba437be1064fd4241d143c2845e5",
+    "v5_summary.json": "ed405aefc6bf66b6b80d6aa7c04a788a24ceaa4d3b844030d6233687d2f75b8d"
+  },
+  "bug_A_g1_clean_accuracy_all_zero": true,
+  "bug_A_status": "CONFIRMED_CLEAN_ACC_ZERO_IN_V5_RECOMPUTE_NOT_POSSIBLE_WITHOUT_CLEAN_RUN",
+  "g1_paired_clean_heldout_recompute": "NOT_RECOMPUTABLE",
+  "bug_E_g1_exact_recompute_5N": {
+    "direct_confidence": {
+      "n": 45,
+      "n_pos": 20,
+      "forward_auroc": 0.166,
+      "forward_auprc": 0.30489195496977495,
+      "forward_p_at_fixed_k25pct": 0.09090909090909091,
+      "reverse_auroc": 0.834,
+      "reverse_auprc": 0.8508790448561558,
+      "reverse_p_at_fixed_k25pct": 1.0
+    },
+    "entropy": {
+      "n": 45,
+      "n_pos": 20,
+      "forward_auroc": 0.148,
+      "forward_auprc": 0.2997088331380463,
+      "forward_p_at_fixed_k25pct": 0.09090909090909091,
+      "reverse_auroc": 0.852,
+      "reverse_auprc": 0.8621067371083895,
+      "reverse_p_at_fixed_k25pct": 1.0
+    },
+    "self_consistency": {
+      "n": 45,
+      "n_pos": 20,
+      "forward_auroc": 0.435,
+      "forward_auprc": 0.4013512440558557,
+      "forward_p_at_fixed_k25pct": 0.2727272727272727,
+      "reverse_auroc": 0.565,
+      "reverse_auprc": 0.4854836262324576,
+      "reverse_p_at_fixed_k25pct": 0.5454545454545454
+    },
+    "direct_paraphrases": {
+      "n": 45,
+      "n_pos": 20,
+      "forward_auroc": 0.3,
+      "forward_auprc": 0.3850829396142271,
+      "forward_p_at_fixed_k25pct": 0.09090909090909091,
+      "reverse_auroc": 0.7,
+      "reverse_auprc": 0.6339317386105312,
+      "reverse_p_at_fixed_k25pct": 0.7272727272727273
+    },
+    "constraint_only": {
+      "n": 45,
+      "n_pos": 20,
+      "forward_auroc": 0.345,
+      "forward_auprc": 0.3448231249931343,
+      "forward_p_at_fixed_k25pct": 0.09090909090909091,
+      "reverse_auroc": 0.655,
+      "reverse_auprc": 0.488923060494218,
+      "reverse_p_at_fixed_k25pct": 0.45454545454545453
+    },
+    "m2_reference_free": {
+      "n": 45,
+      "n_pos": 20,
+      "forward_auroc": 0.789,
+      "forward_auprc": 0.6426455145147096,
+      "forward_p_at_fixed_k25pct": 0.7272727272727273,
+      "reverse_auroc": 0.211,
+      "reverse_auprc": 0.3186153568289007,
+      "reverse_p_at_fixed_k25pct": 0.2727272727272727
+    },
+    "full_m2": {
+      "n": 45,
+      "n_pos": 20,
+      "forward_auroc": 0.86,
+      "forward_auprc": 0.6962190816448622,
+      "forward_p_at_fixed_k25pct": 0.7272727272727273,
+      "reverse_auroc": 0.14,
+      "reverse_auprc": 0.29426815034371406,
+      "reverse_p_at_fixed_k25pct": 0.09090909090909091
+    }
+  },
+  "g2a_audit": {
+    "n_units": 22,
+    "complete_prompt_A_generative_correct": 11,
+    "complete_prompt_A_generative_rate": 0.5,
+    "note": "v0.5 rule_only took empty facts -> abstention negative control, not strong baseline"
+  },
+  "cross_model_overlap_audit": {
+    "qwen_strict_eligible_count": 13,
+    "llama_strict_eligible_count": 9,
+    "total_model_target_instances": 22,
+    "overlapping_entities": [
+      "canada goose",
+      "great horned owl",
+      "scarlet macaw"
+    ],
+    "distinct_entities_across_both_models": 19,
+    "llama_fresh_subprocess_reload_in_v5": false,
+    "qwen_reload_in_v5_mode": "in_process_peft_disk_reload_target_acc_only",
+    "one_sided_95_upper_bound_0_of_14_if_iid": 0.19263617565013536
+  },
+  "g3_negative_boundaries": {
+    "d2_bounded_n_mastered": 15,
+    "d2_bounded_n_damage_effective": 0,
+    "d2_note": "raw_ul.clamp(max=2.0) zeros gradient above 2.0; config failure, not universal phase transition",
+    "smollm2_n_mastered": 2,
+    "smollm2_oracle_restored": 0,
+    "smollm2_note": "tested config failure, not universal parameter-count threshold"
+  }
+}

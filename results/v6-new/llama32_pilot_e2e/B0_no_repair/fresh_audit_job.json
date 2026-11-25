@@ -1,0 +1,3178 @@
+{
+  "model_path": "/tmp/models/Llama-3.2-3B-Instruct",
+  "backend_kind": "causal_lm",
+  "damaged_state_path": "/root/rivermind-data/KRMM/results/v6-new/llama32_pilot_g1/damaged_state.pt",
+  "expected_damaged_sha256": "c8fe8ed162ea9b5803bc030aae19c830d38b760ae6e2b2d34fe70f5d5893043e",
+  "adapter_dirs": [],
+  "consistency_probes": [
+    {
+      "prompt": "A biology textbook lists the tuatara under which vertebrate class?\nA: mammal\nB: bird\nC: reptile\nD: fish\nReply with one letter only.",
+      "expected_probs": [
+        7.96981669814915e-05,
+        0.9396348169785678,
+        0.060068842774764805,
+        0.00021664207968591297
+      ]
+    },
+    {
+      "prompt": "A hardware inventory groups items by composition. Which material describes a polystyrene foam cooler?\nA: metal (metallic alloy or pure metal)\nB: wood or plant-based fiber (cellulose or timber)\nC: stone, ceramic, or glass (mineral or silicate)\nD: synthetic polymer or elastomer (plastic or rubber)\nReply with one letter only.",
+      "expected_probs": [
+        0.00035182305658866585,
+        0.007066554167818503,
+        0.06704560653452103,
+        0.9255360162410718
+      ]
+    },
+    {
+      "prompt": "A music encyclopedia categorizes a traditional didgeridoo under which acoustic family?\nA: chordophone (vibrating stretched string)\nB: aerophone (vibrating air column or air-driven reed)\nC: membranophone (vibrating stretched membrane)\nD: idiophone (vibrating solid body itself)\nReply with one letter only.",
+      "expected_probs": [
+        9.60941667679341e-05,
+        0.9998180903340059,
+        5.82840581300476e-05,
+        2.7531441096090637e-05
+      ]
+    }
+  ],
+  "prob_diff_tolerance": 0.0001,
+  "eval_units": [
+    {
+      "unit": {
+        "unit_id": "8c8843a91343f62c",
+        "entity_id": "tuatara",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_unk_real_tuatara",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "a3d4210ba4a126ef",
+        "entity_id": "polystyrene foam cooler",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_polystyrene_cooler",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "b8380196e3082d41",
+        "entity_id": "didgeridoo",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_didgeridoo",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "e228ba8e779ca70b",
+        "entity_id": "oud",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_oud",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "f876705130afe32e",
+        "entity_id": "plexiglass display case",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_plexiglass_case",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "3ff749c3c5330103",
+        "entity_id": "titanium watch case",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_titanium_watch",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "3d1615368c76ea9a",
+        "entity_id": "cedar shoe tree",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_cedar_shoe_tree",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "89d9cbec971db4bd",
+        "entity_id": "kestrelian bramble-vole",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_unk_fict_1",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "ddd4e88310865120",
+        "entity_id": "tabla",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_tabla",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "c56e27890da49262",
+        "entity_id": "golden eagle",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_golden_eagle",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "dd45b0f75a98080e",
+        "entity_id": "ocarina",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_ocarina",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "6eef1756192e77a7",
+        "entity_id": "porcelain soup bowl",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_porcelain_bowl",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "7426593917dd9800",
+        "entity_id": "meerkat",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_meerkat",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "cad6a85d48b5c863",
+        "entity_id": "composite travel mug",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_amb_1",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "802b35e3528ffaff",
+        "entity_id": "mahogany chess board",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_mahogany_board",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "dde18d9be281c752",
+        "entity_id": "narwhal",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_narwhal",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "b46cba387e78e869",
+        "entity_id": "electro-acoustic drum pad",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_amb_3",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "295e768bde818c9d",
+        "entity_id": "slate chalkboard",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_slate_board",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "4cfe7b43ba8a3c07",
+        "entity_id": "halibut",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_halibut",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "aec0819ffccd75ef",
+        "entity_id": "leopard gecko",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_leopard_gecko",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "bd14d9bd22b587ed",
+        "entity_id": "brass padlock",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_brass_padlock",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "ba69e40b507bf6a6",
+        "entity_id": "thalenite spice tray",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_unk_fict_3",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "bb026e876fc737e3",
+        "entity_id": "barracuda",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_barracuda",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "dfc61806c0fb76fc",
+        "entity_id": "koto",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_koto",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "ec06dbbae272276c",
+        "entity_id": "steelpan",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_steelpan",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "58df120a86bf1ebd",
+        "entity_id": "nylon backpack",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_nylon_backpack",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "c25180bcfb2ee604",
+        "entity_id": "claves",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_claves",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "d4f66e0ab69b2402",
+        "entity_id": "nordic glass-trout",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_unk_fict_2",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "ca090a0b27cef3c3",
+        "entity_id": "toucan",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_toucan",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "b5de49d8c3f892ac",
+        "entity_id": "velarian reed-zither",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_unk_fict_4",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "d3c904cbed82909a",
+        "entity_id": "clownfish",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_clownfish",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "7a864ea1773a43b1",
+        "entity_id": "hybrid wind-string drone box",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_amb_4",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "ec42450ba2239c14",
+        "entity_id": "flamingo",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_flamingo",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "5c9abf535f7d8da8",
+        "entity_id": "wolverine",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_wolverine",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "bb36efd3be8053c0",
+        "entity_id": "walnut picture frame",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_walnut_frame",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "f7344edddb4ebf6c",
+        "entity_id": "panpipes",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_panpipes",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "B"
+    },
+    {
+      "unit": {
+        "unit_id": "42445ae94c5869ac",
+        "entity_id": "surdo drum",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_surdo_drum",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "64a68e79c502cf8c",
+        "entity_id": "bakelite rotary knob",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_unk_real_bakelite",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "9a8c51d3f9967952",
+        "entity_id": "solenodon",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_unk_real_solenodon",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "69a220e0e1bd256a",
+        "entity_id": "erhu",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_erhu",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "859cb11fe9ea646b",
+        "entity_id": "kalimba",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_kalimba",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "e0ecfd4ddea6358f",
+        "entity_id": "steatite carving block",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_unk_real_steatite",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "68eb06be257a60cd",
+        "entity_id": "coelacanth",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_unk_real_coelacanth",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "cdf8b32ca832a16f",
+        "entity_id": "pewter goblet",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_pewter_goblet",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "A"
+    },
+    {
+      "unit": {
+        "unit_id": "42d581e14cca2ccf",
+        "entity_id": "bearded dragon",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_bearded_dragon",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "1dbb5a5505c22192",
+        "entity_id": "txalaparta",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_unk_real_txalaparta",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "D"
+    },
+    {
+      "unit": {
+        "unit_id": "1a82059cb97edc16",
+        "entity_id": "laminated desk organizer",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_amb_2",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": null
+    },
+    {
+      "unit": {
+        "unit_id": "200f6504805cb37a",
+        "entity_id": "tabor drum",
+        "relation_id": "hornbostel_sachs_class",
+        "modality": "text",
+        "source_group": "v6_tabor_drum",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "sound_source_mechanism",
+        "options": {
+          "A": "chordophone (vibrating stretched string)",
+          "B": "aerophone (vibrating air column or air-driven reed)",
+          "C": "membranophone (vibrating stretched membrane)",
+          "D": "idiophone (vibrating solid body itself)"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "03a5f042456bd5fc",
+        "entity_id": "marble rolling pin",
+        "relation_id": "primary_material",
+        "modality": "text",
+        "source_group": "v6_marble_pin",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "everyday_material",
+        "options": {
+          "A": "metal (metallic alloy or pure metal)",
+          "B": "wood or plant-based fiber (cellulose or timber)",
+          "C": "stone, ceramic, or glass (mineral or silicate)",
+          "D": "synthetic polymer or elastomer (plastic or rubber)"
+        }
+      },
+      "gold_answer": "C"
+    },
+    {
+      "unit": {
+        "unit_id": "68c33539602f4ab2",
+        "entity_id": "green anaconda",
+        "relation_id": "taxonomic_class",
+        "modality": "text",
+        "source_group": "v6_green_anaconda",
+        "probe_template_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "split": "test",
+        "domain": "vertebrate_class",
+        "options": {
+          "A": "mammal",
+          "B": "bird",
+          "C": "reptile",
+          "D": "fish"
+        }
+      },
+      "gold_answer": "C"
+    }
+  ],
+  "audit_controls": [
+    {
+      "question": "What is a polystyrene foam cooler primarily used for?\nA: Keeping beverages and perishable food insulated and cold\nB: Welding steel beams\nC: Carving granite statues\nD: Playing brass horns\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "polystyrene foam cooler"
+    },
+    {
+      "question": "Is expanded polystyrene a lightweight synthetic plastic polymer foam?\nA: Yes\nB: No, birch wood\nC: No, copper alloy\nD: No, marble stone\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "polystyrene foam cooler"
+    },
+    {
+      "question": "Which indigenous culture is the didgeridoo traditionally associated with?\nA: Indigenous peoples of northern Australia\nB: Medieval European court lutenists\nC: Ancient Roman chariot drivers\nD: Polynesian ukulele makers\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "didgeridoo"
+    },
+    {
+      "question": "Does a didgeridoo produce its drone through vibrating lips exciting an air column in a hollow tube?\nA: Yes\nB: No, bowed strings\nC: No, struck skin drum\nD: No, struck metal triangle\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "didgeridoo"
+    },
+    {
+      "question": "How is a traditional Middle Eastern oud played?\nA: Plucked with a risha plectrum across paired fretless strings\nB: Blown with a brass mouthpiece\nC: Struck on an animal-skin head\nD: Shaken like a gourd\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "oud"
+    },
+    {
+      "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "oud"
+    },
+    {
+      "question": "What is a plexiglass display case used for?\nA: Protecting and showcasing collectibles behind clear rigid panels\nB: Playing symphony music\nC: Sharpening knives\nD: Baking bread\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "plexiglass display case"
+    },
+    {
+      "question": "Is plexiglass (polymethyl methacrylate) a transparent synthetic thermoplastic polymer?\nA: Yes\nB: No, natural timber\nC: No, forged iron\nD: No, fired clay\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "plexiglass display case"
+    },
+    {
+      "question": "Why is titanium prized for wristwatch cases?\nA: High strength-to-weight ratio and corrosion resistance\nB: It dissolves in water\nC: It is grown from pine trees\nD: It is soft edible wax\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "titanium watch case"
+    },
+    {
+      "question": "Is titanium a transition metal element?\nA: Yes\nB: No, wood fiber\nC: No, silicate clay\nD: No, petroleum polymer\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "titanium watch case"
+    },
+    {
+      "question": "Why is cedar placed inside leather shoes as a shoe tree?\nA: To maintain shape and absorb moisture and odor\nB: To conduct electricity\nC: To melt ice on roads\nD: To sharpen blades\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "cedar shoe tree"
+    },
+    {
+      "question": "Is cedar an aromatic natural timber harvested from trees?\nA: Yes\nB: No, cast steel\nC: No, polyethylene plastic\nD: No, granite rock\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "cedar shoe tree"
+    },
+    {
+      "question": "How is a pair of Indian tabla drums traditionally played?\nA: Struck with fingers and palms on two tuned stretched drumheads\nB: Blown with a brass mouthpiece\nC: Plucked with a plectrum\nD: Bowed with horsehair\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabla"
+    },
+    {
+      "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabla"
+    },
+    {
+      "question": "Where do golden eagles commonly build their nests?\nA: High cliffs and tall trees in mountainous regions\nB: Underwater coral caves\nC: Underground burrows\nD: Antarctic sea ice\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "golden eagle"
+    },
+    {
+      "question": "Does a golden eagle have wings and feathers?\nA: Yes\nB: No, gills and fins\nC: No, fur and hooves\nD: No, dry scales\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "golden eagle"
+    },
+    {
+      "question": "How is sound produced on a ceramic or wooden ocarina?\nA: Blowing air through a mouthpiece into an enclosed vessel chamber with finger holes\nB: Plucked steel strings\nC: A taut calfskin drumhead\nD: Tuned rosewood bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "ocarina"
+    },
+    {
+      "question": "Does an ocarina produce sound via a vibrating enclosed body of air?\nA: Yes\nB: No, stretched strings\nC: No, struck membrane\nD: No, struck metal plate\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "ocarina"
+    },
+    {
+      "question": "What is a porcelain soup bowl used for?\nA: Serving hot liquid foods like soup\nB: Driving nails\nC: Conducting power lines\nD: Rowing boats\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "porcelain soup bowl"
+    },
+    {
+      "question": "Is porcelain made by firing kaolin clay at high temperatures?\nA: Yes\nB: No, carving oak\nC: No, forging steel\nD: No, extruding vinyl\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "porcelain soup bowl"
+    },
+    {
+      "question": "Where are meerkats famously found in the wild?\nA: Southern African deserts and savannas\nB: Arctic tundra\nC: Amazon river floor\nD: Deep Pacific trenches\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "meerkat"
+    },
+    {
+      "question": "Are meerkats known for standing upright on hind legs as sentries?\nA: Yes\nB: No, they glide with wings\nC: No, they swim with fins\nD: No, they shed dry snake scales\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "meerkat"
+    },
+    {
+      "question": "What is a mahogany chess board used for?\nA: Playing the board game of chess\nB: Soldering microchips\nC: Filtering seawater\nD: Baking pizza\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "mahogany chess board"
+    },
+    {
+      "question": "Is mahogany a reddish-brown tropical hardwood?\nA: Yes\nB: No, aluminum sheet\nC: No, tempered glass\nD: No, PVC plastic\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "mahogany chess board"
+    },
+    {
+      "question": "What distinctive anatomical feature do male narwhals typically grow?\nA: A long spiral tusk\nB: Colorful tail feathers\nC: Four webbed walking legs\nD: Armored tortoise plates\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "narwhal"
+    },
+    {
+      "question": "Must a narwhal surface to breathe air through lungs?\nA: Yes\nB: No, it uses fish gills\nC: No, it breathes through skin\nD: No, it lives in trees\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "narwhal"
+    },
+    {
+      "question": "What is a traditional slate chalkboard used for?\nA: Writing with chalk in classrooms\nB: Cooking stew\nC: Weaving sweaters\nD: Inflating balloons\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "slate chalkboard"
+    },
+    {
+      "question": "Is slate a fine-grained metamorphic mineral rock?\nA: Yes\nB: No, pine wood\nC: No, copper alloy\nD: No, nylon fiber\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "slate chalkboard"
+    },
+    {
+      "question": "What is unusual about an adult halibut's eyes?\nA: Both eyes are located on the same upper side of its flat body\nB: It has no fins\nC: It has feathered wings\nD: It grows fur in winter\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "halibut"
+    },
+    {
+      "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "halibut"
+    },
+    {
+      "question": "Which region are wild leopard geckos native to?\nA: Arid grasslands and deserts of South Asia\nB: Deep Pacific trenches\nC: Antarctic ice sheets\nD: Arctic tundra\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "leopard gecko"
+    },
+    {
+      "question": "Does a leopard gecko have dry spotted scaly skin and movable eyelids?\nA: Yes\nB: No, thick fur\nC: No, gills\nD: No, feathers\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "leopard gecko"
+    },
+    {
+      "question": "What is a brass padlock primarily used for?\nA: Securing doors, gates, or lockers\nB: Baking pastries\nC: Painting watercolors\nD: Storing ice cream\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "brass padlock"
+    },
+    {
+      "question": "Is brass an electrically conductive alloy of copper and zinc?\nA: Yes\nB: No, tree bark\nC: No, fired clay\nD: No, synthetic nylon\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "brass padlock"
+    },
+    {
+      "question": "What is a barracuda known for in tropical oceans?\nA: Being a fast predatory ray-finned swimmer with sharp teeth\nB: Flying over deserts\nC: Laying bird eggs on cliffs\nD: Hibernating in fur-lined dens\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "barracuda"
+    },
+    {
+      "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "barracuda"
+    },
+    {
+      "question": "Which country's traditional music is the 13-stringed koto associated with?\nA: Japan\nB: Scotland\nC: Switzerland\nD: Brazil\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "koto"
+    },
+    {
+      "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "koto"
+    },
+    {
+      "question": "Which Caribbean nation invented the pitched steelpan percussion instrument?\nA: Trinidad and Tobago\nB: Iceland\nC: Switzerland\nD: Mongolia\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "steelpan"
+    },
+    {
+      "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "steelpan"
+    },
+    {
+      "question": "What is a nylon backpack primarily used for?\nA: Carrying books, gear, or supplies on one's back\nB: Smelting ore\nC: Grinding spices\nD: Carving marble\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "nylon backpack"
+    },
+    {
+      "question": "Is nylon a synthetic polyamide polymer fiber?\nA: Yes\nB: No, solid granite\nC: No, natural oak\nD: No, cast bronze\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "nylon backpack"
+    },
+    {
+      "question": "How are percussion claves played in Afro-Cuban music?\nA: Striking two short solid hardwood sticks directly against each other\nB: Blowing air through a reed\nC: Plucking steel strings\nD: Striking a stretched goatskin head\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "claves"
+    },
+    {
+      "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "claves"
+    },
+    {
+      "question": "What is the toucan's most recognizable physical feature?\nA: A large brightly colored bill\nB: A spiral ivory tusk\nC: Venomous fangs\nD: Dorsal shark fins\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "toucan"
+    },
+    {
+      "question": "Is a toucan covered in feathers?\nA: Yes\nB: No, fur\nC: No, fish scales\nD: No, reptilian armor\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "toucan"
+    },
+    {
+      "question": "Which marine organism do clownfish famously form a symbiotic relationship with?\nA: Sea anemones\nB: Pine trees\nC: Desert cacti\nD: Mountain goats\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "clownfish"
+    },
+    {
+      "question": "Does a clownfish live entirely in marine water and breathe through gills?\nA: Yes\nB: No, it breathes air with lungs\nC: No, it nests in trees\nD: No, it has fur\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "clownfish"
+    },
+    {
+      "question": "What gives flamingos their distinctive pink coloration?\nA: Carotenoid pigments from algae and brine shrimp in their diet\nB: Glowing bioluminescent fish scales\nC: Thick winter fur\nD: Shedding reptilian skin\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "flamingo"
+    },
+    {
+      "question": "Does a flamingo have feathered wings and a curved bill?\nA: Yes\nB: No, it swims with gills\nC: No, it slithers on scales\nD: No, it has four paws\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "flamingo"
+    },
+    {
+      "question": "Which biome is the wolverine primarily native to?\nA: Northern boreal forests and tundra\nB: Tropical coral reefs\nC: Sahara sand dunes\nD: Antarctic ice shelves\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "wolverine"
+    },
+    {
+      "question": "Does a wolverine have a dense coat of fur?\nA: Yes\nB: No, feathers\nC: No, dry scales\nD: No, gill plates\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "wolverine"
+    },
+    {
+      "question": "What is a walnut picture frame primarily used for?\nA: Displaying and protecting photographs or artwork\nB: Boiling soup\nC: Welding steel\nD: Pumping fuel\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "walnut picture frame"
+    },
+    {
+      "question": "Does walnut lumber come from hardwood trees?\nA: Yes\nB: No, smelted iron\nC: No, petroleum refinery\nD: No, volcanic glass\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "walnut picture frame"
+    },
+    {
+      "question": "How are panpipes constructed?\nA: A row of graduated hollow tubes closed at the bottom\nB: A triangular box with three strings\nC: A goblet shell with a stretched skin\nD: A set of suspended bronze gongs\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "panpipes"
+    },
+    {
+      "question": "Do panpipes produce sound when air is blown across the open tops of tubes?\nA: Yes\nB: No, plucked strings\nC: No, struck drumhead\nD: No, scraped wood\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "panpipes"
+    },
+    {
+      "question": "Which musical tradition is the large bass surdo drum central to?\nA: Brazilian samba percussion ensembles\nB: Scottish Highland pipe bands\nC: Baroque string quartets\nD: Japanese shakuhachi solos\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "surdo drum"
+    },
+    {
+      "question": "Does a surdo drum generate its deep pulse from striking a taut stretched head with a mallet?\nA: Yes\nB: No, blowing through reeds\nC: No, plucking nylon strings\nD: No, shaking maracas\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "surdo drum"
+    },
+    {
+      "question": "How does a musician play the Chinese erhu?\nA: Drawing a horsehair bow between two stretched strings\nB: Blowing air across a finger-holed tube\nC: Striking a kettle drum with mallets\nD: Ringing bronze handbells\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "erhu"
+    },
+    {
+      "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "erhu"
+    },
+    {
+      "question": "How is an African kalimba (thumb piano) played?\nA: Plucking tuned solid metal tines mounted on a wooden soundboard with the thumbs\nB: Blowing like a bugle\nC: Bowing horsehair across strings\nD: Striking a stretched drumhead\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "kalimba"
+    },
+    {
+      "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "kalimba"
+    },
+    {
+      "question": "What is a pewter goblet traditionally used for?\nA: Drinking beverages\nB: Cutting timber\nC: Insulating high-voltage cables\nD: Paving highways\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "pewter goblet"
+    },
+    {
+      "question": "Is pewter a malleable alloy composed mostly of tin?\nA: Yes\nB: No, oak wood\nC: No, porcelain clay\nD: No, acrylic resin\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "pewter goblet"
+    },
+    {
+      "question": "Which continent is the central bearded dragon native to?\nA: Australia\nB: Antarctica\nC: Greenland\nD: Iceland\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "bearded dragon"
+    },
+    {
+      "question": "Is a bearded dragon covered in spiny dry scales?\nA: Yes\nB: No, feathers\nC: No, woolly fur\nD: No, smooth fish fins\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "bearded dragon"
+    },
+    {
+      "question": "How was a medieval European tabor drum traditionally played?\nA: Hung from the arm and struck on its taut drumhead with a single stick\nB: Blown like a flute\nC: Bowed with horsehair\nD: Struck as a solid iron bell\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabor drum"
+    },
+    {
+      "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabor drum"
+    },
+    {
+      "question": "Why do bakers use a heavy marble rolling pin for pastry dough?\nA: Its weight and cool surface keep butter from melting\nB: It bends like rubber\nC: It burns like firewood\nD: It conducts radio signals\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "marble rolling pin"
+    },
+    {
+      "question": "Is marble a crystalline metamorphic stone?\nA: Yes\nB: No, tree bark\nC: No, synthetic foam\nD: No, brass alloy\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "marble rolling pin"
+    },
+    {
+      "question": "Which South American river basin is the primary habitat of the green anaconda?\nA: Amazon and Orinoco basins\nB: Arctic Circle\nC: Sahara Desert\nD: Alpine glaciers\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "green anaconda"
+    },
+    {
+      "question": "Is the green anaconda a heavy-bodied constricting snake covered in scales?\nA: Yes\nB: No, a songbird\nC: No, a marine mammal\nD: No, a freshwater fish\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "green anaconda"
+    },
+    {
+      "question": "What is 12 times 12?\nA: 124\nB: 144\nC: 132\nD: 154\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 81 divided by 9?\nA: 9\nB: 8\nC: 7\nD: 6\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 17 plus 26?\nA: 33\nB: 53\nC: 43\nD: 42\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 100 minus 37?\nA: 73\nB: 67\nC: 53\nD: 63\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 2 to the power of 5?\nA: 16\nB: 64\nC: 32\nD: 25\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "How many sides does a triangle have?\nA: 3\nB: 4\nC: 5\nD: 6\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "Which number is odd?\nA: 8\nB: 9\nC: 12\nD: 14\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "Which letter follows M in the English alphabet?\nA: N\nB: O\nC: L\nD: M\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "Which word is a synonym of large?\nA: tiny\nB: big\nC: slow\nD: sour\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "Which word is an antonym of hot?\nA: warm\nB: burning\nC: cold\nD: sunny\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is three quarters as a decimal?\nA: 0.25\nB: 0.5\nC: 1.25\nD: 0.75\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 6 times 7?\nA: 36\nB: 48\nC: 54\nD: 42\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 9 plus 14?\nA: 23\nB: 25\nC: 21\nD: 24\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "Which day comes immediately after Monday?\nA: Sunday\nB: Tuesday\nC: Friday\nD: Saturday\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "How many metres are in one kilometre?\nA: 100\nB: 10\nC: 1000\nD: 10000\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "How many interior angles does a square have?\nA: 3\nB: 5\nC: 6\nD: 4\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is the first month of the calendar year?\nA: January\nB: June\nC: May\nD: December\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 5 squared?\nA: 10\nB: 25\nC: 125\nD: 15\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is 40 divided by 5?\nA: 10\nB: 6\nC: 8\nD: 12\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    },
+    {
+      "question": "What is decimal ten in binary?\nA: 101\nB: 111\nC: 1100\nD: 1010\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__"
+    }
+  ],
+  "baseline_controls": [
+    {
+      "question": "What is a polystyrene foam cooler primarily used for?\nA: Keeping beverages and perishable food insulated and cold\nB: Welding steel beams\nC: Carving granite statues\nD: Playing brass horns\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "polystyrene foam cooler",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8604629124226086,
+        0.13195627441994093,
+        0.0074444630575958015,
+        0.00013635009985460335
+      ],
+      "mass": 0.9997223542595748
+    },
+    {
+      "question": "Is expanded polystyrene a lightweight synthetic plastic polymer foam?\nA: Yes\nB: No, birch wood\nC: No, copper alloy\nD: No, marble stone\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "polystyrene foam cooler",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.6465063860945209,
+        0.3460499704230681,
+        0.00718203777797512,
+        0.00026160570443585414
+      ],
+      "mass": 0.9996039962861687
+    },
+    {
+      "question": "Which indigenous culture is the didgeridoo traditionally associated with?\nA: Indigenous peoples of northern Australia\nB: Medieval European court lutenists\nC: Ancient Roman chariot drivers\nD: Polynesian ukulele makers\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "didgeridoo",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.99889561204324,
+        0.0009108748998846112,
+        0.00010878849858587607,
+        8.472455828959587e-05
+      ],
+      "mass": 0.9996596126802615
+    },
+    {
+      "question": "Does a didgeridoo produce its drone through vibrating lips exciting an air column in a hollow tube?\nA: Yes\nB: No, bowed strings\nC: No, struck skin drum\nD: No, struck metal triangle\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "didgeridoo",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9960262618250054,
+        0.003592231660583332,
+        0.00017884667684487567,
+        0.00020265983756633776
+      ],
+      "mass": 0.9998258742707549
+    },
+    {
+      "question": "How is a traditional Middle Eastern oud played?\nA: Plucked with a risha plectrum across paired fretless strings\nB: Blown with a brass mouthpiece\nC: Struck on an animal-skin head\nD: Shaken like a gourd\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "oud",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8965342116976377,
+        0.07359201099736119,
+        0.02108446440776267,
+        0.008789312897238468
+      ],
+      "mass": 0.9996234299615026
+    },
+    {
+      "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "oud",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.7619305784863274,
+        0.21829676501921927,
+        0.013955245208864115,
+        0.005817411285589187
+      ],
+      "mass": 0.9995890744030476
+    },
+    {
+      "question": "What is a plexiglass display case used for?\nA: Protecting and showcasing collectibles behind clear rigid panels\nB: Playing symphony music\nC: Sharpening knives\nD: Baking bread\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "plexiglass display case",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9784656959794216,
+        0.013957063174699814,
+        0.007470677343950567,
+        0.00010656350192802206
+      ],
+      "mass": 0.999858105511521
+    },
+    {
+      "question": "Is plexiglass (polymethyl methacrylate) a transparent synthetic thermoplastic polymer?\nA: Yes\nB: No, natural timber\nC: No, forged iron\nD: No, fired clay\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "plexiglass display case",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.7291132179643729,
+        0.2682257872399091,
+        0.0018072910213347898,
+        0.0008537037743832593
+      ],
+      "mass": 0.999569348001387
+    },
+    {
+      "question": "Why is titanium prized for wristwatch cases?\nA: High strength-to-weight ratio and corrosion resistance\nB: It dissolves in water\nC: It is grown from pine trees\nD: It is soft edible wax\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "titanium watch case",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.6133002513476115,
+        0.22562057612173828,
+        0.1550665879765287,
+        0.006012584554121578
+      ],
+      "mass": 0.9760868372395635
+    },
+    {
+      "question": "Is titanium a transition metal element?\nA: Yes\nB: No, wood fiber\nC: No, silicate clay\nD: No, petroleum polymer\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "titanium watch case",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8277423526458667,
+        0.16299211806818573,
+        0.004343593432761943,
+        0.004921935853185617
+      ],
+      "mass": 0.9984010295011103
+    },
+    {
+      "question": "Why is cedar placed inside leather shoes as a shoe tree?\nA: To maintain shape and absorb moisture and odor\nB: To conduct electricity\nC: To melt ice on roads\nD: To sharpen blades\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "cedar shoe tree",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.1129831265044313,
+        0.7367425309449579,
+        0.128026645078429,
+        0.02224769747218173
+      ],
+      "mass": 0.97124526463449
+    },
+    {
+      "question": "Is cedar an aromatic natural timber harvested from trees?\nA: Yes\nB: No, cast steel\nC: No, polyethylene plastic\nD: No, granite rock\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "cedar shoe tree",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.39027892425096466,
+        0.5678524550434229,
+        0.03630159054820934,
+        0.00556703015740319
+      ],
+      "mass": 0.9990272582508624
+    },
+    {
+      "question": "How is a pair of Indian tabla drums traditionally played?\nA: Struck with fingers and palms on two tuned stretched drumheads\nB: Blown with a brass mouthpiece\nC: Plucked with a plectrum\nD: Bowed with horsehair\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabla",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9964823022435905,
+        0.00217979619462357,
+        0.0004292273166151251,
+        0.000908674245170814
+      ],
+      "mass": 0.9996286786044948
+    },
+    {
+      "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabla",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9792786778531182,
+        0.015828566242786966,
+        0.0027505925462266833,
+        0.0021421633578681877
+      ],
+      "mass": 0.9994495350401849
+    },
+    {
+      "question": "Where do golden eagles commonly build their nests?\nA: High cliffs and tall trees in mountainous regions\nB: Underwater coral caves\nC: Underground burrows\nD: Antarctic sea ice\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "golden eagle",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.988511727930049,
+        0.007547380027963491,
+        0.0035651300963047638,
+        0.00037576194568267346
+      ],
+      "mass": 0.9997063652554061
+    },
+    {
+      "question": "Does a golden eagle have wings and feathers?\nA: Yes\nB: No, gills and fins\nC: No, fur and hooves\nD: No, dry scales\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "golden eagle",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.99938006575594,
+        0.0005527414862458566,
+        5.825852397721896e-05,
+        8.934233837003027e-06
+      ],
+      "mass": 0.999979946741405
+    },
+    {
+      "question": "How is sound produced on a ceramic or wooden ocarina?\nA: Blowing air through a mouthpiece into an enclosed vessel chamber with finger holes\nB: Plucked steel strings\nC: A taut calfskin drumhead\nD: Tuned rosewood bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "ocarina",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9952181387712776,
+        0.0031675613087976556,
+        0.0009075214735565316,
+        0.0007067784463681762
+      ],
+      "mass": 0.9997291918261908
+    },
+    {
+      "question": "Does an ocarina produce sound via a vibrating enclosed body of air?\nA: Yes\nB: No, stretched strings\nC: No, struck membrane\nD: No, struck metal plate\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "ocarina",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9897380883748808,
+        0.008562912433118661,
+        0.0009025243161270714,
+        0.0007964748758734838
+      ],
+      "mass": 0.9997444938635454
+    },
+    {
+      "question": "What is a porcelain soup bowl used for?\nA: Serving hot liquid foods like soup\nB: Driving nails\nC: Conducting power lines\nD: Rowing boats\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "porcelain soup bowl",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9989977458657153,
+        0.0008039264946213069,
+        0.00015830250284283356,
+        4.0025136820518704e-05
+      ],
+      "mass": 0.9996222664412926
+    },
+    {
+      "question": "Is porcelain made by firing kaolin clay at high temperatures?\nA: Yes\nB: No, carving oak\nC: No, forging steel\nD: No, extruding vinyl\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "porcelain soup bowl",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.996673912524461,
+        0.0031721947272280566,
+        9.579197908347676e-05,
+        5.810076922744505e-05
+      ],
+      "mass": 0.9999231816145766
+    },
+    {
+      "question": "Where are meerkats famously found in the wild?\nA: Southern African deserts and savannas\nB: Arctic tundra\nC: Amazon river floor\nD: Deep Pacific trenches\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "meerkat",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9990626066166574,
+        0.0008039786744521964,
+        0.0001232941117067042,
+        1.012059718374711e-05
+      ],
+      "mass": 0.99997535131115
+    },
+    {
+      "question": "Are meerkats known for standing upright on hind legs as sentries?\nA: Yes\nB: No, they glide with wings\nC: No, they swim with fins\nD: No, they shed dry snake scales\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "meerkat",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9906227277366756,
+        0.008570565688498547,
+        0.00025880863190644754,
+        0.0005478979429194026
+      ],
+      "mass": 0.999671088240575
+    },
+    {
+      "question": "What is a mahogany chess board used for?\nA: Playing the board game of chess\nB: Soldering microchips\nC: Filtering seawater\nD: Baking pizza\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "mahogany chess board",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8767098732967137,
+        0.11864977298985482,
+        0.0046005511481352485,
+        3.980256529622522e-05
+      ],
+      "mass": 0.9987698538279801
+    },
+    {
+      "question": "Is mahogany a reddish-brown tropical hardwood?\nA: Yes\nB: No, aluminum sheet\nC: No, tempered glass\nD: No, PVC plastic\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "mahogany chess board",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.968255693851303,
+        0.029238788722541615,
+        0.0024000658866776153,
+        0.00010545153947785828
+      ],
+      "mass": 0.9998323188556242
+    },
+    {
+      "question": "What distinctive anatomical feature do male narwhals typically grow?\nA: A long spiral tusk\nB: Colorful tail feathers\nC: Four webbed walking legs\nD: Armored tortoise plates\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "narwhal",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9920188038553559,
+        0.0075741564690531464,
+        0.0003327852447947635,
+        7.42544307961838e-05
+      ],
+      "mass": 0.999569812331174
+    },
+    {
+      "question": "Must a narwhal surface to breathe air through lungs?\nA: Yes\nB: No, it uses fish gills\nC: No, it breathes through skin\nD: No, it lives in trees\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "narwhal",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8915882909531432,
+        0.09397270743147695,
+        0.01441118148918536,
+        2.7820126194511466e-05
+      ],
+      "mass": 0.9999321891064028
+    },
+    {
+      "question": "What is a traditional slate chalkboard used for?\nA: Writing with chalk in classrooms\nB: Cooking stew\nC: Weaving sweaters\nD: Inflating balloons\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "slate chalkboard",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9987132212874085,
+        0.0011693729230492689,
+        9.598797775300485e-05,
+        2.1417811789220272e-05
+      ],
+      "mass": 0.9999134955942282
+    },
+    {
+      "question": "Is slate a fine-grained metamorphic mineral rock?\nA: Yes\nB: No, pine wood\nC: No, copper alloy\nD: No, nylon fiber\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "slate chalkboard",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.01720300883862197,
+        0.9392524247093201,
+        0.015181600999422225,
+        0.02836296545263563
+      ],
+      "mass": 0.9992300560697913
+    },
+    {
+      "question": "What is unusual about an adult halibut's eyes?\nA: Both eyes are located on the same upper side of its flat body\nB: It has no fins\nC: It has feathered wings\nD: It grows fur in winter\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "halibut",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.05676520019447848,
+        0.8879571791481045,
+        0.039014116360735145,
+        0.016263504296681906
+      ],
+      "mass": 0.9990744460374117
+    },
+    {
+      "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "halibut",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.49730536247407553,
+        0.49730536247407553,
+        0.004875410587971026,
+        0.0005138644638778715
+      ],
+      "mass": 0.9999499024124816
+    },
+    {
+      "question": "Which region are wild leopard geckos native to?\nA: Arid grasslands and deserts of South Asia\nB: Deep Pacific trenches\nC: Antarctic ice sheets\nD: Arctic tundra\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "leopard gecko",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9871985716468122,
+        0.005180342471101953,
+        0.0075373534467328895,
+        8.373243535295195e-05
+      ],
+      "mass": 0.9999803367536515
+    },
+    {
+      "question": "Does a leopard gecko have dry spotted scaly skin and movable eyelids?\nA: Yes\nB: No, thick fur\nC: No, gills\nD: No, feathers\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "leopard gecko",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8658721683829852,
+        0.07107511430403277,
+        0.06272357422351703,
+        0.0003291430894649748
+      ],
+      "mass": 0.9998191360209603
+    },
+    {
+      "question": "What is a brass padlock primarily used for?\nA: Securing doors, gates, or lockers\nB: Baking pastries\nC: Painting watercolors\nD: Storing ice cream\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "brass padlock",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.020760452080538935,
+        0.4725056741390499,
+        0.03422819964136116,
+        0.4725056741390499
+      ],
+      "mass": 0.9801864232867956
+    },
+    {
+      "question": "Is brass an electrically conductive alloy of copper and zinc?\nA: Yes\nB: No, tree bark\nC: No, fired clay\nD: No, synthetic nylon\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "brass padlock",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.00023663158536205929,
+        0.9641520917580301,
+        0.006496405816753526,
+        0.029114870839854395
+      ],
+      "mass": 0.9982809554348933
+    },
+    {
+      "question": "What is a barracuda known for in tropical oceans?\nA: Being a fast predatory ray-finned swimmer with sharp teeth\nB: Flying over deserts\nC: Laying bird eggs on cliffs\nD: Hibernating in fur-lined dens\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "barracuda",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.0005502319385701264,
+        0.9948426392655257,
+        0.004607035982120821,
+        9.281378331581303e-08
+      ],
+      "mass": 0.9999961149018759
+    },
+    {
+      "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "barracuda",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.0003342862239151948,
+        0.9964932119539768,
+        0.0031716197684249652,
+        8.820536830213366e-07
+      ],
+      "mass": 0.9999971971279251
+    },
+    {
+      "question": "Which country's traditional music is the 13-stringed koto associated with?\nA: Japan\nB: Scotland\nC: Switzerland\nD: Brazil\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "koto",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9998297827683433,
+        0.0001233888010994459,
+        1.1476946466902373e-05,
+        3.535148409036858e-05
+      ],
+      "mass": 0.9998779548841412
+    },
+    {
+      "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "koto",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.7932821700558929,
+        0.08361131930381052,
+        0.03949519133648607,
+        0.08361131930381052
+      ],
+      "mass": 0.9960003718733788
+    },
+    {
+      "question": "Which Caribbean nation invented the pitched steelpan percussion instrument?\nA: Trinidad and Tobago\nB: Iceland\nC: Switzerland\nD: Mongolia\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "steelpan",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9988642990424693,
+        0.001032124129922789,
+        5.822845676902075e-05,
+        4.5348370838911445e-05
+      ],
+      "mass": 0.9997212045273045
+    },
+    {
+      "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "steelpan",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9081073481722913,
+        0.06578307889043404,
+        0.014678188202239418,
+        0.011431384735035256
+      ],
+      "mass": 0.9996068309992552
+    },
+    {
+      "question": "What is a nylon backpack primarily used for?\nA: Carrying books, gear, or supplies on one's back\nB: Smelting ore\nC: Grinding spices\nD: Carving marble\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "nylon backpack",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.998906029247402,
+        0.0009108844142828545,
+        0.0001793637619448319,
+        3.7225763702476472e-06
+      ],
+      "mass": 0.9999710471761318
+    },
+    {
+      "question": "Is nylon a synthetic polyamide polymer fiber?\nA: Yes\nB: No, solid granite\nC: No, natural oak\nD: No, cast bronze\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "nylon backpack",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9902122950697927,
+        0.009707700032877334,
+        6.540996240152955e-05,
+        1.4594934928455585e-05
+      ],
+      "mass": 0.9999736615845904
+    },
+    {
+      "question": "How are percussion claves played in Afro-Cuban music?\nA: Striking two short solid hardwood sticks directly against each other\nB: Blowing air through a reed\nC: Plucking steel strings\nD: Striking a stretched goatskin head\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "claves",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8462738441593538,
+        0.005032128074810071,
+        0.001633692769025181,
+        0.1470603349968109
+      ],
+      "mass": 0.9994839401915669
+    },
+    {
+      "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "claves",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.09695873704209657,
+        0.38347923533911077,
+        0.18114277359342762,
+        0.33841925402536505
+      ],
+      "mass": 0.993825189769268
+    },
+    {
+      "question": "What is the toucan's most recognizable physical feature?\nA: A large brightly colored bill\nB: A spiral ivory tusk\nC: Venomous fangs\nD: Dorsal shark fins\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "toucan",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9996620110096892,
+        7.48265376955821e-05,
+        0.00012336808311539562,
+        0.00013979436949981914
+      ],
+      "mass": 0.9998655171220889
+    },
+    {
+      "question": "Is a toucan covered in feathers?\nA: Yes\nB: No, fur\nC: No, fish scales\nD: No, reptilian armor\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "toucan",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9995012868265103,
+        0.00013977188587716453,
+        0.00017947064380628518,
+        0.00017947064380628518
+      ],
+      "mass": 0.999968156349496
+    },
+    {
+      "question": "Which marine organism do clownfish famously form a symbiotic relationship with?\nA: Sea anemones\nB: Pine trees\nC: Desert cacti\nD: Mountain goats\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "clownfish",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.99748130526155,
+        0.001699328973703946,
+        0.0008027061311144427,
+        1.6659633631621846e-05
+      ],
+      "mass": 0.9998631419239246
+    },
+    {
+      "question": "Does a clownfish live entirely in marine water and breathe through gills?\nA: Yes\nB: No, it breathes air with lungs\nC: No, it nests in trees\nD: No, it has fur\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "clownfish",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.7054024423590242,
+        0.2940554777119828,
+        0.000500958734425678,
+        4.112119456729412e-05
+      ],
+      "mass": 0.9999468391288246
+    },
+    {
+      "question": "What gives flamingos their distinctive pink coloration?\nA: Carotenoid pigments from algae and brine shrimp in their diet\nB: Glowing bioluminescent fish scales\nC: Thick winter fur\nD: Shedding reptilian skin\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "flamingo",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9998165424962151,
+        9.609401782414698e-05,
+        8.480266719946574e-05,
+        2.5608187612604193e-06
+      ],
+      "mass": 0.9999546269484654
+    },
+    {
+      "question": "Does a flamingo have feathered wings and a curved bill?\nA: Yes\nB: No, it swims with gills\nC: No, it slithers on scales\nD: No, it has four paws\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "flamingo",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9964678098273572,
+        0.0031715388763848707,
+        0.00020274968341737836,
+        0.00015790161284063287
+      ],
+      "mass": 0.9999312306754291
+    },
+    {
+      "question": "Which biome is the wolverine primarily native to?\nA: Northern boreal forests and tundra\nB: Tropical coral reefs\nC: Sahara sand dunes\nD: Antarctic ice shelves\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "wolverine",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9966642635703926,
+        0.0014984241385263832,
+        0.0016979371315158013,
+        0.00013937515956519015
+      ],
+      "mass": 0.9999640798778273
+    },
+    {
+      "question": "Does a wolverine have a dense coat of fur?\nA: Yes\nB: No, feathers\nC: No, dry scales\nD: No, gill plates\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "wolverine",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9939313692067439,
+        0.002791748787371871,
+        0.002791748787371871,
+        0.00048513321851240636
+      ],
+      "mass": 0.9998726705089211
+    },
+    {
+      "question": "What is a walnut picture frame primarily used for?\nA: Displaying and protecting photographs or artwork\nB: Boiling soup\nC: Welding steel\nD: Pumping fuel\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "walnut picture frame",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9982750237905013,
+        0.0015008456760193525,
+        6.594255681320195e-05,
+        0.00015818797666623615
+      ],
+      "mass": 0.9998401207631105
+    },
+    {
+      "question": "Does walnut lumber come from hardwood trees?\nA: Yes\nB: No, smelted iron\nC: No, petroleum refinery\nD: No, volcanic glass\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "walnut picture frame",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9957833527016281,
+        0.00406953926196203,
+        0.00013925197799968388,
+        7.85605841022881e-06
+      ],
+      "mass": 0.9999758538206152
+    },
+    {
+      "question": "How are panpipes constructed?\nA: A row of graduated hollow tubes closed at the bottom\nB: A triangular box with three strings\nC: A goblet shell with a stretched skin\nD: A set of suspended bronze gongs\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "panpipes",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.946094929202598,
+        0.010510166328918344,
+        0.04156851152376292,
+        0.0018263929447207906
+      ],
+      "mass": 0.9995438129408285
+    },
+    {
+      "question": "Do panpipes produce sound when air is blown across the open tops of tubes?\nA: Yes\nB: No, plucked strings\nC: No, struck drumhead\nD: No, scraped wood\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "panpipes",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9903380158519802,
+        0.005888765057491786,
+        0.0002015024599528299,
+        0.003571716630575119
+      ],
+      "mass": 0.999364806979429
+    },
+    {
+      "question": "Which musical tradition is the large bass surdo drum central to?\nA: Brazilian samba percussion ensembles\nB: Scottish Highland pipe bands\nC: Baroque string quartets\nD: Japanese shakuhachi solos\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "surdo drum",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9634925748055849,
+        0.029094954547326274,
+        0.003937573761989802,
+        0.003474896885098984
+      ],
+      "mass": 0.9987892126664519
+    },
+    {
+      "question": "Does a surdo drum generate its deep pulse from striking a taut stretched head with a mallet?\nA: Yes\nB: No, blowing through reeds\nC: No, plucking nylon strings\nD: No, shaking maracas\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "surdo drum",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9831796935370056,
+        0.01589161987218726,
+        0.0007911971380191539,
+        0.00013748945278790818
+      ],
+      "mass": 0.9997557998867705
+    },
+    {
+      "question": "How does a musician play the Chinese erhu?\nA: Drawing a horsehair bow between two stretched strings\nB: Blowing air across a finger-holed tube\nC: Striking a kettle drum with mallets\nD: Ringing bronze handbells\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "erhu",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.561274420210119,
+        0.43712096291330194,
+        0.00021335666251014637,
+        0.001391260214068977
+      ],
+      "mass": 0.9997458554571494
+    },
+    {
+      "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "erhu",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9889346831430305,
+        0.010986072943872112,
+        3.9621956548734175e-05,
+        3.9621956548734175e-05
+      ],
+      "mass": 0.9999585458790534
+    },
+    {
+      "question": "How is an African kalimba (thumb piano) played?\nA: Plucking tuned solid metal tines mounted on a wooden soundboard with the thumbs\nB: Blowing like a bugle\nC: Bowing horsehair across strings\nD: Striking a stretched drumhead\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "kalimba",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9979110241311288,
+        0.001324008872367492,
+        0.0006254174776192382,
+        0.000139549518884528
+      ],
+      "mass": 0.9998358754673973
+    },
+    {
+      "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "kalimba",
+      "pred": "D",
+      "correct": false,
+      "probs": [
+        0.2220000888586895,
+        0.1959144271581494,
+        0.049534916745480155,
+        0.5325505672376809
+      ],
+      "mass": 0.9914130568504333
+    },
+    {
+      "question": "What is a pewter goblet traditionally used for?\nA: Drinking beverages\nB: Cutting timber\nC: Insulating high-voltage cables\nD: Paving highways\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "pewter goblet",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.961518536914354,
+        0.037282118119670665,
+        0.0008767914170017902,
+        0.000322553548973588
+      ],
+      "mass": 0.9983505557465833
+    },
+    {
+      "question": "Is pewter a malleable alloy composed mostly of tin?\nA: Yes\nB: No, oak wood\nC: No, porcelain clay\nD: No, acrylic resin\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "pewter goblet",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9205836675699478,
+        0.07556610903550078,
+        0.002281898749672765,
+        0.001568324644878687
+      ],
+      "mass": 0.9975003263680264
+    },
+    {
+      "question": "Which continent is the central bearded dragon native to?\nA: Australia\nB: Antarctica\nC: Greenland\nD: Iceland\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "bearded dragon",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9706249513898785,
+        0.003500620161331118,
+        0.02586627700273028,
+        8.151446060116592e-06
+      ],
+      "mass": 0.99998050497652
+    },
+    {
+      "question": "Is a bearded dragon covered in spiny dry scales?\nA: Yes\nB: No, feathers\nC: No, woolly fur\nD: No, smooth fish fins\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "bearded dragon",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.1245523747723272,
+        0.6325292315423325,
+        0.2326945112454862,
+        0.010223882439854053
+      ],
+      "mass": 0.9991315044462681
+    },
+    {
+      "question": "How was a medieval European tabor drum traditionally played?\nA: Hung from the arm and struck on its taut drumhead with a single stick\nB: Blown like a flute\nC: Bowed with horsehair\nD: Struck as a solid iron bell\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabor drum",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8105617366591514,
+        0.007012733100491432,
+        0.18086077790074795,
+        0.0015647523396092118
+      ],
+      "mass": 0.9992138862144202
+    },
+    {
+      "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "tabor drum",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9987270483225048,
+        0.0011693890816404267,
+        4.534213817625406e-05,
+        5.8220457678566387e-05
+      ],
+      "mass": 0.9999151094125409
+    },
+    {
+      "question": "Why do bakers use a heavy marble rolling pin for pastry dough?\nA: Its weight and cool surface keep butter from melting\nB: It bends like rubber\nC: It burns like firewood\nD: It conducts radio signals\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "marble rolling pin",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9995293364069056,
+        0.0004305398256664809,
+        3.118819905242122e-05,
+        8.935568375509467e-06
+      ],
+      "mass": 0.9998614389078284
+    },
+    {
+      "question": "Is marble a crystalline metamorphic stone?\nA: Yes\nB: No, tree bark\nC: No, synthetic foam\nD: No, brass alloy\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "marble rolling pin",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8754371745379084,
+        0.11847754031207712,
+        0.004593872935509306,
+        0.0014914122145051583
+      ],
+      "mass": 0.9998511940939352
+    },
+    {
+      "question": "Which South American river basin is the primary habitat of the green anaconda?\nA: Amazon and Orinoco basins\nB: Arctic Circle\nC: Sahara Desert\nD: Alpine glaciers\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "green anaconda",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.4192277254021695,
+        0.2542744771314914,
+        0.3264948786751731,
+        2.9187911660331087e-06
+      ],
+      "mass": 0.9999659340096514
+    },
+    {
+      "question": "Is the green anaconda a heavy-bodied constricting snake covered in scales?\nA: Yes\nB: No, a songbird\nC: No, a marine mammal\nD: No, a freshwater fish\nReply with one letter only.",
+      "gold": "A",
+      "kind": "same_entity_other_relation",
+      "entity_id": "green anaconda",
+      "pred": "C",
+      "correct": false,
+      "probs": [
+        0.2786698899563035,
+        0.31577434136491433,
+        0.4054622853543381,
+        9.348332444409611e-05
+      ],
+      "mass": 0.99996643288614
+    },
+    {
+      "question": "What is 12 times 12?\nA: 124\nB: 144\nC: 132\nD: 154\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "B",
+      "correct": true,
+      "probs": [
+        0.00017948229147508386,
+        0.9995660552021212,
+        0.0001583925553104968,
+        9.606995109327189e-05
+      ],
+      "mass": 0.9999823127291165
+    },
+    {
+      "question": "What is 81 divided by 9?\nA: 9\nB: 8\nC: 7\nD: 6\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.47626949247270645,
+        0.28887205151142475,
+        0.009884657787742319,
+        0.22497379822812646
+      ],
+      "mass": 0.9998502405360341
+    },
+    {
+      "question": "What is 17 plus 26?\nA: 33\nB: 53\nC: 43\nD: 42\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": false,
+      "probs": [
+        0.48464258456722314,
+        0.17829007402254798,
+        0.22892895659424817,
+        0.10813838481598069
+      ],
+      "mass": 0.9998481944203377
+    },
+    {
+      "question": "What is 100 minus 37?\nA: 73\nB: 67\nC: 53\nD: 63\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": false,
+      "probs": [
+        0.9366717361433431,
+        0.05284340821723132,
+        0.004915202057357444,
+        0.005569653582068158
+      ],
+      "mass": 0.9999701529741287
+    },
+    {
+      "question": "What is 2 to the power of 5?\nA: 16\nB: 64\nC: 32\nD: 25\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.06487133090811976,
+        0.6974325356346889,
+        0.22642318666650516,
+        0.011272946790686193
+      ],
+      "mass": 0.9998681908473372
+    },
+    {
+      "question": "How many sides does a triangle have?\nA: 3\nB: 4\nC: 5\nD: 6\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.9999613477193544,
+        2.4299891818522567e-05,
+        1.0129701002452738e-05,
+        4.222687824648937e-06
+      ],
+      "mass": 0.999993352493675
+    },
+    {
+      "question": "Which number is odd?\nA: 8\nB: 9\nC: 12\nD: 14\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "B",
+      "correct": true,
+      "probs": [
+        0.0007073936272247242,
+        0.996084428732733,
+        0.001029251707650409,
+        0.0021789259323918794
+      ],
+      "mass": 0.9998824993381277
+    },
+    {
+      "question": "Which letter follows M in the English alphabet?\nA: N\nB: O\nC: L\nD: M\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.8969119148549497,
+        0.08342580060570268,
+        0.01642751507287014,
+        0.0032347694664774957
+      ],
+      "mass": 0.5109818577766418
+    },
+    {
+      "question": "Which word is a synonym of large?\nA: tiny\nB: big\nC: slow\nD: sour\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "B",
+      "correct": true,
+      "probs": [
+        0.0005521682067973671,
+        0.9983434953796079,
+        0.0005521682067973671,
+        0.0005521682067973671
+      ],
+      "mass": 0.999825160310138
+    },
+    {
+      "question": "Which word is an antonym of hot?\nA: warm\nB: burning\nC: cold\nD: sunny\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "C",
+      "correct": true,
+      "probs": [
+        0.08445422744532331,
+        0.006932424824771467,
+        0.90796853171912,
+        0.0006448160107852167
+      ],
+      "mass": 0.9998258947161958
+    },
+    {
+      "question": "What is three quarters as a decimal?\nA: 0.25\nB: 0.5\nC: 1.25\nD: 0.75\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": false,
+      "probs": [
+        0.6958398664111761,
+        0.011247203411245403,
+        0.0028437383884860707,
+        0.29006919178909246
+      ],
+      "mass": 0.9998857537284493
+    },
+    {
+      "question": "What is 6 times 7?\nA: 36\nB: 48\nC: 54\nD: 42\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "D",
+      "correct": true,
+      "probs": [
+        0.19232064775662566,
+        0.19232064775662566,
+        0.02296942455009594,
+        0.5923892799366527
+      ],
+      "mass": 0.9998203068971634
+    },
+    {
+      "question": "What is 9 plus 14?\nA: 23\nB: 25\nC: 21\nD: 24\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "B",
+      "correct": false,
+      "probs": [
+        0.2874899737552397,
+        0.47399083840195627,
+        0.06414768372770319,
+        0.1743715041151008
+      ],
+      "mass": 0.999888688325882
+    },
+    {
+      "question": "Which day comes immediately after Monday?\nA: Sunday\nB: Tuesday\nC: Friday\nD: Saturday\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "B",
+      "correct": true,
+      "probs": [
+        0.08026289333514494,
+        0.8629074780452518,
+        0.0016658032331222314,
+        0.05516382538648099
+      ],
+      "mass": 0.9997778472024947
+    },
+    {
+      "question": "How many metres are in one kilometre?\nA: 100\nB: 10\nC: 1000\nD: 10000\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "C",
+      "correct": true,
+      "probs": [
+        0.3689512725075333,
+        0.020814806530872546,
+        0.6082978422749042,
+        0.0019360786866899338
+      ],
+      "mass": 0.9999052189523354
+    },
+    {
+      "question": "How many interior angles does a square have?\nA: 3\nB: 5\nC: 6\nD: 4\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "D",
+      "correct": true,
+      "probs": [
+        0.00026112965423043824,
+        0.00010885504338838765,
+        0.0001233489212332258,
+        0.9995066663811479
+      ],
+      "mass": 0.999965159673593
+    },
+    {
+      "question": "What is the first month of the calendar year?\nA: January\nB: June\nC: May\nD: December\nReply with one letter only.",
+      "gold": "A",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": true,
+      "probs": [
+        0.999887013820638,
+        7.484337944765196e-05,
+        1.6699814756445075e-05,
+        2.1442985157840355e-05
+      ],
+      "mass": 0.9999633743827872
+    },
+    {
+      "question": "What is 5 squared?\nA: 10\nB: 25\nC: 125\nD: 15\nReply with one letter only.",
+      "gold": "B",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "B",
+      "correct": true,
+      "probs": [
+        0.00017928589161636733,
+        0.9984723373081787,
+        0.001169090908588512,
+        0.00017928589161636733
+      ],
+      "mass": 0.9999757591285743
+    },
+    {
+      "question": "What is 40 divided by 5?\nA: 10\nB: 6\nC: 8\nD: 12\nReply with one letter only.",
+      "gold": "C",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "A",
+      "correct": false,
+      "probs": [
+        0.9984936705905725,
+        0.001031741126924825,
+        0.0003349572965940608,
+        0.00013963098590865633
+      ],
+      "mass": 0.9999870471074246
+    },
+    {
+      "question": "What is decimal ten in binary?\nA: 101\nB: 111\nC: 1100\nD: 1010\nReply with one letter only.",
+      "gold": "D",
+      "kind": "general_commonsense",
+      "entity_id": "__general__",
+      "pred": "D",
+      "correct": true,
+      "probs": [
+        0.3166204123308591,
+        0.09071325551829823,
+        0.07064755998091277,
+        0.5220187721699299
+      ],
+      "mass": 0.9997634515166283
+    }
+  ],
+  "max_group_acc_drop": 0.05,
+  "min_token_agreement": 0.9,
+  "output": "/root/rivermind-data/KRMM/results/v6-new/llama32_pilot_e2e/B0_no_repair/fresh_audit_result.json"
+}

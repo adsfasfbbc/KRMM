@@ -1,0 +1,27 @@
+{
+  "version": "krmm-v0.7.0",
+  "branch": "codex/krmm-v07-continual-safe-repair",
+  "base_commit": "bdb628a27feb5a41f8fa1676e5f9eeef9ed81f2b",
+  "frozen_v5_parent": "7a41d02a0b7cfa226d8ef7bc47e13d5402d44c1f",
+  "batch": "Batch_C1_Oracle_Diagnosis_and_Writer_Matrix",
+  "budget_limits": {
+    "max_gpu_hours": 12.0,
+    "max_gpu_launches": 24,
+    "max_single_launch_minutes": 120,
+    "max_new_disk_gib": 20.0,
+    "min_free_disk_gib": 15.0,
+    "concurrency": 1
+  },
+  "primary_model": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+  "replay_pool": "data/v6/pilot_manifest.json",
+  "gates": {
+    "diagnosis_G0": "D0 stable, D1 no-op exact zero drift, D2 single vs D3 sequential per-fact transition verified, fresh subprocess pass",
+    "OW_PILOT": "At least one non-trivial writer achieves Y_strict > 0, >=4/8 Oracle targets restored, 0 same-entity regressions, fresh reload pass, and fewer harms than W0"
+  },
+  "allowed_commands": [
+    "python scripts/v7/audit_v6.py --base bdb628a --out reports/v7",
+    "python -m pytest tests/v7 tests/v6 tests/v5 tests/v4 tests/v3_cpu tests/v3",
+    "python scripts/v7/run_oracle_diagnosis.py --config configs/v6/pilot.json --out results/v7-new/OW-replay",
+    "python scripts/v7/run_writer_matrix.py --config configs/v6/pilot.json --diag-dir results/v7-new/OW-replay --out results/v7-new/OW-writer-matrix"
+  ]
+}

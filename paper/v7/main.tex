@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+
+\title{Beyond Oracle Knowledge Editing: Evidence-Guided Repair and the Limits of Continual Knowledge Restoration}
+\author{Anonymous Authors (Draft v0.7 for Human Author Review)}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Standard parametric knowledge editing assumes an oracle request naming both the corrupted fact and its target ground-truth answer. We study \emph{Blind Continual Knowledge Repair} under strict public/evaluator information isolation across four disjoint entity pools (v0.3: 140; v0.5: 52; v0.6: 50; v0.7-dev: 36) and two 3B architectures (\texttt{Qwen2.5-Omni-3B} and \texttt{Llama-3.2-3B-Instruct}). While structured evidence reconstruction outperforms generative baselines in single-target blind repair ($+23$--$53$~pp) and eliminates known wrong pseudo-label writes across 3B families ($0/22$ in v0.5), moving to \emph{true sequential multi-target continual repair} on a single shared damaged checkpoint exposes a sharp safety bottleneck: even under gold Oracle supervision ($8$ sequential \texttt{standard\_kl} LoRA merges, verified via isolated fresh Python subprocesses with $0.00$ numerical merge drift), per-fact immutable auditing detects $1$--$3$ same-entity regressions masked by group-mean accuracy gains ($Y_{\text{strict}} = 0.0$) while general commonsense benchmarks report $0.0\%$ degradation. Through controlled causal diagnosis ($D_0$--$D_4$), we rule out evaluator noise, \texttt{bf16}/PEFT merge drift ($0.00\times 10^0$), and catastrophic forgetting of prior repairs ($\text{Forget}_t = 0.00$ across all 8 steps), isolating immediate high-norm per-step collateral regressions. Finally, a matched writer matrix ($W_0$--$W_5$, $T_4$) reveals a cautionary out-of-sample result: although balanced-option generic KL ($W_1$: $Y_{\text{strict}}=0.889$, $H_{\text{ever}}=0$) and relation+history KL ($W_4/T_4$: $Y_{\text{strict}}=0.778$, $H_{\text{ever}}=0$) pass strict zero-regression on the opened v0.6 replay episode, \emph{none} of $W_0, W_1, W_2, W_4$ generalize to zero same-entity regressions on a brand-new unseen 36-entity episode (\texttt{DEV-V7}: $15/15$ targets restored, yet $1$--$3$ regressions, $Y_{\text{strict}}=0.0$). Our results establish rigorous audit standards and demonstrate that soft KL regularization alone cannot guarantee per-fact safe continual knowledge restoration.
+\end{abstract}
+
+\section{Introduction}
+Parametric editors such as ROME~\cite{meng2022rome}, MEMIT~\cite{meng2023memit}, AlphaEdit~\cite{fang2025alphaedit}, GRACE~\cite{hartvigsen2023grace}, and WISE~\cite{wang2024wise} operate on oracle edit requests. We investigate the blind partial-observability regime: neither the corrupted targets nor their ground-truth answers are given, and repairs must be persisted continually into one shared model state.
+
+\section{Problem Formulation and Per-Fact Transition Auditing}
+We evaluate continual repair via per-fact non-netting state transitions across $M_0 \to M_1 \to \dots \to M_T$: target recovery $R_t$, active recovery $A_t$, previous-repair forgetting $\text{Forget}_t$, final and ever-occurred immutable harm ($H_{\text{new}}, H_{\text{ever}}$), non-target improvements $G$ (which are forbidden from offsetting $H_{\text{new}}$), and strict safe yield $Y_{\text{strict}} = R_{\text{final}} \cdot \mathbb{I}[\text{global\_safety} \land \text{fresh\_reload}]$.
+
+\section{Causal Failure Diagnosis ($D_0$--$D_4$)}
+On \texttt{Qwen2.5-Omni-3B} ($D=18$, $8$ Oracle targets, \texttt{OW-replay}):
+\begin{itemize}
+  \item $D_0$ (no-update): $H_{\text{new}}=0$, agreement $1.000$.
+  \item $D_1$ (no-op PEFT merge $1\times, 2\times, 4\times, 8\times$): exact SHA256 match, $\max \|\Delta W\|_F = 0.00$, $\max |\Delta w| = 0.00$, $H_{\text{new}}=0$.
+  \item $D_2$ (single-target from $M_0$): $8/8$ restored; $6/8$ incur $H_{\text{new}}=0$, whereas \texttt{cedar shoe tree} ($\|\Delta W\|_F=2.88$, $H_{\text{new}}=2$) and \texttt{slate chalkboard} ($\|\Delta W\|_F=3.25$, $H_{\text{new}}=2$) immediately induce collateral regressions.
+  \item $D_3$ (sequential $M_0 \to M_8$): $\text{Forget}_t = 0.00$ at all 8 steps ($16/18$ restored); harm jumps $0 \to 1$ precisely at step 4 (\texttt{cedar shoe tree}) and $1 \to 2$ at step 7 (\texttt{slate chalkboard}).
+  \item $D_4$ (matched 256-step joint edit): $14/18$ restored, $H_{\text{new}}=1$ ($Y_{\text{strict}}=0.0$).
+\end{itemize}
+
+\section{Matched Oracle Writer Matrix and Out-of-Sample Generalization}
+\begin{table}[t]
+\centering\small
+\caption{Matched 8-step Oracle writer matrix verified via isolated fresh Python subprocesses on \texttt{Qwen2.5-Omni-3B}: Episode 1 (\texttt{OW-replay}, $D=18$) vs.\ Episode 2 (unseen out-of-sample \texttt{DEV-V7}, 36 brand-new entities, $D=15$).}
+\begin{tabular}{l|rrrr|rrrr}
+\toprule
+ & \multicolumn{4}{c|}{\textbf{Ep.1: OW-replay ($D=18$)}} & \multicolumn{4}{c}{\textbf{Ep.2: Unseen DEV-V7 ($D=15$)}} \\
+Writer Branch & Rest. & $H_{\text{ever}}$ & SE-Reg & $Y_{\text{strict}}$ & Rest. & $H_{\text{ever}}$ & SE-Reg & $Y_{\text{strict}}$ \\
+\midrule
+$W_0$ (\texttt{standard\_kl}) & 16/18 & 2 & 1 & 0.000 & 15/15 & 1 & 1 & 0.000 \\
+$W_1$ (balanced generic KL) & 16/18 & \textbf{0} & \textbf{0} & \textbf{0.889} & 15/15 & 2 & 2 & 0.000 \\
+$W_2$ (public relation KL) & 14/18 & 1 & 0 & 0.000 & 15/15 & 5 & 3 & 0.000 \\
+$W_3$ (history replay) & 16/18 & 2 & 1 & 0.000 & \multicolumn{4}{c}{\texttt{NOT\_RUN}} \\
+$W_4$ ($W_2 + W_3$) & 14/18 & \textbf{0} & \textbf{0} & \textbf{0.778} & 15/15 & 2 & 1 & 0.000 \\
+$T_4$ ($W_4$ + public tx, 2 rb) & 14/18 & \textbf{0} & \textbf{0} & \textbf{0.778} & \multicolumn{4}{c}{\texttt{NOT\_RUN}} \\
+$W_5$ (joint + relation KL) & 14/18 & 0 & \textbf{0} & \textbf{0.778} & \multicolumn{4}{c}{\texttt{NOT\_RUN}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Crucially, while $W_1$ ($Y_{\text{strict}}=0.889$) and $W_4/T_4/W_5$ ($Y_{\text{strict}}=0.778$) pass strict zero-regression on Episode 1, \emph{none} of $W_0, W_1, W_2, W_4$ preserve zero same-entity regressions on unseen \texttt{DEV-V7} ($15/15$ restored, $1$--$3$ regressions, $Y_{\text{strict}}=0.0$).
+
+\section{Limitations and Future Work}
+Open-relation transfer (CounterFact/zsRE), mixed-fine-tuning damage ($D_3$), and hard-constrained/parameter-isolated continual writers (e.g., exact null-space projection or discrete routing) remain open directions (\texttt{NOT\_RUN} in Batch C1).
+
+\section*{AI Usage Disclosure}
+Logged in \texttt{docs/v7/AI\_USAGE\_LOG.md}. Human author verification is required prior to submission.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}

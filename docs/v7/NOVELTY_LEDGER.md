@@ -1,0 +1,13 @@
+# KRMM v0.7 Novelty & Continual-Editing Literature Ledger (`NOVELTY_LEDGER.md`)
+
+Verification date: `2026-11-25` (incorporating Section 12.1 verified conference pages + v0.6 ledger).
+
+| Work & Venue | Verified URL | Core Setting | Overlap & Falsifiable Distinction vs KRMM v0.7 |
+|---|---|---|---|
+| **GRACE** (NeurIPS 2023) | `proceedings.neurips.cc/paper_files/paper/2023/hash/95b6e2ff...` | Lifelong editing with discrete key-value adaptors on known requests | Maintains external discrete codebook for *known* edit requests; KRMM studies blind internal-only repair into merged weights under unknown targets/answers. |
+| **WISE** (NeurIPS 2024) | `proceedings.neurips.cc/paper_files/paper/2024/hash/60960ad7...` | Dual parametric memory for lifelong known edit requests | Addresses reliability/generalization/locality conflict for *known* edits; KRMM isolates blind identifiability, unknown-entity hallucination, and per-fact same-entity regression without dual-memory routing. |
+| **AlphaEdit** (ICLR 2025) | `proceedings.iclr.cc/paper_files/paper/2025/hash/29c8c615...` | Null-space constrained editing for known requests | Null-space projection is NOT claimed as KRMM's novelty; KRMM focuses on blind partial observability and relation-specific retain under per-fact zero-regression auditing. |
+| **Model Editing at Scale leads to Gradual and Catastrophic Forgetting** (Findings ACL 2024) | `aclanthology.org/2024.findings-acl.902/` | Sequential ROME/MEMIT forgetting | Sequential forgetting in known editing is already established; KRMM does NOT claim first discovery of sequential forgetting, but exposes *same-entity letter-bias bleed masked by group-mean accuracy* in blind continual repair. |
+| **EvoEdit** (Findings ACL 2026) | `aclanthology.org/2026.findings-acl.75/` | Evolving null-space alignment for sequential editing | Mitigates sequential interference via dynamic null-space alignment for known edits; KRMM compares relation-specific retain vs generic-count matched retain under blind repair constraints. |
+| **More Edits, More Stable** (ICML 2026) | `proceedings.mlr.press/v306/ma26f.html` | Lifelong normalization in sequential editing | Studies normalization stability in sequential editing; complementary to KRMM's per-fact immutable transition auditing and blind identifiability. |
+| **SEA** (COLM 2025) / **Edit Detection** (NAACL 2025) / **ThinkEval** (TMLR 2026) / **Self-Rewriting** (arXiv:2611.21885) | Verified in v0.6 `NOVELTY_LEDGER.md` | Deficiency discovery / edit detection / residual leakage / self-rewriting | KRMM's distinct scope: strict public/evaluator isolation, per-fact non-netting continual transition audit, and joint analysis of interference + unknown-entity identifiability. |

@@ -1,0 +1,783 @@
+{
+  "m0_sha256": "6df2e427b7b9bd6f341b51ae5ef892ce53a3c7fbf71f97fec586bbc7c5fa90ef",
+  "denominator_D": 18,
+  "ow_pilot_pass": true,
+  "ow_pilot_passing_writers": [
+    "W1_generic_matched",
+    "W4_relation_plus_history",
+    "T4_W4_public_transaction",
+    "W5_joint_with_relation"
+  ],
+  "branches": {
+    "W0_standard_kl": {
+      "n_committed": 8,
+      "n_rollbacks": 0,
+      "total_train_steps": 256,
+      "sum_effective_delta_w_frobenius": 13.719670217820749,
+      "inproc_metrics": {
+        "Y_strict": 0.0,
+        "Y_active": 0.0,
+        "R_final": 0.8888888888888888,
+        "A_final": 0.4444444444444444,
+        "restored_count": 16,
+        "oracle_8_restored": 8,
+        "H_new_final": 1,
+        "H_ever_total": 2,
+        "G_final_non_target": 8,
+        "max_Forget_t": 0.0,
+        "final_global_safety_pass": false,
+        "same_entity_regs_final": [
+          {
+            "fact_idx": 29,
+            "entity_id": "halibut",
+            "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only.",
+            "first_harm_step": 4
+          }
+        ],
+        "first_harm_by_fact": {
+          "29": {
+            "step": 4,
+            "entity_id": "halibut",
+            "kind": "same_entity_other_relation",
+            "question": "Does a halibut breathe underwater using gills?"
+          },
+          "35": {
+            "step": 4,
+            "entity_id": "barracuda",
+            "kind": "same_entity_other_relation",
+            "question": "Does a barracuda extract oxygen from water via gills?"
+          }
+        }
+      },
+      "step_details": [
+        {
+          "step": 1,
+          "entity_id": "polystyrene foam cooler",
+          "rolled_back": false,
+          "dw_frob": 2.4901989071018704,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 2,
+          "entity_id": "plexiglass display case",
+          "rolled_back": false,
+          "dw_frob": 1.2111554795617212,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 3,
+          "entity_id": "titanium watch case",
+          "rolled_back": false,
+          "dw_frob": 1.880324516988879,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 4,
+          "entity_id": "cedar shoe tree",
+          "rolled_back": false,
+          "dw_frob": 2.6264556593031556,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 5,
+          "entity_id": "meerkat",
+          "rolled_back": false,
+          "dw_frob": 1.1024179208591556,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 6,
+          "entity_id": "narwhal",
+          "rolled_back": false,
+          "dw_frob": 1.8534039507617948,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 7,
+          "entity_id": "slate chalkboard",
+          "rolled_back": false,
+          "dw_frob": 1.9167966428057641,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 8,
+          "entity_id": "halibut",
+          "rolled_back": false,
+          "dw_frob": 0.6389171404384081,
+          "monitor": {
+            "passed": true
+          }
+        }
+      ],
+      "fresh_subprocess": {
+        "fresh_reload_passed": true,
+        "strict_locality_pass": false,
+        "oracle_8_restored": 8,
+        "restored_D": 16,
+        "same_entity_regressions_count": 1,
+        "overall_token_agreement": 0.9021739130434783,
+        "Y_strict_fresh": 0.0
+      }
+    },
+    "W1_generic_matched": {
+      "n_committed": 8,
+      "n_rollbacks": 0,
+      "total_train_steps": 256,
+      "sum_effective_delta_w_frobenius": 14.263768870881332,
+      "inproc_metrics": {
+        "Y_strict": 0.8888888888888888,
+        "Y_active": 0.4444444444444444,
+        "R_final": 0.8888888888888888,
+        "A_final": 0.4444444444444444,
+        "restored_count": 16,
+        "oracle_8_restored": 8,
+        "H_new_final": 0,
+        "H_ever_total": 0,
+        "G_final_non_target": 8,
+        "max_Forget_t": 0.0,
+        "final_global_safety_pass": true,
+        "same_entity_regs_final": [],
+        "first_harm_by_fact": {}
+      },
+      "step_details": [
+        {
+          "step": 1,
+          "entity_id": "polystyrene foam cooler",
+          "rolled_back": false,
+          "dw_frob": 2.416451204714353,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 2,
+          "entity_id": "plexiglass display case",
+          "rolled_back": false,
+          "dw_frob": 1.6908517776388525,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 3,
+          "entity_id": "titanium watch case",
+          "rolled_back": false,
+          "dw_frob": 1.7960490834597547,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 4,
+          "entity_id": "cedar shoe tree",
+          "rolled_back": false,
+          "dw_frob": 2.1339069772532344,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 5,
+          "entity_id": "meerkat",
+          "rolled_back": false,
+          "dw_frob": 1.3996519321802008,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 6,
+          "entity_id": "narwhal",
+          "rolled_back": false,
+          "dw_frob": 1.9544030611024727,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 7,
+          "entity_id": "slate chalkboard",
+          "rolled_back": false,
+          "dw_frob": 2.0676073426539494,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 8,
+          "entity_id": "halibut",
+          "rolled_back": false,
+          "dw_frob": 0.8048474918785157,
+          "monitor": {
+            "passed": true
+          }
+        }
+      ],
+      "fresh_subprocess": {
+        "fresh_reload_passed": true,
+        "strict_locality_pass": true,
+        "oracle_8_restored": 8,
+        "restored_D": 16,
+        "same_entity_regressions_count": 0,
+        "overall_token_agreement": 0.9130434782608695,
+        "Y_strict_fresh": 0.8888888888888888
+      }
+    },
+    "W2_relation_retain": {
+      "n_committed": 8,
+      "n_rollbacks": 0,
+      "total_train_steps": 256,
+      "sum_effective_delta_w_frobenius": 16.184889461063012,
+      "inproc_metrics": {
+        "Y_strict": 0.0,
+        "Y_active": 0.0,
+        "R_final": 0.7777777777777778,
+        "A_final": 0.4444444444444444,
+        "restored_count": 14,
+        "oracle_8_restored": 8,
+        "H_new_final": 1,
+        "H_ever_total": 1,
+        "G_final_non_target": 8,
+        "max_Forget_t": 0.09090909090909091,
+        "final_global_safety_pass": false,
+        "same_entity_regs_final": [],
+        "first_harm_by_fact": {
+          "74": {
+            "step": 8,
+            "entity_id": "__general__",
+            "kind": "general_commonsense",
+            "question": "What is 17 plus 26?"
+          }
+        }
+      },
+      "step_details": [
+        {
+          "step": 1,
+          "entity_id": "polystyrene foam cooler",
+          "rolled_back": false,
+          "dw_frob": 2.539059968808986,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 2,
+          "entity_id": "plexiglass display case",
+          "rolled_back": false,
+          "dw_frob": 1.4945200460480572,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 3,
+          "entity_id": "titanium watch case",
+          "rolled_back": false,
+          "dw_frob": 2.6278406967471803,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 4,
+          "entity_id": "cedar shoe tree",
+          "rolled_back": false,
+          "dw_frob": 2.299344867868668,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 5,
+          "entity_id": "meerkat",
+          "rolled_back": false,
+          "dw_frob": 1.852099104505618,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 6,
+          "entity_id": "narwhal",
+          "rolled_back": false,
+          "dw_frob": 2.4221172944438765,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 7,
+          "entity_id": "slate chalkboard",
+          "rolled_back": false,
+          "dw_frob": 1.6695539227796699,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 8,
+          "entity_id": "halibut",
+          "rolled_back": false,
+          "dw_frob": 1.2803535598609543,
+          "monitor": {
+            "passed": true
+          }
+        }
+      ],
+      "fresh_subprocess": {
+        "fresh_reload_passed": true,
+        "strict_locality_pass": false,
+        "oracle_8_restored": 8,
+        "restored_D": 14,
+        "same_entity_regressions_count": 0,
+        "overall_token_agreement": 0.8913043478260869,
+        "Y_strict_fresh": 0.0
+      }
+    },
+    "W3_history_replay": {
+      "n_committed": 8,
+      "n_rollbacks": 0,
+      "total_train_steps": 256,
+      "sum_effective_delta_w_frobenius": 13.609917662909272,
+      "inproc_metrics": {
+        "Y_strict": 0.0,
+        "Y_active": 0.0,
+        "R_final": 0.8888888888888888,
+        "A_final": 0.4444444444444444,
+        "restored_count": 16,
+        "oracle_8_restored": 8,
+        "H_new_final": 1,
+        "H_ever_total": 2,
+        "G_final_non_target": 8,
+        "max_Forget_t": 0.09090909090909091,
+        "final_global_safety_pass": false,
+        "same_entity_regs_final": [
+          {
+            "fact_idx": 29,
+            "entity_id": "halibut",
+            "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only.",
+            "first_harm_step": 4
+          }
+        ],
+        "first_harm_by_fact": {
+          "29": {
+            "step": 4,
+            "entity_id": "halibut",
+            "kind": "same_entity_other_relation",
+            "question": "Does a halibut breathe underwater using gills?"
+          },
+          "35": {
+            "step": 7,
+            "entity_id": "barracuda",
+            "kind": "same_entity_other_relation",
+            "question": "Does a barracuda extract oxygen from water via gills?"
+          }
+        }
+      },
+      "step_details": [
+        {
+          "step": 1,
+          "entity_id": "polystyrene foam cooler",
+          "rolled_back": false,
+          "dw_frob": 2.521592064299081,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 2,
+          "entity_id": "plexiglass display case",
+          "rolled_back": false,
+          "dw_frob": 1.4740344076788452,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 3,
+          "entity_id": "titanium watch case",
+          "rolled_back": false,
+          "dw_frob": 1.8561410121438606,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 4,
+          "entity_id": "cedar shoe tree",
+          "rolled_back": false,
+          "dw_frob": 2.33732518696872,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 5,
+          "entity_id": "meerkat",
+          "rolled_back": false,
+          "dw_frob": 0.9973674387650407,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 6,
+          "entity_id": "narwhal",
+          "rolled_back": false,
+          "dw_frob": 1.8429580711253672,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 7,
+          "entity_id": "slate chalkboard",
+          "rolled_back": false,
+          "dw_frob": 1.8354330929386928,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 8,
+          "entity_id": "halibut",
+          "rolled_back": false,
+          "dw_frob": 0.7450663889896628,
+          "monitor": {
+            "passed": true
+          }
+        }
+      ],
+      "fresh_subprocess": {
+        "fresh_reload_passed": true,
+        "strict_locality_pass": false,
+        "oracle_8_restored": 8,
+        "restored_D": 16,
+        "same_entity_regressions_count": 1,
+        "overall_token_agreement": 0.8913043478260869,
+        "Y_strict_fresh": 0.0
+      }
+    },
+    "W4_relation_plus_history": {
+      "n_committed": 8,
+      "n_rollbacks": 0,
+      "total_train_steps": 256,
+      "sum_effective_delta_w_frobenius": 15.793449008491214,
+      "inproc_metrics": {
+        "Y_strict": 0.7777777777777778,
+        "Y_active": 0.4444444444444444,
+        "R_final": 0.7777777777777778,
+        "A_final": 0.4444444444444444,
+        "restored_count": 14,
+        "oracle_8_restored": 8,
+        "H_new_final": 0,
+        "H_ever_total": 0,
+        "G_final_non_target": 8,
+        "max_Forget_t": 0.0,
+        "final_global_safety_pass": true,
+        "same_entity_regs_final": [],
+        "first_harm_by_fact": {}
+      },
+      "step_details": [
+        {
+          "step": 1,
+          "entity_id": "polystyrene foam cooler",
+          "rolled_back": false,
+          "dw_frob": 2.5858771337229483,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 2,
+          "entity_id": "plexiglass display case",
+          "rolled_back": false,
+          "dw_frob": 1.5820926254508134,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 3,
+          "entity_id": "titanium watch case",
+          "rolled_back": false,
+          "dw_frob": 2.1453282467575248,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 4,
+          "entity_id": "cedar shoe tree",
+          "rolled_back": false,
+          "dw_frob": 2.4277046220585823,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 5,
+          "entity_id": "meerkat",
+          "rolled_back": false,
+          "dw_frob": 1.764498984176897,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 6,
+          "entity_id": "narwhal",
+          "rolled_back": false,
+          "dw_frob": 2.5227732068041537,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 7,
+          "entity_id": "slate chalkboard",
+          "rolled_back": false,
+          "dw_frob": 1.5859672023800895,
+          "monitor": {
+            "passed": true
+          }
+        },
+        {
+          "step": 8,
+          "entity_id": "halibut",
+          "rolled_back": false,
+          "dw_frob": 1.179206987140206,
+          "monitor": {
+            "passed": true
+          }
+        }
+      ],
+      "fresh_subprocess": {
+        "fresh_reload_passed": true,
+        "strict_locality_pass": true,
+        "oracle_8_restored": 8,
+        "restored_D": 14,
+        "same_entity_regressions_count": 0,
+        "overall_token_agreement": 0.9021739130434783,
+        "Y_strict_fresh": 0.7777777777777778
+      }
+    },
+    "T4_W4_public_transaction": {
+      "n_committed": 6,
+      "n_rollbacks": 2,
+      "total_train_steps": 256,
+      "sum_effective_delta_w_frobenius": 12.751539180590557,
+      "inproc_metrics": {
+        "Y_strict": 0.7777777777777778,
+        "Y_active": 0.3333333333333333,
+        "R_final": 0.7777777777777778,
+        "A_final": 0.3333333333333333,
+        "restored_count": 14,
+        "oracle_8_restored": 8,
+        "H_new_final": 0,
+        "H_ever_total": 0,
+        "G_final_non_target": 8,
+        "max_Forget_t": 0.125,
+        "final_global_safety_pass": true,
+        "same_entity_regs_final": [],
+        "first_harm_by_fact": {}
+      },
+      "step_details": [
+        {
+          "step": 1,
+          "entity_id": "polystyrene foam cooler",
+          "rolled_back": true,
+          "dw_frob": 2.4931358059527553,
+          "monitor": {
+            "passed": false,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 1.0,
+            "target_self_ok": true,
+            "rel_checked": 4,
+            "rel_flips": 1,
+            "hist_checked": 0,
+            "hist_flips": 0,
+            "reasons": [
+              "public_relation_monitor_flip(1/4)"
+            ]
+          }
+        },
+        {
+          "step": 2,
+          "entity_id": "plexiglass display case",
+          "rolled_back": true,
+          "dw_frob": 2.5072111820284184,
+          "monitor": {
+            "passed": false,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 0.9821428571428571,
+            "target_self_ok": true,
+            "rel_checked": 4,
+            "rel_flips": 1,
+            "hist_checked": 0,
+            "hist_flips": 0,
+            "reasons": [
+              "public_relation_monitor_flip(1/4)"
+            ]
+          }
+        },
+        {
+          "step": 3,
+          "entity_id": "titanium watch case",
+          "rolled_back": false,
+          "dw_frob": 3.3439227816649537,
+          "monitor": {
+            "passed": true,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 0.9821428571428571,
+            "target_self_ok": true,
+            "rel_checked": 4,
+            "rel_flips": 0,
+            "hist_checked": 0,
+            "hist_flips": 0,
+            "reasons": []
+          }
+        },
+        {
+          "step": 4,
+          "entity_id": "cedar shoe tree",
+          "rolled_back": false,
+          "dw_frob": 2.674310135677672,
+          "monitor": {
+            "passed": true,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 0.9821428571428571,
+            "target_self_ok": true,
+            "rel_checked": 5,
+            "rel_flips": 0,
+            "hist_checked": 1,
+            "hist_flips": 0,
+            "reasons": []
+          }
+        },
+        {
+          "step": 5,
+          "entity_id": "meerkat",
+          "rolled_back": false,
+          "dw_frob": 1.6050025461702986,
+          "monitor": {
+            "passed": true,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 0.9821428571428571,
+            "target_self_ok": true,
+            "rel_checked": 6,
+            "rel_flips": 0,
+            "hist_checked": 2,
+            "hist_flips": 0,
+            "reasons": []
+          }
+        },
+        {
+          "step": 6,
+          "entity_id": "narwhal",
+          "rolled_back": false,
+          "dw_frob": 2.2932296221434565,
+          "monitor": {
+            "passed": true,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 0.9821428571428571,
+            "target_self_ok": true,
+            "rel_checked": 5,
+            "rel_flips": 0,
+            "hist_checked": 3,
+            "hist_flips": 0,
+            "reasons": []
+          }
+        },
+        {
+          "step": 7,
+          "entity_id": "slate chalkboard",
+          "rolled_back": false,
+          "dw_frob": 1.7866297047203883,
+          "monitor": {
+            "passed": true,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 0.9821428571428571,
+            "target_self_ok": true,
+            "rel_checked": 3,
+            "rel_flips": 0,
+            "hist_checked": 4,
+            "hist_flips": 0,
+            "reasons": []
+          }
+        },
+        {
+          "step": 8,
+          "entity_id": "halibut",
+          "rolled_back": false,
+          "dw_frob": 1.0484443902137872,
+          "monitor": {
+            "passed": true,
+            "monitor_mode": "relation_and_history",
+            "public_retain_agreement": 0.9821428571428571,
+            "target_self_ok": true,
+            "rel_checked": 6,
+            "rel_flips": 0,
+            "hist_checked": 5,
+            "hist_flips": 0,
+            "reasons": []
+          }
+        }
+      ],
+      "fresh_subprocess": {
+        "fresh_reload_passed": true,
+        "strict_locality_pass": true,
+        "oracle_8_restored": 8,
+        "restored_D": 14,
+        "same_entity_regressions_count": 0,
+        "overall_token_agreement": 0.9130434782608695,
+        "Y_strict_fresh": 0.7777777777777778
+      }
+    },
+    "W5_joint_with_relation": {
+      "n_committed": 1,
+      "n_rollbacks": 0,
+      "total_train_steps": 256,
+      "sum_effective_delta_w_frobenius": 6.824743866504492,
+      "inproc_metrics": {
+        "Y_strict": 0.7777777777777778,
+        "Y_active": 0.4444444444444444,
+        "R_final": 0.7777777777777778,
+        "A_final": 0.4444444444444444,
+        "restored_count": 14,
+        "oracle_8_restored": 8,
+        "H_new_final": 0,
+        "H_ever_total": 0,
+        "G_final_non_target": 6,
+        "max_Forget_t": 0.0,
+        "final_global_safety_pass": true,
+        "same_entity_regs_final": [],
+        "first_harm_by_fact": {}
+      },
+      "fresh_subprocess": {
+        "fresh_reload_passed": true,
+        "strict_locality_pass": true,
+        "oracle_8_restored": 8,
+        "restored_D": 14,
+        "same_entity_regressions_count": 0,
+        "overall_token_agreement": 0.9347826086956522,
+        "Y_strict_fresh": 0.7777777777777778
+      }
+    }
+  },
+  "elapsed_seconds": 1344.2706091403961
+}

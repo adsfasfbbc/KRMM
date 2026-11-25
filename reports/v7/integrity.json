@@ -1,0 +1,668 @@
+{
+  "base_ref": "bdb628a",
+  "full_commit_sha": "bdb628a27feb5a41f8fa1676e5f9eeef9ed81f2b",
+  "parent_commit_sha": "7a41d02a0b7cfa226d8ef7bc47e13d5402d44c1f",
+  "v5_frozen_parent_verified": true,
+  "pilot_manifest_sha256": "d1bfa042d702ea7bb928f507afbdaf581669edcf66efbbac214ca8101291216d",
+  "qwen_g1_D": 19,
+  "llama_g1_D": 10,
+  "qwen_g2a_cand_gen": {
+    "generative_accuracy": 0.21052631578947367,
+    "structured_accuracy_overall": 0.7368421052631579,
+    "structured_coverage": 0.8421052631578947
+  },
+  "forensics": {
+    "qwen_Oracle_upper_bound": {
+      "n_actions": 8,
+      "written_entities": [
+        "a3d4210ba4a126ef",
+        "3ff749c3c5330103",
+        "3d1615368c76ea9a",
+        "802b35e3528ffaff",
+        "dde18d9be281c752",
+        "295e768bde818c9d",
+        "4cfe7b43ba8a3c07",
+        "bb026e876fc737e3"
+      ],
+      "strict_locality_pass": false,
+      "overall_token_agreement": 0.8369565217391305,
+      "by_group": {
+        "same_entity_other_relation": {
+          "n": 72,
+          "before_acc": 0.8194444444444444,
+          "after_acc": 0.9305555555555556,
+          "acc_drop": -0.11111111111111116,
+          "correct_to_wrong": 3,
+          "wrong_to_correct": 11,
+          "token_agreement": 0.8055555555555556,
+          "passed": false
+        },
+        "general_commonsense": {
+          "n": 20,
+          "before_acc": 0.8,
+          "after_acc": 0.8,
+          "acc_drop": 0.0,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 0,
+          "token_agreement": 0.95,
+          "passed": true
+        }
+      },
+      "same_entity_regressions": [
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        },
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        }
+      ],
+      "written_entity_names": [
+        "polystyrene foam cooler (everyday_material)",
+        "titanium watch case (everyday_material)",
+        "cedar shoe tree (everyday_material)",
+        "mahogany chess board (everyday_material)",
+        "narwhal (vertebrate_class)",
+        "slate chalkboard (everyday_material)",
+        "halibut (vertebrate_class)",
+        "barracuda (vertebrate_class)"
+      ],
+      "regressions_on_written_entities": [
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        }
+      ],
+      "regressions_on_unwritten_entities": [
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        }
+      ]
+    },
+    "qwen_M_evidence_gated": {
+      "n_actions": 11,
+      "written_entities": [
+        "dfc61806c0fb76fc",
+        "7a864ea1773a43b1",
+        "42445ae94c5869ac",
+        "200f6504805cb37a",
+        "802b35e3528ffaff",
+        "4cfe7b43ba8a3c07",
+        "58df120a86bf1ebd",
+        "dd45b0f75a98080e"
+      ],
+      "strict_locality_pass": false,
+      "overall_token_agreement": 0.8152173913043478,
+      "by_group": {
+        "same_entity_other_relation": {
+          "n": 72,
+          "before_acc": 0.8194444444444444,
+          "after_acc": 0.7083333333333334,
+          "acc_drop": 0.11111111111111105,
+          "correct_to_wrong": 11,
+          "wrong_to_correct": 3,
+          "token_agreement": 0.7916666666666666,
+          "passed": false
+        },
+        "general_commonsense": {
+          "n": 20,
+          "before_acc": 0.8,
+          "after_acc": 0.8,
+          "acc_drop": 0.0,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 0,
+          "token_agreement": 0.9,
+          "passed": true
+        }
+      },
+      "same_entity_regressions": [
+        {
+          "entity_id": "oud",
+          "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabla",
+          "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "ocarina",
+          "question": "Does an ocarina produce sound via a vibrating enclosed body of air?\nA: Yes\nB: No, stretched strings\nC: No, struck membrane\nD: No, struck metal plate\nReply with one letter only."
+        },
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        },
+        {
+          "entity_id": "koto",
+          "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "steelpan",
+          "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only."
+        },
+        {
+          "entity_id": "claves",
+          "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "erhu",
+          "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only."
+        }
+      ],
+      "written_entity_names": [
+        "koto (sound_source_mechanism)",
+        "hybrid wind-string drone box (sound_source_mechanism)",
+        "surdo drum (sound_source_mechanism)",
+        "tabor drum (sound_source_mechanism)",
+        "mahogany chess board (everyday_material)",
+        "halibut (vertebrate_class)",
+        "nylon backpack (everyday_material)",
+        "ocarina (sound_source_mechanism)"
+      ],
+      "regressions_on_written_entities": [
+        {
+          "entity_id": "ocarina",
+          "question": "Does an ocarina produce sound via a vibrating enclosed body of air?\nA: Yes\nB: No, stretched strings\nC: No, struck membrane\nD: No, struck metal plate\nReply with one letter only."
+        },
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "koto",
+          "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only."
+        }
+      ],
+      "regressions_on_unwritten_entities": [
+        {
+          "entity_id": "oud",
+          "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabla",
+          "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        },
+        {
+          "entity_id": "steelpan",
+          "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only."
+        },
+        {
+          "entity_id": "claves",
+          "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "erhu",
+          "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        }
+      ]
+    },
+    "qwen_M_full": {
+      "n_actions": 10,
+      "written_entities": [
+        "dfc61806c0fb76fc",
+        "7a864ea1773a43b1",
+        "42445ae94c5869ac",
+        "200f6504805cb37a",
+        "802b35e3528ffaff",
+        "ca090a0b27cef3c3",
+        "4cfe7b43ba8a3c07",
+        "58df120a86bf1ebd"
+      ],
+      "strict_locality_pass": false,
+      "overall_token_agreement": 0.8369565217391305,
+      "by_group": {
+        "same_entity_other_relation": {
+          "n": 72,
+          "before_acc": 0.8194444444444444,
+          "after_acc": 0.7083333333333334,
+          "acc_drop": 0.11111111111111105,
+          "correct_to_wrong": 10,
+          "wrong_to_correct": 2,
+          "token_agreement": 0.8194444444444444,
+          "passed": false
+        },
+        "general_commonsense": {
+          "n": 20,
+          "before_acc": 0.8,
+          "after_acc": 0.8,
+          "acc_drop": 0.0,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 0,
+          "token_agreement": 0.9,
+          "passed": true
+        }
+      },
+      "same_entity_regressions": [
+        {
+          "entity_id": "oud",
+          "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabla",
+          "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        },
+        {
+          "entity_id": "koto",
+          "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "steelpan",
+          "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only."
+        },
+        {
+          "entity_id": "claves",
+          "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "erhu",
+          "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only."
+        }
+      ],
+      "written_entity_names": [
+        "koto (sound_source_mechanism)",
+        "hybrid wind-string drone box (sound_source_mechanism)",
+        "surdo drum (sound_source_mechanism)",
+        "tabor drum (sound_source_mechanism)",
+        "mahogany chess board (everyday_material)",
+        "toucan (vertebrate_class)",
+        "halibut (vertebrate_class)",
+        "nylon backpack (everyday_material)"
+      ],
+      "regressions_on_written_entities": [
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "koto",
+          "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only."
+        }
+      ],
+      "regressions_on_unwritten_entities": [
+        {
+          "entity_id": "oud",
+          "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabla",
+          "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        },
+        {
+          "entity_id": "steelpan",
+          "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only."
+        },
+        {
+          "entity_id": "claves",
+          "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "erhu",
+          "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        }
+      ]
+    },
+    "qwen_B1_generative": {
+      "n_actions": 8,
+      "written_entities": [
+        "dfc61806c0fb76fc",
+        "7a864ea1773a43b1",
+        "42445ae94c5869ac",
+        "200f6504805cb37a",
+        "d4f66e0ab69b2402",
+        "802b35e3528ffaff",
+        "ca090a0b27cef3c3",
+        "ba69e40b507bf6a6"
+      ],
+      "strict_locality_pass": false,
+      "overall_token_agreement": 0.7934782608695652,
+      "by_group": {
+        "same_entity_other_relation": {
+          "n": 72,
+          "before_acc": 0.8194444444444444,
+          "after_acc": 0.5972222222222222,
+          "acc_drop": 0.2222222222222222,
+          "correct_to_wrong": 16,
+          "wrong_to_correct": 0,
+          "token_agreement": 0.7638888888888888,
+          "passed": false
+        },
+        "general_commonsense": {
+          "n": 20,
+          "before_acc": 0.8,
+          "after_acc": 0.8,
+          "acc_drop": 0.0,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 0,
+          "token_agreement": 0.9,
+          "passed": true
+        }
+      },
+      "same_entity_regressions": [
+        {
+          "entity_id": "didgeridoo",
+          "question": "Does a didgeridoo produce its drone through vibrating lips exciting an air column in a hollow tube?\nA: Yes\nB: No, bowed strings\nC: No, struck skin drum\nD: No, struck metal triangle\nReply with one letter only."
+        },
+        {
+          "entity_id": "oud",
+          "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabla",
+          "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        },
+        {
+          "entity_id": "koto",
+          "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "steelpan",
+          "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only."
+        },
+        {
+          "entity_id": "claves",
+          "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "flamingo",
+          "question": "Does a flamingo have feathered wings and a curved bill?\nA: Yes\nB: No, it swims with gills\nC: No, it slithers on scales\nD: No, it has four paws\nReply with one letter only."
+        },
+        {
+          "entity_id": "walnut picture frame",
+          "question": "Does walnut lumber come from hardwood trees?\nA: Yes\nB: No, smelted iron\nC: No, petroleum refinery\nD: No, volcanic glass\nReply with one letter only."
+        },
+        {
+          "entity_id": "surdo drum",
+          "question": "Does a surdo drum generate its deep pulse from striking a taut stretched head with a mallet?\nA: Yes\nB: No, blowing through reeds\nC: No, plucking nylon strings\nD: No, shaking maracas\nReply with one letter only."
+        },
+        {
+          "entity_id": "erhu",
+          "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "bearded dragon",
+          "question": "Is a bearded dragon covered in spiny dry scales?\nA: Yes\nB: No, feathers\nC: No, woolly fur\nD: No, smooth fish fins\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "How was a medieval European tabor drum traditionally played?\nA: Hung from the arm and struck on its taut drumhead with a single stick\nB: Blown like a flute\nC: Bowed with horsehair\nD: Struck as a solid iron bell\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only."
+        }
+      ],
+      "written_entity_names": [
+        "koto (sound_source_mechanism)",
+        "hybrid wind-string drone box (sound_source_mechanism)",
+        "surdo drum (sound_source_mechanism)",
+        "tabor drum (sound_source_mechanism)",
+        "nordic glass-trout (vertebrate_class)",
+        "mahogany chess board (everyday_material)",
+        "toucan (vertebrate_class)",
+        "thalenite spice tray (everyday_material)"
+      ],
+      "regressions_on_written_entities": [
+        {
+          "entity_id": "koto",
+          "question": "Does a koto produce sound via plucked silk or nylon stretched strings over movable bridges?\nA: Yes\nB: No, blown bamboo tube\nC: No, struck membrane\nD: No, metal chime bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "surdo drum",
+          "question": "Does a surdo drum generate its deep pulse from striking a taut stretched head with a mallet?\nA: Yes\nB: No, blowing through reeds\nC: No, plucking nylon strings\nD: No, shaking maracas\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "How was a medieval European tabor drum traditionally played?\nA: Hung from the arm and struck on its taut drumhead with a single stick\nB: Blown like a flute\nC: Bowed with horsehair\nD: Struck as a solid iron bell\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabor drum",
+          "question": "Does a tabor drum produce sound from a struck stretched skin membrane?\nA: Yes\nB: No, blown flute tube\nC: No, bowed strings\nD: No, struck iron bell\nReply with one letter only."
+        }
+      ],
+      "regressions_on_unwritten_entities": [
+        {
+          "entity_id": "didgeridoo",
+          "question": "Does a didgeridoo produce its drone through vibrating lips exciting an air column in a hollow tube?\nA: Yes\nB: No, bowed strings\nC: No, struck skin drum\nD: No, struck metal triangle\nReply with one letter only."
+        },
+        {
+          "entity_id": "oud",
+          "question": "Does an oud produce sound primarily from vibrating stretched strings?\nA: Yes\nB: No, vibrating air column\nC: No, stretched drumhead\nD: No, solid bronze gong\nReply with one letter only."
+        },
+        {
+          "entity_id": "tabla",
+          "question": "Does a tabla produce sound from vibrating stretched membranes?\nA: Yes\nB: No, blown air column\nC: No, stretched strings\nD: No, solid metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "halibut",
+          "question": "Does a halibut breathe underwater using gills?\nA: Yes\nB: No, lungs\nC: No, beak and feathers\nD: No, dry lizard scales\nReply with one letter only."
+        },
+        {
+          "entity_id": "barracuda",
+          "question": "Does a barracuda extract oxygen from water via gills?\nA: Yes\nB: No, mammal lungs\nC: No, bird air sacs\nD: No, reptile lungs\nReply with one letter only."
+        },
+        {
+          "entity_id": "steelpan",
+          "question": "Does a steelpan produce pitched notes from vibrating hammered solid steel metal?\nA: Yes\nB: No, stretched animal skin\nC: No, blown air column\nD: No, stretched strings\nReply with one letter only."
+        },
+        {
+          "entity_id": "claves",
+          "question": "Do claves produce sound from the vibration of their own solid hardwood bodies?\nA: Yes\nB: No, stretched drumhead\nC: No, vibrating strings\nD: No, blown air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "flamingo",
+          "question": "Does a flamingo have feathered wings and a curved bill?\nA: Yes\nB: No, it swims with gills\nC: No, it slithers on scales\nD: No, it has four paws\nReply with one letter only."
+        },
+        {
+          "entity_id": "walnut picture frame",
+          "question": "Does walnut lumber come from hardwood trees?\nA: Yes\nB: No, smelted iron\nC: No, petroleum refinery\nD: No, volcanic glass\nReply with one letter only."
+        },
+        {
+          "entity_id": "erhu",
+          "question": "Does an erhu generate sound primarily from vibrating bowed strings?\nA: Yes\nB: No, vibrating air column\nC: No, struck drumhead\nD: No, struck metal bars\nReply with one letter only."
+        },
+        {
+          "entity_id": "kalimba",
+          "question": "Does a kalimba produce sound from the vibration of its own solid metal tines?\nA: Yes\nB: No, stretched drumhead\nC: No, stretched strings\nD: No, vibrating air column\nReply with one letter only."
+        },
+        {
+          "entity_id": "bearded dragon",
+          "question": "Is a bearded dragon covered in spiny dry scales?\nA: Yes\nB: No, feathers\nC: No, woolly fur\nD: No, smooth fish fins\nReply with one letter only."
+        }
+      ]
+    },
+    "llama_Oracle_upper_bound": {
+      "n_actions": 8,
+      "written_entities": [
+        "8c8843a91343f62c",
+        "3ff749c3c5330103",
+        "3d1615368c76ea9a",
+        "aec0819ffccd75ef",
+        "bd14d9bd22b587ed",
+        "bb026e876fc737e3",
+        "ca090a0b27cef3c3",
+        "e0ecfd4ddea6358f"
+      ],
+      "strict_locality_pass": false,
+      "overall_token_agreement": 0.8586956521739131,
+      "by_group": {
+        "same_entity_other_relation": {
+          "n": 72,
+          "before_acc": 0.8333333333333334,
+          "after_acc": 0.9861111111111112,
+          "acc_drop": -0.1527777777777778,
+          "correct_to_wrong": 1,
+          "wrong_to_correct": 12,
+          "token_agreement": 0.8194444444444444,
+          "passed": false
+        },
+        "general_commonsense": {
+          "n": 20,
+          "before_acc": 0.7,
+          "after_acc": 0.7,
+          "acc_drop": 0.0,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 0,
+          "token_agreement": 1.0,
+          "passed": true
+        }
+      },
+      "same_entity_regressions": [
+        {
+          "entity_id": "erhu",
+          "question": "How does a musician play the Chinese erhu?\nA: Drawing a horsehair bow between two stretched strings\nB: Blowing air across a finger-holed tube\nC: Striking a kettle drum with mallets\nD: Ringing bronze handbells\nReply with one letter only."
+        }
+      ],
+      "written_entity_names": [
+        "tuatara (vertebrate_class)",
+        "titanium watch case (everyday_material)",
+        "cedar shoe tree (everyday_material)",
+        "leopard gecko (vertebrate_class)",
+        "brass padlock (everyday_material)",
+        "barracuda (vertebrate_class)",
+        "toucan (vertebrate_class)",
+        "steatite carving block (everyday_material)"
+      ],
+      "regressions_on_written_entities": [],
+      "regressions_on_unwritten_entities": [
+        {
+          "entity_id": "erhu",
+          "question": "How does a musician play the Chinese erhu?\nA: Drawing a horsehair bow between two stretched strings\nB: Blowing air across a finger-holed tube\nC: Striking a kettle drum with mallets\nD: Ringing bronze handbells\nReply with one letter only."
+        }
+      ]
+    },
+    "llama_M_evidence_gated": {
+      "n_actions": 9,
+      "written_entities": [
+        "03a5f042456bd5fc",
+        "c25180bcfb2ee604",
+        "cad6a85d48b5c863",
+        "64a68e79c502cf8c",
+        "f876705130afe32e",
+        "bb36efd3be8053c0",
+        "ba69e40b507bf6a6",
+        "1a82059cb97edc16"
+      ],
+      "strict_locality_pass": false,
+      "overall_token_agreement": 0.8804347826086957,
+      "by_group": {
+        "same_entity_other_relation": {
+          "n": 72,
+          "before_acc": 0.8333333333333334,
+          "after_acc": 0.9583333333333334,
+          "acc_drop": -0.125,
+          "correct_to_wrong": 1,
+          "wrong_to_correct": 10,
+          "token_agreement": 0.8472222222222222,
+          "passed": false
+        },
+        "general_commonsense": {
+          "n": 20,
+          "before_acc": 0.7,
+          "after_acc": 0.7,
+          "acc_drop": 0.0,
+          "correct_to_wrong": 0,
+          "wrong_to_correct": 0,
+          "token_agreement": 1.0,
+          "passed": true
+        }
+      },
+      "same_entity_regressions": [
+        {
+          "entity_id": "erhu",
+          "question": "How does a musician play the Chinese erhu?\nA: Drawing a horsehair bow between two stretched strings\nB: Blowing air across a finger-holed tube\nC: Striking a kettle drum with mallets\nD: Ringing bronze handbells\nReply with one letter only."
+        }
+      ],
+      "written_entity_names": [
+        "marble rolling pin (everyday_material)",
+        "claves (sound_source_mechanism)",
+        "composite travel mug (everyday_material)",
+        "bakelite rotary knob (everyday_material)",
+        "plexiglass display case (everyday_material)",
+        "walnut picture frame (everyday_material)",
+        "thalenite spice tray (everyday_material)",
+        "laminated desk organizer (everyday_material)"
+      ],
+      "regressions_on_written_entities": [],
+      "regressions_on_unwritten_entities": [
+        {
+          "entity_id": "erhu",
+          "question": "How does a musician play the Chinese erhu?\nA: Drawing a horsehair bow between two stretched strings\nB: Blowing air across a finger-holed tube\nC: Striking a kettle drum with mallets\nD: Ringing bronze handbells\nReply with one letter only."
+        }
+      ]
+    }
+  }
+}

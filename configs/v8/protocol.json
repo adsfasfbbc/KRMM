@@ -1,0 +1,71 @@
+{
+  "version": "krmm-v08-rebuild-replay-1",
+  "base_sha": "92501018228213bac8c9235169857ce7673ed964",
+  "scope": "Evaluator-owned historical REPLAY reconstruction, descriptive use only. Never satisfies DEV, TEST, Gate-F, OW_CONFIRM, semantic attribution, or nonzero merge gate.",
+  "history": {
+    "status": "INCOMPLETE_ORIGINAL_PRESERVED",
+    "missing_adapter_config_sha256": "941d060e9b2fccdd0e2b7e95bf59d5edda59640d2035912a3a6c80e0c87bbfdb",
+    "historical_m0_sha256": "6df2e427b7b9bd6f341b51ae5ef892ce53a3c7fbf71f97fec586bbc7c5fa90ef"
+  },
+  "gpu": {
+    "index": 0,
+    "uuid": "GPU-c66f578f-8471-fc77-30c8-0fdb241da712",
+    "min_start_free_mib": 23000,
+    "concurrency": 1
+  },
+  "model": {
+    "path": "/root/rivermind-data/models/Qwen2.5-Omni-3B",
+    "revision": "f75b40e3da2003cdd6e1829b1f420ca70797c34e",
+    "download_manifest_sha256": "4b7ec73b012f5a0ead984c7d002828ce8368916cc7a2be00920a07c8c51f95a5"
+  },
+  "files": {
+    "configs/v6/pilot.json": "ea371f55d1d5e610d7ffeb6a1a221fd05012c9b33b3795c5a1f98b98732898c1",
+    "data/v6/pilot_manifest.json": "d1bfa042d702ea7bb928f507afbdaf581669edcf66efbbac214ca8101291216d",
+    "data/v6/evaluator_only/pilot_hidden.json": "42478c017f57839bca5748bff79c5baab4a0317f46d2741f9a3893bd5cf8aad3"
+  },
+  "contract_caps": {
+    "gpu_hours": 16,
+    "primary_launches": 28,
+    "reload_children": 80,
+    "fits": 800,
+    "primary_wall_minutes": 240,
+    "reload_wall_minutes": 40,
+    "added_disk_gib": 40,
+    "minimum_free_disk_gib": 15
+  },
+  "stage_caps": {
+    "V8-A": {
+      "gpu_hours": 2,
+      "primary_launches": 6,
+      "reload_children": 8
+    },
+    "V8-B": {
+      "gpu_hours": 8,
+      "primary_launches": 12,
+      "reload_children": 40
+    },
+    "V8-C": {
+      "gpu_hours": 4,
+      "primary_launches": 6,
+      "reload_children": 16
+    },
+    "V8-D": {
+      "gpu_hours": 2,
+      "primary_launches": 4,
+      "reload_children": 16
+    }
+  },
+  "seeds": {
+    "rebuild": 2026
+  },
+  "validity": {
+    "minimum_clean_mastery": 0.75,
+    "minimum_degraded_targets": 8,
+    "reload_probability_tolerance": 0.0001
+  },
+  "gates": {
+    "V8_B": "Requires valid format measurement, independent DEV manifest and frozen new-writer queue",
+    "V8_C": "NOT_RUN_RESOURCE: Omni-7B has no local checkpoint",
+    "V8_D": "Requires OW_CONFIRM PASS, frozen blind queue, and remaining budget"
+  }
+}

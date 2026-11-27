@@ -1,0 +1,59 @@
+{
+  "version": "krmm-v08-rebuild-replay-1",
+  "phase": "V8-A preregistered reconstruction only",
+  "cwd": "/root/rivermind-data/KRMM",
+  "entries": [
+    {
+      "id": "rebuild-replay-20261127-01",
+      "kind": "primary",
+      "stage": "V8-A",
+      "retry": false,
+      "max_seconds": 5400,
+      "max_fits": 67,
+      "max_added_disk_gib": 4,
+      "reloads": [
+        {
+          "label": "D3_sequential_v6",
+          "max_seconds": 900,
+          "argv": [
+            "/root/rivermind-data/krmm-env/bin/python",
+            "/root/rivermind-data/KRMM/scripts/v6/verify_fresh_subprocess.py",
+            "--job",
+            "/root/rivermind-data/KRMM/results/v8-new/rebuild-replay-20261127-01/replay/fresh_job_D3_sequential_v6.json"
+          ]
+        },
+        {
+          "label": "D4_joint_multitarget",
+          "max_seconds": 900,
+          "argv": [
+            "/root/rivermind-data/krmm-env/bin/python",
+            "/root/rivermind-data/KRMM/scripts/v6/verify_fresh_subprocess.py",
+            "--job",
+            "/root/rivermind-data/KRMM/results/v8-new/rebuild-replay-20261127-01/replay/fresh_job_D4_joint_multitarget.json"
+          ]
+        }
+      ],
+      "argv": [
+        "/usr/bin/env",
+        "HF_HUB_OFFLINE=1",
+        "TRANSFORMERS_OFFLINE=1",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "PYTHONUNBUFFERED=1",
+        "CUDA_VISIBLE_DEVICES=GPU-c66f578f-8471-fc77-30c8-0fdb241da712",
+        "/usr/bin/timeout",
+        "-k",
+        "30s",
+        "5400s",
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/rebuild_replay.py",
+        "--run",
+        "rebuild-replay-20261127-01"
+      ]
+    }
+  ],
+  "excluded": {
+    "V8_B": "Queue not yet frozen",
+    "V8_C": "Missing Omni-7B checkpoint",
+    "V8_D": "OW_CONFIRM has not run"
+  }
+}

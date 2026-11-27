@@ -84,21 +84,45 @@ def verify(cfg, queue):
     caps = contract["contract_caps"]
     stage = contract["stage_caps"]["V8-B"]
     wall_hours = sum(entry["seconds"] for entry in queue["stages"]) / 3600
-    used = read(RESULTS / earlier / "budget_usage.json") if earlier else None
-    if used:
-        prior["gpu_hours"] += used["gpu_hours"]
-        prior["primary_launches"] += used["primary_launches"]
-        prior["reload_children"] += used["reload_children"]
-        prior["fits"] += sum(used["fits"].values())
+    prepared = cfg.get("resume_from")
+    preceding = [read(RESULTS / earlier / "budget_usage.json")] if earlier else []
+    if prepared:
+        source = RESULTS / prepared
+        if digest(source / "SHA256SUMS") != cfg["prepared_manifest_sha256"]:
+            raise RuntimeError("Prepared episode manifest changed")
+        subprocess.run(["sha256sum", "-c", "--quiet", "SHA256SUMS"], cwd=source, check=True)
+        g0 = read(source / "private/g0.json")
+        exchange = read(source / "oracle_input/requests.json")
+        old_budget = read(source / "budget_usage.json")
+        originals = read(ROOT / "configs/v8/dev_pilot02/protocol.json")
+        if (
+            g0["status"] != "PASS" or g0["m0_sha256"] != exchange["state_sha256"]
+            or old_budget["status"] != "FAILED" or old_budget["fits"]["writer"] != 0
+            or any(cfg[key] != value for key, value in originals.items() if key != "id")
+            or g0["m0_sha256"] != cfg["prepared_m0_sha256"]
+        ):
+            raise RuntimeError("Resume requires the original passing G0 and zero earlier writer fits")
+        preceding.append(old_budget)
+        for probe in cfg["cuda_probes"]:
+            directory = ROOT / probe
+            seconds = float((directory / "end").read_text()) - float((directory / "start").read_text())
+            preceding.append({"gpu_hours": seconds / 3600, "primary_launches": 1, "reload_children": 0, "fits": {}})
+
+    used_hours = sum(item["gpu_hours"] for item in preceding)
+    used_main = sum(item["primary_launches"] for item in preceding)
+    used_fresh = sum(item["reload_children"] for item in preceding)
+    used_fits = sum(sum(item["fits"].values()) for item in preceding)
+    planned_modes = list(STAGES[1:] if prepared else STAGES)
+    new_main = len(planned_modes) - 1
     if (
-        [entry["mode"] for entry in queue["stages"]] != list(STAGES)
-        or wall_hours + (used["gpu_hours"] if used else 0) > stage["gpu_hours"]
-        or (used["primary_launches"] if used else 0) + 2 > stage["primary_launches"]
-        or (used["reload_children"] if used else 0) + 1 > stage["reload_children"]
-        or wall_hours + prior["gpu_hours"] > caps["gpu_hours"]
-        or prior["primary_launches"] + 2 > caps["primary_launches"]
-        or prior["reload_children"] + 1 > caps["reload_children"]
-        or prior["fits"] + cfg["max_writer_fits"] + len(public) > caps["fits"]
+        [entry["mode"] for entry in queue["stages"]] != planned_modes
+        or wall_hours + used_hours > stage["gpu_hours"]
+        or used_main + new_main > stage["primary_launches"]
+        or used_fresh + 1 > stage["reload_children"]
+        or wall_hours + used_hours + prior["gpu_hours"] > caps["gpu_hours"]
+        or prior["primary_launches"] + used_main + new_main > caps["primary_launches"]
+        or prior["reload_children"] + used_fresh + 1 > caps["reload_children"]
+        or prior["fits"] + used_fits + cfg["max_writer_fits"] + (0 if prepared else len(public)) > caps["fits"]
     ):
         raise RuntimeError("DEV queue would exceed its frozen budget")
     return {"old_normalized_entities_aliases": len(old_names), "new_normalized_entities_aliases": len(new_names),
@@ -116,11 +140,22 @@ def supervise(cfg, queue, out, protocol_path, queue_path):
         out.mkdir()
         for folder in ("private", "oracle_input", "writer", "writer/scratch"):
             (out / folder).mkdir()
+        prepared = cfg.get("resume_from")
+        if prepared:
+            source = RESULTS / prepared
+            for name in (
+                "private/g0.json", "private/truth.json", "private/damaged_targets.json", "private/m0_controls.json",
+                "oracle_input/m0.pt", "oracle_input/requests.json",
+            ):
+                shutil.copyfile(source / name, out / name)
+                if digest(source / name) != digest(out / name):
+                    raise RuntimeError(f"Prepared input copy failed: {name}")
         write(out / "provenance.json", {
             "source_commit": command("git", "rev-parse", "HEAD"),
             "protocol_sha256": digest(protocol_path), "queue_sha256": digest(queue_path),
             "public_sha256": cfg["public_sha256"], "private_sha256": cfg["private_sha256"],
-            "overlap_audit": overlap,
+            "overlap_audit": overlap, "prepared_from": prepared,
+            "prepared_manifest_sha256": cfg.get("prepared_manifest_sha256"),
         })
         track = []
         status = "FAILED"
@@ -187,11 +222,12 @@ def supervise(cfg, queue, out, protocol_path, queue_path):
 def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("verify", "supervise", *STAGES), required=True)
-    parser.add_argument("--pilot", choices=("01", "02"), default="01")
+    parser.add_argument("--pilot", choices=("01", "02", "02-resume"), default="01")
     args = parser.parse_args()
     mode = args.mode
+    config_root = ROOT / ("configs/v8/dev_pilot02_resume" if args.pilot == "02-resume" else "configs/v8/dev_pilot02")
     protocol_path, queue_path = (PROTOCOL, QUEUE) if args.pilot == "01" else (
-        ROOT / "configs/v8/dev_pilot02/protocol.json", ROOT / "configs/v8/dev_pilot02/run_queue.json",
+        config_root / "protocol.json", config_root / "run_queue.json",
     )
     cfg, queue = read(protocol_path), read(queue_path)
     if cfg["id"] != queue["id"]:

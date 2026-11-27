@@ -116,14 +116,15 @@ def isolate(out, cfg):
     public_path, private_path = data_paths(cfg)
     allowed = [
         "/usr", "/opt", "/lib", "/lib64", "/etc", "/sys", "/proc/self", "/proc/cpuinfo",
-        "/proc/meminfo", "/proc/driver", "/proc/sys", ROOT / "krmm", ROOT / "scripts",
+        "/proc/meminfo", "/proc/devices", "/proc/driver", "/proc/sys", ROOT / "krmm", ROOT / "scripts",
         public_path, LEGACY, out / "oracle_input", model, Path(sys.prefix),
     ]
     workspace = out / "writer"
     os.environ["HOME"] = str(workspace / "scratch")
     os.environ["TMPDIR"] = str(workspace / "scratch")
     os.environ["XDG_CACHE_HOME"] = str(workspace / "scratch")
-    abi = restrict(allowed, [workspace], ["/dev"])
+    # CUDA names its own background threads through procfs after Landlock is active.
+    abi = restrict(allowed, [workspace], ["/dev", "/proc/self/task"])
     require_denied(private_path)
     if private_path != PRIVATE:
         require_denied(PRIVATE)

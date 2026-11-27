@@ -3,7 +3,7 @@ import math
 
 from krmm.v8.dev_eval import accuracy, control_specs, controls, semantic_metrics, targets
 from krmm.v7.transition_audit import compute_step_transition_metrics
-from scripts.v8.dev_workers import LEGACY, PRIVATE, PUBLIC, configs
+from scripts.v8.dev_workers import configs, data_paths
 from scripts.v8.rebuild_replay import read, write
 
 
@@ -17,8 +17,9 @@ def observe(out, cfg):
     hidden = out / "private"
     workspace = out / "writer"
     oracle = read(out / "oracle_input" / "requests.json")
-    public = read(PUBLIC)
-    private = {row["unit_id"]: row for row in read(PRIVATE)}
+    public_path, private_path = data_paths(cfg)
+    public = read(public_path)
+    private = {row["unit_id"]: row for row in read(private_path)}
     truth = read(hidden / "truth.json")
     degraded = {row["unit_id"] for row in truth if row["is_degraded_target"]}
     m0_targets = read(hidden / "damaged_targets.json")

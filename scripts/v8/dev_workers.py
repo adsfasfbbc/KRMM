@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """GPU entry points for the frozen DEV-V8 evaluator and Oracle writer."""
-from collections import Counter
-import argparse
 import hashlib
 import json
 import os
@@ -17,6 +15,10 @@ PUBLIC = ROOT / "data/v8/public/dev_v8.json"
 PRIVATE = ROOT / "data/v8/evaluator_private/dev_v8.json"
 PROTOCOL = ROOT / "configs/v8/dev_protocol.json"
 LEGACY = ROOT / "configs/v6/pilot.json"
+
+
+def data_paths(cfg):
+    return ROOT / cfg.get("public_path", str(PUBLIC)), ROOT / cfg.get("private_path", str(PRIVATE))
 
 
 def event(path, **data):
@@ -49,8 +51,9 @@ def prepare(out, cfg):
     from krmm.v8.dev_eval import anchor_truth, control_specs, controls, knowledge, screen, select_damage, targets
 
     old, damage, repair = configs()
-    public = read(PUBLIC)
-    private = {row["unit_id"]: row for row in read(PRIVATE)}
+    public_path, private_path = data_paths(cfg)
+    public = read(public_path)
+    private = {row["unit_id"]: row for row in read(private_path)}
     hidden = out / "private"
     exchange = out / "oracle_input"
     set_seed(cfg["seed"])
@@ -107,26 +110,29 @@ def prepare(out, cfg):
     print("DEV G0 PASS", base_gate, "degraded", len(degraded), flush=True)
 
 
-def isolate(out):
+def isolate(out, cfg):
     from krmm.v8.isolation import require_denied, restrict
     model = read(LEGACY)["model_path"]
+    public_path, private_path = data_paths(cfg)
     allowed = [
         "/usr", "/opt", "/lib", "/lib64", "/etc", "/sys", "/proc/self", "/proc/cpuinfo",
         "/proc/meminfo", "/proc/driver", "/proc/sys", ROOT / "krmm", ROOT / "scripts",
-        PUBLIC, PROTOCOL, LEGACY, out / "oracle_input", model, Path(sys.prefix),
+        public_path, LEGACY, out / "oracle_input", model, Path(sys.prefix),
     ]
     workspace = out / "writer"
     os.environ["HOME"] = str(workspace / "scratch")
     os.environ["TMPDIR"] = str(workspace / "scratch")
     os.environ["XDG_CACHE_HOME"] = str(workspace / "scratch")
     abi = restrict(allowed, [workspace], ["/dev"])
-    require_denied(PRIVATE)
+    require_denied(private_path)
+    if private_path != PRIVATE:
+        require_denied(PRIVATE)
     require_denied(out / "private" / "g0.json")
     return abi
 
 
 def writer(out, cfg):
-    abi = isolate(out)
+    abi = isolate(out, cfg)
     import torch
     from krmm.model import Omni
     from krmm.v3.damage import restore_weights, snapshot_weights, state_sha256
@@ -137,7 +143,7 @@ def writer(out, cfg):
 
     old, _, repair = configs()
     root = out / "writer"
-    public = {row["unit_id"]: row for row in read(PUBLIC)}
+    public = {row["unit_id"]: row for row in read(data_paths(cfg)[0])}
     oracle = read(out / "oracle_input" / "requests.json")
     requests = oracle["requests"]
     if len(requests) != cfg["oracle_targets"] or len({row["unit_id"] for row in requests}) != len(requests):

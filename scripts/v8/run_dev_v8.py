@@ -11,10 +11,11 @@ import signal
 import subprocess
 import sys
 import time
+import unicodedata
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from scripts.v8.dev_workers import PRIVATE, PROTOCOL, PUBLIC, prepare, writer
+from scripts.v8.dev_workers import PRIVATE, PROTOCOL, PUBLIC, data_paths, prepare, writer
 from scripts.v8.rebuild_replay import command, digest, gpu_usage, read, verify_inputs, write
 
 QUEUE = ROOT / "configs/v8/dev_run_queue.json"
@@ -29,10 +30,11 @@ def verify(cfg, queue):
     from krmm.v7.dev_catalog import build_dev_v7_catalog
 
     verify_inputs(read(ROOT / "configs/v8/protocol.json"), ("krmm/v8/", "data/v8/", "tests/v8/"))
-    for path, key in ((PUBLIC, "public_sha256"), (PRIVATE, "private_sha256")):
+    public_path, private_path = data_paths(cfg)
+    for path, key in ((public_path, "public_sha256"), (private_path, "private_sha256")):
         if digest(path) != cfg[key]:
             raise RuntimeError(f"Frozen manifest mismatch: {path}")
-    public, hidden = read(PUBLIC), read(PRIVATE)
+    public, hidden = read(public_path), read(private_path)
     if [row["unit_id"] for row in public] != [row["unit_id"] for row in hidden] or len({row["unit_id"] for row in public}) != 36:
         raise RuntimeError("Manifest IDs disagree")
     if sorted(Counter(row["domain"] for row in public).values()) != [12, 12, 12]:
@@ -46,9 +48,34 @@ def verify(cfg, queue):
         | {row.entity_id for row in v6} | {alias for row in evaluator for alias in row.aliases}
         | {row.entity_id for row in build_dev_v7_catalog()[0]}
     )
-    old_names = {normalize_entity_name(name) for name in history}
-    new_names = {normalize_entity_name(row["entity_id"]) for row in public}
-    new_names.update(normalize_entity_name(alias) for row in hidden for alias in row["aliases"])
+    def normalize(name):
+        folded = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
+        return normalize_entity_name(folded)
+
+    earlier = cfg.get("earlier_failed_pilot")
+    if earlier:
+        earlier_catalog = read(PUBLIC)
+        earlier_ids = {row["unit_id"] for row in earlier_catalog if row["domain"] == "sound_source_mechanism"}
+        earlier_answers = read(PRIVATE)
+        unchanged = [row for row in public if row["domain"] != "sound_source_mechanism"]
+        unchanged_ids = {row["unit_id"] for row in unchanged}
+        if (
+            unchanged != [row for row in earlier_catalog if row["unit_id"] not in earlier_ids]
+            or [row for row in hidden if row["unit_id"] in unchanged_ids]
+            != [row for row in earlier_answers if row["unit_id"] not in earlier_ids]
+            or earlier_ids.intersection(row["unit_id"] for row in public)
+        ):
+            raise RuntimeError("Pilot should only replace the earlier 12 instrument entities")
+        history.update(row["entity_id"] for row in earlier_catalog if row["unit_id"] in earlier_ids)
+        history.update(alias for row in earlier_answers if row["unit_id"] in earlier_ids for alias in row["aliases"])
+        earlier_run = RESULTS / earlier
+        if digest(earlier_run / "SHA256SUMS") != cfg["earlier_manifest_sha256"]:
+            raise RuntimeError("Earlier pilot checksum manifest was changed")
+        subprocess.run(["sha256sum", "-c", "--quiet", "SHA256SUMS"], cwd=earlier_run, check=True)
+
+    old_names = {normalize(name) for name in history}
+    new_names = {normalize(row["entity_id"]) for row in public}
+    new_names.update(normalize(alias) for row in hidden for alias in row["aliases"])
     overlap = sorted(old_names & new_names)
     if overlap:
         raise RuntimeError(f"Normalized historical overlap: {overlap}")
@@ -57,9 +84,18 @@ def verify(cfg, queue):
     caps = contract["contract_caps"]
     stage = contract["stage_caps"]["V8-B"]
     wall_hours = sum(entry["seconds"] for entry in queue["stages"]) / 3600
+    used = read(RESULTS / earlier / "budget_usage.json") if earlier else None
+    if used:
+        prior["gpu_hours"] += used["gpu_hours"]
+        prior["primary_launches"] += used["primary_launches"]
+        prior["reload_children"] += used["reload_children"]
+        prior["fits"] += sum(used["fits"].values())
     if (
         [entry["mode"] for entry in queue["stages"]] != list(STAGES)
-        or wall_hours > stage["gpu_hours"] or wall_hours + prior["gpu_hours"] > caps["gpu_hours"]
+        or wall_hours + (used["gpu_hours"] if used else 0) > stage["gpu_hours"]
+        or (used["primary_launches"] if used else 0) + 2 > stage["primary_launches"]
+        or (used["reload_children"] if used else 0) + 1 > stage["reload_children"]
+        or wall_hours + prior["gpu_hours"] > caps["gpu_hours"]
         or prior["primary_launches"] + 2 > caps["primary_launches"]
         or prior["reload_children"] + 1 > caps["reload_children"]
         or prior["fits"] + cfg["max_writer_fits"] + len(public) > caps["fits"]
@@ -69,7 +105,7 @@ def verify(cfg, queue):
             "source_groups": len({row["source_group"] for row in public}), "overlap": overlap}
 
 
-def supervise(cfg, queue, out):
+def supervise(cfg, queue, out, protocol_path, queue_path):
     overlap = verify(cfg, queue)
     os.umask(0o077)
     with (RESULTS / ".rebuild.lock").open("a") as lock:
@@ -82,7 +118,7 @@ def supervise(cfg, queue, out):
             (out / folder).mkdir()
         write(out / "provenance.json", {
             "source_commit": command("git", "rev-parse", "HEAD"),
-            "protocol_sha256": digest(PROTOCOL), "queue_sha256": digest(QUEUE),
+            "protocol_sha256": digest(protocol_path), "queue_sha256": digest(queue_path),
             "public_sha256": cfg["public_sha256"], "private_sha256": cfg["private_sha256"],
             "overlap_audit": overlap,
         })
@@ -151,15 +187,20 @@ def supervise(cfg, queue, out):
 def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("verify", "supervise", *STAGES), required=True)
-    mode = parser.parse_args().mode
-    cfg, queue = read(PROTOCOL), read(QUEUE)
+    parser.add_argument("--pilot", choices=("01", "02"), default="01")
+    args = parser.parse_args()
+    mode = args.mode
+    protocol_path, queue_path = (PROTOCOL, QUEUE) if args.pilot == "01" else (
+        ROOT / "configs/v8/dev_pilot02/protocol.json", ROOT / "configs/v8/dev_pilot02/run_queue.json",
+    )
+    cfg, queue = read(protocol_path), read(queue_path)
     if cfg["id"] != queue["id"]:
         raise RuntimeError("Frozen DEV protocol and queue disagree")
     out = RESULTS / cfg["id"]
     if mode == "verify":
         print(verify(cfg, queue))
     elif mode == "supervise":
-        supervise(cfg, queue, out)
+        supervise(cfg, queue, out, protocol_path, queue_path)
     elif mode == "prepare":
         prepare(out, cfg)
     elif mode == "writer":

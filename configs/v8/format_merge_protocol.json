@@ -1,0 +1,44 @@
+{
+  "rebuild_run": "results/v8-new/rebuild-replay-20261127-01",
+  "m0_sha256": "f2e1c4d3cee61590f64a9da5d6ca1bcc1cb59da6ae0667ccd9022d7dff70e9b8",
+  "rebuild_manifest_sha256": "28353031f8515abd9c2fd49d152e846d13ba677d3bfdd3c931b0f6624fdfd5c0",
+  "basis": "Historical-source descriptive REPLAY, six facts frozen before new inference. Same 3B cached revision and original M0. Three focal facts from reconstructed D3 final harms and three stable controls (fish anatomy, musical acoustics, material). Cedar and slate historic focal writes, meerkat reconstructed no-harm comparison. No new fits.",
+  "minimum_free_bytes": 16106127360,
+  "max_added_bytes": 1073741824,
+  "gpu_uuid": "GPU-c66f578f-8471-fc77-30c8-0fdb241da712",
+  "minimum_start_free_mib": 23000,
+  "tolerance": 0.0001,
+  "remaining_before_queue": {
+    "global_gpu_hours": 15.760786662140035,
+    "global_primary_launches": 27,
+    "global_reload_children": 78,
+    "global_fits": 771,
+    "v8_a_gpu_hours": 1.7607866621400332,
+    "v8_a_primary_launches": 5,
+    "v8_a_reload_children": 6
+  },
+  "branches": [
+    {
+      "label": "cedar",
+      "adapter": "D2_single_adapters/04_3d1615368c76ea9a"
+    },
+    {
+      "label": "slate",
+      "adapter": "D2_single_adapters/08_295e768bde818c9d"
+    },
+    {
+      "label": "meerkat",
+      "adapter": "D2_single_adapters/05_7426593917dd9800"
+    }
+  ],
+  "d3_final_dir": "D3_seq_adapters",
+  "option_permutations": [
+    "ABCD",
+    "BCDA",
+    "CDAB",
+    "DABC"
+  ],
+  "open_max_tokens": 32,
+  "version": "krmm-v08-format-merge-1",
+  "run_id": "format-merge-20261127-01"
+}

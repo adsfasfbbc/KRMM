@@ -1,0 +1,38 @@
+{
+  "version": "krmm-v08-format-merge-1",
+  "run_id": "format-merge-20261127-01",
+  "queue": [
+    {
+      "kind": "primary",
+      "max_seconds": 1800,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/diagnose_formats.py",
+        "--mode",
+        "primary"
+      ]
+    },
+    {
+      "kind": "independent_gpu_reload",
+      "max_seconds": 1200,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/diagnose_formats.py",
+        "--mode",
+        "fresh"
+      ]
+    }
+  ],
+  "command": [
+    "/usr/bin/env",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONUNBUFFERED=1",
+    "CUDA_VISIBLE_DEVICES=GPU-c66f578f-8471-fc77-30c8-0fdb241da712",
+    "/root/rivermind-data/krmm-env/bin/python",
+    "/root/rivermind-data/KRMM/scripts/v8/diagnose_formats.py",
+    "--mode",
+    "supervise"
+  ]
+}

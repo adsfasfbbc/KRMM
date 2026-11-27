@@ -1,0 +1,81 @@
+{
+  "run_id": "rebuild-replay-20261127-01",
+  "status": "REPLAY_RECONSTRUCTED",
+  "historical_integrity": "INCOMPLETE_ORIGINAL_PRESERVED",
+  "source_commit": "87e11b0af294ebb0743579a81a113e5d60ccb4ca",
+  "protocol_sha256": "589743774ca2fd9493ec326214cf7c5248420155d35232b4ba0d5588f303bc75",
+  "queue_sha256": "f06afc4bbd03f045e33c398c60cd4d4042c188a089747a3d8c4566f55d9d4841",
+  "artifact_manifest": {
+    "verified_files": 73,
+    "sha256": "28353031f8515abd9c2fd49d152e846d13ba677d3bfdd3c931b0f6624fdfd5c0"
+  },
+  "m0": {
+    "sha256": "f2e1c4d3cee61590f64a9da5d6ca1bcc1cb59da6ae0667ccd9022d7dff70e9b8",
+    "exact_historical_match": false,
+    "clean_mastered": 28,
+    "clean_eligible": 36,
+    "planned_injection": 12,
+    "planned_injection_overlap_with_history": 12,
+    "degraded": 22,
+    "historical_degraded": 18,
+    "degraded_overlap_with_history": 18
+  },
+  "d0": {
+    "controls_exact": true
+  },
+  "d1": {
+    "merges": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "zero_update_and_exact_state": true
+  },
+  "d2": {
+    "targets_restored": 8,
+    "targets_attempted": 8,
+    "updates_with_new_harm": 7
+  },
+  "d3": {
+    "recovered": 20,
+    "active": 8,
+    "incidental": 12,
+    "final_harm": 3,
+    "ever_harm": 3,
+    "strict_yield": 0,
+    "reload_pass": true,
+    "probes": 92,
+    "max_probability_difference": 0
+  },
+  "d4": {
+    "recovered": 19,
+    "active": 8,
+    "incidental": 11,
+    "final_harm": 2,
+    "strict_yield": 0,
+    "reload_pass": true,
+    "probes": 92,
+    "max_probability_difference": 0,
+    "adapter_config_sha256": "9d935c5649f11d158ab81ae2745af98faa16b83e2f8edb7c566bb36ab51013a9",
+    "adapter_config_exact_historical_match": false
+  },
+  "budget": {
+    "primary_launches": 1,
+    "reload_children": 2,
+    "fits": 29,
+    "fit_steps": 1536,
+    "primary_wall_seconds": 803.1618540845811,
+    "reload_seconds": 58.00616221129894,
+    "conservative_gpu_hours_upper_bound": 0.23921333785996668,
+    "filesystem_space_delta_bytes": 275316736,
+    "peak_fit_allocated_gib": 11.157513618469238
+  },
+  "next_gates": {
+    "semantic_format": "NOT_RUN",
+    "nonzero_merge_audit": "NOT_RUN",
+    "ow_confirm": "NOT_RUN",
+    "scale_7b": "NOT_RUN_RESOURCE",
+    "blind_e2e": "NOT_RUN_GATED"
+  }
+}

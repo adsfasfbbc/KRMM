@@ -31,6 +31,34 @@ def observe(out, cfg):
     m0_sha = oracle["state_sha256"]
     if state_sha256(anchor) != m0_sha:
         raise RuntimeError("Observer M0 digest mismatch")
+    precision_run = "merge_dtype" in cfg
+    if precision_run:
+        restore_weights(model, anchor)
+        if cfg["merge_dtype"] == "FP32":
+            from krmm.v8.merge_precision import promote_edited_layers
+            torch.set_float32_matmul_precision("highest")
+            anchor = promote_edited_layers(model.model, anchor)
+            m0_sha = state_sha256(anchor)
+        baseline_targets = targets(model, public, private)
+        baseline_controls = controls(model, specs, True)
+        anchor_prediction_changes = {
+            "heldout_targets": sum(
+                row["accuracy"] != m0_targets[key]["accuracy"] for key, row in baseline_targets.items()
+            ),
+            "fixed_controls": sum(
+                before["pred"] != after["pred"]
+                for before, after in zip(m0_controls, baseline_controls, strict=True)
+            ),
+            "historically_degraded_at_full_accuracy": sum(
+                baseline_targets[key]["accuracy"] >= 0.999 for key in degraded
+            ),
+        }
+        m0_targets, m0_controls = baseline_targets, baseline_controls
+        healthy = {key for key, value in m0_targets.items() if key not in degraded and value["accuracy"] >= 0.999}
+        write(hidden / "precision_m0.json", {
+            "heldout": m0_targets, "controls": m0_controls, "comparison_to_original": anchor_prediction_changes,
+            "edited_state_sha256": m0_sha,
+        })
     scores = {}
 
     for name in cfg["branches"]:
@@ -78,13 +106,22 @@ def observe(out, cfg):
             "healthy_harm": healthy_harm, "strict_yield": metrics["Y_strict"],
             "fresh_pass": True, "max_public_probe_difference": error, "semantics": semantics,
             "max_attempted_analytic_residual": max((row["analytic_residual"] for row in branch["attempts"]), default=0),
-            "max_attempted_bf16_residual": max((row["merged_residual"] for row in branch["attempts"]), default=0),
+            ("max_attempted_merged_residual" if precision_run else "max_attempted_bf16_residual"):
+                max((row["merged_residual"] for row in branch["attempts"]), default=0),
             "max_attempted_norm_error": max((row["max_norm_error"] for row in branch["attempts"]), default=0),
             "forward_tokens": sum(row["train_tokens"] for row in branch["attempts"]),
         }
         write(hidden / f"{name}_replay.json", {"targets": trajectory_targets, "controls": trajectory_controls, "metrics": metrics})
         print("DEV observer", name, scores[name], flush=True)
-    result = decide(scores, cfg)
+    if precision_run:
+        result = {
+            "decision": "TEST_NOT_RUN_BY_REQUEST",
+            "merge_dtype": cfg["merge_dtype"],
+            "anchor_prediction_changes": anchor_prediction_changes,
+            "full_eight_updates_each": all(row["committed"] == cfg["oracle_targets"] for row in scores.values()),
+        }
+    else:
+        result = decide(scores, cfg)
     write(out / "dev_summary.json", {"g0": read(hidden / "g0.json"), "branches": scores, **result})
 
 

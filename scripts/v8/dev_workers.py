@@ -110,15 +110,16 @@ def prepare(out, cfg):
     print("DEV G0 PASS", base_gate, "degraded", len(degraded), flush=True)
 
 
-def isolate(out, cfg):
+def isolate(out, cfg, oracle_paths=None):
     from krmm.v8.isolation import require_denied, restrict
     model = read(LEGACY)["model_path"]
     public_path, private_path = data_paths(cfg)
     allowed = [
         "/usr", "/opt", "/lib", "/lib64", "/etc", "/sys", "/proc/self", "/proc/cpuinfo",
         "/proc/meminfo", "/proc/devices", "/proc/driver", "/proc/sys", ROOT / "krmm", ROOT / "scripts",
-        public_path, LEGACY, out / "oracle_input", model, Path(sys.prefix),
+        public_path, LEGACY, model, Path(sys.prefix),
     ]
+    allowed.extend([out / "oracle_input"] if oracle_paths is None else oracle_paths)
     workspace = out / "writer"
     os.environ["HOME"] = str(workspace / "scratch")
     os.environ["TMPDIR"] = str(workspace / "scratch")
@@ -156,6 +157,13 @@ def writer(out, cfg):
     expected = oracle["state_sha256"]
     if state_sha256(snapshot_weights(model, repair)) != expected:
         raise RuntimeError("Oracle M0 hash mismatch")
+    if cfg.get("merge_dtype") == "FP32":
+        from krmm.v8.merge_precision import promote_edited_layers
+        torch.set_float32_matmul_precision("highest")
+        anchor = promote_edited_layers(model.model, anchor)
+        expected = state_sha256(anchor)
+        if state_sha256(snapshot_weights(model, repair)) != expected:
+            raise RuntimeError("FP32 initial edited weights differ from the promoted anchor")
     retains = train_retain_prompts(include_multi_template=True)
     teacher = model.retain_logits(retains)
     extra = list(EXTRA_GENERIC_RETAIN_PROMPTS)
@@ -220,6 +228,7 @@ def writer(out, cfg):
                       "candidate_sha256": state_sha256(after), "adapter": str(path.relative_to(root)),
                       "committed": not reject, "train_tokens": tokens, "analytic_residual": analytic,
                       "merged_residual": merged, "max_norm_error": match_error, "layer_audit": measures,
+                      "merge_dtype": cfg.get("merge_dtype", "BF16"),
                       "public_prompt_sha256": [hashlib.sha256(prompt.encode()).hexdigest() for prompt in prompts]}
             if reject:
                 restore_weights(model, before)

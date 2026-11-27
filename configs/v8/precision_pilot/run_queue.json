@@ -1,0 +1,61 @@
+{
+  "run_id": "dev-v8-20261127-02-precision",
+  "command": [
+    "/usr/bin/env",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONUNBUFFERED=1",
+    "CUDA_VISIBLE_DEVICES=GPU-c66f578f-8471-fc77-30c8-0fdb241da712",
+    "/root/rivermind-data/krmm-env/bin/python",
+    "/root/rivermind-data/KRMM/scripts/v8/run_precision_pilot.py",
+    "--mode",
+    "supervise"
+  ],
+  "stages": [
+    {
+      "mode": "pilot",
+      "seconds": 900,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/run_precision_pilot.py",
+        "--mode",
+        "pilot"
+      ]
+    },
+    {
+      "mode": "pilot-fresh",
+      "seconds": 900,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/run_precision_pilot.py",
+        "--mode",
+        "pilot-fresh"
+      ]
+    },
+    {
+      "mode": "writer",
+      "seconds": 7200,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/run_precision_pilot.py",
+        "--mode",
+        "writer"
+      ]
+    },
+    {
+      "mode": "observe",
+      "seconds": 2400,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/run_precision_pilot.py",
+        "--mode",
+        "observe"
+      ]
+    }
+  ],
+  "conditional": "writer and observe only after the independent single-step gate chooses a passing deployed route",
+  "max_writer_fits": 24,
+  "max_primary_launches": 2,
+  "max_reload_children": 2
+}

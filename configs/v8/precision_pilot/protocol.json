@@ -1,0 +1,25 @@
+{
+  "run_id": "dev-v8-20261127-02-precision",
+  "archive_run": "dev-v8-20261127-02-resume",
+  "dev_config_sha256": "4e82e771f1358fe155d3e876b16c75793ba6c6b930aeded937f61783da4ea382",
+  "m0_sha256": "a94369ee0666376078a38ec1a9179f17c0238a04e1a0255bbd1255c3b453322b",
+  "archived_bf16_candidate_sha256": "c922db0d247881ec2a0266d9f590d56201e4b8abd360801e8fd3dd207a77380a",
+  "first_unit_id": "dv8-11",
+  "public_prompt_sha256": [
+    "594deae7b4fee60dfd79fb71cbdf9075437b30829ae4a4444ed4a2a2bee757a8",
+    "6982ce4cc654d9286c1b48da411576cec8f194ca22323a180becac12865078f0",
+    "5327ad4dd0cafb2ebe9e8ffbfbc1501d255a167ff60d5e0ce292925359d88704",
+    "a2bfc0115bcd613af6d448313148146e4e8ee79b4d7c3118826038352ec68ef4",
+    "8c18897aa989cfaa45bd337ab847b4205eab73d130c3a9b945d7d4c510dee3fc",
+    "f55196d4aeacbbf59bf15a219e476aa2e78917d45cfef14d014841579322eea3",
+    "8e1603e94b63241d133de0881f826d2f022d98ab36e18c3c46ef659355525d80"
+  ],
+  "adapter_weights_sha256": "aeed3354deac8461552e7303b9ca125006171ec2e7e0e149ed5306ca13123c9d",
+  "residual_threshold": 0.01,
+  "formal_test": "DISABLED",
+  "route_priority": [
+    "BF16",
+    "FP32"
+  ],
+  "precision_scope": "Only the 12 edited Linear weights and optional biases are promoted. FP32 linear forward with BF16 external activations."
+}

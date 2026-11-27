@@ -41,10 +41,10 @@ def command(*argv):
     return subprocess.check_output(argv, cwd=ROOT, text=True).strip()
 
 
-def verify_inputs(protocol):
+def verify_inputs(protocol, additional_paths=()):
     base = protocol["base_sha"]
     tracked = command("git", "diff", "--name-only", base, "--")
-    allowed = ("scripts/v8/", "configs/v8/", "docs/v8/", "reports/v8/")
+    allowed = ("scripts/v8/", "configs/v8/", "docs/v8/", "reports/v8/", *additional_paths)
     if any(not path.startswith(allowed) for path in tracked.splitlines()):
         raise RuntimeError("Protected source differs from the frozen parent")
     if command("git", "status", "--porcelain", "--untracked-files=no"):

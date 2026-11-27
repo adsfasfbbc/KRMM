@@ -1,0 +1,54 @@
+{
+  "id": "dev-v8-20261127-01",
+  "remaining_before": {
+    "global_gpu_hours": 15.726549132004793,
+    "primary": 26,
+    "children": 77,
+    "fits": 771,
+    "v8_b_gpu_hours": 8
+  },
+  "command": [
+    "/usr/bin/env",
+    "HF_HUB_OFFLINE=1",
+    "TRANSFORMERS_OFFLINE=1",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONUNBUFFERED=1",
+    "CUDA_VISIBLE_DEVICES=GPU-c66f578f-8471-fc77-30c8-0fdb241da712",
+    "/root/rivermind-data/krmm-env/bin/python",
+    "/root/rivermind-data/KRMM/scripts/v8/run_dev_v8.py",
+    "--mode",
+    "supervise"
+  ],
+  "stages": [
+    {
+      "mode": "prepare",
+      "seconds": 3600,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/run_dev_v8.py",
+        "--mode",
+        "prepare"
+      ]
+    },
+    {
+      "mode": "writer",
+      "seconds": 7200,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/run_dev_v8.py",
+        "--mode",
+        "writer"
+      ]
+    },
+    {
+      "mode": "observe",
+      "seconds": 2400,
+      "argv": [
+        "/root/rivermind-data/krmm-env/bin/python",
+        "/root/rivermind-data/KRMM/scripts/v8/run_dev_v8.py",
+        "--mode",
+        "observe"
+      ]
+    }
+  ]
+}
